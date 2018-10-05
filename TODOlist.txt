@@ -1,0 +1,18 @@
+- Parler d'imbriquer les balises + arbre
+- HEAD après BODY
+- schéma d'imbrication
+- Parler des commentaires
+- faire un fichier HTML à remplir petit à petit : exemple de CV ?
+- fil conducteur : site pour un club ?
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		En-têtes
+	</head>
+	<body>
+		Contenu
+	</body>
+</html>
+
