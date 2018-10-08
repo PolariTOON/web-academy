@@ -1,0 +1,133 @@
+@import url("/resources/slides.css");
+/*~~~~~~ header, footer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+header,
+footer {
+	color: #369;
+}
+/*~~~~~~ main ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+main {
+	color: #333;
+}
+main dl > dt,
+main dl > dd::before,
+main ol > li::before,
+main ul > li::before,
+main blockquote::before,
+main blockquote::after,
+main pre::before,
+main pre::after,
+main figure > iframe,
+main figure > canvas,
+main figure > picture,
+main figure > audio[controls],
+main figure > video[controls],
+main table > :not(caption) > tr > th[scope],
+main table > :not(caption) > tr > th[scope]::before,
+main table > :not(caption) > tr > th[scope]::after,
+main table > :not(caption) > tr > td,
+main hr {
+	color: #369;
+}
+main > hgroup {
+	margin: 7rem 0;
+	border-radius: 2rem 0;
+	background-color: #9cf;
+}
+main > hgroup::before,
+main > hgroup::after {
+	content: "";
+	display: table;
+}
+main > hgroup > h1,
+main > hgroup > h2 {
+	display: block;
+}
+main > hgroup > h1 {
+	text-align: left;
+}
+main > hgroup > h2 {
+	margin: 2rem -4rem;
+	padding: 2rem 6rem;
+	border-radius: 2rem 0;
+	background-color: #69c;
+	text-align: right;
+}
+main > hgroup + h2 {
+	counter-reset: h2;
+}
+main > hgroup + h2::before {
+	content: none;
+}
+main > hgroup + h2 + ol > li::before {
+	content: "." counter(ol, upper-roman);
+}
+main > hgroup + h2 + ol > li > ol > li::before {
+	content: "." counter(ol);
+}
+main > hgroup + h2 + ol > li > ol > li > ol > li::before {
+	content: "§";
+}
+main > hgroup + h2 + ol > li > p > a:not([download]) > data,
+main > hgroup + h2 + ol > li > ol > li > p > a:not([download]) > data,
+main > hgroup + h2 + ol > li > ol > li > ol > li > p > a:not([download]) > data {
+	display: inline-flex;
+	width: 100%;
+}
+main > hgroup + h2 + ol > li > p > a:not([download]) > data::before,
+main > hgroup + h2 + ol > li > ol > li > p > a:not([download]) > data::before,
+main > hgroup + h2 + ol > li > ol > li > ol > li > p > a:not([download]) > data::before {
+	content: "";
+	order: 1;
+	flex: 1 0 auto;
+	margin: 1.6rem .4rem .2rem .4rem;
+	border-bottom: .2rem dotted #369;
+}
+main > hgroup + h2 + ol > li > p > a:not([download]) > data::after,
+main > hgroup + h2 + ol > li > ol > li > p > a:not([download]) > data::after,
+main > hgroup + h2 + ol > li > ol > li > ol > li > p > a:not([download]) > data::after {
+	content: attr(value);
+	order: 1;
+	flex: 0 0 auto;
+	color: #369;
+}
+main > hgroup + h2 + ol > li > p > a:not([download]) > data > *,
+main > hgroup + h2 + ol > li > ol > li > p > a:not([download]) > data > *,
+main > hgroup + h2 + ol > li > ol > li > ol > li > p > a:not([download]) > data > * {
+	display: contents;
+}
+main > h2 {
+	margin: 2rem -4rem;
+	padding: 1rem 6rem;
+	border-radius: 2rem 0;
+	background-color: #69c;
+}
+main > picture {
+	clear: right;
+	float: right;
+	width: 16rem;
+	height: 16rem;
+	margin: 0 2rem;
+	padding: 2rem;
+}
+main > figure > picture {
+	padding: 2rem;
+}
+/*~~~~~~ @media ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media print {
+	main > h2,
+	main > hr {
+		-webkit-page-break-before: always;
+		-webkit-column-break-before: always;
+		-webkit-region-break-before: always;
+		page-break-before: always;
+		break-before: page;
+	}
+	main > hr::after {
+		box-shadow: none;
+	}
+}
+@media screen {
+	main > hr {
+		display: none;
+	}
+}

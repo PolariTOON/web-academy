@@ -1,0 +1,165 @@
+@import url("/resources/main.css");
+@import url("/resources/noto-sans.css");
+:root {
+	--font-size: 11.25pt;
+	--outer-size-x: 10in;
+	--outer-size-y: 7.5in;
+	--inner-size-x: 52rem;
+	--inner-size-y: 36rem;
+	--margin-x: calc((100vw - var(--outer-size-x)) / 2);
+	--margin-y: calc((100vh - var(--outer-size-y)) / 2);
+	--padding-x: calc((var(--outer-size-x) - var(--inner-size-x)) / 2);
+	--padding-y: calc((var(--outer-size-y) - var(--inner-size-y)) / 2);
+}
+/*~~~~~~ html, body ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+html {
+	font-size: var(--font-size); /* 1rem */
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+body {
+	font-family: "Noto Sans", sans-serif;
+}
+/*~~~~~~ header, footer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+header,
+footer {
+	color: #666;
+}
+header::after,
+footer::before {
+	content: "";
+	display: table;
+	width: calc(100% + 4rem);
+	margin: 0 -2rem;
+	box-shadow: 0 0 0 .1rem currentColor, inset 0 0 0 .1rem currentColor;
+}
+header > p,
+footer > p {
+	margin: 1rem;
+}
+header > p:first-of-type {
+	float: left;
+}
+header > p:last-of-type {
+	float: right;
+}
+footer > p:only-of-type {
+	text-align: right;
+}
+footer > p:only-of-type::after {
+	content: counter(page);
+	counter-increment: page;
+}
+/*~~~~~~ main ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+main {
+	color: #333;
+}
+main::before,
+main::after {
+	content: "";
+	display: table;
+}
+main > h2 {
+	counter-reset: h3;
+}
+main > h2::before,
+main > h3::before,
+main > h4::before {
+	float: left;
+	width: 0;
+	margin: 0 1rem 0 -1rem;
+	direction: rtl;
+}
+main > h2::before {
+	content: "." counter(h2, upper-roman);
+	counter-increment: h2;
+}
+main > h3::before {
+	content: "." counter(h3);
+	counter-increment: h3;
+}
+main > h4::before {
+	content: "§";
+}
+main > figure,
+main > table {
+	transform: translate(calc(var(--inner-size-x) / 2 - 2rem - 50%), 0);
+}
+/*~~~~~~ @media ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media print {
+	@page {
+		size: A4 landscape;
+		margin: 0;
+	}
+	body {
+		float: left;
+	}
+	header,
+	footer {
+		position: fixed;
+		left: calc(var(--margin-x) + var(--padding-x));
+		right: calc(var(--margin-x) + var(--padding-x));
+	}
+	header {
+		top: var(--margin-y);
+		bottom: auto;
+	}
+	footer {
+		top: auto;
+		bottom: var(--margin-y);
+	}
+	main {
+		box-decoration-break: clone;
+		margin: calc(var(--margin-y) + var(--padding-y)) calc(var(--margin-x) + var(--margin-x));
+	}
+}
+@media screen {
+	html {
+		scrollbar-width: none;
+		scroll-snap-type-x: mandatory;
+		scroll-snap-points-x: repeat(100vw);
+		scroll-snap-type: x mandatory;
+		justify-content: center;
+		align-content: center;
+		display: grid;
+		width: 100vw;
+		height: 100vh;
+		background: linear-gradient(to bottom, #333 var(--margin-y), transparent var(--margin-y), transparent calc(100vh - var(--margin-y)), #333 calc(100vh - var(--margin-y))), linear-gradient(to right, #333 var(--margin-x), #fff var(--margin-x), #fff calc(100vw - var(--margin-x)), #333 calc(100vw - var(--margin-x))) #333;
+		background: linear-gradient(to bottom, #333 var(--margin-y), transparent var(--margin-y), transparent calc(100vh - var(--margin-y)), #333 calc(100vh - var(--margin-y))) no-repeat, linear-gradient(to right, #333 var(--margin-x), #fff var(--margin-x), #fff calc(100vw - var(--margin-x)), #333 calc(100vw - var(--margin-x))) no-repeat, -moz-element(#footer) bottom repeat-x, -moz-element(#header) top repeat-x, linear-gradient(to bottom, #333 var(--margin-y), transparent var(--margin-y), transparent calc(100vh - var(--margin-y)), #333 calc(100vh - var(--margin-y))) repeat-x, linear-gradient(to right, #333 var(--margin-x), #fff var(--margin-x), #fff calc(100vw - var(--margin-x)), #333 calc(100vw - var(--margin-x))) repeat-x #333;
+	}
+	html::-webkit-scrollbar {
+		display: none;
+	}
+	header,
+	footer {
+		position: absolute;
+		right: 0;
+		left: 0;
+		width: 100vw;
+		max-height: 100vh;
+		padding: var(--margin-y) calc(var(--margin-x) + var(--padding-x));
+	}
+	header {
+		top: 0;
+		bottom: auto;
+	}
+	footer {
+		top: auto;
+		bottom: 0;
+	}
+	main {
+		scroll-snap-align: none center;
+		width: var(--outer-size-x);
+		height: var(--outer-size-y);
+		margin: 0;
+		padding: var(--padding-y) var(--padding-x);
+		column-width: var(--outer-size-x);
+		column-gap: calc(100vw - var(--inner-size-x));
+		column-fill: auto;
+	}
+	main::after {
+		height: 1px;
+		margin-top: -1px;
+		padding-left: calc(var(--margin-x) + var(--padding-x) + var(--inner-size-x));
+	}
+}

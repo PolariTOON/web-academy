@@ -1,0 +1,15 @@
+{
+	"name": "web_academy_dev",
+	"version": "1.0.0",
+	"description": "",
+	"main": "package.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://gitlab.telecomnancy.univ-lorraine.fr/Alexis.El-Mrini/web_academy_dev.git"
+	},
+	"author": "",
+	"license": ""
+}

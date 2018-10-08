@@ -1,0 +1,24 @@
+@font-face {
+	font-family: "Noto Sans";
+	font-style: normal;
+	font-weight: normal;
+	src: url("/resources/latin-regular.woff2") format("woff2"), url("/resources/latin-regular.woff") format("woff");
+}
+@font-face {
+	font-family: "Noto Sans";
+	font-style: italic;
+	font-weight: normal;
+	src: url("/resources/latin-italic.woff2") format("woff2"), url("/resources/latin-italic.woff") format("woff");
+}
+@font-face {
+	font-family: "Noto Sans";
+	font-style: normal;
+	font-weight: bold;
+	src: url("/resources/latin-regular-bold.woff2") format("woff2"), url("/resources/latin-regular-bold.woff") format("woff");
+}
+@font-face {
+	font-family: "Noto Sans";
+	font-style: italic;
+	font-weight: bold;
+	src: url("/resources/latin-italic-bold.woff2") format("woff2"), url("/resources/latin-italic-bold.woff") format("woff");
+}
