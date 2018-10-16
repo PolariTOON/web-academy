@@ -24,7 +24,7 @@ main figure > video[controls],
 main table > :not(caption) > tr > th[scope],
 main table > :not(caption) > tr > th[scope]::before,
 main table > :not(caption) > tr > th[scope]::after,
-main table > :not(caption) > tr > td,
+main table > :not(caption) > tr > td::after,
 main hr {
 	color: #369;
 }
@@ -115,6 +115,7 @@ main > figure > picture {
 /*~~~~~~ @media ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 @media print {
 	main > h2,
+	main > :not(h2) + h3,
 	main > hr {
 		-webkit-page-break-before: always;
 		-webkit-column-break-before: always;

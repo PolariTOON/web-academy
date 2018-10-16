@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+	<head>
+		<title>Web Academy - Structuration de page web en HTML</title>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" type="text/css" href="/resources/theme.css"/>
+	</head>
+	<body>
+		<header id="header">
+			<p>Structuration de page <em>web</em> en <em>HTML</em></p>
+			<p><em>Telecom Nancy Services</em></p>
+		</header>
+		<main id="main">
+			<hgroup>
+				<h1><em>Web Academy</em></h1>
+				<h2>Structuration de<br>page <em>web</em> en <em>HTML</em></h2>
+			</hgroup>
+			<!-- <address>
+				<p><data value="@Alexis.El-Mrini">Alexis EL MRINI</data>, <data value="@Tristan.Le-Godais">Tristan LE GODAIS</data></p>
+			</address> -->
+			<h2>Sommaire</h2>
+			<ol>
+				<li>
+					<p><a href="#1"><data value="4">Syntaxe d'un nœud</data></a></p>
+					<ol>
+						<li>
+							<p><a href="#1-1"><data value="4">Nœuds</data></a></p>
+						</li>
+						<li>
+							<p><a href="#1-2"><data value="6">Attributs</data></a></p>
+						</li>
+						<li>
+							<p><a href="#1-3"><data value="7">Échappement de caractères</data></a></p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><a href="#2"><data value="8">Contenu d'un document <em>HTML</em></data></a></p>
+					<ol>
+						<li>
+							<p><a href="#2-1"><data value="8">Corps de texte</data></a></p>
+						</li>
+						<li>
+							<p><a href="#2-2"><data value="9">Formatage de texte (à la <em>HTML4</em>)</data></a></p>
+						</li>
+						<li>
+							<p><a href="#2-3"><data value="11">Balisage sémantique de texte</data></a></p>
+						</li>
+						<li>
+							<p><a href="#2-4"><data value="12">Références à d'autres documents</data></a></p>
+						</li>
+						<li>
+							<p><a href="#2-5"><data value="14">Structures composites plus complexes</data></a></p>
+						</li>
+					</ol>
+				</li>
+			</ol>
+			<h2 id="1">Syntaxe d'un nœud</h2>
+			<h3 id="1-1">Nœuds</h3>
+			<figure>
+				<figcaption>Anatomie d'un élément</figcaption>
+				<picture><img src="/chapter_2/resources/anatomy.png" alt="Schéma identifiant les différentes parties d'un élément"/></picture>
+			</figure>
+			<hr/>
+			<ul>
+				<li>
+					<p>Deux écritures selon le type d'élément&nbsp;:</p>
+					<ul>
+						<li>
+							<p>Balises par paire&nbsp;: <code>&lt;p class="nice"&gt;Bonjour&lt;/p&gt;</code></p>
+						</li>
+						<li>
+							<p>Balises auto-fermantes (éléments sans contenu généralement)&nbsp;: <code>&lt;img src="a.jpg"/&gt;</code></p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>Commentaires&nbsp;: <code>&lt;!-- ceci est un commentaire --&gt;</code></p>
+				</li>
+			</ul>
+			<h3 id="1-2">Attributs</h3>
+			<ul>
+				<li>
+					<p>Attributs universels apposables à n'importe quel élément&nbsp;:</p>
+					<ul>
+						<li>
+							<p><code>class="…"</code> et <code>id="…"</code> pour la sélection et l'identification (en <em>CSS</em> et <em>JS</em>)</p>
+						</li>
+						<li>
+							<p><code>style="…"</code> pour du style <em>CSS</em></p>
+						</li>
+						<li>
+							<p><code>onclick="…"</code>, <code>onerror="…"</code>… pour des gestionnaires d'événements <em>JS</em></p>
+						</li>
+						<li>
+							<p><code>dir="…"</code>, <code>lang="…"</code>, <code>title="…"</code>, <code>tabindex="…"</code>…</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>Attributs spécifiques selon le type d'élément&nbsp;: <code>src="…"</code> et <code>alt="…"</code> pour les éléments <code>&lt;img/&gt;</code>, <code>href="…"</code> pour les éléments <code>&lt;a&gt;…&lt;/a&gt;</code>…</p>
+				</li>
+			</ul>
+			<h3 id="1-3">Échappement de caractères</h3>
+			<table>
+				<caption>Séquences d'échappement héritées de <em>XML</em></caption>
+				<tbody>
+					<tr>
+						<th scope="row">Caractère</th>
+						<td>
+							<p><samp>"</samp></p>
+						</td>
+						<td>
+							<p><samp>&amp;</samp></p>
+						</td>
+						<td>
+							<p><samp>'</samp></p>
+						</td>
+						<td>
+							<p><samp>&lt;</samp></p>
+						</td>
+						<td>
+							<p><samp>&gt;</samp></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">Entité</th>
+						<td>
+							<p><code>&amp;quot;</code></p>
+						</td>
+						<td>
+							<p><code>&amp;amp;</code></p>
+						</td>
+						<td>
+							<p><code>&amp;apos;</code></p>
+						</td>
+						<td>
+							<p><code>&amp;lt;</code></p>
+						</td>
+						<td>
+							<p><code>&amp;gt;</code></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<ul>
+				<li>
+					<p>Quelques centaines d'autres entités prédéfinies existent en <em>HTML</em> (<code>&amp;nbsp;</code>, <code>&amp;copy;</code>, <code>&amp;pi;</code>…)</p>
+				</li>
+				<li>
+					<p>Possibilité de donner directement le point de code <em>Unicode</em> en décimal (<code>&amp;#dddd;</code>) ou hexadécimal (<code>&amp;#xhhhh;</code>)</p>
+				</li>
+			</ul>
+			<h2 id="2">Contenu d'un document <em>HTML</em></h2>
+			<h3 id="2-1">Corps de texte</h3>
+			<p><em>HTML</em> sert à structurer un document (un livre, un cours, un <em>CV</em>, une page <em>web</em>…), notamment à l'aide de&nbsp;:</p>
+			<ul>
+				<li>
+					<p>Balises de titres&nbsp;: <code>&lt;h1&gt;…&lt;/h1&gt;</code> de haut niveau à de <code>&lt;h6&gt;…&lt;/h6&gt;</code> de bas niveau</p>
+				</li>
+				<li>
+					<p>Balises de paragraphe&nbsp;: <code>&lt;p&gt;…&lt;/p&gt;</code></p>
+				</li>
+				<li>
+					<p>Balise de saut de ligne&nbsp;: <code>&lt;br/&gt;</code> (au cours d'un paragraphe)</p>
+				</li>
+				<li>
+					<p>Balise de règle horizontale&nbsp;: <code>&lt;hr/&gt;</code> (changement de sujet)</p>
+				</li>
+			</ul>
+			<h3 id="2-2">Formatage de texte (à la <em>HTML4</em>)</h3>
+			<dl>
+				<dt><code>&lt;i&gt;…&lt;/i&gt;</code></dt>
+				<dd>
+					<p>Italique</p>
+				</dd>
+				<dt><code>&lt;b&gt;…&lt;/b&gt;</code></dt>
+				<dd>
+					<p>Gras</p>
+				</dd>
+				<dt><code>&lt;u&gt;…&lt;/u&gt;</code></dt>
+				<dd>
+					<p>Soulignage</p>
+				</dd>
+				<dt><code>&lt;s&gt;…&lt;/s&gt;</code></dt>
+				<dd>
+					<p>Biffage (raturage)</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt><code>&lt;sub&gt;…&lt;/sub&gt;</code></dt>
+				<dd>
+					<p>Texte en indice</p>
+				</dd>
+				<dt><code>&lt;sup&gt;…&lt;/sup&gt;</code></dt>
+				<dd>
+					<p>Texte en exposant</p>
+				</dd>
+				<dt><code>&lt;div&gt;…&lt;/div&gt;</code></dt>
+				<dt><code>&lt;span&gt;…&lt;/span&gt;</code></dt>
+				<dd>
+					<p>Conteneurs de dernier recours, sans aucune valeur sémantique, à réserver notamment pour la mise en page avec <em>CSS</em></p>
+				</dd>
+			</dl>
+			<h3 id="2-3">Balisage sémantique de texte</h3>
+			<dl>
+				<dt><code>&lt;em&gt;…&lt;/em&gt;</code></dt>
+				<dd>
+					<p>Emphase (insistance)</p>
+				</dd>
+				<dt><code>&lt;strong&gt;…&lt;/strong&gt;</code></dt>
+				<dd>
+					<p>Forte emphase (importance)</p>
+				</dd>
+				<dt><code>&lt;ins&gt;…&lt;/ins&gt;</code></dt>
+				<dd>
+					<p>Insertion de texte</p>
+				</dd>
+				<dt><code>&lt;del&gt;…&lt;/del&gt;</code></dt>
+				<dd>
+					<p>Suppression de texte</p>
+				</dd>
+			</dl>
+			<h3 id="2-4">Références à d'autres documents</h3>
+			<p>Un document <em>HTML</em> peut faire référence à du contenu externe (une autre page <em>web</em>, une image, une vidéo…) via une <em>URL</em> notamment sous la forme de&nbsp;:</p>
+			<ul>
+				<li>
+					<p>Lien hypertexte&nbsp;: <code>&lt;a href="…" target="…"&gt;…&lt;/a&gt;</code> avec les attributs&nbsp;:</p>
+					<ul>
+						<li>
+							<p><code>href="…"</code> qui donne l'adresse (l'<em>URL</em>) d'un document ou d'une partie d'un document (un identifiant d'élément <em>HTML</em>)</p>
+						</li>
+						<li>
+							<p><code>target="…"</code> qui donne le contexte dans lequel ouvrir le lien&nbsp;: l'onglet courant (<code>_top</code>), un nouvel onglet (<code>_blank</code>), le contexte courant (<code>_self</code>) ou le contexte parent (<code>_parent</code>)</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>Image intégrée&nbsp;: <code>&lt;img src="…" alt="…"/&gt;</code> avec les attributs&nbsp;:</p>
+					<ul>
+						<li>
+							<p><code>src="…"</code> qui donne l'adresse (l'<em>URL</em>) de l'image</p>
+						</li>
+						<li>
+							<p><code>alt="…"</code> qui donne le texte alternatif équivalent pour les utilisateurs n'ayant pas accès aux images ou en cas d'erreur de chargement</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h3 id="2-5">Structures composites plus complexes</h3>
+			<ul>
+				<li>
+					<p>Liste non ordonnée (avec puces)&nbsp;:</p>
+					<pre><code>&lt;ul&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&lt;/ul&gt;</code></pre>
+					<p>Chaque item est délimité par un élément <code>&lt;li&gt;…&lt;/li&gt;</code></p>
+				</li>
+			</ul>
+			<hr/>
+			<ul>
+				<li>
+					<p>Liste ordonnée (avec numérotation)&nbsp;:</p>
+					<pre><code>&lt;ol&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&lt;/ol&gt;</code></pre>
+					<p>Chaque item est délimité par un élément <code>&lt;li&gt;…&lt;/li&gt;</code></p>
+					<p>L'attribut <code>start="…"</code> d'une liste ordonnée permet de spécifier le numéro du premier item</p>
+					<p>L'attribut <code>reversed="…"</code> d'une liste ordonnée permet de la numéroter de manière descendante</p>
+				</li>
+			</ul>
+			<hr/>
+			<ul>
+				<li>
+					<p>Tableau de données&nbsp;:</p>
+					<pre><code>&lt;table&gt;&#x0a;&#x09;&lt;tr&gt;&#x0a;&#x09;&#x09;&lt;th&gt;…&lt;/th&gt;&#x0a;&#x09;&#x09;&lt;th&gt;…&lt;/th&gt;&#x0a;&#x09;&#x09;&lt;th&gt;…&lt;/th&gt;&#x0a;&#x09;&lt;/tr&gt;&#x0a;&#x09;&lt;tr&gt;&#x0a;&#x09;&#x09;&lt;th&gt;…&lt;/th&gt;&#x0a;&#x09;&#x09;&lt;td&gt;…&lt;/td&gt;&#x0a;&#x09;&#x09;&lt;td&gt;…&lt;/td&gt;&#x0a;&#x09;&lt;/tr&gt;&#x0a;&lt;/table&gt;</code></pre>
+					<p>Chaque ligne est délimitée par un élément <code>&lt;tr&gt;…&lt;/tr&gt;</code></p>
+					<p>Chaque cellule est délimitée par un élément <code>&lt;td&gt;…&lt;/td&gt;</code> pour les cellules de données ou <code>&lt;th&gt;…&lt;/th&gt;</code> pour les cellules d'en-tête</p>
+					<p>L'attribut <code>rowspan="…"</code> d'une cellule permet d'indiquer le nombre de lignes qu'elle occupe</p>
+					<p>L'attribut <code>colspan="…"</code> d'une cellule permet d'indiquer le nombre de colonnes qu'elle occupe</p>
+				</li>
+			</ul>
+		</main>
+		<footer id="footer">
+			<p></p>
+		</footer>
+	</body>
+</html>

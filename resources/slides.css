@@ -83,6 +83,8 @@ main > h4::before {
 }
 main > figure,
 main > table {
+	margin-left: calc(50% - var(--inner-size-x) / 2 + 2rem);
+	margin-right: calc(50% - var(--inner-size-x) / 2 + 2rem);
 	transform: translate(calc(var(--inner-size-x) / 2 - 2rem - 50%), 0);
 }
 /*~~~~~~ @media ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -133,8 +135,8 @@ main > table {
 	header,
 	footer {
 		position: absolute;
-		right: 0;
 		left: 0;
+		right: 0;
 		width: 100vw;
 		max-height: 100vh;
 		padding: var(--margin-y) calc(var(--margin-x) + var(--padding-x));
