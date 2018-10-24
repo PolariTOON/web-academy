@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+    
+        <meta name="viewport" content="width=device-width, user-scalable=no">
         <meta charset="utf-8">
+        
         <title>Présentation des formulaires</title>
-        <script src="script.js" defer></script>
+        
+        <script src="script.js" defer=""></script>
+        
+       
     </head>
     <body>
         <h1>Présentation de différents champs pour les formulaires</h1>
@@ -11,9 +17,9 @@
             <!--
                 <form> définit un formulaire.
                 method correspond à la méthode d'envoi des données (GET : données dans l'url ; POST : données dans le corps de requête)
-                action correspond à la cible de l'envoi
+                action correspond à la cible de l'envoi.
             -->
-            <form id="myform" method="GET" action="exemple_formulaire.html">
+            <form id="myform" method="get" action="exemple_formulaire.html">
                 
                 <!-- 
                     Par défaut, <input> correspond à <input type="text">
@@ -65,19 +71,21 @@
                         <legend> <!-- Définit une légende pout un groupe de champs -->
                             Mes fruits préférés :
                         </legend>
-                        
-                        <label>
-                            <input name="banane" type="checkbox" checked>Banane
-                        </label>
-                        <br>
-                        
-                        <label>
-                            <input name="pomme" type="checkbox">Pomme
-                        </label>
-                        <br>
-                        <label>
-                            <input name="orange" type="checkbox">Orange
-                        </label>
+                        <p>
+                            <label>
+                                <input name="banane" type="checkbox" checked>Banane
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="pomme" type="checkbox">Pomme
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="orange" type="checkbox">Orange
+                            </label>
+                        </p>
                     </fieldset>
                 </p>
                 
@@ -123,16 +131,19 @@
                 
                 
                 <!-- 
-                    Boutton de validation. Fonctionne aussi avec <input type="button"> (boutton classique) ou <input type="submit"> (pour l'envoi de formulaire).
+                    Boutons de validation et de génération. Fonctionnent aussi avec <input type="button"> (bouton classique) ou <input type="submit"> (pour l'envoi de formulaire).
                 -->
                 <p>
+                    <!-- type="button" rend le bouton "normal" -->
                     <button type="button" name="generate">Générer bio</button>
+                    
+                    <!-- type="submit" envoie le formulaire. Comportement par défaut de <button>. -->
                     <button type="submit" name="validate">Envoyer les données</button>
                 </p>
             </form>
         </p>
         
-        <p id="reponse">&nbsp;</p>
+        <output id="reponse">&nbsp;</output>
         
           
     </body>
