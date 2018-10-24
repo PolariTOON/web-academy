@@ -52,7 +52,19 @@
 						<li>
 							<p><a href="#2-5"><data value="14">Structures composites plus complexes</data></a></p>
 						</li>
+						<li>
+							<p><a href="#2-6"><data value="18">Formulaires</data></a></p>
+						</li>
+						<li>
+							<p><a href="#2-7"><data value="21">Sections</data></a></p>
+						</li>
 					</ol>
+				</li>
+				<li>
+					<p><a href="#3"><data value="23">Métadonnées d'un document <em>HTML</em></data></a></p>
+				</li>
+				<li>
+					<p><a href="#4"><data value="25">Structure générale d'un document <em>HTML</em> valide</data></a></p>
 				</li>
 			</ol>
 			<h2 id="1">Syntaxe d'un nœud</h2>
@@ -236,6 +248,9 @@
 						</li>
 					</ul>
 				</li>
+			</ul>
+			<hr/>
+			<ul>
 				<li>
 					<p>Image intégrée&nbsp;: <code>&lt;img src="…" alt="…"/&gt;</code> avec les attributs&nbsp;:</p>
 					<ul>
@@ -252,7 +267,7 @@
 			<ul>
 				<li>
 					<p>Liste non ordonnée (avec puces)&nbsp;:</p>
-					<pre><code>&lt;ul&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&lt;/ul&gt;</code></pre>
+					<pre><code>&lt;ul&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&lt;/ul&gt;&#x0a;</code></pre>
 					<p>Chaque item est délimité par un élément <code>&lt;li&gt;…&lt;/li&gt;</code></p>
 				</li>
 			</ul>
@@ -260,8 +275,8 @@
 			<ul>
 				<li>
 					<p>Liste ordonnée (avec numérotation)&nbsp;:</p>
-					<pre><code>&lt;ol&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&lt;/ol&gt;</code></pre>
-					<p>Chaque item est délimité par un élément <code>&lt;li&gt;…&lt;/li&gt;</code></p>
+					<pre><code>&lt;ol&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&#x09;&lt;li&gt;…&lt;/li&gt;&#x0a;&lt;/ol&gt;&#x0a;</code></pre>
+					<p>Chaque item est délimité par un élément <code>&lt;li&gt;…&lt;/li&gt;&#x0a;</code></p>
 					<p>L'attribut <code>start="…"</code> d'une liste ordonnée permet de spécifier le numéro du premier item</p>
 					<p>L'attribut <code>reversed="…"</code> d'une liste ordonnée permet de la numéroter de manière descendante</p>
 				</li>
@@ -270,13 +285,134 @@
 			<ul>
 				<li>
 					<p>Tableau de données&nbsp;:</p>
-					<pre><code>&lt;table&gt;&#x0a;&#x09;&lt;tr&gt;&#x0a;&#x09;&#x09;&lt;th&gt;…&lt;/th&gt;&#x0a;&#x09;&#x09;&lt;th&gt;…&lt;/th&gt;&#x0a;&#x09;&#x09;&lt;th&gt;…&lt;/th&gt;&#x0a;&#x09;&lt;/tr&gt;&#x0a;&#x09;&lt;tr&gt;&#x0a;&#x09;&#x09;&lt;th&gt;…&lt;/th&gt;&#x0a;&#x09;&#x09;&lt;td&gt;…&lt;/td&gt;&#x0a;&#x09;&#x09;&lt;td&gt;…&lt;/td&gt;&#x0a;&#x09;&lt;/tr&gt;&#x0a;&lt;/table&gt;</code></pre>
+					<pre><code>&lt;table&gt;&#x0a;&#x09;&lt;tr&gt;&#x0a;&#x09;&#x09;&lt;th&gt;…&lt;/th&gt;&#x0a;&#x09;&#x09;&lt;th&gt;…&lt;/th&gt;&#x0a;&#x09;&#x09;&lt;th&gt;…&lt;/th&gt;&#x0a;&#x09;&lt;/tr&gt;&#x0a;&#x09;&lt;tr&gt;&#x0a;&#x09;&#x09;&lt;th&gt;…&lt;/th&gt;&#x0a;&#x09;&#x09;&lt;td&gt;…&lt;/td&gt;&#x0a;&#x09;&#x09;&lt;td&gt;…&lt;/td&gt;&#x0a;&#x09;&lt;/tr&gt;&#x0a;&lt;/table&gt;&#x0a;</code></pre>
 					<p>Chaque ligne est délimitée par un élément <code>&lt;tr&gt;…&lt;/tr&gt;</code></p>
 					<p>Chaque cellule est délimitée par un élément <code>&lt;td&gt;…&lt;/td&gt;</code> pour les cellules de données ou <code>&lt;th&gt;…&lt;/th&gt;</code> pour les cellules d'en-tête</p>
 					<p>L'attribut <code>rowspan="…"</code> d'une cellule permet d'indiquer le nombre de lignes qu'elle occupe</p>
 					<p>L'attribut <code>colspan="…"</code> d'une cellule permet d'indiquer le nombre de colonnes qu'elle occupe</p>
 				</li>
 			</ul>
+			<h3 id="2-6">Formulaires</h3>
+			<dl>
+				<dt><code>&lt;textarea name="…"&gt;…&lt;/textarea&gt;</code></dt>
+				<dd>
+					<p>Champ de texte multiligne</p>
+				</dd>
+				<dt><code>&lt;input name="…" value="…"/&gt;</code></dt>
+				<dd>
+					<p>Champ de texte sur une ligne par défaut…</p>
+				</dd>
+				<dd>
+					<p>…ou alors un bouton radio, une boîte à cocher, un champ de date, un nuancier…</p>
+				</dd>
+				<dt><code>&lt;button name="…" value="…"&gt;…&lt;/button&gt;</code></dt>
+				<dd>
+					<p>Bouton de soumission de formulaire par défaut</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt><code>&lt;label&gt;…&lt;/label&gt;</code></dt>
+				<dd>
+					<p>Légende d'un contrôle (champ de texte, bouton…)</p>
+					<p>Deux manières de l'y associer&nbsp;:</p>
+					<ul>
+						<li>
+							<p>En plaçant le contrôle à l'intérieur de la légende&nbsp;:</p>
+							<pre><code>&lt;label&gt;Prénom&nbsp;: &lt;input/&gt;&lt;/label&gt;&#x0a;</code></pre>
+						</li>
+						<li>
+							<p>En précisant son identifiant dans l'attribut <code>for="…"</code></p>
+							<pre><code>&lt;label for="firstname"&gt;Prénom&nbsp;:&lt;/label&gt;&#x0a;&lt;input id="firstname"/&gt;&#x0a;</code></pre>
+						</li>
+					</ul>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt><code>&lt;form action="…" method="…"&gt;…&lt;/form&gt;</code></dt>
+				<dd>
+					<p>Formulaire&nbsp;:</p>
+					<pre><code>&lt;form action="https://ddg.co/" method="get"&gt;&#x0a;&#x09;&lt;label&gt;Termes&nbsp;: &lt;input name="q"/&gt;&lt;/label>&#x0a;&#x09;&lt;button&gt;Rechercher&lt;/button&gt;&#x0a;&lt;/form>&#x0a;</code></pre>
+					<p>L'attribut <code>action="…"</code> d'un formulaire permet de spécifier l'adresse à laquelle envoyer les données du formulaire</p>
+					<p>L'attribut <code>method="…"</code> d'un formulaire permet de spécifier la méthode <em>HTTP</em> utilisée pour soumettre le formulaire (<code>get</code> ou <code>post</code>)</p>
+				</dd>
+			</dl>
+			<h3 id="2-7">Sections</h3>
+			<p>Un document <em>HTML</em> peut être hiérarchisé via l'utilisation des différents niveaux de titres (de <code>&lt;h1&gt;…&lt;/h1&gt;</code> à <code>&lt;h6&gt;…&lt;/h6&gt;</code>), mais aussi de sections&nbsp;:</p>
+			<ul>
+				<li>
+					<p>Article&nbsp;: <code>&lt;article&gt;…&lt;/article&gt;</code> représentant un contenu autonome pouvant être extrait du document à des fins de <em>syndication</em> (un article, un commentaire d'utilisateur…)</p>
+				</li>
+				<li>
+					<p>Aparté&nbsp;: <code>&lt;aside&gt;…&lt;/aside&gt;</code> représentant un contenu tangentiel pouvant être considéré séparément du reste du document (un encart publicitaire, une anecdote, une note…)</p>
+				</li>
+				<li>
+					<p>Section de navigation&nbsp;: <code>&lt;nav&gt;…&lt;/nav&gt;</code> représentant un groupement de liens de navigation (un menu, une table des matières…)</p>
+				</li>
+			</ul>
+			<hr/>
+			<ul>
+				<li>
+					<p>Section générique&nbsp;: <code>&lt;section&gt;…&lt;/section&gt;</code> représentant tout autre groupement thématique (un chapitre, une sous-partie, un onglet…)</p>
+				</li>
+			</ul>
+			<p>Les différentes portions du contenu d'une section peuvent être éventuellement regroupées à l'aide de&nbsp;:</p>
+			<ul>
+				<li>
+					<p>En-tête de section&nbsp;: <code>&lt;header&gt;…&lt;/header&gt;</code> pour des titres, un logo, un formulaire de recherche…</p>
+				</li>
+				<li>
+					<p>Pied de section&nbsp;: <code>&lt;footer&gt;…&lt;/footer&gt;</code> pour des informations sur l'auteur, les sources, la license…</p>
+				</li>
+				<li>
+					<p>Corps de section&nbsp;: <code>&lt;main&gt;…&lt;/main&gt;</code> pour le contenu principal du document (cet élément <strong>ne doit pas apparaître plus d'une fois</strong> dans le document)…</p>
+				</li>
+			</ul>
+			<h2 id="3">Métadonnées d'un document <em>HTML</em></h2>
+			<p>Un document <em>HTML</em> peut être décrit et enrichi par un ensemble d'informations générales (métadonnées) renseignées à l'aide de&nbsp;:</p>
+			<ul>
+				<li>
+					<p>Titre de document&nbsp;: <code>&lt;title&gt;…&lt;/title&gt;</code> apparaissant dans l'onglet de la page</p>
+				</li>
+				<li>
+					<p>Feuille de style&nbsp;: <code>&lt;style&gt;…&lt;/style&gt;</code> décrivant la mise en forme en via <em>CSS</em></p>
+				</li>
+				<li>
+					<p>Programme&nbsp;: <code>&lt;script&gt;…&lt;/script&gt;</code> permettant d'exécuter du <em>JS</em></p>
+				</li>
+			</ul>
+			<hr/>
+			<ul>
+				<li>
+					<p>Lien vers une ressource&nbsp;: <code>&lt;link/&gt;</code> permettant d'afficher une <em>favicon</em>, d'indiquer un moteur de recherche…&nbsp;:</p>
+					<pre><code>&lt;link rel="favicon" href="favicon.png"/&gt;&#x0a;&lt;link rel="search" href="opensearch.xml"/&gt;&#x0a;…&#x0a;</code></pre>
+				</li>
+				<li>
+					<p>Métadonnée générique&nbsp;: <code>&lt;meta/&gt;</code> définissant tout autre type de métadonnée comme l'encodage, le <em>viewport</em>…&nbsp;:</p>
+					<pre><code>&lt;meta charset="utf-8"/&gt;&#x0a;&lt;meta name="viewport" content="width=480"/&gt;&#x0a;…&#x0a;</code></pre>
+				</li>
+			</ul>
+			<h2 id="4">Structure générale d'un document <em>HTML</em> valide</h2>
+			<p>Tout document <em>HTML</em> doit commencer avec la déclaration <code>&lt;!DOCTYPE html&gt;</code> afin de signifier au navigateur qu'il est en codé en <em>HTML</em>, dans sa dernière version.</p>
+			<p>La déclaration doit être suivie de l'élément racine <code>&lt;html&gt;…&lt;/html&gt;</code>.</p>
+			<p>L'attribut <code>dir="…"</code> permet de spécifier le sens de lecture (<code>ltr</code> ou <code>rtl</code>).</p>
+			<p>L'attribut <code>lang="…"</code> permet de spécifier la langue (<code>fr</code>, <code>en</code>…).</p>
+			<hr/>
+			<p>L'élément racine <code>&lt;html&gt;…&lt;/html&gt;</code> contient dans dans cet ordre&nbsp;:</p>
+			<ul>
+				<li>
+					<p>L'en-tête du document&nbsp;: <code>&lt;head&gt;…&lt;/head&gt;</code> regroupant les métadonnées du document (<code>&lt;title&gt;…&lt;/title&gt;</code>, <code>&lt;style&gt;…&lt;/style&gt;</code>, <code>&lt;script&gt;…&lt;/script&gt;</code>, <code>&lt;link/&gt;</code>, <code>&lt;meta/&gt;</code>…)</p>
+				</li>
+				<li>
+					<p>Le corps du document&nbsp;: <code>&lt;body&gt;…&lt;/body&gt;</code> représentant le contenu du document (sections, titres, paragraphes, listes, tableaux de données…)</p>
+				</li>
+			</ul>
+			<hr/>
+			<figure>
+				<figcaption>Exemple de document <em>HTML</em> valide</figcaption>
+				<pre><code>&lt;!DOCTYPE html&gt;&#x0a;&lt;html dir="ltr" lang="fr"&gt;&#x0a;&#x09;&lt;head&gt;&#x0a;&#x09;&#x09;&lt;title&gt;Page d'exemple&lt;/title&gt;&#x0a;&#x09;&#x09;&lt;meta charset="utf-8"/&gt;&#x0a;&#x09;&#x09;&lt;meta name="viewport" content="width=device-width"/&gt;&#x0a;&#x09;&lt;/head&gt;&#x0a;&#x09;&lt;body&gt;&#x0a;&#x09;&#x09;&lt;h1&gt;Page d'exemple&lt;/h1&gt;&#x0a;&#x09;&#x09;&lt;p&gt;Bienvenue sur cette page d'exemple.&lt;/p&gt;&#x0a;&#x09;&lt;/body&gt;&#x0a;&lt;/html&gt;&#x0a;</code></pre>
+			</figure>
 		</main>
 		<footer id="footer">
 			<p></p>

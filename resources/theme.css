@@ -123,6 +123,9 @@ main > figure > picture {
 		page-break-before: always;
 		break-before: page;
 	}
+	main > hr {
+		margin: 2rem 2rem -2rem 2rem;
+	}
 	main > hr::after {
 		box-shadow: none;
 	}
