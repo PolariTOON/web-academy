@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exercice 3 - formulaires</title>
+    <head>
+    <body>
+        <h1>Exercice 3 : Formulaires</h1>
+        <form name="demon" method="post" action="http://webacademy.elmrini.fr/exo_3.php">
+            <fieldset>
+                <legend>Infos générales</legend>
+                <p>
+                    <label for="nom">nom du démon : </label>
+                    <input name="nom" placeholder="Nom du démon">
+                </p>
+                <p>
+                    <label for="prenom">Prénom du démon : </label>
+                    <input name="prenom" placeholder="Prénom du démon">
+                </p>
+                <p>
+                    <label for="age">Âge du démon : </label>
+                    <input type="number" name="age" min="0" max="1000" step="10" placeholder="Age du démon à la décennie près">
+                </p>
+                <p>
+                    <label for="naissance">Date de naissance :</label>
+                    <input type="date" name="naissance">
+                </p>
+            
+            
+            </fieldset>
+            
+            <fieldset>
+                <legend>Race de démon</legend>
+                <p>
+                    <input type="radio" value="troll" name="race">Troll
+                </p>
+                <p>
+                    <input type="radio" value="incube" name="race">Incube
+                </p>
+                <p>
+                    <input type="radio" value="succube" name="race">Succube
+                </p>
+                <p>
+                    <input type="radio" value="djinn" name="race">Djinn
+                </p>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Pouvoirs</legend>
+                <p>
+                    <label>
+                        <input name="voler" type="checkbox" checked>Voler
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="telepathie" type="checkbox">Empathie
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="telekinesie" type="checkbox">Télékinésie
+                    </label>
+                </p>
+            </fieldset>
+            <button>Valider</button>
+        </form>
+        
