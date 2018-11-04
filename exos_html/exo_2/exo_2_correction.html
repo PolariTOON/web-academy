@@ -1,38 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html dir="ltr" lang="fr">
     <head>
-        <meta charset="utf-8">
-        <title>Exercice 2 - tableaux</title>
+        <title>Tableaux</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
         <style>
-            table,tr,th,td{
+            table {
                 border-collapse: collapse;
-                text-align:center;
             }
-            td,th{
-                border : 1px solid black;
+            th, td {
+                border: 1px solid black;
+                text-align: center;
             }
-            table tr:first-child th:first-child {
-                border:none;
+            table > tbody > tr:first-child > th:first-child {
+                border: none;
             }
-            
         </style>
     </head>
     <body>
         <h1>Exercice 2 : les tableaux</h1>
-        
-        <!-- 
-            Les seules balises autorisées sont : <table>,<tr>,<th>,<td> 
-            Seule la première case, qui est une <th>, n'aura pas de bordure (règle définie dans le CSS)
+        <!--
+            Les seules balises autorisées sont : <table></table>, <tr></tr>, <th></th>, <td></td>.
+            Seule la première case, qui est une balise <th></th>, n'aura pas de bordure (règle définie dans le CSS).
         -->
-        
         <table>
             <tr>
-                <th id="a" rowspan="2"></th>
+                <th rowspan="2"></th>
                 <th colspan="3">Gains</th>
                 <th colspan="3">Pertes</th>
             </tr>
             <tr>
-                
                 <th>Trimestre 1</th>
                 <th>Trimestre 2</th>
                 <th>Trimestre 3</th>
@@ -55,19 +52,17 @@
                 <td>400</td>
                 <td>100</td>
                 <td>90</td>
-                
             </tr>
             <tr>
                 <th>Usine de raclette 1</th>
                 <td>3600</td>
                 <td>5000</td>
                 <td colspan="2" rowspan="2">0</td>
-                
             </tr>
             <tr>
                 <th>Usine de raclette 2</th>
                 <td>2600</td>
-                <td> 1000000 !</td>
+                <td>1000000 !</td>
             </tr>
         </table>
     </body>

@@ -26,9 +26,9 @@ HTTP.createServer ((request, response) => {
 	let content, contentType;
 	try {
 		const pathname = new URL (request.url, origin).pathname;
-		const extension = pathname.slice (~(~pathname.lastIndexOf (".") || ~pathname.length));
-		content = FileSystem.readFileSync (root + pathname);
-		contentType = contentTypes.hasOwnProperty (extension) ? contentTypes [extension] : "text/plain;charset=utf-8";
+		const extension = pathname.endsWith ("/") ? "/" : pathname.slice (~(~pathname.lastIndexOf (".") || ~pathname.length));
+		content = FileSystem.readFileSync (root + pathname + (extension === "/" ? "index.html" : ""));
+		contentType = contentTypes.hasOwnProperty (extension) ? contentTypes [extension] : contentTypes [""];
 		response.statusCode = 200;
 	} catch (error) {
 		console.warn (error.message);
@@ -68,7 +68,7 @@ HTTP.createServer ((request, response) => {
 	</body>
 </html>
 `;
-		contentType = "text/html;charset=utf-8";
+		contentType = contentTypes ["/"];
 		response.statusCode = 404;
 	};
 	response.setHeader ("Content-Type", contentType);
