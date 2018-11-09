@@ -10,4 +10,4 @@ function generer_reponse(form){
 
 var myform = document.forms["myform"];
 
-myform["generate"].addEventListener("click",function(){generer_reponse(myform)});
+myform["generate"].addEventListener("click",function(){generer_reponse(myform);});
