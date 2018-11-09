@@ -1,12 +1,12 @@
 @import url("/resources/main.css");
-@import url("/resources/noto-sans.css");
+@import url("/resources/noto-serif.css");
 :root {
-	--font-family: "Noto Sans", sans-serif;
-	--font-size: 11.25pt;
-	--outer-size-x: 10in;
-	--outer-size-y: 7.5in;
-	--inner-size-x: 52rem;
-	--inner-size-y: 36rem;
+	--font-family: "Noto Serif", sans-serif;
+	--font-size: 7.5pt;
+	--outer-size-x: 21cm;
+	--outer-size-y: 29.7cm;
+	--inner-size-x: 64rem;
+	--inner-size-y: 96rem;
 	--margin-x: calc((100vw - var(--outer-size-x)) / 2);
 	--margin-y: calc((100vh - var(--outer-size-y)) / 2);
 	--padding-x: calc((var(--outer-size-x) - var(--inner-size-x)) / 2);
@@ -92,7 +92,7 @@ main > table {
 /*~~~~~~ @media ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 @media print {
 	@page {
-		size: A4 landscape;
+		size: A4 portrait;
 		margin: 0;
 	}
 	body {
