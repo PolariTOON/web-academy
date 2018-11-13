@@ -34,10 +34,6 @@ footer::before {
 	margin: 0 -2rem;
 	box-shadow: 0 0 0 .1rem currentColor, inset 0 0 0 .1rem currentColor;
 }
-header > p,
-footer > p {
-	margin: 1rem;
-}
 header > p:first-of-type {
 	float: left;
 }
@@ -45,10 +41,10 @@ header > p:last-of-type {
 	float: right;
 }
 footer > p:only-of-type {
-	text-align: right;
+	text-align: center;
 }
 footer > p:only-of-type::after {
-	content: counter(page);
+	content: "Page " counter(page);
 	counter-increment: page;
 }
 /*~~~~~~ main ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
