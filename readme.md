@@ -20,11 +20,11 @@ Pas encore publiés
 
 ***HTML*** :
 
-- Mon super site ([sujet](exos_html/exo_1/exo_1_subject.html.pdf), [correction](exos_html/exo_1/exo_1_correction.html.pdf))
+- Mon super site ([sujet](exos_html/exo_1/exo_1_subject.html.pdf), [correction](exos_html/exo_1/exo_1_correction.html))
 
-- Tableaux ([sujet](exos_html/exo_2/exo_2_subject.html.pdf), [correction](exos_html/exo_2/exo_2_correction.html.pdf))
+- Tableaux ([sujet](exos_html/exo_2/exo_2_subject.html.pdf), [correction](exos_html/exo_2/exo_2_correction.html))
 
-- Formulaires ([sujet](exos_html/exo_3/exo_3_subject.html.pdf), [correction](exos_html/exo_3/exo_3_correction.html.pdf))
+- Formulaires ([sujet](exos_html/exo_3/exo_3_subject.html.pdf), [correction](exos_html/exo_3/exo_3_correction.html))
 
 ### Exemples
 
