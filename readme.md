@@ -20,19 +20,19 @@ Pas encore publiés
 
 ***HTML*** :
 
-- Mon super site ([sujet](exos_html/exo_1/exo_1_subject.html.pdf), [correction](exos_html/exo_1/exo_1_correction.html))
+- Mon super site ([sujet](exercices/html_1/subject.html.pdf), [objectif](exercices/html_1/screen.png), [correction](exercices/html_1/correction.html))
 
-- Tableaux ([sujet](exos_html/exo_2/exo_2_subject.html.pdf), [correction](exos_html/exo_2/exo_2_correction.html))
+- Tableaux ([sujet](exercices/html_2/subject.html.pdf), [objectif](exercices/html_2/screen.png), [squelette](exercices/html_2/index.html), [correction](exercices/html_2/correction.html))
 
-- Formulaires ([sujet](exos_html/exo_3/exo_3_subject.html.pdf), [correction](exos_html/exo_3/exo_3_correction.html))
+- Formulaires ([sujet](exercices/html_3/subject.html.pdf), [objectif](exercices/html_3/screen.png), [correction](exercices/html_3/correction.html))
 
 ### Exemples
 
 ***HTML*** :
 
-- [Document vide](html_1/)
+- [Document vide](examples/html_1/)
 
-- [Présentation des formulaires](html_2/formulaires/)
+- [Présentation des formulaires](examples/html_2/)
 
 ## Note sur les fichiers `.html.pdf`
 
