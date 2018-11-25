@@ -14,7 +14,9 @@ La *Web Academy* est une formation sur le *web* dispensée aux élèves de [*Tel
 
 ### Sujets de travaux pratiques
 
-Pas encore publiés
+***HTML*** :
+
+- Structure d'un *CV* ([sujet](practical-works/html_1/subject.html.pdf))
 
 ### Exercices
 

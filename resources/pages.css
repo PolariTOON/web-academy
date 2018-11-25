@@ -57,6 +57,9 @@ main::after {
 	display: table;
 	pointer-events: none;
 }
+main > h1 {
+	counter-reset: h2;
+}
 main > h2 {
 	counter-reset: h3;
 }
