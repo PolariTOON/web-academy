@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+	<head>
+		<title>Web Academy - Mise en forme de page web en CSS</title>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" type="text/css" href="/resources/theme.css"/>
+	</head>
+	<body>
+		<header id="header">
+			<p>Mise en forme de page <em>web</em> en <em>CSS</em></p>
+			<p><em>Telecom Nancy Services</em></p>
+		</header>
+		<main id="main">
+			<hgroup>
+				<h1><em>Web Academy</em></h1>
+				<h2>Mise en forme de<br/>page <em>web</em> en <em>CSS</em></h2>
+			</hgroup>
+			<!-- <address>
+				<p><data value="@Alexis.El-Mrini">Alexis EL MRINI</data>, <data value="@Tristan.Le-Godais">Tristan LE GODAIS</data></p>
+			</address> -->
+			<h2>Sommaire</h2>
+			<ol>
+				<li>
+					<p><a href="#1"><data value="5">Présentation des <em>CSS</em></data></a></p>
+					<ol>
+						<li>
+							<p><a href="#1-1"><data value="5">Vocation des <em>CSS</em></data></a></p>
+						</li>
+						<li>
+							<p><a href="#1-2"><data value="6">Intégration dans un document</data></a></p>
+						</li>
+						<li>
+							<p><a href="#1-3"><data value="7">Bonnes pratiques</data></a></p>
+						</li>
+						<li>
+							<p><a href="#1-4"><data value="8">Exemple de mise en page de document</data></a></p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><a href="#2"><data value="9">Syntaxe</data></a></p>
+				</li>
+				<li>
+					<p><a href="#3"><data value="10">Sélecteurs</data></a></p>
+					<ol>
+						<li>
+							<p><a href="#3-1"><data value="11">Sélecteurs basiques</data></a></p>
+						</li>
+						<li>
+							<p><a href="#3-2"><data value="12">Sélecteurs d'attributs</data></a></p>
+						</li>
+						<li>
+							<p><a href="#3-3"><data value="13">Sélecteurs de fratrie (horizontaux)</data></a></p>
+						</li>
+						<li>
+							<p><a href="#3-4"><data value="14">Sélecteurs de filiation (verticaux)</data></a></p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><a href="#4"><data value="15">Propriétés</data></a></p>
+					<ol>
+						<li>
+							<p><a href="#4-1"><data value="15">Formatage de texte</data></a></p>
+						</li>
+						<li>
+							<p><a href="#4-2"><data value="16">Modèles de disposition</data></a></p>
+						</li>
+						<li>
+							<p><a href="#4-3"><data value="20">Modèle de boîte</data></a></p>
+						</li>
+						<li>
+							<p><a href="#4-4"><data value="21">Bordure et fond</data></a></p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><a href="#5"><data value="22">Valeurs</data></a></p>
+					<ol>
+						<li>
+							<p><a href="#5-1"><data value="23">Couleurs</data></a></p>
+						</li>
+						<li>
+							<p><a href="#5-2"><data value="24">Mesuress</data></a></p>
+						</li>
+					</ol>
+				</li>
+			</ol>
+			<h2 id="1">Présentation des <em>CSS</em></h2>
+			<h3 id="1-1">Vocation des <em>CSS</em></h3>
+			<p>Les <em>CSS</em> (<em>Cascading Style Sheets</em>) permettent de décrire le rendu d'un document en suivant le principe de séparation du fond de la forme&nbsp;:</p>
+			<dl>
+				<dt><em>HTML</em></dt>
+				<dd>
+					<p>Définit le fond (le message, le contenu)</p>
+				</dd>
+				<dt><em>CSS</em></dt>
+				<dd>
+					<p>Définissent la forme (la présentation, la mise en page)</p>
+				</dd>
+			</dl>
+			<h3 id="1-2">Intégration dans un document</h3>
+			<p>Il existe trois moyens pour intégrer une feuille de style <em>CSS</em> à un document <em>HTML</em>&nbsp;:</p>
+			<dl>
+				<dt>Style <em>inline</em></dt>
+				<dd>
+					<p><code>&lt;div style="a: …; b: …;"&gt;…&lt;/div&gt;</code></p>
+				</dd>
+				<dt>Feuille de style interne</dt>
+				<dd>
+					<p><code>&lt;style&gt;c {…} d {…}&lt;/style&gt;</code></p>
+				</dd>
+				<dt>Feuille de style externe</dt>
+				<dd>
+					<p><code>&lt;link rel="stylesheet" href="style.css"/&gt;</code></p>
+				</dd>
+			</dl>
+			<h3 id="1-3">Bonnes pratiques</h3>
+			<p>Pour être bien sûr de séparer le fond de la forme, une méthode peut être de commencer par rédiger le contenu et ensuite de le mettre en page.</p>
+			<p>Dans cette optique, il est préférable d'utiliser des feuilles de styles externes&nbsp;!</p>
+			<h3 id="1-4">Exemple de mise en page de document</h3>
+			<h2 id="2">Syntaxe</h2>
+			<p>Une feuille de style comporte une liste de règles, associant chacune un bloc de déclarations à une liste de sélecteurs&nbsp;:</p>
+			<figure>
+				<figcaption>Exemple de document <em>CSS</em> syntaxiquement valide</figcaption>
+				<pre><code>sélecteur1 { /* Première règle */&#x0a;&#x09;propriété1: valeur1;&#x0a;&#x09;propriété2: valeur2;&#x0a;}&#x0a;sélecteur2, sélecteur3 { /* Seconde règle */&#x0a;&#x09;propriété3: valeur3;&#x0a;}&#x0a;</code></pre>
+			</figure>
+			<h2 id="3">Sélecteurs</h2>
+			<p>Les sélecteurs permettent de cibler les éléments concernés par la déclaration. Il en existe plusieurs types et il est possible de les combiner.</p>
+			<figure>
+				<figcaption>Règle utilisant une combinaison de plusieurs types de sélecteurs</figcaption>
+				<pre><code>p#note, ul > li.short {…}&#x0a;/*&#x0a;&#x09;Cible l'élément &lt;p id="note"&gt;…&lt;/p&gt;&#x0a;&#x09;et les éléments &lt;li class="short …"&gt;…&lt;/li&gt;&#x0a;&#x09;enfants d'éléments &lt;ul&gt;…&lt;/ul&gt;&#x0a;*/&#x0a;</code></pre>
+			</figure>
+			<h3 id="3-1">Sélecteurs basiques</h3>
+			<dl>
+				<dt>Sélecteur universel</dt>
+				<dd>
+					<p><code>* {…}</code> cible tous les éléments</p>
+				</dd>
+				<dt>Sélecteur d'élément (spécificité 0.0.1)</dt>
+				<dd>
+					<p><code>tagname {…}</code> cible les éléments de nom <code>tagname</code></p>
+				</dd>
+				<dt>Sélecteur de classe (spécificité 0.1.0)</dt>
+				<dd>
+					<p><code>.classname {…}</code> cible les éléments de classe <code>classname</code></p>
+				</dd>
+				<dt>Sélecteur d'identifiant (spécificité 1.0.0)</dt>
+				<dd>
+					<p><code>#id {…}</code> cible l'élément d'identifiant <code>id</code></p>
+				</dd>
+			</dl>
+			<h3 id="3-2">Sélecteurs d'attribut</h3>
+			<dl>
+				<dt>Sélecteur de clé</dt>
+				<dd>
+					<p><code>a[attr] {…}</code> cible les éléments <code>a</code> possédant l'attribut <code>attr</code></p>
+				</dd>
+				<dt>Sélecteur d'association clé-valeur</dt>
+				<dd>
+					<p><code>a[attr=val] {…}</code> cible les éléments <code>a</code> possédant l'attribut <code>attr</code> ayant la valeur <code>val</code></p>
+				</dd>
+			</dl>
+			<h3 id="3-3">Sélecteurs de fratrie (horizontaux)</h3>
+			<dl>
+				<dt>Sélecteur de suivant direct (cadet)</dt>
+				<dd>
+					<p><code>a + b {…}</code> cible le cadet <code>b</code> d'un élément <code>a</code></p>
+				</dd>
+				<dt>Sélecteur de suivant généralisé</dt>
+				<dd>
+					<p><code>a ~ b {…}</code> cible les éléments <code>b</code> après un élément <code>a</code></p>
+				</dd>
+			</dl>
+			<h3 id="3-4">Sélecteurs de filiation (verticaux)</h3>
+			<dl>
+				<dt>Sélecteur de descendant direct (enfants)</dt>
+				<dd>
+					<p><code>a > b {…}</code> cible les enfants <code>b</code> d'un élément <code>a</code></p>
+				</dd>
+				<dt>Sélecteur de descendant généralisé</dt>
+				<dd>
+					<p><code>a b {…}</code> cible les éléments <code>b</code> dans un élément <code>a</code></p>
+				</dd>
+			</dl>
+			<h2 id="4">Propriétés</h2>
+			<h3 id="4-1">Formatage de texte</h3>
+			<figure>
+				<figcaption>Propriétés affectant le mise en forme d'un texte</figcaption>
+				<pre><code>div {&#x0a;&#x09;color: red; /* couleur du texte */&#x0a;&#x09;font-family /* police d'écriture */&#x0a;&#x09;font-style: italic; /* roman ou italique */&#x0a;&#x09;font-weight: bold; /* graisse */&#x0a;&#x09;text-decoration: underline; /* soulignage… */&#x0a;}&#x0a;</code></pre>
+			</figure>
+			<h3 id="4-2">Modèles de disposition</h3>
+			<p><em>CSS</em> offre plusieurs modèles pour agencer le contenu d'un élément.</p>
+			<p>Plusieurs propriétés permettent d'activer les différents modèles&nbsp;: <code>display</code>, mais aussi <code>float</code> et <code>position</code>.</p>
+			<p>Remarquons que&nbsp;:</p>
+			<ul>
+				<li>
+					<p><code>display</code> possède deux valeurs spéciales&nbsp;: <code>none</code> qui n'affiche pas l'élément et <code>contents</code> qui l'affiche sans générer de boîte</p>
+				</li>
+				<li>
+					<p>Chaque modèle propose un ensemble de propriétés spécifiques pour décrire l'interaction entre les différents boîtes</p>
+				</li>
+			</ul>
+			<hr/>
+			<dl>
+				<dt>Flux</dt>
+				<dd>
+					<p>C'est le modèle par défaut qui décrit comment interagit un élément avec ceux autours de lui</p>
+					<p>Au sein d'un tel élément, les éléments s'affichent dans l'ordre, dans le sens de la lecture (généralement de bas en haut pour les éléments <em>block</em> et de gauche à droite pour les éléments <em>inline</em>)</p>
+					<p>Dans ce modèle, cela correspond respectivement aux valeurs <code>block</code> et <code>inline</code> de la propriété <code>display</code></p>
+				</dd>
+				<dd>
+					<p>Il est possible de répartir le contenu d'un élément <em>block</em> en colonnes à l'aide des propriétés <code>column-*</code></p>
+				</dd>
+				<dd>
+					<p>Un élément peux sortir du flux si une des propriétés <code>float</code> et <code>position</code> est modifiée</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Boîte flottante</dt>
+				<dd>
+					<p>Avec les propriétés <code>float</code> et <code>clear</code>, un élément peut flotter à gauche ou à droite en décalant le reste du flux</p>
+				</dd>
+				<dt>Boîte positionnée</dt>
+				<dd>
+					<p>Avec les propriétés <code>position</code>, <code>top</code>, <code>left</code>, <code>bottom</code> et <code>right</code>, la position d'un élément peut être définie très précisément en fournissant ses coordonnées</p>
+				</dd>
+				<dt>Tableau</dt>
+				<dd>
+					<p>C'est le modèle historiquement utilisé par les éléments <code>&lt;table&gt;…&lt;/table&gt;</code>, <code>&lt;tr&gt;…&lt;/tr&gt;</code>, <code>&lt;th&gt;…&lt;/th&gt;</code>, <code>&lt;td&gt;…&lt;/td&gt;</code>… avant qu'il ne soit défini au sein des <em>CSS</em> avec les valeurs <code>table</code> et <code>inline-table</code> de la propriété <code>display</code> et les propriétés <code>table-*</code></p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Boîte flexible</dt>
+				<dd>
+					<p>C'est un modèle activable avec les valeurs <code>flex</code> et <code>inline-flex</code> de la propriété <code>display</code> conçu pour un <em>design</em> unidimensionnel</p>
+					<p>Le position, la taille et l'ordre des enfants se contrôle avec les propriétés <code>flex-*</code>, <code>place-*</code>, <code>*-gap</code> et <code>order</code></p>
+				</dd>
+				<dt>Grille</dt>
+				<dd>
+					<p>C'est un modèle activable avec les valeurs <code>grid</code> et <code>inline-flex</code> de la propriété <code>display</code> conçu pour un <em>design</em> bidimensionnel</p>
+					<p>Le position, la taille et l'ordre des enfants se contrôle avec les propriétés <code>grid-*</code>, <code>place-*</code>, <code>*-gap</code> et <code>order</code></p>
+				</dd>
+			</dl>
+			<h3 id="4-3">Modèle de boîte</h3>
+			<p>Un élément est lui-même constitué d'un imbrication de boîtes délimitées par la marge intérieure, la bordure, la marge extérieure et le décalage.</p>
+			<p>La dimension de chacune des boîtes peut notamment être contrôlée avec les propriétés <code>padding-*</code>, <code>border-*-width</code>, <code>margin-*</code>, <code>top</code>, <code>left</code>, <code>bottom</code> et <code>right</code>.</p>
+			<h3 id="4-4">Bordure et fond</h3>
+			<figure>
+				<figcaption>Propriétés affectant la bordure et le fond</figcaption>
+				<pre><code>div {&#x0a;&#x09;border: 2px solid blue;&#x0a;&#x09;/* bordure */&#x0a;&#x09;border-right: 4px dotted red;&#x0a;&#x09;/* bordure droite */&#x0a;&#x09;background-color: black;&#x0a;&#x09;/* fond coloré */&#x0a;&#x09;background-image: url("sprite.png");&#x0a;&#x09;/* fond imagé */&#x0a;}&#x0a;</code></pre>
+			</figure>
+			<h2 id="5">Valeurs</h2>
+			<p>Un certain nombre de propriétés accepte des types de valeurs qui sont récurrents, comme les longueurs et les couleurs.</p>
+			<p>À chaque type de valeurs correspond une série de notations aux effets divers.</p>
+			<h3 id="5-1">Couleurs</h3>
+			<p>Les couleurs peuvent être renseignées en utilisant&nbsp;:</p>
+			<dl>
+				<dt>Des mots-clés</dt>
+				<dd>
+					<p><code>rebeccapurple</code>, <code>currentColor</code>, <code>transparent</code>…</p>
+				</dd>
+				<dt>Une notation fonctionnelle</dt>
+				<dd>
+					<p><code>rgb(102, 51, 153)</code>, <code>rgba(102, 51, 153, .4)</code>…</p>
+				</dd>
+				<dt>Une notation hexadécimale</dt>
+				<dd>
+					<p><code>#639</code>, <code>#663399</code>, <code>#6396</code>, <code>#66339966</code>…</p>
+				</dd>
+			</dl>
+			<h3 id="5-2">Mesures</h3>
+			<p>Chaque mesure est typée selon son unité. On trouve entre autres&nbsp;:</p>
+			<dl>
+				<dt>Les entiers et les nombres</dt>
+				<dd>
+					<p><code>0</code>, <code>1.25</code>, <code>-.4</code>…</p>
+				</dd>
+				<dt>Les pourcentages</dt>
+				<dd>
+					<p><code>25%</code>…</p>
+				</dd>
+				<dt>Les longueurs</dt>
+				<dd>
+					<p>Absolues&nbsp;: <code>px</code>, <code>mm</code>, <code>pt</code>… ou relatives&nbsp;: <code>em</code>, <code>vw</code>, <code>vh</code>…</p>
+				</dd>
+			</dl>
+		</main>
+		<footer id="footer">
+			<p></p>
+		</footer>
+	</body>
+</html>
