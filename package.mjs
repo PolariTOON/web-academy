@@ -1,7 +1,6 @@
-"use strict";
-const HTTP = require ("http");
-const {URL} = require ("url");
-const FileSystem = require ("fs");
+import http from "http";
+import url from "url";
+import fs from "fs";
 const contentTypes = {
 	"": "text/plain;charset=utf-8",
 	"/": "text/html;charset=utf-8",
@@ -21,19 +20,20 @@ const contentTypes = {
 	".woff": "font/woff",
 	".woff2": "font/woff2"
 };
-const {origin, port} = new URL (process.argv [2]);
-const root = __dirname;
-HTTP.createServer ((request, response) => {
+const {origin, port} = new URL(process.argv[2]);
+const root = import.meta.url.slice(0, import.meta.url.lastIndexOf("/"));
+http.createServer(async (request, response) => {
 	let content, contentType;
 	try {
-		const pathname = new URL (request.url, origin).pathname;
-		const extension = pathname.endsWith ("/") ? "/" : pathname.slice (~(~pathname.lastIndexOf (".") || ~pathname.length));
-		content = FileSystem.readFileSync (root + pathname + (extension === "/" ? "index.html" : ""));
-		contentType = contentTypes.hasOwnProperty (extension) ? contentTypes [extension] : contentTypes [""];
+		const pathname = new URL(request.url, origin).pathname;
+		const extension = pathname.endsWith("/") ? "/" : pathname.slice(~(~pathname.lastIndexOf(".") || ~pathname.length));
+		content = await fs.promises.readFile(url.fileURLToPath(root + pathname + (extension === "/" ? "index.html" : "")));
+		contentType = contentTypes.hasOwnProperty(extension) ? contentTypes[extension] : contentTypes[""];
 		response.statusCode = 200;
 	} catch (error) {
-		console.warn (error.message);
-		content = `<!DOCTYPE html>
+		console.warn(error.message);
+		content = `\
+<!DOCTYPE html>
 <html dir="ltr" lang="fr">
 	<head>
 		<title>Erreur 404</title>
@@ -65,13 +65,13 @@ HTTP.createServer ((request, response) => {
 	</head>
 	<body>
 		<h1>404</h1>
-		<p>Oups ! On dirait que vous êtes perdu…</p>
+		<p>Oups&nbsp;! On dirait que vous êtes perdu…</p>
 	</body>
 </html>
 `;
-		contentType = contentTypes ["/"];
+		contentType = contentTypes["/"];
 		response.statusCode = 404;
-	};
-	response.setHeader ("Content-Type", contentType);
-	response.end (content);
-}).listen (Number (port));
+	}
+	response.setHeader("Content-Type", contentType);
+	response.end(content);
+}).listen(Number(port));

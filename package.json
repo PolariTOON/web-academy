@@ -2,9 +2,10 @@
 	"name": "web_academy_dev",
 	"version": "1.0.0",
 	"description": "",
-	"main": "package.js",
+	"main": "package.mjs",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node --experimental-modules package.mjs http://127.0.0.1:8887/"
 	},
 	"repository": {
 		"type": "git",
