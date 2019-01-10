@@ -1,56 +1,87 @@
 html {
+    min-width: 820px;
+    padding: 40px;
     background: #eee;
 }
 body {
     width: 740px;
-    margin: 40px auto;
+    margin: auto;
     padding: 40px;
     background: #fff;
     box-shadow: 0 0 4px #0006;
     line-height: 1.25;
     font-size: 16px;
 }
+header,
+main,
+footer {
+    padding: 20px 40px;
+}
 header {
-    padding: 40px;
     border-radius: 40px 120px;
     background-color: #693;
 }
-main {
-    padding: 40px;
-}
 footer {
+    column-count: 3;
+    column-gap: 60px;
+    column-rule: 20px dotted #693;
     border-top: 20px dotted #693;
     border-bottom: 20px dotted #693;
 }
-h1 {
+footer > p:first-child {
+    margin-top: 0;
+}
+footer > p:last-child {
+    margin-bottom: 0;
+}
+h1,
+h2,
+p {
     margin: 20px 0;
+}
+h1 {
     color: #dfe;
-    font-family: "Arial", sans-serif;
+    font-family: "Roboto", sans-serif;
     text-shadow: 0 0 4px #0009;
     text-align: center;
     font-size: 3em;
 }
 h2 {
     clear: both;
-    margin: 20px 0;
     padding-left: 20px;
     border-left: 20px solid currentColor;
     color: #693;
-    font-family: "Courier New", monospace;
+    font-family: "Roboto Mono", monospace;
     font-size: 2em;
     text-align: justify;
 }
 p {
-    margin: 20px 0;
-    font-family: "Times", serif;
+    font-family: "Roboto Slab", serif;
     font-size: 1em;
     text-align: justify;
 }
-img {
-    display: block;
+figure > img {
+    vertical-align: top;
 }
-figcaption {
+figure > figcaption {
+    font-style: italic;
     text-align: center;
+}
+a[href] {
+    color: #03c;
+    text-decoration: none;
+}
+a:not([href]) {
+    color: #c30;
+    cursor: not-allowed;
+}
+dfn {
+    font-style: normal;
+    font-weight: bold;
+}
+sup {
+    vertical-align: top;
+    font-size: .8em;
 }
 .left {
     float: left;
@@ -60,15 +91,6 @@ figcaption {
     float: right;
     margin: 0 -40px 20px 40px;
 }
-#cgu {
-    column-count: 3;
-    column-gap: 60px;
-    column-rule: 20px dotted #693;
-    padding: 20px 40px;
-}
-#cgu > :first-child {
-    margin-top: 0;
-}
-#cgu > :last-child {
-    margin-bottom: 0;
+#lorem {
+    font-variant: small-caps;
 }
