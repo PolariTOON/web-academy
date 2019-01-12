@@ -8,35 +8,35 @@ La *Web Academy* est une formation sur le *web* dispensée aux élèves de [*Tel
 
 ### Supports de cours
 
-- [Introduction au développement *web*](chapter_1/web_1.html.pdf)
+- [Introduction au développement *web*](chapters/01-web/index.html.pdf)
 
-- [Structuration de page *web* en *HTML*](chapter_2/web_2.html.pdf)
+- [Structuration de page *web* en *HTML*](chapters/02-html/index.html.pdf)
 
-- [Mise en forme de page *web* en *CSS*](chapter_3/web_3.html.pdf)
+- [Mise en forme de page *web* en *CSS*](chapters/03-css/index.html.pdf)
 
 ### Sujets de travaux pratiques
 
 ***HTML*** :
 
-- Structure d'un *CV* ([sujet](practical-works/html_1/subject.html.pdf), [correction](practical-works/html_1/correction.html))
+- Structure d'un *CV* ([sujet](practical-works/01-html/subject.html.pdf), [squelette](practical-works/01-html/index.html), [correction](practical-works/01-html/correction.html))
 
 ### Exercices
 
 ***HTML*** :
 
-- Mon super site ([sujet](exercices/html_1/subject.html.pdf), [objectif](exercices/html_1/screen.png), [correction](exercices/html_1/correction.html))
+- Mon super site ([sujet](exercices/01-html/subject.html.pdf), [squelette](exercices/01-html/index.html), [objectif](exercices/01-html/goal.png), [correction](exercices/01-html/correction.html))
 
-- Tableaux ([sujet](exercices/html_2/subject.html.pdf), [objectif](exercices/html_2/screen.png), [squelette](exercices/html_2/index.html), [correction](exercices/html_2/correction.html))
+- Tableaux ([sujet](exercices/02-html/subject.html.pdf), [squelette](exercices/02-html/index.html), [objectif](exercices/02-html/goal.png), [correction](exercices/02-html/correction.html))
 
-- Formulaires ([sujet](exercices/html_3/subject.html.pdf), [objectif](exercices/html_3/screen.png), [correction](exercices/html_3/correction.html))
+- Formulaires ([sujet](exercices/03-html/subject.html.pdf), [squelette](exercices/03-html/index.html), [objectif](exercices/03-html/goal.png), [correction](exercices/03-html/correction.html))
 
 ### Exemples
 
 ***HTML*** :
 
-- [Document vide](examples/html_1/)
+- [Document vide](examples/01-html/index.html)
 
-- [Présentation des formulaires](examples/html_2/)
+- [Présentation des formulaires](examples/02-html/index.html)
 
 ## Note sur les fichiers `.html.pdf`
 

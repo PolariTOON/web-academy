@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-    
+
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <meta charset="utf-8">
-        
+
         <title>Présentation des formulaires</title>
-        
-        <script src="script.js" defer=""></script>
-        
-       
+
+        <script src="resources/index.js" defer=""></script>
+
+
     </head>
     <body>
         <h1>Présentation de différents champs pour les formulaires</h1>
@@ -20,8 +20,8 @@
                 action correspond à la cible de l'envoi.
             -->
             <form id="myform" method="get" action="exemple_formulaire.html">
-                
-                <!-- 
+
+                <!--
                     Par défaut, <input> correspond à <input type="text">
                 -->
                 <p>
@@ -29,8 +29,8 @@
                         Nom prénom :<input name="nom" placeholder="nom prénom">
                     </label>
                 </p>
-                
-                <!-- 
+
+                <!--
                     Voici un exemple de champ input différent de type=text
                 -->
                 <p>
@@ -38,8 +38,8 @@
                         Âge :<input type="number" name="age">
                     </label>
                 </p>
-                
-                <!-- 
+
+                <!--
                     On peut séparer un label et le champ auquel il renvoie par l'attribut for.
                 -->
                 <p>
@@ -47,18 +47,18 @@
                         Biographie :
                     </label>
                 </p>
-                
-                
+
+
                 <!--
                     La balise textarea permet de rentrer un texte de plusieurs lignes.
                 -->
                 <p>
                     <textarea name="biography">Remplissez votre biographie</textarea>
                 </p>
-                
-                
-                
-                
+
+
+
+
                 <!--
                     Le champ checkbox permet de définir des cases (questionnaire à choix multiple).
                     Chaque champ a un name différent.
@@ -66,7 +66,7 @@
                     La valeur par défaut (value) est "on"
                     La valeur renvoyée est "on" pour les champs cochés et rien pour les autres (ils ne sont pas envoyés).
                 -->
-                    
+
                 <p>
                     <fieldset> <!-- permet de regrouper des champs -->
                         <legend> <!-- Définit une légende pout un groupe de champs -->
@@ -89,9 +89,9 @@
                         </p>
                     </fieldset>
                 </p>
-                
-                
-                <!-- 
+
+
+                <!--
                     Les champs radio définissent un questionnaire à choix unique.
                     Ils ont le même name mais des valeurs différentes.
                     Possibilité de mettre un choix par défaut.
@@ -102,7 +102,7 @@
                         <legend>
                             J'ai le permis :
                         </legend>
-                        
+
                         <label>
                             <input type="radio" name="permis" value="oui"> Oui
                         </label>
@@ -111,9 +111,9 @@
                         </label>
                     </fieldset>
                 </p>
-                
-                
-                <!-- 
+
+
+                <!--
                     Le champ mot de passe cache automatiquement les caractères rentrés à l'intérieur.
                     Attention ! Ils sont encore visibles si vous appuyez sur F12 et ne sont pas chiffrés à ce moment-là !
                 -->
@@ -122,30 +122,30 @@
                         Mot de passe : <input type="password" name="password">
                     </label>
                 </p>
-                
-                
-                <!-- 
+
+
+                <!--
                     token anti CSRF, protection contre certaines attaques.
                     Le champ hidden permet de faire transiter des informations que le client n'a pas besoin de (ou ne doit pas) modifier
                 -->
                 <input type="hidden" value="692de3ecb3626f29362381d86a123f3a" name="token">
-                
-                
-                <!-- 
+
+
+                <!--
                     Boutons de validation et de génération. Fonctionnent aussi avec <input type="button"> (bouton classique) ou <input type="submit"> (pour l'envoi de formulaire).
                 -->
                 <p>
                     <!-- type="button" rend le bouton "normal" -->
                     <button type="button" name="generate">Générer bio</button>
-                    
+
                     <!-- type="submit" envoie le formulaire. Comportement par défaut de <button>. -->
                     <button type="submit" name="validate">Envoyer les données</button>
                 </p>
             </form>
         </p>
-        
+
         <output id="reponse">&nbsp;</output>
-        
-          
+
+
     </body>
 </html>
