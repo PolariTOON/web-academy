@@ -1,12 +1,14 @@
+html,
+body {
+    padding: 40px;
+}
 html {
     min-width: 820px;
-    padding: 40px;
     background: #eee;
 }
 body {
     width: 740px;
     margin: auto;
-    padding: 40px;
     background: #fff;
     box-shadow: 0 0 4px #0009;
     line-height: 1.25;
@@ -43,9 +45,9 @@ p {
 h1 {
     color: #dfe;
     font-family: "Roboto", sans-serif;
-    text-shadow: 0 0 4px #0009;
-    text-align: center;
     font-size: 3em;
+    text-align: center;
+    text-shadow: 0 0 4px #0009;
 }
 h2 {
     clear: both;
