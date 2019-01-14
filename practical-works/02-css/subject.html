@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+	<head>
+		<title>TP 2</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" type="text/css" href="resources/subject.css"/>
+	</head>
+	<body>
+		<header id="header">
+			<p><em>TP</em> 2</p>
+			<p><em>Telecom Nancy Services</em></p>
+		</header>
+		<main id="main">
+			<h1><em>TP</em> 2</h1>
+			<p>Le second <em>TP</em> va vous permettre de manipuler <em>CSS</em>. L'objectif est de reproduire le style <em>CSS</em> d'une page <em>web</em> dont le code <em>HTML</em> (fichier <code>index.html</code>) ainsi qu'une capture d'écran (fichier <code>goal.png</code>) vous sont donnés. Il s'agit d'une page <em>web</em> présentant le club de châteaux de cartes de l'école. Le seul fichier à modifier est <code>index.css</code>&nbsp;: ne tentez pas de bricoler le code <em>HTML</em>&nbsp;!</p>
+			<p>Ce <em>TP</em> sera progressif&nbsp;: on manipulera d'abord le style des éléments un par un, puis on reviendra modifier les marges qui déterminent leurs interactions et ainsi les placer correctement sur la page.</p>
+			<h2>Astuces</h2>
+			<ol>
+				<li>
+					<p>La grille qui apparaît sur votre page ainsi que sur la capture d'écran du résultat attendu est composée de carreaux de <code>20px</code> de côté. Elle vous permet d'aligner précisément les différents éléments.</p>
+					<p>Vous pouvez la retirer temporairement grâce aux outils de développement en sélectionnant le pseudo-élément <code>body::after</code> (à la fin de l'élément <code>&lt;body&gt;&lt;/body&gt;</code>) et en décochant la propriété <code>background-color</code> dans le style.</p>
+				</li>
+				<li>
+					<p>Nous vous conseillons d'utiliser les outils de développement de votre navigateur pour ajuster les valeurs des propriétés comme les couleurs et les marges, que ce soit avant de les ajouter à votre code, ou après si vous en avez besoin.</p>
+					<p>Vous êtes également encouragés à utiliser l'outil <q>pipette</q> sur la capture d'écran du résultat attendu si vous voulez récupérer les couleurs exactes.</p>
+				</li>
+			</ol>
+			<h2>Questions sur les sélecteurs</h2>
+			<ol>
+				<li>
+					<p>Dressez une liste des différents éléments de la page d'après le code source <em>HTML</em> ou grâce à l'outil <q>inspecteur</q>.</p>
+				</li>
+				<li>
+					<p>Comment différenceriez-vous à l'aide des <em>CSS</em> les éléments <code>&lt;a&gt;&lt;/a&gt;</code> ayant un attribut <code>href</code> de ceux qui n'en ont pas, en n'utilisant ni classe ni identifiant&nbsp;?</p>
+				</li>
+				<li>
+					<p>Quels éléments possèdent une classe&nbsp;? À quoi vont-elles servir&nbsp;?</p>
+				</li>
+				<li>
+					<p>Quel élément possède un identifiant&nbsp;?</p>
+				</li>
+			</ol>
+			<h2>Style général de la page</h2>
+			<p>Nous nous intéressons ici aux propriétés qui vont directement affecter l'aspect général de la page.</p>
+			<h3>Éléments <code>&lt;html&gt;&lt;/html&gt;</code> et <code>&lt;body&gt;&lt;/body&gt;</code></h3>
+			<p>Essayons de mettre en évidence le contenu de la page, comme si il s'agissait d'une feuille blanche sur un support gris clair&nbsp;:</p>
+			<ol>
+				<li>
+					<p>Modifiez la couleur de l'arrière-plan de la page en utilisant la propriété <code>background-color</code> au niveau de l'élément <code>&lt;html&gt;&lt;/html&gt;</code>.</p>
+				</li>
+				<li>
+					<p>Saisissez la largeur du contenu de l'élément <code>&lt;body&gt;&lt;/body&gt;</code> à <code>740px</code>.</p>
+				</li>
+				<li>
+					<p>Essayez de centrer horizontalement l'élément <code>&lt;body&gt;&lt;/body&gt;</code>&nbsp;: quelle propriété et quelle valeur pourriez-vous utiliser&nbsp;?</p>
+					<p>L'astuce est de modifier les marges extérieures de l'élément <code>&lt;body&gt;&lt;/body&gt;</code> en utilisant une valeur de marge spéciale.</p>
+				</li>
+				<li>
+					<p>Ajoutez une ombre de boîte à l'élément <code>&lt;body&gt;&lt;/body&gt;</code> à l'aide de la propriété <code>box-shadow</code>, ainsi qu'une couleur de fond pour le faire ressortir.</p>
+				</li>
+			</ol>
+			<h3>Style général du texte</h3>
+			<p>Il n'est pas nécessaire en <em>CSS</em> de redéfinir certaines propriétés en ciblant tous les éléments concernés un par un. En ciblant directement l'élément <code>&lt;body&gt;&lt;/body&gt;</code> par exemple, on peut faire en sorte que ces déclarations s'appliquent à tous ses descendants, grâce à un mécanisme appelé <q>héritage</q>&nbsp;:</p>
+			<ol>
+				<li>
+					<p>Ajoutez des propriétés à l'élément <code>&lt;body&gt;&lt;/body&gt;</code> définissant&nbsp;:</p>
+					<ul>
+						<li>
+							<p>la police de caractères à <code>"Roboto Slab"</code> ou <code>serif</code> par défaut (<code>serif</code> sera utilisé si <code>"Roboto Slab"</code> n'est pas disponible)&nbsp;;</p>
+						</li>
+						<li>
+							<p>la taille des caractères à <code>16px</code> à l'aide de la propriété <code>font-size</code>&nbsp;;</p>
+						</li>
+						<li>
+							<p>la hauteur de ligne égale à 1,25 fois la taille des caractères à l'aide de la propriété <code>line-height</code>.</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>D'après vous, pourquoi avons-nous choisi une telle hauteur de ligne&nbsp;?</p>
+				</li>
+			</ol>
+			<h2>Style des éléments de type <q>block</q></h2>
+			<p>Cette partie est réalisable dans n'importe quel ordre. Si vous bloquez sur une question, n'hésitez pas à demander ou à y revenir plus tard.</p>
+			<h3>En-tête du document</h3>
+			<ol>
+				<li>
+					<p>Modifiez l'élément <code>&lt;header&gt;&lt;/header&gt;</code> en lui donnant&nbsp;:</p>
+					<ul>
+						<li>
+							<p>un fond vert&nbsp;;</p>
+						</li>
+						<li>
+							<p>des coins arrondis à l'aide de la propriété <code>border-radius</code> (vous pouvez changer chaque coin séparément).</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>Modifiez l'élément <code>&lt;h1&gt;&lt;/h1&gt;</code> en lui donnant&nbsp;:</p>
+					<ul>
+						<li>
+							<p>une couleur de texte vert pâle (voire blanc transparent)&nbsp;;</p>
+						</li>
+						<li>
+							<p>une police de caractères valant <code>"Roboto"</code> ou <code>sans-serif</code> par défaut&nbsp;;</p>
+						</li>
+						<li>
+							<p>une taille de caractères égale à 3 fois la taille initiale&nbsp;;</p>
+						</li>
+						<li>
+							<p>un texte centré horizontalement à l'aide de la propriété <code>text-align</code>&nbsp;;</p>
+						</li>
+						<li>
+							<p>une ombre de texte à l'aide de la propriété <code>text-shadow</code>.</p>
+						</li>
+					</ul>
+				</li>
+			</ol>
+			<h3>Corps du document</h3>
+			<ol>
+				<li>
+					<p>Modifiez les éléments <code>&lt;h2&gt;&lt;/h2&gt;</code> en leur donnant&nbsp;:</p>
+					<ul>
+						<li>
+							<p>une couleur de texte vert&nbsp;;</p>
+						</li>
+						<li>
+							<p>une police de caractères valant <code>"Roboto Mono"</code> ou <code>monospace</code> par défaut&nbsp;;</p>
+						</li>
+						<li>
+							<p>une taille de caractères égale à 2 fois la taille initiale.</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>Comment pourriez-vous réaliser la grosse bordure à gauche des titres <code>&lt;h2&gt;&lt;/h2&gt;</code> de telle sorte qu'elle soit toujours de la même couleur que le texte&nbsp;?</p>
+					<p>L'astuce est d'utiliser une valeur de couleur spéciale  (cette valeur est considérée comme la première variable introduite dans le langage <em>CSS</em>&nbsp;!).</p>
+				</li>
+				<li>
+					<p>Ajoutez également une marge intérieure à gauche des titres <code>&lt;h2&gt;&lt;/h2&gt;</code> pour faire en sorte que le texte ne soit pas trop collé à la bordure.</p>
+				</li>
+				<li>
+					<p>Modifiez les éléments <code>&lt;p&gt;&lt;/p&gt;</code> en leur donnant&nbsp;:</p>
+					<ul>
+						<li>
+							<p>une taille de caractères égale à la taille par défaut&nbsp;;</p>
+						</li>
+						<li>
+							<p>un texte justifié.</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>Qu'avez-vous eu à faire pour régler la taille des paragraphes <code>&lt;p&gt;&lt;/p&gt;</code>&nbsp;?</p>
+				</li>
+				<li>
+					<p>Modifier les classes <code>left</code> et <code>right</code> de telle sorte que les figures <code>&lt;figure&gt;&lt;/figure&gt;</code> flottent par rapport au texte, respectivement sur la gauche et sur la droite.</p>
+				</li>
+				<li>
+					<p>On souhaite que les figures ne flottent qu'à côté des paragraphes <code>&lt;p&gt;&lt;/p&gt;</code>, c'est-à-dire pas à côté des titres <code>&lt;h2&gt;&lt;/h2&gt;</code>. Quelle propriété pouvez-vous utiliser et sur quels éléments&nbsp;?</p>
+				</li>
+				<li>
+					<p>Modifier les éléments <code>&lt;figcaption&gt;&lt;/figcaption&gt;</code> enfants d'éléments <code>&lt;figure&gt;&lt;/figure&gt;</code> en leur donnant&nbsp;:</p>
+					<ul>
+						<li>
+							<p>un texte en italique&nbsp;;</p>
+						</li>
+						<li>
+							<p>un texte centré horizontalement.</p>
+						</li>
+					</ul>
+				</li>
+			</ol>
+			<h3>Pied de page</h3>
+			<ol>
+				<li>
+					<p>Modifiez l'élément <code>&lt;footer&gt;&lt;/footer&gt;</code> en lui donnant&nbsp;:</p>
+					<ul>
+						<li>
+							<p>une répartition sur 3 colonnes à l'aide de la propriété <code>column-count</code>&nbsp;;</p>
+						</li>
+						<li>
+							<p>une gouttière (dont vous mesurerez la largeur) à l'aide de la propriété <code>column-gap</code>.</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<p>Comment pourriez-vous réaliser les bordures supérieures et inférieures en pointillés de l'élément <code>&lt;footer&gt;&lt;/footer&gt;</code>&nbsp;?</p>
+				</li>
+				<li>
+					<p>Appliquez le même style sur la règle séparant les colonnes de l'élément <code>&lt;footer&gt;&lt;/footer&gt;</code> à l'aide de la propriété <code>column-rule</code>.</p>
+				</li>
+			</ol>
+			<h2>Style des éléments de type <q>inline</q></h2>
+			<p>Là encore, vous pouvez réaliser cette partie dans n'importe quel ordre.</p>
+			<h3>Ancres</h3>
+			<ol>
+				<li>
+					<p>Donnez aux ancres <code>&lt;a&gt;&lt;/a&gt;</code> possédant un attribut <code>href</code> une couleur de texte bleue et aux ancres qui n'en possèdent pas une couleur rouge.</p>
+					<p>Plusieurs méthodes permettent d'arriver à ce résultat. Une d'entre elles est le mécanisme de <q>cascade</q> (d'où le langage <em>CSS</em> tire d'ailleurs son nom&nbsp;!).</p>
+				</li>
+				<li>
+					<p>De la même manière, enlevez le soulignage des ancres <code>&lt;a&gt;&lt;/a&gt;</code> possédant un attribut <code>href</code> et modifiez le curseur des ancres qui n'en possèdent pas de telle manière à indiquer à l'utilisateur qu'ils ne pointent vers aucune page.</p>
+				</li>
+			</ol>
+			<h3>Définitions</h3>
+			<ol>
+				<li>
+					<p>Donnez aux définitions <code>&lt;dfn&gt;&lt;/dfn&gt;</code> un texte gras et enlevez leur soulignage.</p>
+				</li>
+			</ol>
+			<h3>Exposants</h3>
+			<ol>
+				<li>
+					<p>Donnez aux exposants <code>&lt;sup&gt;&lt;/sup&gt;</code> une taille de caractères égale à 0,8 fois la taille initiale.</p>
+				</li>
+			</ol>
+			<h3>Élément <code>&lt;i id="lorem"&gt;&lt;/i&gt;</code></h3>
+			<ol>
+				<li>
+					<p>Déterminez la propriété et la valeur à utiliser pour afficher en petite capitales le texte de l'élément possédant l'identifiant <code>lorem</code>.</p>
+				</li>
+			</ol>
+			<h2>Marges</h2>
+			<ol>
+				<li>
+					<p>Ajoutez une marge intérieure de <code>40px</code> aux éléments <code>&lt;html&gt;&lt;/html&gt;</code> et <code>&lt;body&gt;&lt;/body&gt;</code> en factorisant au mieux le code.</p>
+				</li>
+				<li>
+					<p>Quelle est la largeur de la boîte de l'élément <code>&lt;body&gt;&lt;/body&gt;</code> désormais&nbsp;? Saisissez la largeur minimale du contenu de l'élément <code>&lt;html&gt;&lt;/html&gt;</code> à la valeur mesurée à l'aide de la propriété <code>min-width</code>.</p>
+					<p>Dans quelles circonstances voyez-vous une différence avec la situation précédente&nbsp;?</p>
+				</li>
+				<li>
+					<p>Calculez les valeurs des marges intérieures à donner aux éléments <code>&lt;header&gt;&lt;/header&gt;</code>,  <code>&lt;main&gt;&lt;/main&gt;</code> et  <code>&lt;footer&gt;&lt;/footer&gt;</code>, en factorisant au mieux le code, ces valeurs étant identiques.</p>
+				</li>
+				<li>
+					<p>Calculez les valeurs des marges extérieures à donner aux éléments <code>&lt;h1&gt;&lt;/h1&gt;</code>,  <code>&lt;h2&gt;&lt;/h2&gt;</code> et <code>&lt;p&gt;&lt;/p&gt;</code>, à nouveau en factorisant.</p>
+				</li>
+				<li>
+					<p>Remarquez-vous quelque chose quand deux éléments de type <q>block</q> se suivent en ayant des marges extérieures positives&nbsp;? Trouvez le nom de ce mécanisme sur l'internet.</p>
+					<p>Comment pourriez-vous pallier cet effet&nbsp;?</p>
+				</li>
+				<li>
+					<p>Déterminez les valeurs des marges extérieures à donner aux classes <code>left</code> et <code>right</code>, qui cette fois-ci sont différentes.</p>
+				</li>
+				<li>
+					<p>Regardez l'apparence des paragraphes situés dans le pied de page. En quoi diffère-t-elle du résultat attendu&nbsp;? Cherchez sur l'internet comment vous pourriez résoudre ce problème.</p>
+				</li>
+				<li>
+					<p>Votre page est-elle parfaitement alignée avec la grille désormais&nbsp;? Déterminez à quels endroits surviennent les décalages puis ajoutez la propriété <code>vertical-align</code> avec <code>top</code> comme valeur aux deux types d'éléments concernés.</p>
+				</li>
+			</ol>
+			<h2>Introduction à l'interopérabilité</h2>
+			<p>Ouvrez votre page désormais terminée avec un navigateur <em>Gecko</em> (<em>Firefox</em>), un navigateur <em>WebKit</em> (<em>Safari</em>, <em>Gnome Web</em>) et un navigateur <em>Blink</em> (<em>Chrome</em>, <em>Opera</em>, bientôt <em>Edge</em>…) et rendez-vous au niveau du pied de page.</p>
+			<ol>
+				<li>
+					<p>Quelle différence flagrante d'affichage observez-vous&nbsp;?</p>
+				</li>
+				<li>
+					<p>Pouvez-vous en déduire de quel navigateur provient notre capture d'écran du résultat attendu&nbsp;?</p>
+				</li>
+			</ol>
+			<p>Ce que vous venez de constater est un problème de compatibilité entre les différents moteurs de rendu des navigateurs. Ici, le problème n'est pas bloquant en soi, mais parfois le comportement des navigateur diverge bien plus. Or un utilisateur visitant votre site s'attendra justement à ce que le comportement soit le même, quel que soit le navigateur. C'est une des raisons pour lesquelles il faut toujours tester votre code dans plusieurs navigateurs.</p>
+		</main>
+		<footer id="footer">
+			<p></p>
+		</footer>
+	</body>
+</html>
