@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+	<head>
+		<title>Web Academy - Manipulation de page web en ECMAScript</title>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" type="text/css" href="resources/index.css"/>
+	</head>
+	<body>
+		<header id="header">
+			<p>Manipulation de page <em>web</em> en <em>ECMAScript</em></p>
+			<p><em>Telecom Nancy Services</em></p>
+		</header>
+		<main id="main">
+			<hgroup>
+				<h1><em>Web Academy</em></h1>
+				<h2>Manipulation de<br/>page <em>web</em> en <em>ECMAScript</em></h2>
+			</hgroup>
+			<!-- <address>
+				<p><data value="@Alexis.El-Mrini">Alexis EL MRINI</data>, <data value="@Tristan.Le-Godais">Tristan LE GODAIS</data></p>
+			</address> -->
+			<h2>Sommaire</h2>
+			<ol></ol>
+			<h2 id="1">Présentation d'<em>ECMAScript</em></h2>
+			<h3 id="1-1">Vocation d'<em>ECMAScript</em></h3>
+			<p>Le langage <em>JavaScript</em> est un langage interprété, orienté objet à prototype et fonctionnel dont le typage est dynamique.</p>
+			<p>Il est apparu en 1996 dans le navigateur <em>Netscape Navigator</em> dans le but de manipuler les pages <em>web</em> et s'est rapidement établi comme le langage de script du <em>web</em>. Depuis 1997, il est standardisé et évolue sous le nom d'<em>ECMAScript</em>. Avec l'émergence de projets comme <em>Node.js</em> ou <em>GNOME Shell</em> en 2009, l'environnement d'exécution du langage ne se limite plus seulement aux navigateurs.</p>
+			<h3 id="1-2">Intégration dans un document</h3>
+			<p>La manière d'intégrer un script <em>ECMAScript</em> à un document <em>HTML</em> dépend à la fois de la variante du langage utilisée et du moment de son évaluation. On distingue ainsi script classique (non strict ou strict) ou modulaire, script interne ou externe et script synchrone (bloquant), différé (récupéré en parallèle de l'analyse du document mais évalué à sa fin) ou asynchrone (récupéré en parallèle de l'analyse et évalué dès que possible, bloquant ainsi la suite de l'analyse).</p>
+			<p>Certaines combinaisons sont incompatibles. On comptabilise ainsi huit manières d'intégrer un script à un document.</p>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Formes d'intégration d'un script classique à un document</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Syntaxe</th>
+						<th scope="col">Emplacement</th>
+						<th scope="col">Exécution</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>&lt;script&gt;a(…);&lt;/script&gt;</code></th>
+						<td>
+							<p>Interne</p>
+						</td>
+						<td>
+							<p>Synchrone</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></th>
+						<td rowspan="3">
+							<p>Externe</p>
+						</td>
+						<td>
+							<p>Synchrone</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>&lt;script defer="" src="script.js"&gt;&lt;/script&gt;</code></th>
+						<td>
+							<p>Différée</p>
+						</p>
+					</tr>
+					<tr>
+						<th scope="row"><code>&lt;script async="" src="script.js"&gt;&lt;/script&gt;</code></th>
+						<td>
+							<p>Asynchrone</p>
+						</p>
+					</tr>
+				</tbody>
+			</table>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Formes d'intégration d'un script modulaire à un document</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Syntaxe</th>
+						<th scope="col">Emplacement</th>
+						<th scope="col">Exécution</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>&lt;script type="module"&gt;a(…);&lt;/script&gt;</code></th>
+						<td rowspan="2">
+							<p>Interne</p>
+						</td>
+						<td>
+							<p>Différée</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>&lt;script type="module" async=""&gt;a(…);&lt;/script&gt;</code></th>
+						<td>
+							<p>Asynchrone</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>&lt;script type="module" src="script.mjs"&gt;&lt;/script&gt;</code></th>
+						<td rowspan="2">
+							<p>Externe</p>
+						</td>
+						<td>
+							<p>Différée</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>&lt;script type="module" async="" src="script.mjs"&gt;&lt;/script&gt;</code></th>
+						<td>
+							<p>Asynchrone</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 id="1-3">Bonnes pratiques</h3>
+			<p>À l'instar des <em>CSS</em>, il est préférable de séparer le code <em>ECMAScript</em> du code <em>HTML</em> en utilisant un script externe.</p>
+			<p>Il est également généralement recommandé de différer l'évaluation d'un script pour ne pas bloquer le chargement du reste d'une page <em>web</em> en utilisant l'attribut <code>defer="…"</code> dans le cas d'un script classique.</p>
+			<p>L'utilisation d'un script modulaire a l'avantage de permettre d'utiliser certaines des dernières fonctionnalités du langage (notamment l'import et l'export statique de modules). Si toutefois, vous préférez utiliser un script classique, alors le mode strict est fortement recommandé. Pour l'activer, il suffit de débuter le script par <code>"use strict";</code>.</p>
+			<h2 id="2">Types d'expressions</h2>
+			<p>Il existe actuellement septs types natifs en <em>ECMAScript</em>, dont six types de valeurs primitives&nbsp;: <em>Undefined</em>, <em>Null</em>, <em>Boolean</em>, <em>Number</em>, <em>String</em> et <em>Symbol</em>. Le reste des valeurs constitue le type objet&nbsp;: <em>Object</em>.</p>
+			<p>Parmi les objets, on trouve différentes sous-classes natives, notamment&nbsp;: <em>Function</em>, <em>Date</em>, <em>RegExp</em>, <em>Array</em>, <em>Map</em>, <em>Set</em>…</p>
+			<p>Certains types n'ont pas de notation litérale. Ci-après sont recensées des exemples de notations litérales pour les types qui en possède une.</p>
+			<table>
+				<caption>Aperçu de la notation litérale des valeurs primitives</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Type</th>
+						<th scope="col">Notation</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><em>Null</em></th>
+						<td>
+							<p><code>null</code></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><em>Boolean</em></th>
+						<td>
+							<p><code>false</code>, <code>true</code></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><em>Number</em></th>
+						<td>
+							<p><code>1</code>, <code>3.14</code>…</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><em>String</em></th>
+						<td>
+							<p><code>""</code>, <code>'abc'</code>, <code>`def`</code>…</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Aperçu de la notation litérale des objets</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Type</th>
+						<th scope="col">Objet vide</th>
+						<th scope="col">Notation courte</th>
+						<th scope="col">Notation longue</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><em>RegExp</em></th>
+						<td>
+							<p><code>/(?:)/u</code></p>
+						</td>
+						<td>
+							<p><code>/[abc]/u</code></p>
+						</td>
+						<td>
+							<p><code>/(?:a|b|c)/u</code></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><em>Array</em></th>
+						<td>
+							<p><code>[]</code></p>
+						</td>
+						<td>
+							<p><code>[a, b]</code></p>
+						</td>
+						<td>
+							<p><code>[a, b,]</code></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><em>Object</em></th>
+						<td>
+							<p><code>{}</code></p>
+						</td>
+						<td>
+							<p><code>{a, b}</code></p>
+						</td>
+						<td>
+							<p><code>{["a"]: a, ["b"]: b,}</code></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><em>Function</em></th>
+						<td>
+							<p><code>() => {}</code></p>
+						</td>
+						<td>
+							<p><code>a => a</code></p>
+						</td>
+						<td>
+							<p><code>(a,) => {return a;}</code></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2 id="3">Instructions</h2>
+			<h3 id="3-1">Déclarations de variables</h3>
+			<p>Il existe divers moyens de déclarer des identifiants de variables en <em>ECMAScript</em>, chacune possèdant ses propres particularités&nbsp;: via les instructions <code>let …;</code>, <code>const …;</code>, <code>import …;</code>, <code>export …;</code>, <code>var …;</code>, <code>class … {…}</code>, <code>function …(…) …</code>, <code>function* …(…) …</code>, <code>async function …(…) …</code> ou <code>async function* …(…) …</code>, ou en tant que paramètre formel d'une fonction.</p>
+			<p>En pratique, les instructions <code>let …;</code>, <code>const …;</code>, <code>import …;</code>, <code>export …;</code> et les paramètres formels de fonctions suffisent à mimer le comportement des autres formes de déclarations (sans le calquer pour autant).</p>
+			<dl>
+				<dt><code>let …;</code></dt>
+				<dd>
+					<p>Cette instruction permet de déclarer une variable locale au bloc d'instructions englobant&nbsp;:</p>
+					<figure>
+						<figcaption>Déclaration <code>let …;</code></figcaption>
+						<pre><code>let a = 0, b;&#x0a;console.log(a); // 0&#x0a;console.log(b); // undefined&#x0a;</code></pre>
+					</figure>
+					<p>La variable est déclarée et initialisée au niveau de l'instruction (à <code>undefined</code> par défaut) et peut être réaffectée. L'utiliser avant ou la redéclarer produit cependant une erreur.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt><code>const …;</code></dt>
+				<dd>
+					<p>Cette instruction permet de déclarer une constante locale au bloc d'instructions englobant&nbsp;:</p>
+					<figure>
+						<figcaption>Déclaration <code>const</code></figcaption>
+						<pre><code>const a = 0, b = "";&#x0a;console.log(a); // 0&#x0a;console.log(b); // ""&#x0a;</code></pre>
+					</figure>
+					<p>Comme pour l'instruction <code>let …;</code>, la constante est déclarée et initialisée au niveau de l'instruction, mais cette fois-ci, une valeur est requise et la constante ne peut pas être réaffectée. L'utiliser avant ou la redéclarer produit également une erreur.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt><code>var …;</code></dt>
+				<dd>
+					<p>Cette instruction permet de déclarer une variable locale au corps de la fonction englobante&nbsp;:</p>
+					<figure>
+						<figcaption>Déclaration <code>var …;</code></figcaption>
+						<pre><code>console.log(a); // undefined&#x0a;var a = 0, b;&#x0a;console.log(a); // 0&#x0a;</code></pre>
+					</figure>
+					<p>La variable est déclarée au début du corps de la fonction englobante et initialisée à <code>undefined</code>. Si une valeur est donnée, la variable est affectée au niveau de l'instruction. L'utiliser avant ou la redéclarer avec <code>var …;</code> est possible.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt><code>function …(…) …</code></dt>
+				<dd>
+					<p>C'est la manière la plus courante de déclarer des fonctions locales au corps de la fonction englobante en <em>ECMAScript</em>&nbsp;:</p>
+					<figure>
+						<figcaption>Déclaration <code>function …(…) …</code></figcaption>
+						<pre><code>console.log(a); // function a()&#x0a;function a() {…}&#x0a;console.log(a); // function a()&#x0a;</code></pre>
+					</figure>
+					<p>La fonction est déclarée et initialisée au début du corps de la fonction englobante. Il est donc possible de l'utiliser avant même l'instruction. La redéclarer écrase juste la définition précédente, rendant celle-ci inutile.</p>
+				</dd>
+			</dl>
+			<p>L'instruction <code>var …;</code> est présente depuis le début du langage <em>ECMAScript</em>, tandis que les instructions <code>let …;</code> et <code>const …;</code> sont des ajouts plus récents (2015) visant à donner une alternative à <code>var …;</code> sans ses défauts de conception.</p>
+			<p>Il est donc recommandé d'utiliser plutôt les instructions <code>let …;</code> et <code>const …;</code>. De plus, on privilégie généralement <code>const …;</code> si <code>let …;</code> n'est pas nécessaire.</p>
+			<p>Les fonctions et les classes constituent des objets de première classe en <em>ECMAScript</em>. Ils peuvent donc être déclarés sans utiliser les instructions spécifiques, voire même être utilisés directement en tant qu'expressions.</p>
+			<h3 id="3-2">Blocs d'instructions</h3>
+			<p>En <em>ECMAScript</em>, les instructions sont ponctuées par un point-virgule <code>;</code> terminal (optionnel dans certains cas), sauf dans le cas d'un bloc d'instructions. Délimité par une accolade ouvrante <code>{</code> au début et une accolade fermante <code>}</code> à la fin, il permet de regrouper plusieurs instructions&nbsp;:</p>
+			<figure>
+				<figcaption>Bloc d'instructions</figcaption>
+				<pre><code>{&#x0a;&#x09;…;&#x0a;&#x09;…;&#x0a;&#x09;…;&#x0a;}&#x0a;</code></pre>
+			</figure>
+			<h3 id="3-3">Structures de contrôle classiques</h3>
+			<p>Les syntaxes des structures de contrôle du langage <em>C</em> (dont <em>ECMAScript</em> s'inspire) sont supportées&nbsp;:</p>
+			<figure>
+				<figcaption>Structures reprises du langage <em>C</em></figcaption>
+				<pre><code>if (…) …&#x0a;if (…) … else …&#x0a;switch (…) {…}&#x0a;while (…) …&#x0a;do … while (…)&#x0a;for (…; …; …) …&#x0a;</code></pre>
+			</figure>
+			<h3 id="3-4">Autres syntaxes de boucles</h3>
+			<dl>
+				<dt><code>for (… in …) …</code></dt>
+				<dd>
+					<p>Il s'agit d'une boucle <code>for (…) …</code> particulière qui permet d'itérer sur les clés (qui ne sont pas des symboles) des propriétés (énumérables) d'un objet dans un ordre arbitraire&nbsp;:</p>
+					<figure>
+						<figcaption>Boucle <code>for (… in …) …</code></figcaption>
+						<pre><code>const o = {a: 42, b: 13};&#x0a;for (const k in o) {&#x0a;&#x09;console.log(k, o[k]); // "a" 42 puis "b" 13&#x0a;}</code></pre>
+					</figure>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt><code>for (… of …) …</code></dt>
+				<dd>
+					<p>Il s'agit d'une boucle <code>for (…) …</code> particulière qui permet de parcourir n'importe quel objet itérable selon l'ordre qu'il a défini&nbsp;:</p>
+					<figure>
+						<figcaption>Boucle <code>for (… of …) …</code></figcaption>
+						<pre><code>const o = [42, 13];&#x0a;for (const v of o) {&#x0a;&#x09;console.log(v); // 42 puis 13&#x0a;}</code></pre>
+					</figure>
+				</dd>
+			</dl>
+			<h3 id="3-5">Étiquettes</h3>
+			<p>Toute instruction peut être étiquettée de la même manière qu'en <em>C</em>.</p>
+			<p>L'instruction <code>break …;</code> peut être utilisée avec une telle étiquette n'importe où.</p>
+			<p>Au sein d'un boucle, les instructions <code>break …;</code> et <code>continue …;</code> peuvent être utilisées avec une étiquette optionnelle.</p>
+			<p>Au sein d'une structure <code>switch … {…}</code>, les étiquettes <code>case …</code> (avec n'importe quelle expression) et <code>default</code> peuvent être utilisées, ainsi que l'instruction <code>break …;</code> avec une étiquette optionnelle.</p>
+			<h2 id="4">Opérateurs</h2>
+			<h2 id="4">Manipulation de tableaux et de chaînes de caractères</h2>
+		</main>
+		<footer id="footer">
+			<p></p>
+		</footer>
+	</body>
+</html>
