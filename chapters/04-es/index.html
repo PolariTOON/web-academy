@@ -19,7 +19,68 @@
 				<p><data value="@Alexis.El-Mrini">Alexis EL MRINI</data>, <data value="@Tristan.Le-Godais">Tristan LE GODAIS</data></p>
 			</address> -->
 			<h2>Sommaire</h2>
-			<ol></ol>
+			<ol>
+				<li>
+					<p><a href="#1"><data value="0">Présentation d'<em>ECMAScript</em></data></a></p>
+					<ol>
+						<li>
+							<p><a href="#1-1"><data value="0">Vocation d'<em>ECMAScript</em></data></a></p>
+						</li>
+						<li>
+							<p><a href="#1-2"><data value="0">Intégration dans un document</data></a></p>
+						</li>
+						<li>
+							<p><a href="#1-3"><data value="0">Bonnes pratiques</data></a></p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><a href="#2"><data value="0">Types d'expressions</data></a></p>
+				</li>
+				<li>
+					<p><a href="#3"><data value="0">Instructions</data></a></p>
+					<ol>
+						<li>
+							<p><a href="#3-1"><data value="0">Déclarations de variables</data></a></p>
+						</li>
+						<li>
+							<p><a href="#3-2"><data value="0">Blocs d'instructions</data></a></p>
+						</li>
+						<li>
+							<p><a href="#3-3"><data value="0">Structures de contrôle classiques</data></a></p>
+						</li>
+						<li>
+							<p><a href="#3-4"><data value="0">Autres syntaxes de boucles</data></a></p>
+						</li>
+						<li>
+							<p><a href="#3-5"><data value="0">Étiquettes</data></a></p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><a href="#4"><data value="0">Opérations</data></a></p>
+					<ol>
+						<li>
+							<p><a href="#4-1"><data value="0">Affectations</data></a></p>
+						</li>
+						<li>
+							<p><a href="#4-2"><data value="0">Concaténations</data></a></p>
+						</li>
+						<li>
+							<p><a href="#4-3"><data value="0">Opérations arithmétiques</data></a></p>
+						</li>
+						<li>
+							<p><a href="#4-4"><data value="0">Opérations bit à bit</data></a></p>
+						</li>
+						<li>
+							<p><a href="#4-5"><data value="0">Opérations logiques</data></a></p>
+						</li>
+						<li>
+							<p><a href="#4-6"><data value="0">Comparaisons</data></a></p>
+						</li>
+					</ol>
+				</li>
+			</ol>
 			<h2 id="1">Présentation d'<em>ECMAScript</em></h2>
 			<h3 id="1-1">Vocation d'<em>ECMAScript</em></h3>
 			<p>Le langage <em>JavaScript</em> est un langage interprété, orienté objet à prototype et fonctionnel dont le typage est dynamique.</p>
@@ -60,13 +121,13 @@
 						<th scope="row"><code>&lt;script defer="" src="script.js"&gt;&lt;/script&gt;</code></th>
 						<td>
 							<p>Différée</p>
-						</p>
+						</td>
 					</tr>
 					<tr>
 						<th scope="row"><code>&lt;script async="" src="script.js"&gt;&lt;/script&gt;</code></th>
 						<td>
 							<p>Asynchrone</p>
-						</p>
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -121,7 +182,8 @@
 			<p>Il existe actuellement septs types natifs en <em>ECMAScript</em>, dont six types de valeurs primitives&nbsp;: <em>Undefined</em>, <em>Null</em>, <em>Boolean</em>, <em>Number</em>, <em>String</em> et <em>Symbol</em>. Le reste des valeurs constitue le type objet&nbsp;: <em>Object</em>.</p>
 			<p>Parmi les objets, on trouve différentes sous-classes natives, notamment&nbsp;: <em>Function</em>, <em>Date</em>, <em>RegExp</em>, <em>Array</em>, <em>Map</em>, <em>Set</em>…</p>
 			<p>Certains types n'ont pas de notation litérale. Ci-après sont recensées des exemples de notations litérales pour les types qui en possède une.</p>
-			<table>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
 				<caption>Aperçu de la notation litérale des valeurs primitives</caption>
 				<thead>
 					<tr>
@@ -156,6 +218,7 @@
 					</tr>
 				</tbody>
 			</table>
+			<hr/>
 			<table style="width: calc(100% + 8rem);">
 				<caption>Aperçu de la notation litérale des objets</caption>
 				<thead>
@@ -221,6 +284,7 @@
 			<h3 id="3-1">Déclarations de variables</h3>
 			<p>Il existe divers moyens de déclarer des identifiants de variables en <em>ECMAScript</em>, chacune possèdant ses propres particularités&nbsp;: via les instructions <code>let …;</code>, <code>const …;</code>, <code>import …;</code>, <code>export …;</code>, <code>var …;</code>, <code>class … {…}</code>, <code>function …(…) …</code>, <code>function* …(…) …</code>, <code>async function …(…) …</code> ou <code>async function* …(…) …</code>, ou en tant que paramètre formel d'une fonction.</p>
 			<p>En pratique, les instructions <code>let …;</code>, <code>const …;</code>, <code>import …;</code>, <code>export …;</code> et les paramètres formels de fonctions suffisent à mimer le comportement des autres formes de déclarations (sans le calquer pour autant).</p>
+			<hr/>
 			<dl>
 				<dt><code>let …;</code></dt>
 				<dd>
@@ -268,6 +332,7 @@
 					<p>La fonction est déclarée et initialisée au début du corps de la fonction englobante. Il est donc possible de l'utiliser avant même l'instruction. La redéclarer écrase juste la définition précédente, rendant celle-ci inutile.</p>
 				</dd>
 			</dl>
+			<hr/>
 			<p>L'instruction <code>var …;</code> est présente depuis le début du langage <em>ECMAScript</em>, tandis que les instructions <code>let …;</code> et <code>const …;</code> sont des ajouts plus récents (2015) visant à donner une alternative à <code>var …;</code> sans ses défauts de conception.</p>
 			<p>Il est donc recommandé d'utiliser plutôt les instructions <code>let …;</code> et <code>const …;</code>. De plus, on privilégie généralement <code>const …;</code> si <code>let …;</code> n'est pas nécessaire.</p>
 			<p>Les fonctions et les classes constituent des objets de première classe en <em>ECMAScript</em>. Ils peuvent donc être déclarés sans utiliser les instructions spécifiques, voire même être utilisés directement en tant qu'expressions.</p>
@@ -310,8 +375,229 @@
 			<p>L'instruction <code>break …;</code> peut être utilisée avec une telle étiquette n'importe où.</p>
 			<p>Au sein d'un boucle, les instructions <code>break …;</code> et <code>continue …;</code> peuvent être utilisées avec une étiquette optionnelle.</p>
 			<p>Au sein d'une structure <code>switch … {…}</code>, les étiquettes <code>case …</code> (avec n'importe quelle expression) et <code>default</code> peuvent être utilisées, ainsi que l'instruction <code>break …;</code> avec une étiquette optionnelle.</p>
-			<h2 id="4">Opérateurs</h2>
-			<h2 id="4">Manipulation de tableaux et de chaînes de caractères</h2>
+			<h2 id="4">Opérations</h2>
+			<h3 id="4-1">Affectations</h3>
+			<p>L'opérateur <code>… = …</code> affecte le résultat du calcul du membre droit au membre de gauche et retourne ce résultat.</p>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Affectations</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>… = …</code></th>
+						<td>
+							<p>Affectation simple</p>
+						</td>
+						<td>
+							<p>N'importe lequel</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 id="4-2">Concaténations</h3>
+			<p>L'opérateur <code>… + …</code> tente de convertir préalablement ses opérandes en chaînes de caractères (de type <em>String</em>) puis les concatène.</p>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Concaténations</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>… + …</code>, <code>… += …</code></th>
+						<td>
+							<p>Concaténation</p>
+						</td>
+						<td>
+							<p><em>String</em></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 id="4-3">Opérations arithmétiques</h3>
+			<p>Les opérateurs <code>… + …</code>, <code>… - …</code>, <code>… * …</code>, <code>… / …</code>, <code>… % …</code>, <code>… ** …</code>, <code>+…</code>, <code>-…</code>, <code>++…</code>, <code>--…</code>, <code>…++</code> et <code>…--</code> tentent de convertir préalablement leurs opérandes en nombres (de type <em>Number</em>) puis effectuent un calcul arithmétique.</p>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Opérateurs arithmétiques binaires</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>… + …</code>, <code>… += …</code>,<br/><code>… - …</code>, <code>… -= …</code></th>
+						<td>
+							<p>Addition,<br/>soustraction</p>
+						</td>
+						<td rowspan="3">
+							<p><em>Number</em></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>… * …</code>, <code>… *= …</code>,<br/><code>… / …</code>, <code>… /= …</code><br/><code>… % …</code>, <code>… %= …</code></th>
+						<td>
+							<p>Multiplication,<br/>division,<br/>reste de la division euclidienne</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>… ** …</code>, <code>… **= …</code></th>
+						<td>
+							<p>Exponentiation</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Opérateurs arithmétiques unaires</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>+…</code>,<br/><code>-…</code></th>
+						<td>
+							<p>Conversion en nombre,<br/>opposé</p>
+						</td>
+						<td rowspan="3">
+							<p><em>Number</em></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>++…</code>,<br/><code>--…</code></th>
+						<td>
+							<p>Pré-incrémentation,<br/>pré-décrémentation</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>…++</code>,<br/><code>…--</code></th>
+						<td>
+							<p>Post-incrémentation,<br/>post-décrémentation</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 id="4-4">Opérations bit à bit</h3>
+			<p>Les opérateurs <code>… | …</code>, <code>… ^ …</code>, <code>… &amp; …</code>, <code>… &lt;&lt; …</code>, <code>… &gt;&gt; …</code>, <code>… &gt;&gt;&gt; …</code> et <code>~…</code> tentent de convertir préalablement leurs opérandes en entiers (de type <em>Number</em>) puis effectuent un calcul bit à bit.</pe>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Opérations bit à bit</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>… | …</code>, <code>… |= …</code><br/><code>… ^ …</code>, <code>… ^= …</code>,<br/><code>… &amp; …</code>, <code>… &amp;= …</code></th>
+						<td>
+							<p>Disjonction bit à bit,<br/>disjonction exclusive bit à bit,<br/>conjonction bit à bit</p>
+						</td>
+						<td rowspan="3">
+							<p><em>Number</em> (entier)</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>… &lt;&lt; …</code>, <code>… &lt;&lt;= …</code>,<br/><code>… &gt;&gt; …</code>, <code>… &gt;&gt;= …</code>,<br/><code>… &gt;&gt;&gt; …</code>, <code>… &gt;&gt;&gt;= …</code></th>
+						<td>
+							<p>Décalage à gauche,<br/>décalage à droite,<br/>décalage à droite non signé</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>~…</code></th>
+						<td>
+							<p>Négation bit à bit</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 id="4-5">Opérations logiques</h3>
+			<p>Les opérateurs <code>… ? … : …</code>, <code>… || …</code>, <code>… && …</code> et <code>!…</code> tentent de convertir préalablement certains de leurs opérandes en booléens (de type <em>Boolean</em>).</p>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Opérations logiques</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>… ? … : …</code></th>
+						<td>
+							<p>Calcul conditionnel</p>
+						</td>
+						<td rowspan="2">
+							<p>N'importe lequel</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>… || …</code>,<br/><code>… && …</code></th>
+						<td>
+							<p>Disjonction logique,<br/>conjonction logique</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>!…</code></th>
+						<td>
+							<p>Négation logique</p>
+						</td>
+						<td>
+							<p><em>Boolean</em></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 id="4-6">Comparaisons</h3>
+			<p>Les opérateurs <code>… === …</code> et <code>… !== …</code> n'effectuent aucune conversion préalable de leurs opérandes, au contraire des opérateurs <code>… == …</code> et <code>… != …</code>.</p>
+			<p>Les opérateurs <code>… &lt;= …</code>, <code>… &lt; …</code>, <code>… &gt;= …</code> et <code>… &gt; …</code> tentent de convertir préalablement leurs opérandes en valeurs primitives (de type <em>Number</em> ou <em>String</em>).</p>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Opérations logiques</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>… == …</code>,<br/><code>… === …</code>,<br/><code>… != …</code>,<br/><code>… !== …</code></th>
+						<td>
+							<p>Égalité,<br/>égalité stricte,<br/>inégalité,<br/>inégalité stricte</p>
+						</td>
+						<td rowspan="2">
+							<p><em>Boolean</em></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>… &lt;= …</code>,<br/><code>… &lt; …</code>,<br/><code>… &gt;= …</code>,<br/><code>… &gt; …</code></th>
+						<td>
+							<p>Infériorité,<br/>infériorité stricte,<br/>supériorité,<br/>supériorité stricte</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</main>
 		<footer id="footer">
 			<p></p>
