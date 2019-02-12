@@ -1,1 +1,22 @@
 @import url("../../../resources/theme.css");
+main > figure,
+main > table {
+	font-size: 1.4rem;
+	line-height: calc(2 / 1.4);
+}
+main > figure :not(pre) > code,
+main > figure :not(pre) > kbd,
+main > figure :not(pre) > samp,
+main > table :not(pre) > code,
+main > table :not(pre) > kbd,
+main > table :not(pre) > samp {
+	font-size: 1.2rem;
+	line-height: calc(2 / 1.2);
+}
+code,
+kbd,
+samp {
+	letter-spacing: -0.0625rem;
+	font-size: 1.4rem;
+	line-height: calc(2 / 1.4);
+}

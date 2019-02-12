@@ -21,62 +21,62 @@
 			<h2>Sommaire</h2>
 			<ol>
 				<li>
-					<p><a href="#1"><data value="0">Présentation d'<em>ECMAScript</em></data></a></p>
+					<p><a href="#1"><data value="5">Présentation d'<em>ECMAScript</em></data></a></p>
 					<ol>
 						<li>
-							<p><a href="#1-1"><data value="0">Vocation d'<em>ECMAScript</em></data></a></p>
+							<p><a href="#1-1"><data value="5">Vocation d'<em>ECMAScript</em></data></a></p>
 						</li>
 						<li>
-							<p><a href="#1-2"><data value="0">Intégration dans un document</data></a></p>
+							<p><a href="#1-2"><data value="6">Intégration dans un document</data></a></p>
 						</li>
 						<li>
-							<p><a href="#1-3"><data value="0">Bonnes pratiques</data></a></p>
+							<p><a href="#1-3"><data value="9">Bonnes pratiques</data></a></p>
 						</li>
 					</ol>
 				</li>
 				<li>
-					<p><a href="#2"><data value="0">Types d'expressions</data></a></p>
+					<p><a href="#2"><data value="10">Types d'expressions</data></a></p>
 				</li>
 				<li>
-					<p><a href="#3"><data value="0">Instructions</data></a></p>
+					<p><a href="#3"><data value="13">Instructions</data></a></p>
 					<ol>
 						<li>
-							<p><a href="#3-1"><data value="0">Déclarations de variables</data></a></p>
+							<p><a href="#3-1"><data value="13">Déclarations de variables</data></a></p>
 						</li>
 						<li>
-							<p><a href="#3-2"><data value="0">Blocs d'instructions</data></a></p>
+							<p><a href="#3-2"><data value="19">Blocs d'instructions</data></a></p>
 						</li>
 						<li>
-							<p><a href="#3-3"><data value="0">Structures de contrôle classiques</data></a></p>
+							<p><a href="#3-3"><data value="20">Structures de contrôle classiques</data></a></p>
 						</li>
 						<li>
-							<p><a href="#3-4"><data value="0">Autres syntaxes de boucles</data></a></p>
+							<p><a href="#3-4"><data value="21">Autres syntaxes de boucles</data></a></p>
 						</li>
 						<li>
-							<p><a href="#3-5"><data value="0">Étiquettes</data></a></p>
+							<p><a href="#3-5"><data value="23">Étiquettes</data></a></p>
 						</li>
 					</ol>
 				</li>
 				<li>
-					<p><a href="#4"><data value="0">Opérations</data></a></p>
+					<p><a href="#4"><data value="24">Opérations</data></a></p>
 					<ol>
 						<li>
-							<p><a href="#4-1"><data value="0">Affectations</data></a></p>
+							<p><a href="#4-1"><data value="24">Affectations</data></a></p>
 						</li>
 						<li>
-							<p><a href="#4-2"><data value="0">Concaténations</data></a></p>
+							<p><a href="#4-2"><data value="25">Concaténations</data></a></p>
 						</li>
 						<li>
-							<p><a href="#4-3"><data value="0">Opérations arithmétiques</data></a></p>
+							<p><a href="#4-3"><data value="26">Opérations arithmétiques</data></a></p>
 						</li>
 						<li>
-							<p><a href="#4-4"><data value="0">Opérations bit à bit</data></a></p>
+							<p><a href="#4-4"><data value="29">Opérations bit à bit</data></a></p>
 						</li>
 						<li>
-							<p><a href="#4-5"><data value="0">Opérations logiques</data></a></p>
+							<p><a href="#4-5"><data value="31">Opérations logiques</data></a></p>
 						</li>
 						<li>
-							<p><a href="#4-6"><data value="0">Comparaisons</data></a></p>
+							<p><a href="#4-6"><data value="33">Comparaisons</data></a></p>
 						</li>
 					</ol>
 				</li>
@@ -94,13 +94,13 @@
 				<thead>
 					<tr>
 						<th scope="auto">Syntaxe</th>
-						<th scope="col">Emplacement</th>
+						<th scope="col">Localisation</th>
 						<th scope="col">Exécution</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<th scope="row"><code>&lt;script&gt;a(…);&lt;/script&gt;</code></th>
+						<th scope="row"><code>&lt;script&gt;…&lt;/script&gt;</code></th>
 						<td>
 							<p>Interne</p>
 						</td>
@@ -109,7 +109,7 @@
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></th>
+						<th scope="row"><code>&lt;script src="…"&gt;&lt;/script&gt;</code></th>
 						<td rowspan="3">
 							<p>Externe</p>
 						</td>
@@ -118,13 +118,13 @@
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><code>&lt;script defer="" src="script.js"&gt;&lt;/script&gt;</code></th>
+						<th scope="row"><code>&lt;script defer="" src="…"&gt;&lt;/script&gt;</code></th>
 						<td>
 							<p>Différée</p>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><code>&lt;script async="" src="script.js"&gt;&lt;/script&gt;</code></th>
+						<th scope="row"><code>&lt;script async="" src="…"&gt;&lt;/script&gt;</code></th>
 						<td>
 							<p>Asynchrone</p>
 						</td>
@@ -137,13 +137,13 @@
 				<thead>
 					<tr>
 						<th scope="auto">Syntaxe</th>
-						<th scope="col">Emplacement</th>
+						<th scope="col">Localisation</th>
 						<th scope="col">Exécution</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<th scope="row"><code>&lt;script type="module"&gt;a(…);&lt;/script&gt;</code></th>
+						<th scope="row"><code>&lt;script type="module"&gt;…&lt;/script&gt;</code></th>
 						<td rowspan="2">
 							<p>Interne</p>
 						</td>
@@ -152,13 +152,13 @@
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><code>&lt;script type="module" async=""&gt;a(…);&lt;/script&gt;</code></th>
+						<th scope="row"><code>&lt;script type="module" async=""&gt;…&lt;/script&gt;</code></th>
 						<td>
 							<p>Asynchrone</p>
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><code>&lt;script type="module" src="script.mjs"&gt;&lt;/script&gt;</code></th>
+						<th scope="row"><code>&lt;script type="module" src="…"&gt;&lt;/script&gt;</code></th>
 						<td rowspan="2">
 							<p>Externe</p>
 						</td>
@@ -167,7 +167,7 @@
 						</td>
 					</tr>
 					<tr>
-						<th scope="row"><code>&lt;script type="module" async="" src="script.mjs"&gt;&lt;/script&gt;</code></th>
+						<th scope="row"><code>&lt;script type="module" async="" src="…"&gt;&lt;/script&gt;</code></th>
 						<td>
 							<p>Asynchrone</p>
 						</td>
