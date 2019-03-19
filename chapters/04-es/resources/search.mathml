@@ -1,0 +1,198 @@
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+	<munder>
+		<mrow>
+			<mrow>
+				<mpadded width="0">
+					<mphantom>
+						<mo>(</mo>
+					</mphantom>
+				</mpadded>
+				<mtext>?</mtext>
+				<mpadded width="0">
+					<mphantom>
+						<mo>)</mo>
+					</mphantom>
+				</mpadded>
+			</mrow>
+			<munder>
+				<mrow>
+					<mpadded width="0">
+						<mphantom>
+							<mo>(</mo>
+						</mphantom>
+					</mpadded>
+					<mtext>a</mtext>
+					<mpadded width="0">
+						<mphantom>
+							<mo>)</mo>
+						</mphantom>
+					</mpadded>
+				</mrow>
+				<munder>
+					<mo>⏟</mo>
+					<mrow>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>key</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</munder>
+			</munder>
+			<mrow>
+				<mpadded width="0">
+					<mphantom>
+						<mo>(</mo>
+					</mphantom>
+				</mpadded>
+				<mtext>=</mtext>
+				<mpadded width="0">
+					<mphantom>
+						<mo>)</mo>
+					</mphantom>
+				</mpadded>
+			</mrow>
+			<munder>
+				<mrow>
+					<mpadded width="0">
+						<mphantom>
+							<mo>(</mo>
+						</mphantom>
+					</mpadded>
+					<mtext>b</mtext>
+					<mpadded width="0">
+						<mphantom>
+							<mo>)</mo>
+						</mphantom>
+					</mpadded>
+				</mrow>
+				<munder>
+					<mo>⏟</mo>
+					<mrow>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>value</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</munder>
+			</munder>
+			<mrow>
+				<mpadded width="0">
+					<mphantom>
+						<mo>(</mo>
+					</mphantom>
+				</mpadded>
+				<mtext>&amp;</mtext>
+				<mpadded width="0">
+					<mphantom>
+						<mo>)</mo>
+					</mphantom>
+				</mpadded>
+			</mrow>
+			<munder>
+				<mrow>
+					<mpadded width="0">
+						<mphantom>
+							<mo>(</mo>
+						</mphantom>
+					</mpadded>
+					<mtext>c</mtext>
+					<mpadded width="0">
+						<mphantom>
+							<mo>)</mo>
+						</mphantom>
+					</mpadded>
+				</mrow>
+				<munder>
+					<mo>⏟</mo>
+					<mrow>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>key</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</munder>
+			</munder>
+			<mrow>
+				<mpadded width="0">
+					<mphantom>
+						<mo>(</mo>
+					</mphantom>
+				</mpadded>
+				<mtext>=</mtext>
+				<mpadded width="0">
+					<mphantom>
+						<mo>)</mo>
+					</mphantom>
+				</mpadded>
+			</mrow>
+			<munder>
+				<mrow>
+					<mpadded width="0">
+						<mphantom>
+							<mo>(</mo>
+						</mphantom>
+					</mpadded>
+					<mtext>d</mtext>
+					<mpadded width="0">
+						<mphantom>
+							<mo>)</mo>
+						</mphantom>
+					</mpadded>
+				</mrow>
+				<munder>
+					<mo>⏟</mo>
+					<mrow>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>value</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</munder>
+			</munder>
+		</mrow>
+		<munder>
+			<mo>⏟</mo>
+			<mrow>
+				<mpadded width="0">
+					<mphantom>
+						<mo>(</mo>
+					</mphantom>
+				</mpadded>
+				<mtext>search</mtext>
+				<mpadded width="0">
+					<mphantom>
+						<mo>)</mo>
+					</mphantom>
+				</mpadded>
+			</mrow>
+		</munder>
+	</munder>
+</math>

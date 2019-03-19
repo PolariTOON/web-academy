@@ -1,0 +1,380 @@
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+	<munder>
+		<mrow>
+			<munder>
+				<mrow>
+					<munder>
+						<mrow>
+							<mpadded width="0">
+								<mphantom>
+									<mo>(</mo>
+								</mphantom>
+							</mpadded>
+							<mtext>scheme:</mtext>
+							<mpadded width="0">
+								<mphantom>
+									<mo>)</mo>
+								</mphantom>
+							</mpadded>
+						</mrow>
+						<munder>
+							<mo>⏟</mo>
+							<mrow>
+								<mpadded width="0">
+									<mphantom>
+										<mo>(</mo>
+									</mphantom>
+								</mpadded>
+								<mtext>protocol</mtext>
+								<mpadded width="0">
+									<mphantom>
+										<mo>)</mo>
+									</mphantom>
+								</mpadded>
+							</mrow>
+						</munder>
+					</munder>
+					<mrow>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>//</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</mrow>
+				<munder>
+					<mo>⏟</mo>
+					<mrow>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>origin (1)</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</munder>
+			</munder>
+			<munder>
+				<mrow>
+					<mpadded width="0">
+						<mphantom>
+							<mo>(</mo>
+						</mphantom>
+					</mpadded>
+					<mtext>user</mtext>
+					<mpadded width="0">
+						<mphantom>
+							<mo>)</mo>
+						</mphantom>
+					</mpadded>
+				</mrow>
+				<munder>
+					<mo>⏟</mo>
+					<mrow>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>username</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</munder>
+			</munder>
+			<mrow>
+				<mpadded width="0">
+					<mphantom>
+						<mo>(</mo>
+					</mphantom>
+				</mpadded>
+				<mtext>:</mtext>
+				<mpadded width="0">
+					<mphantom>
+						<mo>)</mo>
+					</mphantom>
+				</mpadded>
+			</mrow>
+			<munder>
+				<mrow>
+					<mpadded width="0">
+						<mphantom>
+							<mo>(</mo>
+						</mphantom>
+					</mpadded>
+					<mtext>pass</mtext>
+					<mpadded width="0">
+						<mphantom>
+							<mo>)</mo>
+						</mphantom>
+					</mpadded>
+				</mrow>
+				<munder>
+					<mo>⏟</mo>
+					<mrow>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>password</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</munder>
+			</munder>
+			<mrow>
+				<mpadded width="0">
+					<mphantom>
+						<mo>(</mo>
+					</mphantom>
+				</mpadded>
+				<mtext>@</mtext>
+				<mpadded width="0">
+					<mphantom>
+						<mo>)</mo>
+					</mphantom>
+				</mpadded>
+			</mrow>
+			<munder>
+				<munder>
+					<mrow>
+						<munder>
+							<mrow>
+								<mpadded width="0">
+									<mphantom>
+										<mo>(</mo>
+									</mphantom>
+								</mpadded>
+								<mtext>example.org</mtext>
+								<mpadded width="0">
+									<mphantom>
+										<mo>)</mo>
+									</mphantom>
+								</mpadded>
+							</mrow>
+							<munder>
+								<mo>⏟</mo>
+								<mrow>
+									<mpadded width="0">
+										<mphantom>
+											<mo>(</mo>
+										</mphantom>
+									</mpadded>
+									<mtext>hostname</mtext>
+									<mpadded width="0">
+										<mphantom>
+											<mo>)</mo>
+										</mphantom>
+									</mpadded>
+								</mrow>
+							</munder>
+						</munder>
+						<mrow>
+							<mpadded width="0">
+								<mphantom>
+									<mo>(</mo>
+								</mphantom>
+							</mpadded>
+							<mtext>:</mtext>
+							<mpadded width="0">
+								<mphantom>
+									<mo>)</mo>
+								</mphantom>
+							</mpadded>
+						</mrow>
+						<munder>
+							<mrow>
+								<mpadded width="0">
+									<mphantom>
+										<mo>(</mo>
+									</mphantom>
+								</mpadded>
+								<mtext>1234</mtext>
+								<mpadded width="0">
+									<mphantom>
+										<mo>)</mo>
+									</mphantom>
+								</mpadded>
+							</mrow>
+							<munder>
+								<mo>⏟</mo>
+								<mrow>
+									<mpadded width="0">
+										<mphantom>
+											<mo>(</mo>
+										</mphantom>
+									</mpadded>
+									<mtext>port</mtext>
+									<mpadded width="0">
+										<mphantom>
+											<mo>)</mo>
+										</mphantom>
+									</mpadded>
+								</mrow>
+							</munder>
+						</munder>
+					</mrow>
+					<munder>
+						<mo>⏟</mo>
+						<mrow>
+							<mpadded width="0">
+								<mphantom>
+									<mo>(</mo>
+								</mphantom>
+							</mpadded>
+							<mtext>host</mtext>
+							<mpadded width="0">
+								<mphantom>
+									<mo>)</mo>
+								</mphantom>
+							</mpadded>
+						</mrow>
+					</munder>
+				</munder>
+				<munder>
+					<mo>⏟</mo>
+					<mrow>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>origin (2)</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</munder>
+			</munder>
+			<munder>
+				<mrow>
+					<mpadded width="0">
+						<mphantom>
+							<mo>(</mo>
+						</mphantom>
+					</mpadded>
+					<mtext>/file</mtext>
+					<mpadded width="0">
+						<mphantom>
+							<mo>)</mo>
+						</mphantom>
+					</mpadded>
+				</mrow>
+				<munder>
+					<mo>⏟</mo>
+					<mrow>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>pathname</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</munder>
+			</munder>
+			<munder>
+				<mrow>
+					<mpadded width="0">
+						<mphantom>
+							<mo>(</mo>
+						</mphantom>
+					</mpadded>
+					<mtext>?query</mtext>
+					<mpadded width="0">
+						<mphantom>
+							<mo>)</mo>
+						</mphantom>
+					</mpadded>
+				</mrow>
+				<munder>
+					<mo>⏟</mo>
+					<mrow>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>search</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</munder>
+			</munder>
+			<munder>
+				<mrow>
+					<mpadded width="0">
+						<mphantom>
+							<mo>(</mo>
+						</mphantom>
+					</mpadded>
+					<mtext>#fragment</mtext>
+					<mpadded width="0">
+						<mphantom>
+							<mo>)</mo>
+						</mphantom>
+					</mpadded>
+				</mrow>
+				<munder>
+					<mo>⏟</mo>
+					<mrow>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>hash</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</munder>
+			</munder>
+		</mrow>
+		<munder>
+			<mo>⏟</mo>
+			<mrow>
+				<mpadded width="0">
+					<mphantom>
+						<mo>(</mo>
+					</mphantom>
+				</mpadded>
+				<mtext>href</mtext>
+				<mpadded width="0">
+					<mphantom>
+						<mo>)</mo>
+					</mphantom>
+				</mpadded>
+			</mrow>
+		</munder>
+	</munder>
+</math>

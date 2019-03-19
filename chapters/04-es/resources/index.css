@@ -1,7 +1,7 @@
 @import url("../../../resources/theme.css");
 main > figure,
 main > table {
-	font-size: 1.4rem;
+	font-size: calc(1.4em / 1.6);
 	line-height: calc(2 / 1.4);
 }
 main > figure :not(pre) > code,
@@ -10,13 +10,13 @@ main > figure :not(pre) > samp,
 main > table :not(pre) > code,
 main > table :not(pre) > kbd,
 main > table :not(pre) > samp {
-	font-size: 1.2rem;
+	font-size: calc(1.2em / 1.6);
 	line-height: calc(2 / 1.2);
 }
-code,
-kbd,
-samp {
-	letter-spacing: -0.0625rem;
-	font-size: 1.4rem;
+:not(pre) > code,
+:not(pre) > kbd,
+:not(pre) > samp {
+	letter-spacing: calc(-0.0625em / 1.6);
+	font-size: calc(1.4em / 1.6);
 	line-height: calc(2 / 1.4);
 }

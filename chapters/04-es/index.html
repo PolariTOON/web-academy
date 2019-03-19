@@ -55,28 +55,70 @@
 						<li>
 							<p><a href="#3-5"><data value="23">Étiquettes</data></a></p>
 						</li>
+						<li>
+							<p><a href="#3-6"><data value="25">Gestion des erreurs</data></a></p>
+						</li>
 					</ol>
 				</li>
 				<li>
-					<p><a href="#4"><data value="24">Opérations</data></a></p>
+					<p><a href="#4"><data value="26">Opérations</data></a></p>
 					<ol>
 						<li>
-							<p><a href="#4-1"><data value="24">Affectations</data></a></p>
+							<p><a href="#4-1"><data value="26">Affectations</data></a></p>
 						</li>
 						<li>
-							<p><a href="#4-2"><data value="25">Concaténations</data></a></p>
+							<p><a href="#4-2"><data value="27">Concaténations</data></a></p>
 						</li>
 						<li>
-							<p><a href="#4-3"><data value="26">Opérations arithmétiques</data></a></p>
+							<p><a href="#4-3"><data value="28">Opérations arithmétiques</data></a></p>
 						</li>
 						<li>
-							<p><a href="#4-4"><data value="29">Opérations bit à bit</data></a></p>
+							<p><a href="#4-4"><data value="31">Opérations bit à bit</data></a></p>
 						</li>
 						<li>
-							<p><a href="#4-5"><data value="31">Opérations logiques</data></a></p>
+							<p><a href="#4-5"><data value="33">Opérations logiques</data></a></p>
 						</li>
 						<li>
-							<p><a href="#4-6"><data value="33">Comparaisons</data></a></p>
+							<p><a href="#4-6"><data value="35">Comparaisons</data></a></p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><a href="#5"><data value="37">Bibliothèque standard</data></a></p>
+					<ol>
+						<li>
+							<p><a href="#5-1"><data value="37">Nombres</data></a></p>
+						</li>
+						<li>
+							<p><a href="#5-2"><data value="42">Chaînes de caractères</data></a></p>
+						</li>
+						<li>
+							<p><a href="#5-3"><data value="46">Tableaux</data></a></p>
+						</li>
+						<li>
+							<p><a href="#5-4"><data value="51"><em>JavaScript Object Notation</em></data></a></p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><a href="#6"><data value="53">Bibliothèques récurrentes</data></a></p>
+					<ol>
+						<li>
+							<p><a href="#6-1"><data value="53">Console</data></a></p>
+						</li>
+						<li>
+							<p><a href="#6-2"><data value="58"><em>Uniform Resource Locator</em></data></a></p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><a href="#7"><data value="61">APIs <em>web</em></data></a></p>
+					<ol>
+						<li>
+							<p><a href="#7-1"><data value="61">API <em>Fetch</em></data></a></p>
+						</li>
+						<li>
+							<p><a href="#7-2"><data value="63"><em>Document Object Model</em></data></a></p>
 						</li>
 					</ol>
 				</li>
@@ -374,7 +416,13 @@
 			<p>Toute instruction peut être étiquettée de la même manière qu'en <em>C</em>.</p>
 			<p>L'instruction <code>break …;</code> peut être utilisée avec une telle étiquette n'importe où.</p>
 			<p>Au sein d'un boucle, les instructions <code>break …;</code> et <code>continue …;</code> peuvent être utilisées avec une étiquette optionnelle.</p>
-			<p>Au sein d'une structure <code>switch … {…}</code>, les étiquettes <code>case …</code> (avec n'importe quelle expression) et <code>default</code> peuvent être utilisées, ainsi que l'instruction <code>break …;</code> avec une étiquette optionnelle.</p>
+			<p>Au sein d'une structure <code>switch (…) {…}</code>, les étiquettes <code>case …</code> (avec n'importe quelle expression) et <code>default</code> peuvent être utilisées, ainsi que l'instruction <code>break …;</code> avec une étiquette optionnelle.</p>
+			<h3 id="3-6">Gestion des erreurs</h3>
+			<p>Le concept d'erreurs en <em>ECMAScript</em> est similaire à celui d'exceptions en <em>Java</em>, et par conséquent leur signalement et leur traitement également&nbsp;:</p>
+			<figure>
+				<figcaption>Instruction <code>throw …;</code> et structure <code>try {…} catch (…) {…} finally {…}</code>)</figcaption>
+				<pre><code>try {&#x0a;&#x09;throw new Error("Custom error");&#x0a;} catch (error) {&#x0a;&#x09;console.error(error.message);&#x0a;} finally {&#x0a;&#x09;console.log("Always executed");&#x0a;}&#x0a;</code></pre>
+			</figure>
 			<h2 id="4">Opérations</h2>
 			<h3 id="4-1">Affectations</h3>
 			<p>L'opérateur <code>… = …</code> affecte le résultat du calcul du membre droit au membre de gauche et retourne ce résultat.</p>
@@ -598,6 +646,240 @@
 					</tr>
 				</tbody>
 			</table>
+			<h2 id="5">Bibliothèque standard</h2>
+			<h3 id="5-1">Nombres</h3>
+			<p>Les nombres (<code>Number</code>) peuvent être manipulés via un ensemble de fonctions directement intégré au langage, et notamment via l'espace de nom <code>Math</code>.</p>
+			<hr/>
+			<dl>
+				<dt>Constantes spéciales</dt>
+				<dd>
+					<p>Les accès <code>Number.NaN</code> (<code>NaN</code>), <code>Number.NEGATIVE_INFINITY</code> (<code>-Infinity</code>) et <code>Number.NEGATIVE_INFINITY</code> (<code>Infinity</code>) représentent respectivement une valeur <em>not a number</em>, l'infini négatif et l'infini positif&nbsp;; d'autres constantes caractéristiques de la représentation flottante sont également disponibles.</p>
+				</dd>
+				<dt>Catégories de nombres</dt>
+				<dd>
+					<p>Les appels <code>Number.isNaN()</code>, <code>Number.isFinite()</code> et <code>Number.isInteger()</code> permettent de tester si un nombre est respectivement une valeur <em>not a number</em>, un infini négatif ou positif et en entier.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Constantes mathématiques</dt>
+				<dd>
+					<p>Les accès <code>Math.E</code>, <code>Math.PI</code> représentent les nombres <em>&#8495;</em> et <em>&#0960;</em>&nbsp;; d'autres constantes récurrentes en mathématiques sont également disponibles.</p>
+				</dd>
+				<dt>Extrema</dt>
+				<dd>
+					<p>Les appels <code>Math.min(…)</code> et <code>Math.max(…)</code> permettent de rechercher au sein d'une séquence de nombres respectivement le minimum et le maximum.</p>
+				</dd>
+				<dt>Conversions en entiers</dt>
+				<dd>
+					<p>Les appels <code>Math.trunc(v)</code>, <code>Math.floor(t)</code> et <code>Math.ceil(u)</code>, <code>Math.round(w)</code> correspondent au calculs respectivement de la troncature, de la partie entière inférieure, de la fpartie entière supérieure et de l'arrondi.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Module et argument</dt>
+				<dd>
+					<p>Les appels <code>Math.hypot(…)</code> et <code>Math.atan2(x, y)</code> correspondent au calculs respectivement de la norme euclidienne d'une séquence de nombres et de l'arc tangente du quotient de deux nombres.</p>
+				</dd>
+				<dt>Fonctions trigonométriques</dt>
+				<dd>
+					<p>Les appels <code>Math.cos(a)</code>, <code>Math.sin(b)</code>, <code>Math.tan(c)</code>, <code>Math.acos(x)</code>, <code>Math.asin(y)</code> et <code>Math.atan(z)</code> correspondent aux appels des fonctions mathématiques du même nom&nbsp;; leurs équivalents hyperboliques sont également disponibles.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Exponentielle et logarithme</dt>
+				<dd>
+					<p>Les appels <code>Math.exp(a)</code> et <code>Math.log(x)</code> correspondent aux appels respectivement de la fonction exponentielle et de la fonction logarithme naturel&nbsp;; des variantes sont égalements disponibles.</p>
+				</dd>
+				<dt>Fonction pseudo-aléatoire</dt>
+				<dd>
+					<p>L'appel <code>Math.random()</code> permet de tirer aléatoirement un nombre entre <em>0</em> inclus et <em>1</em> exclus selon une distribution supposée uniforme.</p>
+				</dd>
+			</dl>
+			<h3 id="5-2">Chaînes de caractères</h3>
+			<p>Les chaînes de caractères (<code>String</code>) peuvent être manipulées via un ensemble de fonctions directement intégré au langage. Elle ont également la particularité d'être itérables (par exemple avec une boucle).</p>
+			<hr/>
+			<dl>
+				<dt>Contenu et longueur</dt>
+				<dd>
+					<p>L'accès <code>"…"[k]</code> permet d'accéder au <code>k</code><sup>e</sup> caractère d'une chaîne tandis que sa longueur s'obtient avec l'accès <code>"…".length</code>&nbsp;; les chaînes de caractères étant immuables, ces propriétés sont disponibles en lecture seule.</p>
+				</dd>
+				<dt>Concaténation, extraction et répétition</dt>
+				<dd>
+					<p>Les appels <code>"…".concat(…)</code>, <code>"…".slice(i, j)</code> et <code>"…".repeat(l)</code> permettent respectivement de concaténer une séquence de chaînes à une chaîne, d'extraire la sous-chaîne débutant à la position <code>i</code> et de longueur maximale <code>j</code> d'une chaîne et de concaténer <code>l</code> copies d'un chaîne.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Remplissage</dt>
+				<dd>
+					<p>Les appels <code>"…".padStart(m, "…")</code> et <code>"…".padEnd(n, "…")</code> permettent de compléter une chaîne avec une sous-chaîne respectivement au début jusqu'à la longueur <code>m</code> et à la fin jusqu'à la longueur <code>n</code>.</p>
+				</dd>
+				<dt>Rognage</dt>
+				<dd>
+					<p>Les appels <code>"…".trimStart()</code>, <code>"…".trimEnd()</code> et <code>"…".trim()</code> permettent de retirer d'une chaîne les blancs respectivement au début, à la fin et aux deux extrémités.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Recherche de sous-chaîne</dt>
+				<dd>
+					<p>Les appels <code>"…".indexOf("…", i)</code> et <code>"…".lastIndexOf("…", j)</code> permettent de rechercher au sein d'une chaîne la position d'une sous-chaîne respectivement à partir de la position <code>i</code> et jusqu'à la position <code>j</code>.</p>
+				</dd>
+				<dt>Présence de sous-chaîne</dt>
+				<dd>
+					<p>Les appels <code>"…".startsWith("…", i)</code> et <code>"…".endsWith("…", j)</code> et <code>"…".includes("…")</code> permettent de tester au sein d'une chaîne la présence d'une sous-chaîne respectivement à partir de la position <code>i</code>, jusqu'à la position <code>j</code> et n'importe où.</p>
+				</dd>
+			</dl>
+			<h3 id="5-3">Tableaux</h3>
+			<p>Les tableaux (<code>Array</code>) peuvent être manipulées à la fois de manière fonctionnelle et comme des objets via un ensemble de fonctions directement intégré au langage. Ils sont également itérables.</p>
+			<hr/>
+			<dl>
+				<dt>Contenu et longueur</dt>
+				<dd>
+					<p>L'accès <code>[…][k]</code> permet d'accéder au <code>k</code><sup>e</sup> élément d'un tableau tandis que sa longueur s'obtient avec l'accès <code>[…].length</code>&nbsp;; les tableaux étant mutables et flexibles, ces propriétés sont disponibles en lecture et écriture, ce qui permet notamment de les vider.</p>
+				</dd>
+				<dt>Concaténation, extraction et aplatissement</dt>
+				<dd>
+					<p>Les appels <code>[…].concat(…)</code>, <code>[…].slice(i, j)</code> et <code>[…].flat(l)</code> permettent respectivement de concaténer une séquence de tableaux à un tablau, d'extraire le sous-tableau débutant à la position <code>i</code> et de longueur maximale <code>j</code> d'un tableau et d'aplatir <code>l</code> niveaux d'imbrication de tableaux.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Remplissage (empilage, enfilage)</dt>
+				<dd>
+					<p>Les appels <code>[…].unshift(…)</code> et <code>[…].push(…)</code> permettent de compléter un tableau avec une séquence d'éléments respectivement au début et à la fin.</p>
+				</dd>
+				<dt>Rognage (désempilage, désenfilage)</dt>
+				<dd>
+					<p>Les appels <code>[…].shift()</code> et <code>[…].pop()</code> permettent de retirer d'un tableau respectivement le premier élément et le dernier élément.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Recherche d'élément</dt>
+				<dd>
+					<p>Les appels <code>[…].indexOf(…, i)</code> et <code>[…].lastIndexOf(…, j)</code> permettent de rechercher au sein d'un tableau la position d'un élément respectivement à partir de la position <code>i</code> et jusqu'à la position <code>j</code>.</p>
+				</dd>
+				<dt>Présence d'élément</dt>
+				<dd>
+					<p>L'appel <code>[…].includes(…)</code> permet de tester au sein d'un tableau la présence d'un élément.</p>
+				</dd>
+				<dt>Renversement et tri</dt>
+				<dd>
+					<p>Les appels <code>[…].reverse()</code> et <code>[…].sort((…) => {…})</code> permettent respectivement de retourner un tableau en place et d'ordonner un tableau en place de manière stable selon une relation d'ordre.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Quantification</dt>
+				<dd>
+					<p>Les appels <code>[…].some((…) => {…})</code> et <code>[…].every((…) => {…})</code> permettent de tester au sein d'un tableau si une condition est vérifiée par respectivement au moins un élément et chaque élément.</p>
+				</dd>
+				<dt>Association et sélection</dt>
+				<dd>
+					<p>Les appels <code>[…].map((…) => {…})</code> et <code>[…].filter((…) => {…})</code> permettent de créer à partir d'un tableau un nouveau tableau respectivement en associant à chaque élément un nouvel élément et en sélectionnant les éléments vérifiant une condition&nbsp;; de nombreuses variantes, combinaisons et généralisations de ces fonctions sont disponibles.</p>
+				</dd>
+			</dl>
+			<h3 id="5-4"><em>JavaScript Object Notation</em></h3>
+			<p>Le format <em>JSON</em> est utilisé pour stocker des données structurées non cycliques (valeur nulle, booléens, nombres, chaînes de caractères, listes et dictionnaires) et est notamment employé dans le cadre d'APIs de type <em>Rest</em>.</p>
+			<figure>
+				<figcaption>Exemple de fichier <em>JSON</em> retourné par <code>geo.api.gouv.fr</code></figcaption>
+				<pre><code>{&#x0a;&#x09;"nom": "Villers-lès-Nancy",&#x0a;&#x09;"population": 14455,&#x0a;&#x09;"code": "54578",&#x0a;}&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<p>La syntaxe du format de données <em>JSON</em> reprend celle des objets en <em>ECMAScript</em> et en forme ainsi un sous-ensemble. Ce format à la syntaxe immuable est manipulable grâce à deux fonctions disponibles via l'espace de nom du même nom.</p>
+			<dl>
+				<dt>Analyse</dt>
+				<dd>
+					<p>Une chaîne de caractères au format <em>JSON</em> peut être analysée et convertie en objet à l'aide de l'appel <code>JSON.parse("…")</code>.</p>
+				</dd>
+				<dt>Reconstitution</dt>
+				<dd>
+					<p>Un objet peut être converti en chaîne de caractères au format <em>JSON</em> à l'aide de l'appel <code>JSON.stringify(…)</code>.</p>
+				</dd>
+			</dl>
+			<h2 id="6">Bibliothèques récurrentes</h2>
+			<h3 id="6-1">Console</h3>
+			<p>L'espace de nom <code>console</code> est disponible à la fois dans dans les navgateurs et dans <em>Node.js</em>, bien que ne faisant pas partie du langage <em>ECMAScript</em> à proprement parler. Il permet d'afficher des données (des objets <em>ECMAScript</em>) éventuellement formatées dans la console du navigateur ou dans le terminal sans faire directement appel au débogueur via l'instruction <code>debugger;</code>.</p>
+			<hr/>
+			<p>Les données sont généralement affichées avec un code couleur&nbsp;:</p>
+			<figure>
+				<figcaption>Fonctions basiques de la console</figcaption>
+				<pre><code>console.debug(…);&#x0a;console.error(…);&#x0a;console.info(…);&#x0a;console.log(…);&#x0a;console.warn(…);&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<p>Pour un débogage plus fin, on peut utiliser les fonctions suivantes qui permettent respectivement de vérifier la réalisation d'une condition et d'afficher la trace de la pile d'appel&nbsp;:</p>
+			<figure>
+				<figcaption>Fonctions avancées de la console</figcaption>
+				<pre><code>console.assert(…, …);&#x0a;console.trace(…);&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<p>D'autres fonctions permettent de structurer plus aisément l'affichage des données&nbsp;:</p>
+			<figure>
+				<figcaption>Fonctions d'affichage structuré de la console</figcaption>
+				<pre><code>console.clear();&#x0a;console.table(…, …);&#x0a;console.dir(…, …);&#x0a;console.dirxml(…);&#x0a;console.group(…);&#x0a;console.groupCollapsed(…);&#x0a;console.groupEnd();&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<p>Pour finir, il est également possible de comptabiliser des occurences ou de mesurer des durées avec les fonctions suivantes&nbsp;:</p>
+			<figure>
+				<figcaption>Fonctions de mesure de la console</figcaption>
+				<pre><code>console.count("…");&#x0a;console.countReset("…");&#x0a;console.time("…");&#x0a;console.timeLog("…", …);&#x0a;console.timeEnd("…");&#x0a;</code></pre>
+			</figure>
+			<h3 id="6-2"><em>Uniform Resource Locator</em></h3>
+			<p>Les adresses de type <em>URL</em> servent à identifier et retrouver des ressources. La syntaxe varie selon le schéma employé (<code>https</code>, <code>file</code>, <code>data</code>, <code>blob</code>, <code>view-source</code>, <code>mailto</code>, <code>tel</code>…) qui correspond généralement à un nom de protocole.</p>
+			<figure>
+				<figcaption>Anatomie d'une adresse <em>URL</em></figcaption>
+				<picture><img src="resources/url.png" alt="scheme://user:pass@example.org:1234/file?query#fragment"/></picture>
+			</figure>
+			<p>La classe <code>URL</code>, présente à la fois dans les navigateurs et dans <em>Node.js</em>, permet d'analyser et de décomposer en un objet une adresse donnée sous forme de chaînes de caractères. Les différentes propriétés correspondent alors à la décomposition détaillée précédemment. Elles sont disponibles à la fois en lecture et en écriture.</p>
+			<p>Cette classe résout automatiquement les adresses relatives (commençant généralement par <code>//</code>, <code>/</code>, <code>../</code>, <code>./</code>, <code>?</code> ou <code>#</code>).</p>
+			<figure>
+				<figcaption>Exemples de résolutions d'adresses relatives</figcaption>
+				<pre><code>new URL("//example.com", "https://example.org/dir/").href;&#x0a;// "https://example.com/"&#x0a;new URL("../", "https://example.org/dir/subdir/").href;&#x0a;// "https://example.org/dir/"&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<p>Une propriété supplémentaire, <code>….searchParams</code>, instance de la classe <code>URLSearchParams</code>, permet de manipuler directement les paramètres d'<em>URL</em>, via des fonctions de lecture (<code>….get("…")</code>), d'écriture (<code>….set("…", "…")</code>), d'ajout (<code>….append("…", "…")</code>), de retrait (<code>….delete("…")</code>), de test de présence (<code>….has("…")</code>), de recherche (<code>….getAll("…")</code>), de tri (<code>….sort()</code>) ou d'itération (<code>….forEach((…) => {…})</code>).</p>
+			<figure>
+				<figcaption>Anatomie des paramètres d'une adresse <em>URL</em></figcaption>
+				<picture><img src="resources/search.png" alt="?a=b&amp;c=d"/></picture>
+			</figure>
+			<h2 id="7">APIs <em>web</em></h2>
+			<h3 id="7-1">API <em>Fetch</em></h3>
+			<p>L'API <em>Fetch</em> n'est disponible nativement que dans les navigateurs mais des implémentations comme <code>whatwg-fetch</code> existent pour <em>Node.js</em>. Il s'agit d'une alernative moderne à l'API <em>XMLHttpRequest</em> qui elle remonte au temps où l'on parlait encore de techniques <em>Ajax</em>.</p>
+			<p>Cette API consiste principalement en une fonction <code>fetch(…, {…})</code> qui permet d'envoyer des requêtes, de réceptionner des réponses et de les traiter, tout ceci de manière asynchrone, c'est-à-dire non bloquante.</p>
+			<hr/>
+			<p>On donne généralement à la fonction <code>fetch(…, {…})</code> une adresse de type <em>URL</em> ainsi qu'un dictionnaire d'options spécifiant par exemple l'en-tête de la requête (<code>headers</code>), son corps (<code>body</code>), sa méthode (<code>method</code>)… L'objet retourné expose la réponse sous forme de propriétés (<code>….headers</code>, <code>….body</code>, <code>….status</code>). Celle-ci peut être décodée comme un tampon, un texte, un format <em>JSON</em>, un formulaire ou un fichier grâce à des fonctions spécialisées.</p>
+			<figure>
+				<figcaption>Exemple d'utilisation de l'API <em>Fetch</em></figcaption>
+				<pre><code>const response = await fetch("https://gitlab.telecomnancy.univ-lorraine.fr/api/v4/projects/6857");&#x0a;const json = await response.json();&#x0a;const stars = json.star_count;&#x0a;console.log(stars);&#x0a;</code></pre>
+			</figure>
+			<h3 id="7-2"><em>Document Object Model</em></h3>
+			<p>Le <em>DOM</em> est certainement l'une des plus anciennes APIs du <em>web</em>, mais aussi la plus importante&nbsp;! Disponible nativement dans les navigateurs, elle peut aussi être utilisée dans <em>Node.js</em> grâce à l'implémentation <code>jsdom</code>.</p>
+			<p>Le <em>DOM</em> est essentiellement une représentation arborescente d'un document <em>XML</em> (en particulier <em>HTML</em>) manipulable via l'objet <code>document</code>. Chaque partie du document correspond ainsi à un objet de classe <code>Node</code>.</p>
+			<p>Le document en devient totalement manipulable et navigable via <em>ECMAScript</em>. C'est grâce au <em>DOM</em> qu'une page peut devenir interactive&nbsp;! À l'aide d'un système d'évènements, on peut en effet réagir à une action de l'utilisateur (comme un clic souris) ou du navigateur en exécutant alors du code <em>ECMAScript</em>.</p>
+			<hr/>
+			<figure>
+				<figcaption>Diagramme des classes simplifié d'un document <em>XML</em></figcaption>
+				<picture><img src="resources/dom.svg" alt="@startuml&#x0a;Node -up-|> EventTarget&#x0a;Document -up-|> Node&#x0a;DocumentType -up-|> Node&#x0a;Element -up-|> Node&#x0a;HTMLElement -up-|> Element&#x0a;SVGElement -up-|> Element&#x0a;Attr -up-|> Node&#x0a;CharacterData -up-|> Node&#x0a;Text -up-|> CharacterData&#x0a;Comment -up-|> CharacterData&#x0a;CDATASection -up-|> CharacterData&#x0a;@enduml"/></picture>
+			</figure>
+			<hr/>
+			<p>Pour créer un élément dynamiquement, on utilise la fonction <code>document.createElement("…")</code> à laquelle on donne un nom de balise. L'élément ainsi créé n'est pas immédiatement inséré dans le document.</p>
+			<p>Avant d'ajouter l'élément au document via la fonction <code>….append(…)</code> par exemple, on peut le manipuler (lui ajouter des attributs, du contenu…)&nbsp;:</p>
+			<figure>
+				<figcaption>Création et insertion d'un élément dans le document</figcaption>
+				<pre><code>const element = document.createElement("button");&#x0a;element.id = "toggle-button";&#x0a;element.textContent = "Click me!";&#x0a;document.body.append(element);&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<p>Pour rechercher un certain élément dans le document, plusieurs méthodes existent, mais la plus puissante est d'utiliser la fonction <code>….querySelector("…")</code> à laquelle on donne un sélecteur <em>CSS</em>.</p>
+			<p>Un moyen de réagir à un clic souris de l'utilisateur sur cet élément peut alors être d'utiliser la fonction <code>….addEventListener("…", (…) => {…})</code>&nbsp;:</p>
+			<figure>
+				<figcaption>Recherche d'un élément dans le document et réaction au clic souris</figcaption>
+				<pre><code>const element = document.querySelector("#toggle-button");&#x0a;element.addEventListener("click", (event) => {&#x0a;&#x09;element.classList.toggle("active");&#x0a;});&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<p>Le <em>DOM</em> est une API très riche qui ne se limite pas à ces quelques fonctions. Chaque type d'élément possède ses propres spécificités et le <em>DOM</em> sert souvent de pont vers d'autres API comme les APIs <em>Canvas</em> ou <em>Web Audio</em> par exemple.</p>
 		</main>
 		<footer id="footer">
 			<p></p>
