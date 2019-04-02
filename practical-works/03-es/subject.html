@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+	<head>
+		<title>TP 3</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" type="text/css" href="resources/subject.css"/>
+	</head>
+	<body>
+		<header id="header">
+			<p><em>TP</em> 3</p>
+			<p><em>Telecom Nancy Services</em></p>
+		</header>
+		<main id="main">
+			<h1><em>TP</em> 3</h1>
+			<p>Le troisième <em>TP</em> a pour objectif de réaliser un moteur de recherche des communes de France. Pour cela, nous allons nous appuyer sur l'API <code>geo.api.gouv.fr</code>, remarquable par sa simplicité d'utilisation.</p>
+			<p>Une partie de l'application, notamment tout ce qui relève de la mise en page et de la navigation a déjà été réalisée (fichiers <code>index.html</code> et <code>index.css</code>). Mais pour fonctionner pleinement, celle-ci requiert une bibliothèque de fonctions qui n'a malheureusement pas encore été développée&nbsp;! Il vous est donc demandé d'écrire le code <em>ECMAScript</em> de cette bibliothèque au sein du fichier <code>index.mjs</code>. Il s'agit du seul fichier à modifier et vous n'avez pas besoin d'étudier le code <em>ECMAScript</em> du fichier <code>index.html</code> pour avancer. Sachez juste qu'il se contentera d'appeler vos fonctions au bon moment.</p>
+			<p>Pour la majeure partie du <em>TP</em>, il vous faudra trouver la documentation par vous-même. Le site <em>MDN Web Docs</em> est une très bonne ressource pour cela. Mais bien sûr, comme toujours, n'hésitez pas non plus à poser des questions&nbsp;! Vous êtes encouragés à utiliser la console du navigateur pour déboguer votre code.</p>
+			<h2>Découverte</h2>
+			<p>Nous allons commencer par prendre un peu en main le moteur de recherche actuel. En l'état, il s'agit simplement d'un formulaire qui permet de faire une recherche sur un nom de commune. À son envoi, une requête <code>get</code> est faite à l'API distante et l'utilisateur est redirigé vers la page donnant le résultat de la recherche.</p>
+			<ol>
+				<li>
+					<p>Essayez de faire quelques recherches via le formulaire. Quel format de données vous est renvoyé&nbsp;?</p>
+				</li>
+				<li>
+					<p>Observez la structure des données renvoyées. Quelle régularité pouvez-vous y déceler&nbsp;?</p>
+				</li>
+				<li>
+					<p>Regardez l'<em>URL</em> de la requête. Voyez-vous la relation entre celle-ci et le contenu de la réponse&nbsp;? Vous pouvez trouver la documentation de l'API à l'adresse <code>https://geo.api.gouv.fr/docs/communes</code>.</p>
+				</li>
+			</ol>
+			<p>Le moteur de recherche actuel n'est pas très orienté utilisateur&nbsp;: le format de données de la réponse n'est pas forcément lisible par un utilisateur lambda et on est obligé d'utiliser l'historique du navigateur pour retrouver la page du moteur de recherche. Il serait bien plus pratique de rester sur la page et d'y afficher directement le résultat dans un format plus agréable à lire&nbsp;: un tableau de données&nbsp;! C'est le comportement attendu de l'application une fois que vous aurez assez avancé dans le développement de la bibliothèque.</p>
+			<h2>Initialisation</h2>
+			<p>Cette partie consiste à écrire le code des fonctions <code>initForm</code> et <code>initTable</code>.</p>
+			<ol>
+				<li>
+					<p>Étudiez la structure du document <em>HTML</em>. Repérez notamment où se trouve l'élément <code>&lt;form&gt;&lt;/form&gt;</code>. Que représente cet élément&nbsp;?</p>
+				</li>
+				<li>
+					<p>Écrivez la fonction <code>initForm</code> qui récupère l'élément <code>&lt;form&gt;&lt;/form&gt;</code> en question et le retourne.</p>
+				</li>
+				<li>
+					<p>À l'aide de la documentation des classes <code>HTMLTableElement</code>, <code>HTMLTableSectionElement</code> et <code>HTMLTableRowElement</code>, écrivez la fonction <code>initTable</code> qui construit un tableau de données vide. Plus précisément, cette fonction&nbsp;:</p>
+					<ul>
+						<li>
+							<p>crée un tableau (élément <code>&lt;table&gt;&lt;/table&gt;</code>)&nbsp;;</p>
+						</li>
+						<li>
+							<p>l'ajoute à l'intérieur de l'élément <code>&lt;main&gt;&lt;/main&gt;</code>&nbsp;;</p>
+						</li>
+						<li>
+							<p>ajoute une légende au tableau (élément <code>&lt;caption&gt;&lt;/caption&gt;</code>), vide pour l'instant&nbsp;;</p>
+						</li>
+						<li>
+							<p>ajoute un en-tête au tableau (élément <code>&lt;thead&gt;&lt;/thead&gt;</code>) contenant une ligne (élément <code>&lt;tr&gt;&lt;/tr&gt;</code>) composée elle-même de plusieurs cellules d'en-tête (éléments <code>&lt;th&gt;&lt;/th&gt;</code>) dont les intitulés respectifs sont donnés dans la constante <code>headers</code>&nbsp;;</p>
+						</li>
+						<li>
+							<p>ajoute un corps de tableau (élément <code>&lt;tbody&gt;&lt;/tbody&gt;</code>) vide pour l'instant&nbsp;;</p>
+						</li>
+						<li>
+							<p>retourne le tableau ainsi construit.</p>
+						</li>
+					</ul>
+				</li>
+			</ol>
+			<h2>Manipulation d'<em>URL</em>s</h2>
+			<p>Cette partie consiste à écrire le code des fonctions <code>getSearchParams</code>, <code>getLocalURL</code> et <code>getRemoteURL</code>.</p>
+			<ol>
+				<li>
+					<p>Écrivez la fonction <code>getSearchParams</code> qui renvoie un objet <code>URLSearchParams</code> contenant les données d'un formulaire donné, en passant par un objet <code>FormData</code> intermédiaire.</p>
+				</li>
+				<li>
+					<p>Écrivez la fonction <code>getLocalURL</code> qui détermine l'<em>URL</em> courante du document, lui applique les paramètres donnés et la retourne sous forme d'objet <code>URL</code>. Une manière de faire est d'utiliser la variable <code>location</code>.</p>
+				</li>
+				<li>
+					<p>Retrouvez dans le document <em>HTML</em> l'<em>URL</em> à laquelle sont envoyées les données du formulaire.</p>
+				</li>
+				<li>
+					<p>Écrivez alors la fonction <code>getRemoteURL</code> qui retourne cette <em>URL</em> sous forme d'objet <em>URL</em>, après lui avoir appliqué les paramètres donnés.</p>
+				</li>
+			</ol>
+			<h2>Changement d'état</h2>
+			<p>L'état de notre application est caractérisé par un objet de la forme <code>{input: …, output: …}</code> qui représente la dernière recherche effectuée. Cet état est donc amené à changer au fur et à mesure de vos interactions avec le moteur de recherche. Cette partie consiste à écrire le code des fonctions <code>computeInput</code>, <code>computeOutput</code> qui calculent les valeurs des champs correspondants et par extension l'état de l'application.</p>
+			<ol>
+				<li>
+					<p>Écrivez la fonction <code>computeInput</code> qui récupère la valeur du champ de recherche nommé <code>"nom"</code> à partir des paramètres donnés et la retourne.</p>
+				</li>
+				<li>
+					<p>Écrivez la fonction <code>computeOutput</code> qui soumet le formulaire manuellement. Plus précisément, cette fonction&nbsp;:</p>
+					<ul>
+						<li>
+							<p>envoie une requête à l'API à l'adresse donnée par votre fonction <code>getRemoteURL</code> en utilisant la fonction <code>fetch</code>&nbsp;;</p>
+						</li>
+						<li>
+							<p>récupère, analyse puis retourne la réponse sous forme de tableau <em>ECMAScript</em>.</p>
+						</li>
+					</ul>
+					<p>N'oubliez pas les mots-clés <code>await</code>&nbsp;! Il sont nécessaires lorsque l'on appelle une fonction asynchrone qui demande généralement du temps pour être exécutée (comme effectuer une requête ou analyser une réponse).</p>
+				</li>
+			</ol>
+			<h2>Débogage</h2>
+			<p>À ce point du <em>TP</em>, nous avons lu le contenu du formulaire, envoyé ces données à l'API et récupérer le résultat de la recherche. L'application a donc changé d'état et il faut maintenant refléter ce changement sur le document lui-même, c'est-à-dire tout simplement afficher le résultat de la recherche. Mais avant cela, vous allez pouvoir un peu plus expérimenter la console du navigateur en y affichant le résultat de manière structurée.</p>
+			<ol>
+				<li>
+					<p>Écrivez la fonction <code>logState</code> qui&nbsp;:</p>
+					<ul>
+						<li>
+							<p>ouvre dans la console un groupe réduit étiquetté par le champ <code>input</code> de l'état donné&nbsp;;</p>
+						</li>
+						<li>
+							<p>affiche dans la console le champ <code>output</code> de l'état donné sous forme de tableau avec pour noms de colonnes uniquement <code>"nom"</code>, <code>"codeDepartement"</code> et <code>"codeRegion"</code>&nbsp;;</p>
+						</li>
+						<li>
+							<p>ferme le groupe.</p>
+						</li>
+					</ul>
+				</li>
+			</ol>
+			<h2>Mise à jour du tableau de données</h2>
+			<p>Nous allons afficher le résultat dans le tableau que vous avez créé au début du <em>TP</em>. Cette partie consiste à écrire le code des fonctions <code>renderCaption</code> et <code>renderBody</code>.</p>
+			<ol>
+				<li>
+					<p>À l'aide de la documentation de la classe <code>HTMLTableElement</code>, écrivez la fonction <code>renderCaption</code> qui met à jour la légende du tableau donné pour qu'elle indique combien de correspondances ont été trouvées et qu'elle rappelle quelle recherche a été effectuée.</p>
+				</li>
+				<li>
+					<p>À l'aide de la documentation des classes <code>HTMLTableElement</code>, <code>HTMLTableSectionElement</code> et <code>HTMLTableRowElement</code>, écrivez la fonction <code>renderBody</code> qui met à jour le corps du tableau donné avec le résultat donné. L'ordre des colonnes est donné par la constante <code>keys</code>.</p>
+				</li>
+			</ol>
+			<h2>Mise à jour du formulaire</h2>
+			<p>Vous avez peut-être remarqué que si vous naviguez dans l'historique du navigateur ou bien si vous rechargez la page, alors le contenu du champ de recherche devient incohérent par rapport au tableau affiché ou bien se vide. Pour pallier ce comportement, il est possible de mettre à jour nous-mêmes le champ de recherche à chaque changement d'état de l'application. Cette partie consiste à écrire le code de la fonction <code>renderField</code> et à améliorer celui de la fonction <code>initForm</code>.</p>
+			<ol>
+				<li>
+					<p>À l'aide de la documentation de la classe <code>HTMLFormElement</code>, écrivez la fonction <code>renderField</code> qui met à jour le contenu du champ de recherche avec la recherche effectuée.</p>
+				</li>
+				<li>
+					<p>À l'aide de vos fonctions <code>computeInput</code> et <code>renderField</code>, améliorez la fonction <code>initForm</code> pour qu'elle auto-complète le champ de recherche avec la valeur du paramètre <code>"nom"</code> de l'<em>URL</em> initiale du document (uniquement si un tel paramètre existe bien sûr). Une manière de faire est d'utiliser la variable <code>location</code>.</p>
+				</li>
+			</ol>
+			<h2>Tri du tableau</h2>
+			<p>Votre application devrait être pleinement fonctionnelle désormais&nbsp;! Vous pourriez vous arrêtez là, mais on va rajouter une fonctionnalité bonus&nbsp;: le tri. Le principe est de pouvoir ordonner le tableau de données selon les valeurs d'une certaine colonne rien qu'en cliquant sur sa cellule d'en-tête. Cette partie consiste à améliorer le code de la fonction <code>initTable</code> et à écrire celui de la fonction <code>sortState</code>.</p>
+			<ol>
+				<li>
+					<p>Améliorez la fonction <code>initTable</code> pour qu'elle ajoute un attribut <code>tabindex="0"</code> à chaque élément <code>&lt;th&gt;&lt;/th&gt;</code>.</p>
+				</li>
+				<li>
+					<p>À l'aide la fonction <code>….sort()</code>, écrivez la fonction <code>sortState</code> qui ordonne le résultat. Plus précisément&nbsp;:</p>
+					<ul>
+						<li>
+							<p>si le numéro de colonne donné est positif, alors l'ordre doit être croissant selon les valeurs de la colonne correspondante&nbsp;;</p>
+						</li>
+						<li>
+							<p>sinon l'ordre doit être décroissant selon les valeurs de la colonne correspondant au complément à 1 du numéro de colonne donné&nbsp;;</p>
+						</li>
+						<li>
+							<p>si le type de données (indiqué par la constante <code>types</code>) de la colonne est <code>"number"</code>, le tri doit être fait selon l'ordre naturel des nombres&nbsp;;</p>
+						<li>
+							<p>sinon si le type de données de la colonne est <code>"string"</code>, le tri doit être fait selon l'ordre lexicographique du français.</p>
+						</li>
+					</ul>
+				</li>
+			</ol>
+		</main>
+		<footer id="footer">
+			<p></p>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,220 @@
+/*~~~~~~ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    outline: 0;
+    vertical-align: top;
+    line-height: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+::selection {
+    background-color: #fc39;
+    color: #333;
+}
+::-moz-focus-inner {
+    border: 0;
+}
+/*~~~~~~ html, body ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+html,
+body {
+    height: 100%;
+}
+html {
+    background-color: #eee;
+    color: #333;
+    line-height: 1.25;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: .625em;
+}
+body {
+    flex-flow: column nowrap;
+    display: flex;
+    margin: 0;
+    font-size: 1.6em;
+}
+/*~~~~~~ header ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+header {
+    z-index: 0;
+    flex: 0 0 auto;
+    flex-flow: column nowrap;
+    display: flex;
+    padding: 1rem;
+    background-color: #9c6;
+    box-shadow: 0 0 .4rem .1rem #3333;
+}
+header::before,
+header::after {
+    content: "";
+    width: calc(50% - 47rem);
+}
+/*~~~~~~ main ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+main {
+    flex: 1 0 auto;
+    flex-flow: column nowrap;
+    display: flex;
+    width: 96rem;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+main::before,
+main::after {
+    content: "";
+    width: calc(50% - 47rem);
+}
+/*~~~~~~ h1 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+h1 {
+    flex: 0 0 auto;
+    margin: 1rem;
+    font-size: 3.2rem;
+    font-weight: bold;
+    font-variant-caps: petite-caps;
+    text-align: left;
+}
+/*~~~~~~ form ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+form {
+    flex: 1 0 auto;
+    flex-flow: row nowrap;
+    display: flex;
+}
+form > p {
+    margin: 1rem;
+}
+form > p:first-of-type {
+    flex: 1 0 auto;
+}
+form > p:first-of-type + p {
+    display: none;
+}
+form > p:first-of-type + p + p {
+    flex: 0 0 auto;
+    width: 4rem;
+}
+/*~~~~~~ label ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+label {
+    display: inline-block;
+    width: 100%;
+    cursor: default;
+    font-size: 0;
+}
+label:focus-within {
+    outline: .1rem dashed #3339;
+    outline-offset: .1rem;
+}
+label > input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: calc(100% - .4rem);
+    height: 3.6rem;
+    margin: .2rem;
+    padding: .6rem;
+    border: .2rem solid transparent;
+    border-radius: .4rem;
+    background-repeat: no-repeat;
+    background-size: 3.2rem 3.2rem;
+    font-size: 1.6rem;
+    transition: border-color .2s, background-color .2s;
+}
+label > input[type="search"] {
+    padding-left: 3.8rem;
+    background-color: #fff;
+    background-image: url("search.svg");
+    cursor: text;
+}
+label:hover > input[type="search"],
+label:focus-within > input[type="search"] {
+    border-color: #69c;
+}
+label > input[type="submit"] {
+    padding-right: 0;
+    padding-left: 3.2rem;
+    background-color: #333;
+    background-image: url("submit.svg");
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+label:hover > input[type="submit"],
+label:focus-within > input[type="submit"] {
+    background-color: #369;
+}
+/*~~~~~~ table ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+table {
+    table-layout: fixed;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    border-spacing: 0;
+    box-shadow: 0 0 .4rem .1rem #3333;
+}
+table > caption {
+    min-height: 4rem;
+    padding: 1rem;
+    font-style: italic;
+    text-align: center;
+}
+table > thead {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 .4rem .4rem -.3rem #3333;
+}
+table > thead > tr > th,
+table > tbody > tr > td {
+    vertical-align: middle;
+    padding: 2rem;
+    background-color: #fff;
+    text-align: left;
+}
+table > thead > tr > th:first-child ~ th,
+table > tbody > tr > td:first-child ~ td {
+    text-align: right;
+}
+table > thead > tr > th {
+    border-bottom: .6rem double #333;
+}
+table > tbody > tr:first-child ~ tr > td {
+    border-top: .2rem solid #333;
+}
+table > thead > tr > th[tabindex="0"] {
+    cursor: pointer;
+}
+table > thead > tr > th[tabindex="0"]:hover,
+table > thead > tr > th[tabindex="0"]:focus-within {
+    background-color: #eee;
+}
+table > thead > tr > th[tabindex="0"]:focus-within {
+    outline: .1rem dashed #3339;
+    outline-offset: .1rem;
+}
+/*~~~~~~ @media ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@media (min-width: 40em) {
+    header {
+        flex-direction: row;
+    }
+}
+@media (max-width: 50em) {
+    table > thead > tr > th:nth-child(5),
+    table > tbody > tr > td:nth-child(5) {
+        display: none;
+    }
+}
+@media (max-width: 40em) {
+    table > thead > tr > th:nth-child(4),
+    table > tbody > tr > td:nth-child(4) {
+        display: none;
+    }
+}
+@media (max-width: 30em) {
+    table > thead > tr > th:nth-child(3),
+    table > tbody > tr > td:nth-child(3) {
+        display: none;
+    }
+}
+@media (max-width: 20em) {
+    table > thead > tr > th:nth-child(2),
+    table > tbody > tr > td:nth-child(2) {
+        display: none;
+    }
+}

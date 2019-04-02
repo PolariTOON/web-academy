@@ -26,6 +26,10 @@ La *Web Academy* est une formation sur le *web* dispensée aux élèves de [*Tel
 
 - Reproduction du style du site d'un club ([sujet](practical-works/02-css/subject.html.pdf), [squelette](practical-works/02-css/resources/index.css), [objectif](practical-works/02-css/goal.png), [correction](practical-works/02-css/resources/correction.css))
 
+***ECMAScript*** :
+
+- [Conception d'un moteur de recherche] ([sujet](practical-works/03-es/subject.html.pdf), [squelette](practical-works/03-es/resources/index.mjs), [correction](practical-works/03-es/resources/correction.mjs))
+
 ### Exercices
 
 ***HTML*** :

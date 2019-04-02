@@ -11,6 +11,7 @@ const contentTypes = {
 	".mathml": "application/mathml+xml;charset=utf-8",
 	".css": "text/css;charset=utf-8",
 	".mjs": "text/javascript;charset=utf-8",
+	".cjs": "text/javascript;charset=utf-8",
 	".js": "text/javascript;charset=utf-8",
 	".json": "application/json;charset=utf-8",
 	".ico": "image/png",
@@ -20,58 +21,34 @@ const contentTypes = {
 	".woff": "font/woff",
 	".woff2": "font/woff2"
 };
-const {origin, port} = new URL(process.argv[2]);
+const address = new URL("http://127.0.0.1/");
 const root = import.meta.url.slice(0, import.meta.url.lastIndexOf("/"));
-http.createServer(async (request, response) => {
+const server = http.createServer(async (request, response) => {
 	let content, contentType;
 	try {
-		const pathname = new URL(request.url, origin).pathname;
+		const {pathname, search} = new URL(request.url, address.origin);
 		const extension = pathname.endsWith("/") ? "/" : pathname.slice(~(~pathname.lastIndexOf(".") || ~pathname.length));
-		content = await fs.promises.readFile(url.fileURLToPath(root + pathname + (extension === "/" ? "index.html" : "")));
-		contentType = contentTypes.hasOwnProperty(extension) ? contentTypes[extension] : contentTypes[""];
-		response.statusCode = 200;
+		if (extension === "") {
+			content = "302 Found";
+			contentType = contentTypes[""];
+			response.statusCode = 302;
+			response.setHeader("Location", `${pathname}/${search}`);
+		} else {
+			content = await fs.promises.readFile(url.fileURLToPath(`${root}${pathname}${extension === "/" ? "index.html" : ""}`));
+			contentType = contentTypes.hasOwnProperty(extension) ? contentTypes[extension] : contentTypes[""];
+			response.statusCode = 200;
+		}
 	} catch (error) {
 		console.warn(error.message);
-		content = `\
-<!DOCTYPE html>
-<html dir="ltr" lang="fr">
-	<head>
-		<title>Erreur 404</title>
-		<meta name="viewport" content="width=device-width"/>
-		<style>
-			@import url("/resources/main.css");
-			html {
-				background-color: #eee;
-			}
-			body {
-				display: grid;
-				grid-gap: 2rem;
-				align-content: center;
-				justify-items: center;
-				height: 100vh;
-				text-align: center;
-			}
-			h1 {
-				font-size: 16rem;
-				margin: 0;
-				padding: 2rem;
-			}
-			p {
-				font-size: 1.6rem;
-				margin: 0;
-				padding: 1rem;
-			}
-		</style>
-	</head>
-	<body>
-		<h1>404</h1>
-		<p>Oups&nbsp;! On dirait que vous êtes perdu…</p>
-	</body>
-</html>
-`;
-		contentType = contentTypes["/"];
+		content = "404 Not Found";
+		contentType = contentTypes[""];
 		response.statusCode = 404;
 	}
 	response.setHeader("Content-Type", contentType);
 	response.end(content);
-}).listen(Number(port));
+})
+server.listen(() => {
+	const {port} = server.address();
+	address.port = port;
+	console.log(`Server listening on port ${port} (${address})`);
+});
