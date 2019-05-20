@@ -47,7 +47,7 @@ const server = http.createServer(async (request, response) => {
 	response.setHeader("Content-Type", contentType);
 	response.end(content);
 })
-server.listen(() => {
+server.listen(8080, () => {
 	const {port} = server.address();
 	address.port = port;
 	console.log(`Server listening on port ${port} (${address})`);

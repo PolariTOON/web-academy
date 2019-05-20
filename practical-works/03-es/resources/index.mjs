@@ -61,7 +61,7 @@ const renderBody = (table, output) => {
 const logState = (state) => {
     /* TODO */
 };
-/* ~~~ State sorting ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~ State sorting ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 const sortState = (state, column) => {
     /* TODO */
 };

@@ -13,7 +13,7 @@
 		</header>
 		<main id="main">
 			<h1><em>TP</em> 3</h1>
-			<p>Le troisième <em>TP</em> a pour objectif de réaliser un moteur de recherche des communes de France. Pour cela, nous allons nous appuyer sur l'API <code>geo.api.gouv.fr</code>, remarquable par sa simplicité d'utilisation.</p>
+			<p>Le troisième <em>TP</em> a pour objectif de réaliser un moteur de recherche des communes de France. Pour cela, nous allons nous appuyer sur l'<em>API</em> <code>geo.api.gouv.fr</code>, remarquable par sa simplicité d'utilisation.</p>
 			<p>Une partie de l'application, notamment tout ce qui relève de la mise en page et de la navigation a déjà été réalisée (fichiers <code>index.html</code> et <code>index.css</code>). Mais pour fonctionner pleinement, celle-ci requiert une bibliothèque de fonctions qui n'a malheureusement pas encore été développée&nbsp;! Il vous est donc demandé d'écrire le code <em>ECMAScript</em> de cette bibliothèque au sein du fichier <code>index.mjs</code>. Il s'agit du seul fichier à modifier et vous n'avez pas besoin d'étudier le code <em>ECMAScript</em> du fichier <code>index.html</code> pour avancer. Sachez juste qu'il se contentera d'appeler vos fonctions au bon moment.</p>
 			<p>Pour la majeure partie du <em>TP</em>, il vous faudra trouver la documentation par vous-même. Le site <em>MDN Web Docs</em> est une très bonne ressource pour cela. Mais bien sûr, comme toujours, n'hésitez pas non plus à poser des questions&nbsp;! Vous êtes encouragés à utiliser la console du navigateur pour déboguer votre code.</p>
 			<h2>Découverte</h2>
@@ -80,7 +80,7 @@
 				</li>
 			</ol>
 			<h2>Changement d'état</h2>
-			<p>L'état de notre application est caractérisé par un objet de la forme <code>{input: …, output: …}</code> qui représente la dernière recherche effectuée. Cet état est donc amené à changer au fur et à mesure de vos interactions avec le moteur de recherche. Cette partie consiste à écrire le code des fonctions <code>computeInput</code>, <code>computeOutput</code> qui calculent les valeurs des champs correspondants et par extension l'état de l'application.</p>
+			<p>L'état de notre application est caractérisé par un objet de la forme <code>{input: …, output: …}</code> qui représente la dernière recherche effectuée. Cet état est donc amené à changer au fur et à mesure de vos interactions avec le moteur de recherche. Cette partie consiste à écrire le code des fonctions <code>computeInput</code> et <code>computeOutput</code> qui calculent les valeurs des champs correspondants et par extension l'état de l'application.</p>
 			<ol>
 				<li>
 					<p>Écrivez la fonction <code>computeInput</code> qui récupère la valeur du champ de recherche nommé <code>"nom"</code> à partir des paramètres donnés et la retourne.</p>
@@ -99,7 +99,7 @@
 				</li>
 			</ol>
 			<h2>Débogage</h2>
-			<p>À ce point du <em>TP</em>, nous avons lu le contenu du formulaire, envoyé ces données à l'API et récupérer le résultat de la recherche. L'application a donc changé d'état et il faut maintenant refléter ce changement sur le document lui-même, c'est-à-dire tout simplement afficher le résultat de la recherche. Mais avant cela, vous allez pouvoir un peu plus expérimenter la console du navigateur en y affichant le résultat de manière structurée.</p>
+			<p>À ce point du <em>TP</em>, nous avons lu le contenu du formulaire, envoyé ces données à l'API et récupéré le résultat de la recherche. L'application a donc changé d'état et il faut maintenant refléter ce changement sur le document lui-même, c'est-à-dire tout simplement afficher le résultat de la recherche. Mais avant cela, vous allez pouvoir un peu plus expérimenter la console du navigateur en y affichant le résultat de manière structurée.</p>
 			<ol>
 				<li>
 					<p>Écrivez la fonction <code>logState</code> qui&nbsp;:</p>

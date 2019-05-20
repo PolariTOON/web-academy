@@ -116,7 +116,7 @@ const logState = (state) => {
     console.table(output, ["nom", "codeDepartement", "codeRegion"]);
     console.groupEnd();
 };
-/* ~~~ State sorting ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~ State sorting ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 const sortState = (state, column) => {
     let order = 1;
     if (column < 0) {
