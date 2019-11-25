@@ -1,16 +1,13 @@
 {
-	"name": "web_academy_dev",
+	"name": "web-academy",
 	"version": "0.0.0",
-	"description": "",
-	"main": "package.mjs",
+	"description": "Formation web dispensée par Telecom Nancy Services",
+	"main": "package.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node --experimental-modules package.mjs"
+		"start": "node package.js"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://gitlab.telecomnancy.univ-lorraine.fr/Alexis.El-Mrini/web_academy_dev.git"
-	},
-	"author": "",
-	"license": ""
+	"repository": "https://github.com/TrisTOON/web-academy",
+	"author": "Tristan LE GODAIS",
+	"license": "MIT",
+	"type": "module"
 }

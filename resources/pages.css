@@ -1,5 +1,5 @@
-@import url("/resources/main.css");
-@import url("/resources/noto-serif.css");
+@import url("main.css");
+@import url("noto-serif.css");
 :root {
 	--font-family: "Noto Serif", sans-serif;
 	--font-size: 7.5pt;

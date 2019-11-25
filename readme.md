@@ -28,7 +28,7 @@ La *Web Academy* est une formation sur le *web* dispensée aux élèves de [*Tel
 
 ***ECMAScript*** :
 
-- Conception d'un moteur de recherche ([sujet](practical-works/03-es/subject.html.pdf), [squelette](practical-works/03-es/resources/index.mjs), [correction](practical-works/03-es/resources/correction.mjs))
+- Conception d'un moteur de recherche ([sujet](practical-works/03-es/subject.html.pdf), [squelette](practical-works/03-es/resources/index.js), [correction](practical-works/03-es/resources/correction.js))
 
 ### Exercices
 
@@ -50,7 +50,7 @@ La *Web Academy* est une formation sur le *web* dispensée aux élèves de [*Tel
 
 ## Lancement du serveur local
 
-À partir d'un certain point de la formation, vous aurez besoin d'un serveur local pour effectuez vos tests. Le script [`package.mjs`](package.mjs) vous permet d'en lancer un rapidement, avec le minimum de configuration. Pour cela, installez au préalable *Node.js* en version 10 ou 12 (à l'aide de [*nvm*](https://github.com/nvm-sh/nvm) par exemple) et clonez ce dépôt. Ensuite, à la racine du projet, exécutez le fichier `package.sh` si vous êtes dans un environnement de type *Unix*, `package.bat` sous *Windows* ou bien la commande suivante :
+À partir d'un certain point de la formation, vous aurez besoin d'un serveur local pour effectuez vos tests. Le script [`package.js`](package.js) vous permet d'en lancer un rapidement, avec le minimum de configuration. Pour cela, installez au préalable *Node.js* au moins en version 13.2.0 (à l'aide de [*nvm*](https://github.com/nvm-sh/nvm) par exemple) et clonez ce dépôt. Ensuite, à la racine du projet, exécutez le fichier `package.sh` si vous êtes dans un environnement de type *Unix*, `package.bat` sous *Windows* ou bien la commande suivante :
 
 ```sh
 $ npm start
@@ -58,4 +58,4 @@ $ npm start
 
 ## Note sur les fichiers `.html.pdf`
 
-Les supports de cours et les sujets de travaux pratiques et d'exercices qui portent l'extension `.html.pdf` ont été générés via le navigateur *Firefox* à partir d'une page *web* codée en *HTML* et *CSS*.
+Les supports de cours et les sujets de travaux pratiques et d'exercices qui portent l'extension `.html.pdf` ont été générés via le navigateur *Firefox 67.0.4* sous *Ubuntu 19.04* à partir d'une page *web* codée en *HTML* et *CSS*.

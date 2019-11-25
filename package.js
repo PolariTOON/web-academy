@@ -10,9 +10,9 @@ const contentTypes = {
 	".svg": "image/svg+xml;charset=utf-8",
 	".mathml": "application/mathml+xml;charset=utf-8",
 	".css": "text/css;charset=utf-8",
-	".mjs": "text/javascript;charset=utf-8",
-	".cjs": "text/javascript;charset=utf-8",
 	".js": "text/javascript;charset=utf-8",
+	".cjs": "text/javascript;charset=utf-8",
+	".mjs": "text/javascript;charset=utf-8",
 	".json": "application/json;charset=utf-8",
 	".ico": "image/png",
 	".png": "image/png",
@@ -46,7 +46,7 @@ const server = http.createServer(async (request, response) => {
 	}
 	response.setHeader("Content-Type", contentType);
 	response.end(content);
-})
+});
 server.listen(8080, () => {
 	const {port} = server.address();
 	address.port = port;

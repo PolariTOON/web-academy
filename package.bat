@@ -1,2 +1,2 @@
-node --experimental-modules package.mjs
+node package.js
 pause > nul
