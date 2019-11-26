@@ -3,7 +3,7 @@
 	<head>
 		<title>Web Academy - Manipulation de page web en ECMAScript</title>
 		<meta name="viewport" content="width=device-width"/>
-		<link rel="stylesheet" type="text/css" href="resources/index.css"/>
+		<link rel="stylesheet" type="text/css" href="./resources/index.css"/>
 	</head>
 	<body>
 		<header id="header">
@@ -221,7 +221,7 @@
 			<p>Il est également généralement recommandé de différer l'évaluation d'un script pour ne pas bloquer le chargement du reste d'une page <em>web</em> en utilisant l'attribut <code>defer="…"</code> dans le cas d'un script classique.</p>
 			<p>L'utilisation d'un script modulaire a l'avantage de permettre d'utiliser certaines des dernières fonctionnalités du langage (notamment l'import et l'export statique de modules). Si toutefois, vous préférez utiliser un script classique, alors le mode strict est fortement recommandé. Pour l'activer, il suffit de débuter le script par <code>"use strict";</code>.</p>
 			<h2 id="2">Types d'expressions</h2>
-			<p>Il existe actuellement septs types natifs en <em>ECMAScript</em>, dont six types de valeurs primitives&nbsp;: <em>Undefined</em>, <em>Null</em>, <em>Boolean</em>, <em>Number</em>, <em>String</em> et <em>Symbol</em>. Le reste des valeurs constitue le type objet&nbsp;: <em>Object</em>.</p>
+			<p>Il existe actuellement huit types natifs en <em>ECMAScript</em>, dont sept types de valeurs primitives&nbsp;: <em>Undefined</em>, <em>Null</em>, <em>Boolean</em>, <em>Number</em>, <em>String</em>, <em>Symbol</em> et <em>BigInt</em>. Le reste des valeurs constitue le type objet&nbsp;: <em>Object</em>.</p>
 			<p>Parmi les objets, on trouve différentes sous-classes natives, notamment&nbsp;: <em>Function</em>, <em>Date</em>, <em>RegExp</em>, <em>Array</em>, <em>Map</em>, <em>Set</em>…</p>
 			<p>Certains types n'ont pas de notation litérale. Ci-après sont recensées des exemples de notations litérales pour les types qui en possède une.</p>
 			<hr/>
@@ -256,6 +256,12 @@
 						<th scope="row"><em>String</em></th>
 						<td>
 							<p><code>""</code>, <code>'abc'</code>, <code>`def`</code>…</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><em>BigInt</em></th>
+						<td>
+							<p><code>1n</code>, <code>2305843009213693951n</code>…</p>
 						</td>
 					</tr>
 				</tbody>
@@ -470,6 +476,7 @@
 					</tr>
 				</tbody>
 			</table>
+			<!-- TODO: parler des opérations sur les BigInt : . + ., . - ., . * ., . / ., . % ., . ** ., -., ++., --., .++, .-- -->
 			<h3 id="4-3">Opérations arithmétiques</h3>
 			<p>Les opérateurs <code>… + …</code>, <code>… - …</code>, <code>… * …</code>, <code>… / …</code>, <code>… % …</code>, <code>… ** …</code>, <code>+…</code>, <code>-…</code>, <code>++…</code>, <code>--…</code>, <code>…++</code> et <code>…--</code> tentent de convertir préalablement leurs opérandes en nombres (de type <em>Number</em>) puis effectuent un calcul arithmétique.</p>
 			<hr/>
@@ -540,6 +547,7 @@
 					</tr>
 				</tbody>
 			</table>
+			<!-- TODO: parler des opérations sur les BigInt : . | ., . ^ ., . &amp; ., . &lt;&lt; ., . &gt;&gt; ., ~. -->
 			<h3 id="4-4">Opérations bit à bit</h3>
 			<p>Les opérateurs <code>… | …</code>, <code>… ^ …</code>, <code>… &amp; …</code>, <code>… &lt;&lt; …</code>, <code>… &gt;&gt; …</code>, <code>… &gt;&gt;&gt; …</code> et <code>~…</code> tentent de convertir préalablement leurs opérandes en entiers (de type <em>Number</em>) puis effectuent un calcul bit à bit.</pe>
 			<hr/>
@@ -646,6 +654,7 @@
 					</tr>
 				</tbody>
 			</table>
+			<!-- TODO: parler éventuellement des BigInt -->
 			<h2 id="5">Bibliothèque standard</h2>
 			<h3 id="5-1">Nombres</h3>
 			<p>Les nombres (<code>Number</code>) peuvent être manipulés via un ensemble de fonctions directement intégré au langage, et notamment via l'espace de nom <code>Math</code>.</p>
@@ -831,7 +840,7 @@
 			<p>Les adresses de type <em>URL</em> servent à identifier et retrouver des ressources. La syntaxe varie selon le schéma employé (<code>https</code>, <code>file</code>, <code>data</code>, <code>blob</code>, <code>view-source</code>, <code>mailto</code>, <code>tel</code>…) qui correspond généralement à un nom de protocole.</p>
 			<figure>
 				<figcaption>Anatomie d'une adresse <em>URL</em></figcaption>
-				<picture><img src="resources/url.png" alt="scheme://user:pass@example.org:1234/file?query#fragment"/></picture>
+				<picture><img src="./resources/url.png" alt="scheme://user:pass@example.org:1234/file?query#fragment"/></picture>
 			</figure>
 			<p>La classe <code>URL</code>, présente à la fois dans les navigateurs et dans <em>Node.js</em>, permet d'analyser et de décomposer en un objet une adresse donnée sous forme de chaînes de caractères. Les différentes propriétés correspondent alors à la décomposition détaillée précédemment. Elles sont disponibles à la fois en lecture et en écriture.</p>
 			<p>Cette classe résout automatiquement les adresses relatives (commençant généralement par <code>//</code>, <code>/</code>, <code>../</code>, <code>./</code>, <code>?</code> ou <code>#</code>).</p>
@@ -843,7 +852,7 @@
 			<p>Une propriété supplémentaire, <code>….searchParams</code>, instance de la classe <code>URLSearchParams</code>, permet de manipuler directement les paramètres d'<em>URL</em>, via des fonctions de lecture (<code>….get("…")</code>), d'écriture (<code>….set("…", "…")</code>), d'ajout (<code>….append("…", "…")</code>), de retrait (<code>….delete("…")</code>), de test de présence (<code>….has("…")</code>), de recherche (<code>….getAll("…")</code>), de tri (<code>….sort()</code>) ou d'itération (<code>….forEach((…) => {…})</code>).</p>
 			<figure>
 				<figcaption>Anatomie des paramètres d'une adresse <em>URL</em></figcaption>
-				<picture><img src="resources/search.png" alt="?a=b&amp;c=d"/></picture>
+				<picture><img src="./resources/search.png" alt="?a=b&amp;c=d"/></picture>
 			</figure>
 			<h2 id="7">APIs <em>web</em></h2>
 			<h3 id="7-1">API <em>Fetch</em></h3>
@@ -862,7 +871,7 @@
 			<hr/>
 			<figure>
 				<figcaption>Diagramme des classes simplifié d'un document <em>XML</em></figcaption>
-				<picture><img src="resources/dom.svg" alt="@startuml&#x0a;Node -up-|> EventTarget&#x0a;Document -up-|> Node&#x0a;DocumentType -up-|> Node&#x0a;Element -up-|> Node&#x0a;HTMLElement -up-|> Element&#x0a;SVGElement -up-|> Element&#x0a;Attr -up-|> Node&#x0a;CharacterData -up-|> Node&#x0a;Text -up-|> CharacterData&#x0a;Comment -up-|> CharacterData&#x0a;CDATASection -up-|> CharacterData&#x0a;@enduml"/></picture>
+				<picture><img src="./resources/dom.svg" alt="@startuml&#x0a;Node -up-|> EventTarget&#x0a;Document -up-|> Node&#x0a;DocumentType -up-|> Node&#x0a;Element -up-|> Node&#x0a;HTMLElement -up-|> Element&#x0a;SVGElement -up-|> Element&#x0a;Attr -up-|> Node&#x0a;CharacterData -up-|> Node&#x0a;Text -up-|> CharacterData&#x0a;Comment -up-|> CharacterData&#x0a;CDATASection -up-|> CharacterData&#x0a;@enduml"/></picture>
 			</figure>
 			<hr/>
 			<p>Pour créer un élément dynamiquement, on utilise la fonction <code>document.createElement("…")</code> à laquelle on donne un nom de balise. L'élément ainsi créé n'est pas immédiatement inséré dans le document.</p>

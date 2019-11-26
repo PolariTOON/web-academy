@@ -121,7 +121,7 @@ label > input {
 label > input[type="search"] {
     padding-left: 3.8rem;
     background-color: #fff;
-    background-image: url("search.svg");
+    background-image: url("./search.svg");
     cursor: text;
 }
 label:hover > input[type="search"],
@@ -132,7 +132,7 @@ label > input[type="submit"] {
     padding-right: 0;
     padding-left: 3.2rem;
     background-color: #333;
-    background-image: url("submit.svg");
+    background-image: url("./submit.svg");
     cursor: pointer;
     -webkit-user-select: none;
     user-select: none;

@@ -1,4 +1,4 @@
-@import url("ubuntu-mono.css");
+@import url("./ubuntu-mono.css");
 /*~~~~~~ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 *,
 ::before,
@@ -247,7 +247,7 @@ blockquote::after {
 pre {
 	/* background-color: #fff;
 	background-image: linear-gradient(to bottom, transparent 50%, #eee 50%); */
-	background-image: url("pre.png");
+	background-image: url("./pre.png");
 	background-size: 100% 4rem;
 	background-attachment: local;
 	white-space: normal;

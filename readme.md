@@ -2,7 +2,7 @@
 
 ## Présentation
 
-La *Web Academy* est une formation sur le *web* dispensée aux élèves de [*Telecom Nancy*](//telecomnancy.univ-lorraine.fr/) par l'association [*Telecom Nancy Services*](//tnservices.fr/). Ce dépôt contient les supports de cours, les sujets de travaux pratiques, des exercices et leur correction ainsi que des exemples pour la session 2018-2019.
+La *Web Academy* est une formation sur le *web* dispensée aux élèves de [*Telecom Nancy*](//telecomnancy.univ-lorraine.fr/) par l'association [*Telecom Nancy Services*](//tnservices.fr/). Ce dépôt contient les supports de cours, les sujets de travaux pratiques, des exercices et leur correction ainsi que des exemples pour les sessions 2018-2019 et 2019-2020.
 
 ## Documents
 

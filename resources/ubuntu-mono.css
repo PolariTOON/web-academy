@@ -2,23 +2,23 @@
 	font-family: "Ubuntu Mono";
 	font-style: normal;
 	font-weight: normal;
-	src: url("ubuntu-mono-latin-regular.woff2") format("woff2"), url("ubuntu-mono-latin-regular.woff") format("woff");
+	src: url("./ubuntu-mono-latin-regular.woff2") format("woff2"), url("./ubuntu-mono-latin-regular.woff") format("woff");
 }
 @font-face {
 	font-family: "Ubuntu Mono";
 	font-style: italic;
 	font-weight: normal;
-	src: url("ubuntu-mono-latin-italic.woff2") format("woff2"), url("ubuntu-mono-latin-italic.woff") format("woff");
+	src: url("./ubuntu-mono-latin-italic.woff2") format("woff2"), url("./ubuntu-mono-latin-italic.woff") format("woff");
 }
 @font-face {
 	font-family: "Ubuntu Mono";
 	font-style: normal;
 	font-weight: bold;
-	src: url("ubuntu-mono-latin-regular-bold.woff2") format("woff2"), url("ubuntu-mono-latin-regular-bold.woff") format("woff");
+	src: url("./ubuntu-mono-latin-regular-bold.woff2") format("woff2"), url("./ubuntu-mono-latin-regular-bold.woff") format("woff");
 }
 @font-face {
 	font-family: "Ubuntu Mono";
 	font-style: italic;
 	font-weight: bold;
-	src: url("ubuntu-mono-latin-italic-bold.woff2") format("woff2"), url("ubuntu-mono-latin-italic-bold.woff") format("woff");
+	src: url("./ubuntu-mono-latin-italic-bold.woff2") format("woff2"), url("./ubuntu-mono-latin-italic-bold.woff") format("woff");
 }
