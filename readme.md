@@ -14,7 +14,7 @@ La *Web Academy* est une formation sur le *web* dispensée aux élèves de [*Tel
 
 - [Mise en forme de page *web* en *CSS*](chapters/03-css/index.html.pdf)
 
-- [Manipulation de page *web* en *ECMAScript*](chapters/04-es/index.html.pdf)
+- [Manipulation de page *web* en *ECMAScript*](chapters/04-js/index.html.pdf)
 
 ### Sujets de travaux pratiques
 
@@ -28,7 +28,7 @@ La *Web Academy* est une formation sur le *web* dispensée aux élèves de [*Tel
 
 ***ECMAScript*** :
 
-- Conception d'un moteur de recherche ([sujet](practical-works/03-es/subject.html.pdf), [squelette](practical-works/03-es/resources/index.js), [correction](practical-works/03-es/resources/correction.js))
+- Conception d'un moteur de recherche ([sujet](practical-works/03-js/subject.html.pdf), [squelette](practical-works/03-js/resources/index.js), [correction](practical-works/03-js/resources/correction.js))
 
 ### Exercices
 

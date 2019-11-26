@@ -1,5 +1,5 @@
 @import url("../../../resources/theme.css");
-main > figure,
+/* main > figure,
 main > table {
 	font-size: calc(1.4em / 1.6);
 	line-height: calc(2 / 1.4);
@@ -19,4 +19,4 @@ main > table :not(pre) > samp {
 	letter-spacing: calc(-0.0625em / 1.6);
 	font-size: calc(1.4em / 1.6);
 	line-height: calc(2 / 1.4);
-}
+} */

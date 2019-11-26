@@ -52,7 +52,7 @@ const computeState = async (searchParams) => {
     const output = await computeOutput(searchParams);
     return {
         input: input,
-        output: output
+        output: output,
     };
 };
 const computeInput = (searchParams) => {

@@ -7,13 +7,13 @@
 	</head>
 	<body>
 		<header id="header">
-			<p>Manipulation de page <em>web</em> en <em>ECMAScript</em></p>
+			<p>Manipulation de page <em>web</em> en <em>JS</em></p>
 			<p><em>Telecom Nancy Services</em></p>
 		</header>
 		<main id="main">
 			<hgroup>
 				<h1><em>Web Academy</em></h1>
-				<h2>Manipulation de<br/>page <em>web</em> en <em>ECMAScript</em></h2>
+				<h2>Manipulation de<br/>page <em>web</em> en <em>JS</em></h2>
 			</hgroup>
 			<!-- <address>
 				<p><data value="@Alexis.El-Mrini">Alexis EL MRINI</data>, <data value="@Tristan.Le-Godais">Tristan LE GODAIS</data></p>
@@ -21,10 +21,10 @@
 			<h2>Sommaire</h2>
 			<ol>
 				<li>
-					<p><a href="#1"><data value="5">Présentation d'<em>ECMAScript</em></data></a></p>
+					<p><a href="#1"><data value="5">Présentation du <em>JS</em></data></a></p>
 					<ol>
 						<li>
-							<p><a href="#1-1"><data value="5">Vocation d'<em>ECMAScript</em></data></a></p>
+							<p><a href="#1-1"><data value="5">Vocation du <em>JS</em></data></a></p>
 						</li>
 						<li>
 							<p><a href="#1-2"><data value="6">Intégration dans un document</data></a></p>
@@ -123,9 +123,9 @@
 					</ol>
 				</li>
 			</ol>
-			<h2 id="1">Présentation d'<em>ECMAScript</em></h2>
-			<h3 id="1-1">Vocation d'<em>ECMAScript</em></h3>
-			<p>Le langage <em>JavaScript</em> est un langage interprété, orienté objet à prototype et fonctionnel dont le typage est dynamique.</p>
+			<h2 id="1">Présentation du <em>JS</em></h2>
+			<h3 id="1-1">Vocation du <em>JS</em></h3>
+			<p>Le langage <em>JS</em> (<em>JavaScript</em>) est un langage interprété, orienté objet à prototype et fonctionnel dont le typage est dynamique.</p>
 			<p>Il est apparu en 1996 dans le navigateur <em>Netscape Navigator</em> dans le but de manipuler les pages <em>web</em> et s'est rapidement établi comme le langage de script du <em>web</em>. Depuis 1997, il est standardisé et évolue sous le nom d'<em>ECMAScript</em>. Avec l'émergence de projets comme <em>Node.js</em> ou <em>GNOME Shell</em> en 2009, l'environnement d'exécution du langage ne se limite plus seulement aux navigateurs.</p>
 			<h3 id="1-2">Intégration dans un document</h3>
 			<p>La manière d'intégrer un script <em>ECMAScript</em> à un document <em>HTML</em> dépend à la fois de la variante du langage utilisée et du moment de son évaluation. On distingue ainsi script classique (non strict ou strict) ou modulaire, script interne ou externe et script synchrone (bloquant), différé (récupéré en parallèle de l'analyse du document mais évalué à sa fin) ou asynchrone (récupéré en parallèle de l'analyse et évalué dès que possible, bloquant ainsi la suite de l'analyse).</p>
@@ -221,7 +221,7 @@
 			<p>Il est également généralement recommandé de différer l'évaluation d'un script pour ne pas bloquer le chargement du reste d'une page <em>web</em> en utilisant l'attribut <code>defer="…"</code> dans le cas d'un script classique.</p>
 			<p>L'utilisation d'un script modulaire a l'avantage de permettre d'utiliser certaines des dernières fonctionnalités du langage (notamment l'import et l'export statique de modules). Si toutefois, vous préférez utiliser un script classique, alors le mode strict est fortement recommandé. Pour l'activer, il suffit de débuter le script par <code>"use strict";</code>.</p>
 			<h2 id="2">Types d'expressions</h2>
-			<p>Il existe actuellement huit types natifs en <em>ECMAScript</em>, dont sept types de valeurs primitives&nbsp;: <em>Undefined</em>, <em>Null</em>, <em>Boolean</em>, <em>Number</em>, <em>String</em>, <em>Symbol</em> et <em>BigInt</em>. Le reste des valeurs constitue le type objet&nbsp;: <em>Object</em>.</p>
+			<p>Il existe actuellement huit types natifs en <em>JS</em>, dont sept types de valeurs primitives&nbsp;: <em>Undefined</em>, <em>Null</em>, <em>Boolean</em>, <em>Number</em>, <em>String</em>, <em>Symbol</em> et <em>BigInt</em>. Le reste des valeurs constitue le type objet&nbsp;: <em>Object</em>.</p>
 			<p>Parmi les objets, on trouve différentes sous-classes natives, notamment&nbsp;: <em>Function</em>, <em>Date</em>, <em>RegExp</em>, <em>Array</em>, <em>Map</em>, <em>Set</em>…</p>
 			<p>Certains types n'ont pas de notation litérale. Ci-après sont recensées des exemples de notations litérales pour les types qui en possède une.</p>
 			<hr/>
@@ -330,7 +330,7 @@
 			</table>
 			<h2 id="3">Instructions</h2>
 			<h3 id="3-1">Déclarations de variables</h3>
-			<p>Il existe divers moyens de déclarer des identifiants de variables en <em>ECMAScript</em>, chacune possèdant ses propres particularités&nbsp;: via les instructions <code>let …;</code>, <code>const …;</code>, <code>import …;</code>, <code>export …;</code>, <code>var …;</code>, <code>class … {…}</code>, <code>function …(…) …</code>, <code>function* …(…) …</code>, <code>async function …(…) …</code> ou <code>async function* …(…) …</code>, ou en tant que paramètre formel d'une fonction.</p>
+			<p>Il existe divers moyens de déclarer des identifiants de variables en <em>JS</em>, chacune possèdant ses propres particularités&nbsp;: via les instructions <code>let …;</code>, <code>const …;</code>, <code>import …;</code>, <code>export …;</code>, <code>var …;</code>, <code>class … {…}</code>, <code>function …(…) …</code>, <code>function* …(…) …</code>, <code>async function …(…) …</code> ou <code>async function* …(…) …</code>, ou en tant que paramètre formel d'une fonction.</p>
 			<p>En pratique, les instructions <code>let …;</code>, <code>const …;</code>, <code>import …;</code>, <code>export …;</code> et les paramètres formels de fonctions suffisent à mimer le comportement des autres formes de déclarations (sans le calquer pour autant).</p>
 			<hr/>
 			<dl>
@@ -372,7 +372,7 @@
 			<dl>
 				<dt><code>function …(…) …</code></dt>
 				<dd>
-					<p>C'est la manière la plus courante de déclarer des fonctions locales au corps de la fonction englobante en <em>ECMAScript</em>&nbsp;:</p>
+					<p>C'est la manière la plus courante de déclarer des fonctions locales au corps de la fonction englobante en <em>JS</em>&nbsp;:</p>
 					<figure>
 						<figcaption>Déclaration <code>function …(…) …</code></figcaption>
 						<pre><code>console.log(a); // function a()&#x0a;function a() {…}&#x0a;console.log(a); // function a()&#x0a;</code></pre>
@@ -383,7 +383,7 @@
 			<hr/>
 			<p>L'instruction <code>var …;</code> est présente depuis le début du langage <em>ECMAScript</em>, tandis que les instructions <code>let …;</code> et <code>const …;</code> sont des ajouts plus récents (2015) visant à donner une alternative à <code>var …;</code> sans ses défauts de conception.</p>
 			<p>Il est donc recommandé d'utiliser plutôt les instructions <code>let …;</code> et <code>const …;</code>. De plus, on privilégie généralement <code>const …;</code> si <code>let …;</code> n'est pas nécessaire.</p>
-			<p>Les fonctions et les classes constituent des objets de première classe en <em>ECMAScript</em>. Ils peuvent donc être déclarés sans utiliser les instructions spécifiques, voire même être utilisés directement en tant qu'expressions.</p>
+			<p>Les fonctions et les classes constituent des objets de première classe en <em>JS</em>. Ils peuvent donc être déclarés sans utiliser les instructions spécifiques, voire même être utilisés directement en tant qu'expressions.</p>
 			<h3 id="3-2">Blocs d'instructions</h3>
 			<p>En <em>ECMAScript</em>, les instructions sont ponctuées par un point-virgule <code>;</code> terminal (optionnel dans certains cas), sauf dans le cas d'un bloc d'instructions. Délimité par une accolade ouvrante <code>{</code> au début et une accolade fermante <code>}</code> à la fin, il permet de regrouper plusieurs instructions&nbsp;:</p>
 			<figure>
@@ -424,7 +424,7 @@
 			<p>Au sein d'un boucle, les instructions <code>break …;</code> et <code>continue …;</code> peuvent être utilisées avec une étiquette optionnelle.</p>
 			<p>Au sein d'une structure <code>switch (…) {…}</code>, les étiquettes <code>case …</code> (avec n'importe quelle expression) et <code>default</code> peuvent être utilisées, ainsi que l'instruction <code>break …;</code> avec une étiquette optionnelle.</p>
 			<h3 id="3-6">Gestion des erreurs</h3>
-			<p>Le concept d'erreurs en <em>ECMAScript</em> est similaire à celui d'exceptions en <em>Java</em>, et par conséquent leur signalement et leur traitement également&nbsp;:</p>
+			<p>Le concept d'erreurs en <em>JS</em> est similaire à celui d'exceptions en <em>Java</em>, et par conséquent leur signalement et leur traitement également&nbsp;:</p>
 			<figure>
 				<figcaption>Instruction <code>throw …;</code> et structure <code>try {…} catch (…) {…} finally {…}</code>)</figcaption>
 				<pre><code>try {&#x0a;&#x09;throw new Error("Custom error");&#x0a;} catch (error) {&#x0a;&#x09;console.error(error.message);&#x0a;} finally {&#x0a;&#x09;console.log("Always executed");&#x0a;}&#x0a;</code></pre>
@@ -798,7 +798,7 @@
 				<pre><code>{&#x0a;&#x09;"nom": "Villers-lès-Nancy",&#x0a;&#x09;"population": 14455,&#x0a;&#x09;"code": "54578",&#x0a;}&#x0a;</code></pre>
 			</figure>
 			<hr/>
-			<p>La syntaxe du format de données <em>JSON</em> reprend celle des objets en <em>ECMAScript</em> et en forme ainsi un sous-ensemble. Ce format à la syntaxe immuable est manipulable grâce à deux fonctions disponibles via l'espace de nom du même nom.</p>
+			<p>La syntaxe du format de données <em>JSON</em> reprend celle des objets en <em>JS</em> et en forme ainsi un sous-ensemble. Ce format à la syntaxe immuable est manipulable grâce à deux fonctions disponibles via l'espace de nom du même nom.</p>
 			<dl>
 				<dt>Analyse</dt>
 				<dd>
