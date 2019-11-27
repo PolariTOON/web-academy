@@ -1,0 +1,14 @@
+HTTP/2 200 OK
+content-encoding: gzip
+accept-ranges: bytes
+cache-control: max-age=604800
+content-type: text/html; charset=UTF-8
+date: Tue, 26 Nov 2019 17:36:02 GMT
+etag: "3147526947+gzip"
+expires: Tue, 03 Dec 2019 17:36:02 GMT
+last-modified: Thu, 17 Oct 2019 07:18:26 GMT
+server: ECS (bsa/EB17)
+vary: Accept-Encoding
+x-cache: HIT
+content-length: 648
+X-Firefox-Spdy: h2

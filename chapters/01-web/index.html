@@ -61,25 +61,21 @@
 			</dl>
 			<h2 id="2">Présentation de <em>HTTP</em></h2>
 			<figure>
-				<figcaption>Client-serveur</figcaption>
-				<picture><img src="./resources/client-server.png" alt="Schéma de la connexion des clients et serveurs à travers l'Internet"/></picture>
+				<figcaption>Connexion de clients et de serveurs à travers l'Internet</figcaption>
+				<picture><img src="./resources/client-server.svg" alt="Connexion de clients et de serveurs à travers l'Internet"/></picture>
 			</figure>
-			<figure>
-				<figcaption><em>HTTP</em>&nbsp;: <em>Hypertext Transfer Protocol</em></figcaption>
-				<picture><img src="./resources/http.png" alt="Schéma d'un échange HTTP"/></picture>
-			</figure>
-			<figure>
-				<figcaption>Requête <em>HTTP</em></figcaption>
-				<picture><img src="./resources/request.png" alt="En-tête d'une requête HTTP"/></picture>
-			</figure>
-			<p>Méthodes&nbsp;: <kbd>GET</kbd>, <kbd>POST</kbd>, <kbd>HEAD</kbd>…</p>
-			<figure>
-				<figcaption>Réponse HTTP</figcaption>
-				<picture><img src="./resources/response.png" alt="En-tête d'une réponse HTTP"/></picture>
-			</figure>
-			<p>Réponses&nbsp;: <samp>200 OK</samp>, <samp>404 Not Found</samp>, <samp>302 Found</samp>, <samp>403 Forbidden</samp>…</p>
 			<hr/>
 			<dl>
+				<dt><em>HTTP</em></dt>
+				<dd>
+					<p><em>Hypertext Transfer Protocol</em></p>
+				</dd>
+				<dd>
+					<p>Méthodes de requêtes&nbsp;: <kbd>DELETE</kbd>, <kbd>GET</kbd>, <kbd>POST</kbd>, <kbd>PUT</kbd>…</p>
+				</dd>
+				<dd>
+					<p>Codes de réponses&nbsp;: <samp>200 OK</samp>, <samp>302 Found</samp>, <samp>403 Forbidden</samp>, <samp>404 Not Found</samp>, <samp>500 Internal Server Error</samp>…</p>
+				</dd>
 				<dt><em>HTTPS</em></dt>
 				<dd>
 					<p><em>Hypertext Transfer Protocol Secure</em></p>
@@ -91,6 +87,20 @@
 					<p>Garantit la confidentialité et l'intégrité des données transférées</p>
 				</dd>
 			</dl>
+			<figure>
+				<figcaption>Échange <em>HTTP</em> entre un client et un serveur</figcaption>
+				<picture><img src="./resources/http.svg" alt="Échange HTTP entre un client et un serveur"/></picture>
+			</figure>
+			<hr/>
+			<figure>
+				<figcaption>En-tête d'une requête <em>HTTP</em></figcaption>
+				<pre><code>GET / HTTP/2&#x0a;Host: example.org&#x0a;User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0&#x0a;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&#x0a;Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3&#x0a;Accept-Encoding: gzip, deflate, br&#x0a;Connection: keep-alive&#x0a;Upgrade-Insecure-Requests: 1&#x0a;If-Modified-Since: Thu, 17 Oct 2019 07:18:26 GMT&#x0a;If-None-Match: "3147526947"&#x0a;Cache-Control: max-age=0&#x0a;TE: Trailers&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<figure>
+				<figcaption>En-tête d'une réponse HTTP</figcaption>
+				<pre><code>HTTP/2 200 OK&#x0a;content-encoding: gzip&#x0a;accept-ranges: bytes&#x0a;cache-control: max-age=604800&#x0a;content-type: text/html; charset=UTF-8&#x0a;date: Tue, 26 Nov 2019 17:36:02 GMT&#x0a;etag: "3147526947+gzip"&#x0a;expires: Tue, 03 Dec 2019 17:36:02 GMT&#x0a;last-modified: Thu, 17 Oct 2019 07:18:26 GMT&#x0a;server: ECS (bsa/EB17)&#x0a;vary: Accept-Encoding&#x0a;x-cache: HIT&#x0a;content-length: 648&#x0a;X-Firefox-Spdy: h2&#x0a;</code></pre>
+			</figure>
 			<h2 id="3">Présentation des langages du <em>web</em></h2>
 			<picture><img src="./resources/html.png" alt="HTML5"/></picture>
 			<dl>

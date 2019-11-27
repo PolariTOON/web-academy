@@ -50,6 +50,10 @@ main > hgroup > h2 {
 	padding: 2rem 6rem;
 	border-radius: 2rem 0;
 	background-color: #69c;
+	background-image: url("./web-academy.png");
+	background-position: 5rem 1rem;
+	background-size: 10rem 10rem;
+	background-repeat: no-repeat;
 	text-align: right;
 }
 main > hgroup + h2 {

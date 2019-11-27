@@ -1,0 +1,330 @@
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+	<munder>
+		<mrow>
+			<munder>
+				<mrow>
+					<mrow>
+						<mspace height="1.25em"/>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>&lt;</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+					<munder>
+						<mrow>
+							<mspace height="1.25em"/>
+							<mpadded width="0">
+								<mphantom>
+									<mo>(</mo>
+								</mphantom>
+							</mpadded>
+							<mtext>div</mtext>
+							<mpadded width="0">
+								<mphantom>
+									<mo>)</mo>
+								</mphantom>
+							</mpadded>
+						</mrow>
+						<munder>
+							<mo>⏟</mo>
+							<mrow>
+								<mspace height="1.25em"/>
+								<mpadded width="0">
+									<mphantom>
+										<mo>(</mo>
+									</mphantom>
+								</mpadded>
+								<mtext>tag name</mtext>
+								<mpadded width="0">
+									<mphantom>
+										<mo>)</mo>
+									</mphantom>
+								</mpadded>
+							</mrow>
+						</munder>
+					</munder>
+					<mrow>
+						<mspace height="1.25em"/>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mspace width="0.3889em"/>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+					<munder>
+						<mrow>
+							<mspace height="1.25em"/>
+							<mpadded width="0">
+								<mphantom>
+									<mo>(</mo>
+								</mphantom>
+							</mpadded>
+							<mtext>class</mtext>
+							<mtext>="</mtext>
+							<mtext>wrapper</mtext>
+							<mtext>"</mtext>
+							<mpadded width="0">
+								<mphantom>
+									<mo>)</mo>
+								</mphantom>
+							</mpadded>
+						</mrow>
+						<munder>
+							<mo>⏟</mo>
+							<mrow>
+								<mspace height="1.25em"/>
+								<mpadded width="0">
+									<mphantom>
+										<mo>(</mo>
+									</mphantom>
+								</mpadded>
+								<mtext>attribute</mtext>
+								<mpadded width="0">
+									<mphantom>
+										<mo>)</mo>
+									</mphantom>
+								</mpadded>
+							</mrow>
+						</munder>
+					</munder>
+					<mrow>
+						<mspace height="1.25em"/>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mspace width="0.3889em"/>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+					<munder>
+						<mrow>
+							<mspace height="1.25em"/>
+							<mpadded width="0">
+								<mphantom>
+									<mo>(</mo>
+								</mphantom>
+							</mpadded>
+							<mtext>id</mtext>
+							<mtext>="</mtext>
+							<mtext>content</mtext>
+							<mtext>"</mtext>
+							<mpadded width="0">
+								<mphantom>
+									<mo>)</mo>
+								</mphantom>
+							</mpadded>
+						</mrow>
+						<munder>
+							<mo>⏟</mo>
+							<mrow>
+								<mspace height="1.25em"/>
+								<mpadded width="0">
+									<mphantom>
+										<mo>(</mo>
+									</mphantom>
+								</mpadded>
+								<mtext>attribute</mtext>
+								<mpadded width="0">
+									<mphantom>
+										<mo>)</mo>
+									</mphantom>
+								</mpadded>
+							</mrow>
+						</munder>
+					</munder>
+					<mrow>
+						<mspace height="1.25em"/>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>&gt;</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</mrow>
+				<munder>
+					<mo>⏟</mo>
+					<mrow>
+						<mspace height="1.25em"/>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>opening tag</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</munder>
+			</munder>
+			<munder>
+				<mrow>
+					<mspace height="1.25em"/>
+					<mpadded width="0">
+						<mphantom>
+							<mo>(</mo>
+						</mphantom>
+					</mpadded>
+					<mtext>…</mtext>
+					<!--<mtext>Some</mtext>
+					<mspace width="0.3889em"/>
+					<mtext>text</mtext>
+					<mspace width="0.3889em"/>
+					<mtext>and</mtext>
+					<mspace width="0.3889em"/>
+					<mtext>&lt;span&gt;some</mtext>
+					<mspace width="0.3889em"/>
+					<mtext>elements&lt;/span&gt;</mtext>-->
+					<mpadded width="0">
+						<mphantom>
+							<mo>)</mo>
+						</mphantom>
+					</mpadded>
+				</mrow>
+				<munder>
+					<mo>⏟</mo>
+					<mrow>
+						<mspace height="1.25em"/>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>inner HTML</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</munder>
+			</munder>
+			<munder>
+				<mrow>
+					<mrow>
+						<mspace height="1.25em"/>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>&lt;/</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+					<munder>
+						<mrow>
+							<mspace height="1.25em"/>
+							<mpadded width="0">
+								<mphantom>
+									<mo>(</mo>
+								</mphantom>
+							</mpadded>
+							<mtext>div</mtext>
+							<mpadded width="0">
+								<mphantom>
+									<mo>)</mo>
+								</mphantom>
+							</mpadded>
+						</mrow>
+						<munder>
+							<mo>⏟</mo>
+							<mrow>
+								<mspace height="1.25em"/>
+								<mpadded width="0">
+									<mphantom>
+										<mo>(</mo>
+									</mphantom>
+								</mpadded>
+								<mtext>tag name</mtext>
+								<mpadded width="0">
+									<mphantom>
+										<mo>)</mo>
+									</mphantom>
+								</mpadded>
+							</mrow>
+						</munder>
+					</munder>
+					<mrow>
+						<mspace height="1.25em"/>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>&gt;</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</mrow>
+				<munder>
+					<mo>⏟</mo>
+					<mrow>
+						<mspace height="1.25em"/>
+						<mpadded width="0">
+							<mphantom>
+								<mo>(</mo>
+							</mphantom>
+						</mpadded>
+						<mtext>closing tag</mtext>
+						<mpadded width="0">
+							<mphantom>
+								<mo>)</mo>
+							</mphantom>
+						</mpadded>
+					</mrow>
+				</munder>
+			</munder>
+		</mrow>
+		<munder>
+			<mo>⏟</mo>
+			<mrow>
+				<mspace height="1.25em"/>
+				<mpadded width="0">
+					<mphantom>
+						<mo>(</mo>
+					</mphantom>
+				</mpadded>
+				<mtext>outer HTML</mtext>
+				<mpadded width="0">
+					<mphantom>
+						<mo>)</mo>
+					</mphantom>
+				</mpadded>
+			</mrow>
+		</munder>
+	</munder>
+</math>
+</html>
