@@ -1,91 +1,91 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="fr">
-    <head>
-        <title>Géo Trouvetou</title>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width"/>
-        <link rel="stylesheet" href="./resources/index.css"/>
-        <script type="module">
-            import {getSearchParams, getLocalURL, initForm, initTable, computeState, renderState, logState, sortState} from "./resources/index.js";
-            let previousColumn = NaN;
-            const load = async (form, table) => {
-                const searchParams = getSearchParams(form);
-                const localURL = getLocalURL(searchParams);
-                const state = await computeState(searchParams);
-                renderState(form, table, state);
-                logState(state);
-                history.replaceState(state, "", localURL);
-            };
-            const push = async (form, table, event) => {
-                event.preventDefault();
-                const searchParams = getSearchParams(form);
-                const localURL = getLocalURL(searchParams);
-                const state = await computeState(searchParams);
-                renderState(form, table, state);
-                logState(state);
-                history.pushState(state, "", localURL);
-            };
-            const pop = (form, table, event) => {
-                const state = event.state;
-                renderState(form, table, state);
-                logState(state);
-            };
-            const sort = (form, table, event) => {
-                const node = event.target;
-                const state = history.state;
-                if (!(node instanceof HTMLTableCellElement) || !node.matches("table > thead > tr > th[tabindex=\"0\"]") || node.parentElement.parentElement.parentElement !== table || state === null) {
-                    return;
-                }
-                const parent = node.parentElement;
-                let child = parent.firstElementChild;
-                let column = 0;
-                while (child !== node) {
-                    child = child.nextElementSibling;
-                    ++column;
-                }
-                if (column === previousColumn) {
-                    column = ~column;
-                }
-                previousColumn = column;
-                sortState(state, column);
-                renderState(form, table, state);
-                logState(state);
-            };
-            const main = () => {
-                const form = initForm();
-                const table = initTable();
-                if (!(form instanceof HTMLFormElement) || !(table instanceof HTMLTableElement)) {
-                    return;
-                }
-                table.addEventListener("click", (event) => {
-                    sort(form, table, event);
-                });
-                table.addEventListener("keydown", (event) => {
-                    const key = event.key;
-                    if (key === "Enter") {
-                        sort(form, table, event);
-                    }
-                });
-                addEventListener("popstate", (event) => {
-                    pop(form, table, event);
-                });
-                form.addEventListener("submit", (event) => {
-                    push(form, table, event);
-                });
-                load(form, table);
-            };
-            main();
-        </script>
-    </head>
-    <body>
-        <header>
-            <h1>Géo Trouvetou</h1>
-            <form action="https://geo.api.gouv.fr/communes">
-                <p><label>Nom&nbsp;: <input type="search" name="nom" value="" placeholder="Donaldville"/></label></p>
-                <p><label>Champs&nbsp;: <input type="hidden" name="fields" value="nom,population,surface,codeDepartement,codeRegion"/></label></p>
-                <p><label>Rechercher&nbsp;: <input type="submit" value="Rechercher"/></label></p>
-            </form>
-        </header>
-        <main></main>
-    </body>
+	<head>
+		<title>Géo Trouvetou</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" href="./resources/index.css"/>
+		<script type="module">
+			import {getSearchParams, getLocalURL, initForm, initTable, computeState, renderState, logState, sortState} from "./resources/index.js";
+			let previousColumn = NaN;
+			const load = async (form, table) => {
+				const searchParams = getSearchParams(form);
+				const localURL = getLocalURL(searchParams);
+				const state = await computeState(searchParams);
+				renderState(form, table, state);
+				logState(state);
+				history.replaceState(state, "", localURL);
+			};
+			const push = async (form, table, event) => {
+				event.preventDefault();
+				const searchParams = getSearchParams(form);
+				const localURL = getLocalURL(searchParams);
+				const state = await computeState(searchParams);
+				renderState(form, table, state);
+				logState(state);
+				history.pushState(state, "", localURL);
+			};
+			const pop = (form, table, event) => {
+				const state = event.state;
+				renderState(form, table, state);
+				logState(state);
+			};
+			const sort = (form, table, event) => {
+				const node = event.target;
+				const state = history.state;
+				if (!(node instanceof HTMLTableCellElement) || !node.matches("table > thead > tr > th[tabindex=\"0\"]") || node.parentElement.parentElement.parentElement !== table || state === null) {
+					return;
+				}
+				const parent = node.parentElement;
+				let child = parent.firstElementChild;
+				let column = 0;
+				while (child !== node) {
+					child = child.nextElementSibling;
+					++column;
+				}
+				if (column === previousColumn) {
+					column = ~column;
+				}
+				previousColumn = column;
+				sortState(state, column);
+				renderState(form, table, state);
+				logState(state);
+			};
+			const main = () => {
+				const form = initForm();
+				const table = initTable();
+				if (!(form instanceof HTMLFormElement) || !(table instanceof HTMLTableElement)) {
+					return;
+				}
+				table.addEventListener("click", (event) => {
+					sort(form, table, event);
+				});
+				table.addEventListener("keydown", (event) => {
+					const key = event.key;
+					if (key === "Enter") {
+						sort(form, table, event);
+					}
+				});
+				addEventListener("popstate", (event) => {
+					pop(form, table, event);
+				});
+				form.addEventListener("submit", (event) => {
+					push(form, table, event);
+				});
+				load(form, table);
+			};
+			main();
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>Géo Trouvetou</h1>
+			<form action="https://geo.api.gouv.fr/communes">
+				<p><label>Nom&nbsp;: <input type="search" name="nom" value="" placeholder="Donaldville"/></label></p>
+				<p><label>Champs&nbsp;: <input type="hidden" name="fields" value="nom,population,surface,codeDepartement,codeRegion"/></label></p>
+				<p><label>Rechercher&nbsp;: <input type="submit" value="Rechercher"/></label></p>
+			</form>
+		</header>
+		<main></main>
+	</body>
 </html>

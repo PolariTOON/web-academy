@@ -4,65 +4,65 @@ const keys = ["nom", "population", "surface", "codeDepartement", "codeRegion"];
 const types = ["string", "number", "number", "string", "string"];
 /* ~~~~ Helpers ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 const getSearchParams = (form) => {
-    /* TODO */
+	/* TODO */
 };
 const getLocalURL = (searchParams) => {
-    /* TODO */
+	/* TODO */
 };
 const getRemoteURL = (searchParams) => {
-    /* TODO */
+	/* TODO */
 };
 /* ~~~~ Initialization ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 const initForm = () => {
-    /* TODO */
+	/* TODO */
 };
 const initTable = () => {
-    /* TODO */
+	/* TODO */
 };
 /* ~~~~ State computing ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 const computeState = async (searchParams) => {
-    const input = computeInput(searchParams);
-    const output = await computeOutput(searchParams);
-    return {
-        input: input,
-        output: output,
-    };
+	const input = computeInput(searchParams);
+	const output = await computeOutput(searchParams);
+	return {
+		input: input,
+		output: output,
+	};
 };
 const computeInput = (searchParams) => {
-    /* TODO */
+	/* TODO */
 };
 const computeOutput = async (searchParams) => {
-    /* TODO */
+	/* TODO */
 };
 /* ~~~~ State rendering ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 const renderState = (form, table, state) => {
-    const input = state.input;
-    const output = state.output;
-    renderForm(form, input);
-    renderTable(table, input, output);
+	const input = state.input;
+	const output = state.output;
+	renderForm(form, input);
+	renderTable(table, input, output);
 };
 const renderForm = (form, input) => {
-    renderField(form, input);
+	renderField(form, input);
 };
 const renderTable = (table, input, output) => {
-    renderCaption(table, input, output);
-    renderBody(table, output);
+	renderCaption(table, input, output);
+	renderBody(table, output);
 };
 const renderField = (form, input) => {
-    /* TODO */
+	/* TODO */
 };
 const renderCaption = (table, input, output) => {
-    /* TODO */
+	/* TODO */
 };
 const renderBody = (table, output) => {
-    /* TODO */
+	/* TODO */
 };
 /* ~~~~ State logging ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 const logState = (state) => {
-    /* TODO */
+	/* TODO */
 };
 /* ~~~~ State sorting ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 const sortState = (state, column) => {
-    /* TODO */
+	/* TODO */
 };
 export {getSearchParams, getLocalURL, getRemoteURL, initForm, initTable, computeState, renderState, logState, sortState};

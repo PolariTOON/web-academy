@@ -14,7 +14,7 @@ La *Web Academy* est une formation sur le *web* dispensée aux élèves de [*Tel
 
 - [Mise en forme de page *web* en *CSS*](chapters/03-css/index.html.pdf)
 
-- [Manipulation de page *web* en *ECMAScript*](chapters/04-js/index.html.pdf)
+- [Manipulation de page *web* en *JS*](chapters/04-js/index.html.pdf)
 
 ### Sujets de travaux pratiques
 

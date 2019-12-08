@@ -1,97 +1,97 @@
 html,
 body {
-    padding: 40px;
+	padding: 40px;
 }
 html {
-    min-width: 820px;
-    background: #eee;
+	min-width: 820px;
+	background: #eee;
 }
 body {
-    width: 740px;
-    margin: auto;
-    background: #fff;
-    box-shadow: 0 0 4px #0009;
-    line-height: 1.25;
-    font-family: "Roboto Slab", serif;
-    font-size: 16px;
+	width: 740px;
+	margin: auto;
+	background: #fff;
+	box-shadow: 0 0 4px #0009;
+	line-height: 1.25;
+	font-family: "Roboto Slab", serif;
+	font-size: 16px;
 }
 header,
 main,
 footer {
-    padding: 20px 40px;
+	padding: 20px 40px;
 }
 header {
-    border-radius: 40px 100px;
-    background-color: #693;
+	border-radius: 40px 100px;
+	background-color: #693;
 }
 footer {
-    column-count: 3;
-    column-gap: 60px;
-    column-rule: 20px dotted #693;
-    border-top: 20px dotted #693;
-    border-bottom: 20px dotted #693;
+	column-count: 3;
+	column-gap: 60px;
+	column-rule: 20px dotted #693;
+	border-top: 20px dotted #693;
+	border-bottom: 20px dotted #693;
 }
 footer > p:first-child {
-    margin-top: 0;
+	margin-top: 0;
 }
 footer > p:last-child {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 h1,
 h2,
 p {
-    margin: 20px 0;
+	margin: 20px 0;
 }
 h1 {
-    color: #dfe;
-    font-family: "Roboto", sans-serif;
-    font-size: 3em;
-    text-align: center;
-    text-shadow: 0 0 4px #0009;
+	color: #dfe;
+	font-family: "Roboto", sans-serif;
+	font-size: 3em;
+	text-align: center;
+	text-shadow: 0 0 4px #0009;
 }
 h2 {
-    clear: both;
-    padding-left: 20px;
-    border-left: 20px solid currentColor;
-    color: #693;
-    font-family: "Roboto Mono", monospace;
-    font-size: 2em;
+	clear: both;
+	padding-left: 20px;
+	border-left: 20px solid currentColor;
+	color: #693;
+	font-family: "Roboto Mono", monospace;
+	font-size: 2em;
 }
 p {
-    font-size: 1em;
-    text-align: justify;
+	font-size: 1em;
+	text-align: justify;
 }
 figure > img {
-    vertical-align: top;
+	vertical-align: top;
 }
 figure > figcaption {
-    font-style: italic;
-    text-align: center;
+	font-style: italic;
+	text-align: center;
 }
 a[href] {
-    color: #03c;
-    text-decoration: none;
+	color: #03c;
+	text-decoration: none;
 }
 a:not([href]) {
-    color: #c30;
-    cursor: not-allowed;
+	color: #c30;
+	cursor: not-allowed;
 }
 dfn {
-    font-style: normal;
-    font-weight: bold;
+	font-style: normal;
+	font-weight: bold;
 }
 sup {
-    vertical-align: top;
-    font-size: .8em;
+	vertical-align: top;
+	font-size: .8em;
 }
 .left {
-    float: left;
-    margin: 0 40px 20px -40px;
+	float: left;
+	margin: 0 40px 20px -40px;
 }
 .right {
-    float: right;
-    margin: 0 -40px 20px 40px;
+	float: right;
+	margin: 0 -40px 20px 40px;
 }
 #lorem {
-    font-variant: small-caps;
+	font-variant: small-caps;
 }
