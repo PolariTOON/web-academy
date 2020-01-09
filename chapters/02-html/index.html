@@ -30,41 +30,41 @@
 							<p><a href="#1-2"><data value="6">Attributs</data></a></p>
 						</li>
 						<li>
-							<p><a href="#1-3"><data value="7">Échappement de caractères</data></a></p>
+							<p><a href="#1-3"><data value="8">Échappement de caractères</data></a></p>
 						</li>
 					</ol>
 				</li>
 				<li>
-					<p><a href="#2"><data value="8">Contenu d'un document <em>HTML</em></data></a></p>
+					<p><a href="#2"><data value="9">Contenu d'un document <em>HTML</em></data></a></p>
 					<ol>
 						<li>
-							<p><a href="#2-1"><data value="8">Corps de texte</data></a></p>
+							<p><a href="#2-1"><data value="9">Corps de texte</data></a></p>
 						</li>
 						<li>
-							<p><a href="#2-2"><data value="9">Formatage de texte (à la <em>HTML4</em>)</data></a></p>
+							<p><a href="#2-2"><data value="10">Formatage de texte (à la <em>HTML4</em>)</data></a></p>
 						</li>
 						<li>
-							<p><a href="#2-3"><data value="11">Balisage sémantique de texte</data></a></p>
+							<p><a href="#2-3"><data value="12">Balisage sémantique de texte</data></a></p>
 						</li>
 						<li>
-							<p><a href="#2-4"><data value="12">Références à d'autres documents</data></a></p>
+							<p><a href="#2-4"><data value="13">Références à d'autres documents</data></a></p>
 						</li>
 						<li>
-							<p><a href="#2-5"><data value="14">Structures composites plus complexes</data></a></p>
+							<p><a href="#2-5"><data value="15">Structures composites plus complexes</data></a></p>
 						</li>
 						<li>
-							<p><a href="#2-6"><data value="18">Formulaires</data></a></p>
+							<p><a href="#2-6"><data value="19">Formulaires</data></a></p>
 						</li>
 						<li>
-							<p><a href="#2-7"><data value="21">Sections</data></a></p>
+							<p><a href="#2-7"><data value="22">Sections</data></a></p>
 						</li>
 					</ol>
 				</li>
 				<li>
-					<p><a href="#3"><data value="23">Métadonnées d'un document <em>HTML</em></data></a></p>
+					<p><a href="#3"><data value="25">Métadonnées d'un document <em>HTML</em></data></a></p>
 				</li>
 				<li>
-					<p><a href="#4"><data value="25">Structure générale d'un document <em>HTML</em> valide</data></a></p>
+					<p><a href="#4"><data value="27">Structure générale d'un document <em>HTML</em> valide</data></a></p>
 				</li>
 			</ol>
 			<h2 id="1">Syntaxe d'un nœud</h2>
@@ -109,8 +109,28 @@
 						</li>
 					</ul>
 				</li>
+			</ul>
+			<hr/>
+			<ul>
 				<li>
-					<p>Attributs spécifiques selon le type d'élément&nbsp;: <code>src="…"</code> et <code>alt="…"</code> pour les éléments <code>&lt;img/&gt;</code>, <code>href="…"</code> pour les éléments <code>&lt;a&gt;…&lt;/a&gt;</code>…</p>
+					<p>Attributs spécifiques selon le type d'élément&nbsp;:</p>
+					<ul>
+						<li>
+							<p><code>width="…"</code>, <code>height="…"</code>, <code>src="…"</code> et <code>alt="…"</code> pour les éléments <code>&lt;img/&gt;</code>…</p>
+						</li>
+						<li>
+							<p><code>href="…"</code> et <code>download="…"</code></code>… pour les éléments <code>&lt;a&gt;…&lt;/a&gt;</code>…</p>
+						</li>
+						<li>
+							<p><code>type="…"</code>, <code>name="…"</code>, <code>value="…"</code></code>… pour les éléments <code>&lt;input/&gt;</code> et <code>&lt;button/&gt;</code>…</p>
+						</li>
+						<li>
+							<p><code>for="…"</code> pour les éléments <code>&lt;label&gt;…&lt;/label&gt;</code>…</p>
+						</li>
+						<li>
+							<p><code>colspan="…"</code> et <code>rowspan="…"</code> pour les éléments <code>&lt;th&gt;…&lt;/th&gt;</code> et <code>&lt;td&gt;…&lt;/td&gt;</code>…</p>
+						</li>
+					</ul>
 				</li>
 			</ul>
 			<h3 id="1-3">Échappement de caractères</h3>
@@ -347,16 +367,17 @@
 				<li>
 					<p>Aparté&nbsp;: <code>&lt;aside&gt;…&lt;/aside&gt;</code> représentant un contenu tangentiel pouvant être considéré séparément du reste du document (un encart publicitaire, une anecdote, une note…)</p>
 				</li>
-				<li>
-					<p>Section de navigation&nbsp;: <code>&lt;nav&gt;…&lt;/nav&gt;</code> représentant un groupement de liens de navigation (un menu, une table des matières…)</p>
-				</li>
 			</ul>
 			<hr/>
 			<ul>
 				<li>
+					<p>Section de navigation&nbsp;: <code>&lt;nav&gt;…&lt;/nav&gt;</code> représentant un groupement de liens de navigation (un menu, une table des matières…)</p>
+				</li>
+				<li>
 					<p>Section générique&nbsp;: <code>&lt;section&gt;…&lt;/section&gt;</code> représentant tout autre groupement thématique (un chapitre, une sous-partie, un onglet…)</p>
 				</li>
 			</ul>
+			<hr/>
 			<p>Les différentes portions du contenu d'une section peuvent être éventuellement regroupées à l'aide de&nbsp;:</p>
 			<ul>
 				<li>

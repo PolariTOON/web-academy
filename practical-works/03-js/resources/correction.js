@@ -105,7 +105,7 @@ const renderBody = (table, output) => {
 			const content = item[key];
 			cell.textContent = content;
 		}
-	};
+	}
 	oldBody.replaceWith(newBody);
 };
 /* ~~~~ State logging ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

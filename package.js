@@ -19,7 +19,7 @@ const contentTypes = {
 	".jpg": "image/jpg",
 	".pdf": "application/pdf",
 	".woff": "font/woff",
-	".woff2": "font/woff2"
+	".woff2": "font/woff2",
 };
 const address = new URL("http://127.0.0.1/");
 const root = import.meta.url.slice(0, import.meta.url.lastIndexOf("/"));

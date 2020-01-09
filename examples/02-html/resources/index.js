@@ -1,3 +1,12 @@
+const meta = /\r\n|\r|\n|&|<|>/gu;
+const entities = {
+	"\r\n": "<br/>",
+	"\r": "<br/>",
+	"\n": "<br/>",
+	"&": "&amp;",
+	"<": "&lt;",
+	">": "&gt;",
+};
 const likesField = function likesField(checkbox) {
 	return checkbox.checked ? "j'aime" : "je n'aime pas";
 };
@@ -9,15 +18,6 @@ const escapeField = function escapeField(textarea) {
 };
 const {my_form} = document.forms;
 const {name, age, biography, banana, apple, orange, driver_license, password, token, result} = my_form;
-const meta = /\r\n|\r|\n|&|<|>/gu;
-const entities = {
-	"\n": "<br/>",
-	"\r": "<br/>",
-	"\r\n": "<br/>",
-	"&": "&amp;",
-	"<": "&lt;",
-	">": "&gt;"
-};
 my_form.querySelector("button[type=\"button\"]").addEventListener("click", () => {
 	result.innerHTML = `\
 Je suis ${name.value || "anonyme"} et j'ai ${age.value || "arrêté de compter les"} ans.\
