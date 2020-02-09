@@ -177,7 +177,9 @@ q {
 code,
 kbd,
 samp {
+	line-height: 1.5625;
 	font-family: "Ubuntu Mono", monospace;
+	font-size: 1.28rem;
 	-moz-tab-size: 4;
 	tab-size: 4;
 	-webkit-hyphens: none;

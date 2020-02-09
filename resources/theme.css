@@ -38,10 +38,6 @@ main > hgroup::after {
 	content: "";
 	display: table;
 }
-main > hgroup > h1,
-main > hgroup > h2 {
-	display: block;
-}
 main > hgroup > h1 {
 	text-align: left;
 }
@@ -56,47 +52,54 @@ main > hgroup > h2 {
 	background-repeat: no-repeat;
 	text-align: right;
 }
-main > hgroup + h2 {
+main > hgroup + address {
+	margin: -4rem 0;
+}
+main > hgroup + address > p {
+	margin: 0;
+	text-align: center;
+}
+main > hgroup + address + h2 {
 	counter-reset: h2;
 }
-main > hgroup + h2::before {
+main > hgroup + address + h2::before {
 	content: none;
 }
-main > hgroup + h2 + ol > li::before {
+main > hgroup + address + h2 + ol > li::before {
 	content: "." counter(ol, upper-roman);
 }
-main > hgroup + h2 + ol > li > ol > li::before {
+main > hgroup + address + h2 + ol > li > ol > li::before {
 	content: "." counter(ol);
 }
-main > hgroup + h2 + ol > li > ol > li > ol > li::before {
+main > hgroup + address + h2 + ol > li > ol > li > ol > li::before {
 	content: "§";
 }
-main > hgroup + h2 + ol > li > p > a:not([download]) > data,
-main > hgroup + h2 + ol > li > ol > li > p > a:not([download]) > data,
-main > hgroup + h2 + ol > li > ol > li > ol > li > p > a:not([download]) > data {
+main > hgroup + address + h2 + ol > li > p > a:not([download]) > data,
+main > hgroup + address + h2 + ol > li > ol > li > p > a:not([download]) > data,
+main > hgroup + address + h2 + ol > li > ol > li > ol > li > p > a:not([download]) > data {
 	display: inline-flex;
 	width: 100%;
 }
-main > hgroup + h2 + ol > li > p > a:not([download]) > data::before,
-main > hgroup + h2 + ol > li > ol > li > p > a:not([download]) > data::before,
-main > hgroup + h2 + ol > li > ol > li > ol > li > p > a:not([download]) > data::before {
+main > hgroup + address + h2 + ol > li > p > a:not([download]) > data::before,
+main > hgroup + address + h2 + ol > li > ol > li > p > a:not([download]) > data::before,
+main > hgroup + address + h2 + ol > li > ol > li > ol > li > p > a:not([download]) > data::before {
 	content: "";
 	order: 1;
 	flex: 1 0 auto;
 	margin: 1.6rem .4rem .2rem .4rem;
 	border-bottom: .2rem dotted #369;
 }
-main > hgroup + h2 + ol > li > p > a:not([download]) > data::after,
-main > hgroup + h2 + ol > li > ol > li > p > a:not([download]) > data::after,
-main > hgroup + h2 + ol > li > ol > li > ol > li > p > a:not([download]) > data::after {
+main > hgroup + address + h2 + ol > li > p > a:not([download]) > data::after,
+main > hgroup + address + h2 + ol > li > ol > li > p > a:not([download]) > data::after,
+main > hgroup + address + h2 + ol > li > ol > li > ol > li > p > a:not([download]) > data::after {
 	content: attr(value);
 	order: 1;
 	flex: 0 0 auto;
 	color: #369;
 }
-main > hgroup + h2 + ol > li > p > a:not([download]) > data > *,
-main > hgroup + h2 + ol > li > ol > li > p > a:not([download]) > data > *,
-main > hgroup + h2 + ol > li > ol > li > ol > li > p > a:not([download]) > data > * {
+main > hgroup + address + h2 + ol > li > p > a:not([download]) > data > *,
+main > hgroup + address + h2 + ol > li > ol > li > p > a:not([download]) > data > *,
+main > hgroup + address + h2 + ol > li > ol > li > ol > li > p > a:not([download]) > data > * {
 	display: contents;
 }
 main > h2 {
