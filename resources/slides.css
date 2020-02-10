@@ -12,14 +12,10 @@
 	--padding-x: calc((var(--outer-size-x) - var(--inner-size-x)) / 2);
 	--padding-y: calc((var(--outer-size-y) - var(--inner-size-y)) / 2);
 }
-/*~~~~~~ html, body ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~ html ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 html {
-	font-size: var(--font-size); /* 1rem */
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
-}
-body {
-	font-family: var(--font-family);
 }
 /*~~~~~~ header, footer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 header,
