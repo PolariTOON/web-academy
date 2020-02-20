@@ -1,4 +1,4 @@
-# *Web Academy*
+# *Web Academy* [<img width="100" height="100" alt="" src="resources/web-academy.png" align="right"/>](//tristoon.github.io/web-academy/)
 
 ## Présentation
 
