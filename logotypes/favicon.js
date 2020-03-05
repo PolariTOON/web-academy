@@ -1,5 +1,6 @@
 scale=1
 a=document.createElement("canvas")
+a.style.backgroundColor="#eee"
 a.width=a.height=(256-28*2)*scale
 b=a.getContext("2d")
 b.scale(scale,scale)

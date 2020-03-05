@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" stroke-linecap="square" stroke-linejoin="bevel">
+	<clipPath id="clip">
+		<circle cx="128" cy="128" r="96" stroke-width="2"/>
+	</clipPath>
+	<circle cx="128" cy="128" r="96" fill="none" stroke-width="2"/>
+	<g clip-path="url(#clip)">
+		<g stroke="#333333" stroke-width="2">
+			<path d="
+				M0,96
+				L160,256
+				L0,256
+				Z
+			" fill="#158700"/>
+			<path d="
+				M0,0
+				L12,0
+				L256,244
+				L256,256
+				L220,256
+				L0,36
+				Z
+			" fill="#1a5e9a"/>
+			<path d="
+				M76,0
+				L256,0
+				L256,180
+				Z
+			" fill="#ff7b00"/>
+		</g>
+		<g fill="none">
+			<path d="
+				M54,128
+				L80,224
+				L104,128
+				M104,128
+				L128,224
+				L152,128
+				M152,224
+				L176,128
+				M176,128
+				L200,224
+				M164,192
+				L188,192
+			" stroke="#333333" stroke-width="20"/>
+			<path d="
+				M54,128
+				L80,224
+				L104,128
+				M104,128
+				L128,224
+				L152,128
+				M152,224
+				L176,128
+				M176,128
+				L200,224
+				M164,192
+				L188,192
+			" stroke="#ffffff" stroke-width="16"/>
+		</g>
+	</g>
+	<g fill="none">
+		<circle cx="128" cy="128" r="96" stroke="#333333" stroke-width="6"/>
+		<circle cx="128" cy="128" r="96" stroke="#ffffff" stroke-width="2"/>
+	</g>
+</svg>
