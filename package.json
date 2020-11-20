@@ -2,12 +2,12 @@
   "name": "web-academy",
   "version": "0.0.0",
   "description": "Formation web dispensée par Telecom Nancy Services",
+  "main": "package.js",
   "scripts": {
-    "start": "node package.js"
+    "start": "node package.js http://127.0.0.1:8080/"
   },
-  "repository": "https://github.com/TrisTOON/web-academy",
+  "repository": "https://github.com/PolariTOON/web-academy",
   "author": "Tristan LE GODAIS",
   "license": "MIT",
-  "type": "module",
-  "exports": "./package.js"
+  "type": "module"
 }

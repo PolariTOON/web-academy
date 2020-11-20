@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" stroke-linecap="square" stroke-linejoin="bevel">
 	<clipPath id="clip">
-		<circle cx="128" cy="128" r="96" stroke-width="2"/>
+		<circle cx="128" cy="128" r="96"/>
 	</clipPath>
-	<circle cx="128" cy="128" r="96" fill="none" stroke-width="2"/>
+	<circle cx="128" cy="128" r="96" fill="none"/>
 	<g clip-path="url(#clip)">
 		<g stroke="#333333" stroke-width="2">
 			<path d="
@@ -31,9 +31,11 @@
 			<path d="
 				M54,128
 				L80,224
+				M80,224
 				L104,128
 				M104,128
 				L128,224
+				M128,224
 				L152,128
 				M152,224
 				L176,128
@@ -45,9 +47,11 @@
 			<path d="
 				M54,128
 				L80,224
+				M80,224
 				L104,128
 				M104,128
 				L128,224
+				M128,224
 				L152,128
 				M152,224
 				L176,128

@@ -21,9 +21,9 @@ main figure > canvas,
 main figure > picture,
 main figure > audio[controls],
 main figure > video[controls],
-main table > :not(caption) > tr > th[scope],
-main table > :not(caption) > tr > th[scope]::before,
-main table > :not(caption) > tr > th[scope]::after,
+main table > :not(caption) > tr > th,
+main table > :not(caption) > tr > th::before,
+main table > :not(caption) > tr > th::after,
 main table > :not(caption) > tr > td::after,
 main hr {
 	color: #369;

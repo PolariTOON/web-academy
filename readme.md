@@ -1,4 +1,4 @@
-# *Web Academy* [<img width="100" height="100" alt="" src="resources/web-academy.png" align="right"/>](//tristoon.github.io/web-academy/)
+# *Web Academy* [<img width="100" height="100" alt="" src="resources/web-academy.png" align="right"/>](//polaritoon.github.io/web-academy/)
 
 ## Présentation
 
@@ -26,7 +26,7 @@ La *Web Academy* est une formation sur le *web* dispensée aux élèves de [*Tel
 
 - Reproduction du style du site d'un club ([sujet](practical-works/02-css/subject.html.pdf), [squelette](practical-works/02-css/resources/index.css), [objectif](practical-works/02-css/goal.png), [correction](practical-works/02-css/resources/correction.css))
 
-***ECMAScript*** :
+***JS*** :
 
 - Conception d'un moteur de recherche ([sujet](practical-works/03-js/subject.html.pdf), [squelette](practical-works/03-js/resources/index.js), [correction](practical-works/03-js/resources/correction.js))
 
@@ -50,7 +50,7 @@ La *Web Academy* est une formation sur le *web* dispensée aux élèves de [*Tel
 
 ## Lancement du serveur local
 
-À partir d'un certain point de la formation, vous aurez besoin d'un serveur local pour effectuez vos tests. Le script [`package.js`](package.js) vous permet d'en lancer un rapidement, avec le minimum de configuration. Pour cela, installez au préalable *Node.js* au moins en version 13.2.0 (à l'aide de [*nvm*](https://github.com/nvm-sh/nvm) par exemple) et clonez ce dépôt. Ensuite, à la racine du projet, exécutez le fichier `package.sh` si vous êtes dans un environnement de type *Unix*, `package.bat` sous *Windows* ou bien la commande suivante :
+À partir d'un certain point de la formation, vous aurez besoin d'un serveur local pour effectuez vos tests. Le script [`package.js`](package.js) vous permet d'en lancer un rapidement, avec le minimum de configuration. Pour cela, installez au préalable *Node.js* au moins en version 12.17.0 (à l'aide de [*nvm*](https://github.com/nvm-sh/nvm) par exemple) et clonez ce dépôt. Ensuite, à la racine du projet, exécutez le fichier `package.sh` si vous êtes dans un environnement de type *Unix*, `package.bat` sous *Windows* ou bien la commande suivante :
 
 ```sh
 $ npm start
