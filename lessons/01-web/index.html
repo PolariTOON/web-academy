@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+	<head>
+		<title>Web Academy - Introduction au développement web</title>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" type="text/css" href="./index.css"/>
+	</head>
+	<body>
+		<header id="header">
+			<p>Introduction au développement <em>web</em></p>
+			<p><em>Telecom Nancy Services</em></p>
+		</header>
+		<main id="main">
+			<hgroup>
+				<h1><em>Web Academy</em></h1>
+				<h2>Introduction au<br/>développement <em>web</em></h2>
+			</hgroup>
+			<address>
+				<p>Alexis EL MRINI (<a href="https://github.com/alexis-elmrini">@alexis-elmrini</a>)</p>
+				<p>Tristan LE GODAIS (<a href="https://github.com/TrisTOON">@TrisTOON</a>)</p>
+			</address>
+			<h2>Sommaire</h2>
+			<ol>
+				<li>
+					<p><a href="#1"><data value="3">Histoire du <em>web</em></data></a></p>
+				</li>
+				<li>
+					<p><a href="#2"><data value="5">Présentation de <em>HTTP</em></data></a></p>
+				</li>
+				<li>
+					<p><a href="#3"><data value="10">Présentation des langages du <em>web</em></data></a></p>
+				</li>
+				<li>
+					<p><a href="#4"><data value="17">Outils de développement <em>web</em></data></a></p>
+				</li>
+			</ol>
+			<h2 id="1">Histoire du <em>web</em></h2>
+			<dl>
+				<dt>1950's</dt>
+				<dd>
+					<p>Premiers réseaux centralisés</p>
+				</dd>
+				<dt>1958</dt>
+				<dd>
+					<p><em>ASCII</em></p>
+				</dd>
+				<dt>1978</dt>
+				<dd>
+					<p><em>TCP</em> / <em>IP</em>&nbsp;: naissance de l'internet</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>1983</dt>
+				<dd>
+					<p><em>DNS</em>&nbsp;: nommage des machines</p>
+				</dd>
+				<dt>1990's</dt>
+				<dd>
+					<p><em>HTML</em>, <em>HTTP</em>, <em>URI</em> (Tim Berners-Lee)&nbsp;: naissance du <em>World Wide Web</em>, réseau décentralisé</p>
+				</dd>
+			</dl>
+			<h2 id="2">Présentation de <em>HTTP</em></h2>
+			<figure>
+				<figcaption>Connexion de clients et de serveurs à travers l'Internet</figcaption>
+				<picture><img src="./resources/client-server.svg" alt="Connexion de clients et de serveurs à travers l'Internet"/></picture>
+			</figure>
+			<hr/>
+			<dl>
+				<dt><em>HTTP</em></dt>
+				<dd>
+					<p><em>Hypertext Transfer Protocol</em></p>
+				</dd>
+				<dd>
+					<p>Méthodes de requêtes&nbsp;: <kbd>DELETE</kbd>, <kbd>GET</kbd>, <kbd>POST</kbd>, <kbd>PUT</kbd>…</p>
+				</dd>
+				<dd>
+					<p>Codes de réponses&nbsp;: <samp>200 OK</samp>, <samp>302 Found</samp>, <samp>403 Forbidden</samp>, <samp>404 Not Found</samp>, <samp>500 Internal Server Error</samp>…</p>
+				</dd>
+				<dt><em>HTTPS</em></dt>
+				<dd>
+					<p><em>Hypertext Transfer Protocol Secure</em></p>
+				</dd>
+				<dd>
+					<p>Échange <em>HTTP</em> chiffré et signé avec <em>SSL</em> / <em>TLS</em></p>
+				</dd>
+				<dd>
+					<p>Garantit la confidentialité et l'intégrité des données transférées</p>
+				</dd>
+			</dl>
+			<figure>
+				<figcaption>Échange <em>HTTP</em> entre un client et un serveur</figcaption>
+				<picture><img src="./resources/http.svg" alt="Échange HTTP entre un client et un serveur"/></picture>
+			</figure>
+			<hr/>
+			<figure>
+				<figcaption>En-tête d'une requête <em>HTTP</em></figcaption>
+				<pre><code>GET / HTTP/2&#x0a;Host: example.org&#x0a;User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0&#x0a;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&#x0a;Accept-Language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3&#x0a;Accept-Encoding: gzip, deflate, br&#x0a;Connection: keep-alive&#x0a;Upgrade-Insecure-Requests: 1&#x0a;If-Modified-Since: Thu, 17 Oct 2019 07:18:26 GMT&#x0a;If-None-Match: "3147526947"&#x0a;Cache-Control: max-age=0&#x0a;TE: Trailers&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<figure>
+				<figcaption>En-tête d'une réponse HTTP</figcaption>
+				<pre><code>HTTP/2 200 OK&#x0a;content-encoding: gzip&#x0a;accept-ranges: bytes&#x0a;cache-control: max-age=604800&#x0a;content-type: text/html; charset=UTF-8&#x0a;date: Tue, 26 Nov 2019 17:36:02 GMT&#x0a;etag: "3147526947+gzip"&#x0a;expires: Tue, 03 Dec 2019 17:36:02 GMT&#x0a;last-modified: Thu, 17 Oct 2019 07:18:26 GMT&#x0a;server: ECS (bsa/EB17)&#x0a;vary: Accept-Encoding&#x0a;x-cache: HIT&#x0a;content-length: 648&#x0a;X-Firefox-Spdy: h2&#x0a;</code></pre>
+			</figure>
+			<h2 id="3">Présentation des langages du <em>web</em></h2>
+			<picture><img src="./resources/html.png" alt="HTML5"/></picture>
+			<dl>
+				<dt><em>HTML</em></dt>
+				<dd>
+					<p><em>Hypertext Markup Language</em></p>
+				</dd>
+				<dd>
+					<p>Langage de structuration de document</p>
+				</dd>
+				<dd>
+					<p>Balises (<code>&lt;html&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;p&gt;</code>…)</p>
+				</dd>
+				<dd>
+					<p>Aujourd'hui&nbsp;: <em>HTML 5</em></p>
+				</dd>
+			</dl>
+			<hr/>
+			<picture><img src="./resources/css.png" alt="CSS3"/></picture>
+			<dl>
+				<dt><em>CSS</em></dt>
+				<dd>
+					<p><em>Cascading Style Sheets</em></p>
+				</dd>
+				<dd>
+					<p>Langage de présentation de document</p>
+				</dd>
+				<dd>
+					<p>Permet de styliser une page</p>
+				</dd>
+				<dd>
+					<p>Syntaxe&nbsp;: <code>div#content {color: blue;}</code></p>
+				</dd>
+				<dd>
+					<p>Aujourd'hui&nbsp;: <em>CSS 3</em></p>
+				</dd>
+			</dl>
+			<hr/>
+			<picture><img src="./resources/js.png" alt="JS"/></picture>
+			<dl>
+				<dt><em>JS</em></dt>
+				<dd>
+					<p><em>Javascript</em></p>
+				</dd>
+				<dd>
+					<p>Nom officiel&nbsp;: <em>ECMAScript</em></p>
+				</dd>
+				<dd>
+					<p>Langage de programmation côté client</p>
+				</dd>
+				<dd>
+					<p>Permet d'animer une page</p>
+				</dd>
+				<dd>
+					<p>Attention&nbsp;: n'est <strong>pas</strong> <em>Java</em></p>
+				</dd>
+				<dd>
+					<p>Aujourd'hui&nbsp;: <em>ECMAScript 2018</em></p>
+				</dd>
+			</dl>
+			<hr/>
+			<picture><img src="./resources/php.png" alt="PHP"/></picture>
+			<dl>
+				<dt><em>PHP</em></dt>
+				<dd>
+					<p><em>PHP Hypertext Preprocessor</em></p>
+				</dd>
+				<dd>
+					<p>Langage de programmation côté serveur</p>
+				</dd>
+				<dd>
+					<p>Permet de générer une page</p>
+				</dd>
+				<dd>
+					<p>Aujourd'hui&nbsp;: <em>PHP 7</em></p>
+				</dd>
+			</dl>
+			<hr/>
+			<picture><img src="./resources/mariadb.png" alt="MariaDB"/></picture>
+			<picture><img src="./resources/mysql.png" alt="MySQL"/></picture>
+			<dl>
+				<dt><em>SQL</em></dt>
+				<dd>
+					<p><em>Structured Query Language</em></p>
+				</dd>
+				<dd>
+					<p>Langage de manipulation des données</p>
+				</dd>
+				<dd>
+					<p>Permet de gérer des bases de données</p>
+				</dd>
+				<dd>
+					<p>Syntaxe&nbsp;: <code>SELECT name FROM users;</code></p>
+				</dd>
+				<dd>
+					<p>Aujourd'hui&nbsp;: <em>MySQL</em>, <em>MariaDB</em>, <em>SQLite</em>…</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt><em>XML</em></dt>
+				<dd>
+					<p><em>eXtensible Markup Language</em></p>
+				</dd>
+				<dd>
+					<p>Méta-langage d'échange de données</p>
+				</dd>
+				<dd>
+					<p>Permet la communication entre applications</p>
+				</dd>
+				<dd>
+					<p>Différents langages&nbsp;: <em>XSLT</em>, <em>XPath</em>, <em>XHTML</em></p>
+				</dd>
+			</dl>
+			<hr/>
+			<picture><img src="./resources/json.png" alt="JSON"/></picture>
+			<dl>
+				<dt><em>JSON</em></dt>
+				<dd>
+					<p><em>Javascript Object Notation</em></p>
+				</dd>
+				<dd>
+					<p>Langage d'échange de données</p>
+				</dd>
+				<dd>
+					<p>Syntaxe&nbsp;: objets de <em>JavaScript</em></p>
+				</dd>
+				<dd>
+					<p>Utilisé par certaines bases de données <em>NoSQL</em></p>
+				</dd>
+			</dl>
+			<h2 id="4">Outils de développement <em>web</em></h2>
+			<ul>
+				<li>
+					<p>Pour tous ces langages&nbsp;: un éditeur de texte</p>
+					<ul>
+						<li>
+							<p><em>Windows</em>&nbsp;: <em>Bloc-notes</em>, <em>Notepad++</em></p>
+						</li>
+						<li>
+							<p><em>GNU</em> / <em>Linux</em>&nbsp;: <em>Nano</em>, <em>Gedit</em>, <em>Kwrite</em>, <em>Sublime</em>…</p>
+						</li>
+						<li>
+							<p><em>Mac</em>&nbsp;: <em>Brackets</em>, <em>TextWrangler</em>…</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<hr/>
+			<ul>
+				<li>
+					<p>Lire un fichier <em>HTML</em>&nbsp;: un navigateur</p>
+					<ul>
+						<li>
+							<p><em>Internet Explorer</em> / <em>Edge</em></p>
+						</li>
+						<li>
+							<p><em>Mozilla Firefox</em></p>
+						</li>
+						<li>
+							<p><em>Google Chrome</em></p>
+						</li>
+						<li>
+							<p><em>Safari</em></p>
+						</li>
+						<li>
+							<p><em>Opera</em></p>
+						</li>
+					</ul>
+					<p>Il est nécessaire d'en installer <strong>plusieurs</strong></p>
+				</li>
+			</ul>
+			<hr/>
+			<ul>
+				<li>
+					<p>Dans un navigateur&nbsp;: <kbd>F12</kbd></p>
+					<p>Outils de développement&nbsp;:</p>
+					<ul>
+						<li>
+							<p>Inspecteur <em>HTML</em></p>
+						</li>
+						<li>
+							<p>Console <em>ECMAScript</em></p>
+						</li>
+						<li>
+							<p>Débogueur</p>
+						</li>
+						<li>
+							<p>Éditeur de style <em>CSS</em></p>
+						</li>
+						<li>
+							<p>Analyse réseau</p>
+						</li>
+						<li>
+							<p>Stockage (<em>cookies</em>, session…)</p>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<hr/>
+			<ul>
+				<li>
+					<p>Autres outils&nbsp;:</p>
+					<dl>
+						<dt><kbd>CTRL + U</kbd></dt>
+						<dd>
+							<p>Code source de la page</p>
+						</dd>
+						<dt><kbd>CTRL + S</kbd></dt>
+						<dd>
+							<p>Enregistrement de la page</p>
+						</dd>
+						<dt><kbd>CTRL + MAJ + M</kbd> (<em>Firefox</em>)</dt>
+						<dd>
+							<p>Redimensionnement de la page (<em>responsive design</em>)</p>
+						</dd>
+					</dl>
+				</li>
+			</ul>
+		</main>
+		<footer id="footer">
+			<p></p>
+		</footer>
+	</body>
+</html>

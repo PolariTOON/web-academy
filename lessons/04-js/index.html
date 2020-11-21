@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+	<head>
+		<title>Web Academy - Manipulation de page web en JS</title>
+		<meta name="viewport" content="width=device-width"/>
+		<link rel="stylesheet" type="text/css" href="./index.css"/>
+	</head>
+	<body>
+		<header id="header">
+			<p>Manipulation de page <em>web</em> en <em>JS</em></p>
+			<p><em>Telecom Nancy Services</em></p>
+		</header>
+		<main id="main">
+			<hgroup>
+				<h1><em>Web Academy</em></h1>
+				<h2>Manipulation de<br/>page <em>web</em> en <em>JS</em></h2>
+			</hgroup>
+			<address>
+				<p>Alexis EL MRINI (<a href="https://github.com/alexis-elmrini">@alexis-elmrini</a>)</p>
+				<p>Tristan LE GODAIS (<a href="https://github.com/TrisTOON">@TrisTOON</a>)</p>
+			</address>
+			<h2>Sommaire</h2>
+			<ol>
+				<li>
+					<p><a href="#1"><data value="6">Présentation du <em>JS</em></data></a></p>
+					<ol>
+						<li>
+							<p><a href="#1-1"><data value="6">Vocation du <em>JS</em></data></a></p>
+						</li>
+						<li>
+							<p><a href="#1-2"><data value="7">Intégration dans un document</data></a></p>
+						</li>
+						<li>
+							<p><a href="#1-3"><data value="10">Bonnes pratiques</data></a></p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><a href="#2"><data value="11">Types d'expressions</data></a></p>
+				</li>
+				<li>
+					<p><a href="#3"><data value="15">Instructions</data></a></p>
+					<ol>
+						<li>
+							<p><a href="#3-1"><data value="15">Déclarations de variables</data></a></p>
+						</li>
+						<li>
+							<p><a href="#3-2"><data value="21">Blocs d'instructions</data></a></p>
+						</li>
+						<li>
+							<p><a href="#3-3"><data value="22">Structures de contrôle classiques</data></a></p>
+						</li>
+						<li>
+							<p><a href="#3-4"><data value="23">Autres syntaxes de boucles</data></a></p>
+						</li>
+						<li>
+							<p><a href="#3-5"><data value="25">Étiquettes</data></a></p>
+						</li>
+						<li>
+							<p><a href="#3-6"><data value="26">Gestion des erreurs</data></a></p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><a href="#4"><data value="27">Opérations</data></a></p>
+					<ol>
+						<li>
+							<p><a href="#4-1"><data value="27">Affectations</data></a></p>
+						</li>
+						<li>
+							<p><a href="#4-2"><data value="28">Concaténations</data></a></p>
+						</li>
+						<li>
+							<p><a href="#4-3"><data value="29">Opérations arithmétiques</data></a></p>
+						</li>
+						<li>
+							<p><a href="#4-4"><data value="33">Opérations bit à bit</data></a></p>
+						</li>
+						<li>
+							<p><a href="#4-5"><data value="36">Opérations logiques</data></a></p>
+						</li>
+						<li>
+							<p><a href="#4-6"><data value="38">Comparaisons</data></a></p>
+						</li>
+						<li>
+							<p><a href="#4-7"><data value="40">Fusion nulle</data></a></p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><a href="#5"><data value="41">Bibliothèque standard</data></a></p>
+					<ol>
+						<li>
+							<p><a href="#5-1"><data value="41">Nombres</data></a></p>
+						</li>
+						<li>
+							<p><a href="#5-2"><data value="46">Chaînes de caractères</data></a></p>
+						</li>
+						<li>
+							<p><a href="#5-3"><data value="50">Tableaux</data></a></p>
+						</li>
+						<li>
+							<p><a href="#5-4"><data value="55"><em>JavaScript Object Notation</em></data></a></p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><a href="#6"><data value="57">Bibliothèques récurrentes</data></a></p>
+					<ol>
+						<li>
+							<p><a href="#6-1"><data value="57">Console</data></a></p>
+						</li>
+						<li>
+							<p><a href="#6-2"><data value="62"><em>Uniform Resource Locator</em></data></a></p>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<p><a href="#7"><data value="66">APIs <em>web</em></data></a></p>
+					<ol>
+						<li>
+							<p><a href="#7-1"><data value="66">API <em>Fetch</em></data></a></p>
+						</li>
+						<li>
+							<p><a href="#7-2"><data value="68"><em>Document Object Model</em></data></a></p>
+						</li>
+					</ol>
+				</li>
+			</ol>
+			<h2 id="1">Présentation du <em>JS</em></h2>
+			<h3 id="1-1">Vocation du <em>JS</em></h3>
+			<p>Le langage <em>JS</em> (<em>JavaScript</em>) est un langage interprété, orienté objet à prototype et fonctionnel dont le typage est dynamique.</p>
+			<p>Il est apparu en 1996 dans le navigateur <em>Netscape Navigator</em> dans le but de manipuler les pages <em>web</em> et s'est rapidement établi comme le langage de script du <em>web</em>. Depuis 1997, il est standardisé et évolue sous le nom d'<em>ECMAScript</em>. Avec l'émergence de projets comme <em>GNOME Shell</em>, <em>Node.js</em>, <em>Moddable</em>, <em>Deno</em> ou <em>QuickJS</em>, l'environnement d'exécution du langage ne se limite plus seulement aux navigateurs.</p>
+			<h3 id="1-2">Intégration dans un document</h3>
+			<p>La manière d'intégrer un script <em>ECMAScript</em> à un document <em>HTML</em> dépend à la fois de la variante du langage utilisée et du moment de son évaluation. On distingue ainsi script classique (non strict ou strict) ou modulaire, script interne ou externe et script synchrone (bloquant), différé (récupéré en parallèle de l'analyse du document mais évalué à sa fin) ou asynchrone (récupéré en parallèle de l'analyse et évalué dès que possible, bloquant ainsi la suite de l'analyse).</p>
+			<p>Certaines combinaisons sont incompatibles. On comptabilise ainsi huit manières d'intégrer un script à un document.</p>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Formes d'intégration d'un script classique à un document</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Syntaxe</th>
+						<th scope="col">Localisation</th>
+						<th scope="col">Exécution</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>&lt;script&gt;…&lt;/script&gt;</code></th>
+						<td>
+							<p>Interne</p>
+						</td>
+						<td>
+							<p>Synchrone</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>&lt;script src="…"&gt;&lt;/script&gt;</code></th>
+						<td rowspan="3">
+							<p>Externe</p>
+						</td>
+						<td>
+							<p>Synchrone</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>&lt;script defer="" src="…"&gt;&lt;/script&gt;</code></th>
+						<td>
+							<p>Différée</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>&lt;script async="" src="…"&gt;&lt;/script&gt;</code></th>
+						<td>
+							<p>Asynchrone</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Formes d'intégration d'un script modulaire à un document</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Syntaxe</th>
+						<th scope="col">Localisation</th>
+						<th scope="col">Exécution</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>&lt;script type="module"&gt;…&lt;/script&gt;</code></th>
+						<td rowspan="2">
+							<p>Interne</p>
+						</td>
+						<td>
+							<p>Différée</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>&lt;script type="module" async=""&gt;…&lt;/script&gt;</code></th>
+						<td>
+							<p>Asynchrone</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>&lt;script type="module" src="…"&gt;&lt;/script&gt;</code></th>
+						<td rowspan="2">
+							<p>Externe</p>
+						</td>
+						<td>
+							<p>Différée</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>&lt;script type="module" async="" src="…"&gt;&lt;/script&gt;</code></th>
+						<td>
+							<p>Asynchrone</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 id="1-3">Bonnes pratiques</h3>
+			<p>À l'instar des <em>CSS</em>, il est préférable de séparer le code <em>ECMAScript</em> du code <em>HTML</em> en utilisant un script externe.</p>
+			<p>Il est également généralement recommandé de différer l'évaluation d'un script pour ne pas bloquer le chargement du reste d'une page <em>web</em> en utilisant l'attribut <code>defer="…"</code> dans le cas d'un script classique.</p>
+			<p>L'utilisation d'un script modulaire a l'avantage de permettre d'utiliser certaines des dernières fonctionnalités du langage (notamment l'import et l'export statique de modules). Si toutefois, vous préférez utiliser un script classique, alors le mode strict est fortement recommandé. Pour l'activer, il suffit de débuter le script par <code>"use strict";</code>.</p>
+			<h2 id="2">Types d'expressions</h2>
+			<p>Il existe actuellement huit types natifs en <em>JS</em>, dont sept types de valeurs primitives&nbsp;: <em>Undefined</em>, <em>Null</em>, <em>Boolean</em>, <em>BigInt</em>, <em>Number</em>, <em>String</em> et <em>Symbol</em>. Le reste des valeurs constitue le type objet&nbsp;: <em>Object</em>.</p>
+			<p>Parmi les objets, on trouve différentes sous-classes natives, notamment&nbsp;: <em>Function</em>, <em>Date</em>, <em>RegExp</em>, <em>Array</em>, <em>Map</em>, <em>Set</em>…</p>
+			<p>Certains types n'ont pas de notation litérale. Ci-après sont recensées des exemples de notations litérales pour les types qui en possède une.</p>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Aperçu des mots-clés désignant des valeurs primitives</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Type</th>
+						<th scope="col">Notation</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><em>Null</em></th>
+						<td>
+							<p><code>null</code></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><em>Boolean</em></th>
+						<td>
+							<p><code>false</code>, <code>true</code></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Aperçu de la notation litérale des autres valeurs primitives</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Type</th>
+						<th scope="col">Notation</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><em>BigInt</em></th>
+						<td>
+							<p><code>1n</code>, <code>2305843009213693951n</code>…</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><em>Number</em></th>
+						<td>
+							<p><code>1</code>, <code>3.14</code>…</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><em>String</em></th>
+						<td>
+							<p><code>""</code>, <code>'abc'</code>, <code>`def`</code>…</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Aperçu de la notation litérale des objets</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Type</th>
+						<th scope="col">Objet vide</th>
+						<th scope="col">Notation courte</th>
+						<th scope="col">Notation longue</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><em>RegExp</em></th>
+						<td>
+							<p><code>/(?:)/u</code></p>
+						</td>
+						<td>
+							<p><code>/[abc]/u</code></p>
+						</td>
+						<td>
+							<p><code>/(?:a|b|c)/u</code></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><em>Array</em></th>
+						<td>
+							<p><code>[]</code></p>
+						</td>
+						<td>
+							<p><code>[a, b]</code></p>
+						</td>
+						<td>
+							<p><code>[a, b,]</code></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><em>Object</em></th>
+						<td>
+							<p><code>{}</code></p>
+						</td>
+						<td>
+							<p><code>{a, b}</code></p>
+						</td>
+						<td>
+							<p><code>{["a"]: a, ["b"]: b,}</code></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><em>Function</em></th>
+						<td>
+							<p><code>() => {}</code></p>
+						</td>
+						<td>
+							<p><code>a => a</code></p>
+						</td>
+						<td>
+							<p><code>(a,) => {return a;}</code></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2 id="3">Instructions</h2>
+			<h3 id="3-1">Déclarations de variables</h3>
+			<p>Il existe divers moyens de déclarer des identifiants de variables en <em>JS</em>, chacune possèdant ses propres particularités&nbsp;: via les instructions <code>let …;</code>, <code>const …;</code>, <code>import …;</code>, <code>export …;</code>, <code>var …;</code>, <code>class … {…}</code>, <code>function …(…) …</code>, <code>function* …(…) …</code>, <code>async function …(…) …</code> ou <code>async function* …(…) …</code>, ou en tant que paramètre formel d'une fonction.</p>
+			<p>En pratique, les instructions <code>let …;</code>, <code>const …;</code>, <code>import …;</code>, <code>export …;</code> et les paramètres formels de fonctions suffisent à mimer le comportement des autres formes de déclarations (sans le calquer pour autant).</p>
+			<hr/>
+			<dl>
+				<dt><code>let …;</code></dt>
+				<dd>
+					<p>Cette instruction permet de déclarer une variable locale au bloc d'instructions englobant&nbsp;:</p>
+					<figure>
+						<figcaption>Déclaration <code>let …;</code></figcaption>
+						<pre><code>let a = 0, b;&#x0a;console.log(a); // 0&#x0a;console.log(b); // undefined&#x0a;</code></pre>
+					</figure>
+					<p>La variable est déclarée et initialisée au niveau de l'instruction (à <code>undefined</code> par défaut) et peut être réaffectée. L'utiliser avant ou la redéclarer produit cependant une erreur.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt><code>const …;</code></dt>
+				<dd>
+					<p>Cette instruction permet de déclarer une constante locale au bloc d'instructions englobant&nbsp;:</p>
+					<figure>
+						<figcaption>Déclaration <code>const</code></figcaption>
+						<pre><code>const a = 0, b = "";&#x0a;console.log(a); // 0&#x0a;console.log(b); // ""&#x0a;</code></pre>
+					</figure>
+					<p>Comme pour l'instruction <code>let …;</code>, la constante est déclarée et initialisée au niveau de l'instruction, mais cette fois-ci, une valeur est requise et la constante ne peut pas être réaffectée. L'utiliser avant ou la redéclarer produit également une erreur.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt><code>var …;</code></dt>
+				<dd>
+					<p>Cette instruction permet de déclarer une variable locale au corps de la fonction englobante&nbsp;:</p>
+					<figure>
+						<figcaption>Déclaration <code>var …;</code></figcaption>
+						<pre><code>console.log(a); // undefined&#x0a;var a = 0, b;&#x0a;console.log(a); // 0&#x0a;</code></pre>
+					</figure>
+					<p>La variable est déclarée au début du corps de la fonction englobante et initialisée à <code>undefined</code>. Si une valeur est donnée, la variable est affectée au niveau de l'instruction. L'utiliser avant ou la redéclarer avec <code>var …;</code> est possible.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt><code>function …(…) …</code></dt>
+				<dd>
+					<p>C'est la manière la plus courante de déclarer des fonctions locales au corps de la fonction englobante en <em>JS</em>&nbsp;:</p>
+					<figure>
+						<figcaption>Déclaration <code>function …(…) …</code></figcaption>
+						<pre><code>console.log(a); // function a()&#x0a;function a() {…}&#x0a;console.log(a); // function a()&#x0a;</code></pre>
+					</figure>
+					<p>La fonction est déclarée et initialisée au début du corps de la fonction englobante. Il est donc possible de l'utiliser avant même l'instruction. La redéclarer écrase juste la définition précédente, rendant celle-ci inutile.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<p>L'instruction <code>var …;</code> est présente depuis le début du langage <em>ECMAScript</em>, tandis que les instructions <code>let …;</code> et <code>const …;</code> sont des ajouts plus récents (2015) visant à donner une alternative à <code>var …;</code> sans ses défauts de conception.</p>
+			<p>Il est donc recommandé d'utiliser plutôt les instructions <code>let …;</code> et <code>const …;</code>. De plus, on privilégie généralement <code>const …;</code> si <code>let …;</code> n'est pas nécessaire.</p>
+			<p>Les fonctions et les classes constituent des objets de première classe en <em>JS</em>. Ils peuvent donc être déclarés sans utiliser les instructions spécifiques, voire même être utilisés directement en tant qu'expressions.</p>
+			<h3 id="3-2">Blocs d'instructions</h3>
+			<p>En <em>ECMAScript</em>, les instructions sont ponctuées par un point-virgule <code>;</code> terminal (optionnel dans certains cas), sauf dans le cas d'un bloc d'instructions. Délimité par une accolade ouvrante <code>{</code> au début et une accolade fermante <code>}</code> à la fin, il permet de regrouper plusieurs instructions&nbsp;:</p>
+			<figure>
+				<figcaption>Bloc d'instructions</figcaption>
+				<pre><code>{&#x0a;&#x09;…;&#x0a;&#x09;…;&#x0a;&#x09;…;&#x0a;}&#x0a;</code></pre>
+			</figure>
+			<h3 id="3-3">Structures de contrôle classiques</h3>
+			<p>Les syntaxes des structures de contrôle du langage <em>C</em> (dont <em>ECMAScript</em> s'inspire) sont supportées&nbsp;:</p>
+			<figure>
+				<figcaption>Structures reprises du langage <em>C</em></figcaption>
+				<pre><code>if (…) …&#x0a;if (…) … else …&#x0a;switch (…) {…}&#x0a;while (…) …&#x0a;do … while (…);&#x0a;for (…; …; …) …&#x0a;</code></pre>
+			</figure>
+			<h3 id="3-4">Autres syntaxes de boucles</h3>
+			<dl>
+				<dt><code>for (… in …) …</code></dt>
+				<dd>
+					<p>Il s'agit d'une boucle <code>for (…) …</code> particulière qui permet d'itérer sur les clés (qui ne sont pas des symboles) des propriétés (énumérables) d'un objet dans un ordre arbitraire&nbsp;:</p>
+					<figure>
+						<figcaption>Boucle <code>for (… in …) …</code></figcaption>
+						<pre><code>const o = {a: 42, b: 13};&#x0a;for (const k in o) {&#x0a;&#x09;console.log(k, o[k]); // "a" 42 puis "b" 13&#x0a;}</code></pre>
+					</figure>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt><code>for (… of …) …</code></dt>
+				<dd>
+					<p>Il s'agit d'une boucle <code>for (…) …</code> particulière qui permet de parcourir n'importe quel objet itérable selon l'ordre qu'il a défini&nbsp;:</p>
+					<figure>
+						<figcaption>Boucle <code>for (… of …) …</code></figcaption>
+						<pre><code>const o = [42, 13];&#x0a;for (const v of o) {&#x0a;&#x09;console.log(v); // 42 puis 13&#x0a;}</code></pre>
+					</figure>
+				</dd>
+			</dl>
+			<h3 id="3-5">Étiquettes</h3>
+			<p>Toute instruction peut être étiquettée de la même manière qu'en <em>C</em>.</p>
+			<p>L'instruction <code>break …;</code> peut être utilisée avec une telle étiquette n'importe où.</p>
+			<p>Au sein d'un boucle, les instructions <code>break …;</code> et <code>continue …;</code> peuvent être utilisées avec une étiquette optionnelle.</p>
+			<p>Au sein d'une structure <code>switch (…) {…}</code>, les étiquettes <code>case …</code> (avec n'importe quelle expression) et <code>default</code> peuvent être utilisées, ainsi que l'instruction <code>break …;</code> avec une étiquette optionnelle.</p>
+			<h3 id="3-6">Gestion des erreurs</h3>
+			<p>Le concept d'erreurs en <em>JS</em> est similaire à celui d'exceptions en <em>Java</em>, et par conséquent leur signalement et leur traitement également&nbsp;:</p>
+			<figure>
+				<figcaption>Instruction <code>throw …;</code> et structure <code>try {…} catch (…) {…} finally {…}</code></figcaption>
+				<pre><code>try {&#x0a;&#x09;throw new Error("Custom error");&#x0a;} catch (error) {&#x0a;&#x09;console.error(error.message);&#x0a;} finally {&#x0a;&#x09;console.log("Always executed");&#x0a;}&#x0a;</code></pre>
+			</figure>
+			<h2 id="4">Opérations</h2>
+			<h3 id="4-1">Affectations</h3>
+			<p>L'opérateur <code>… = …</code> affecte le résultat du calcul du membre droit au membre de gauche et retourne ce résultat.</p>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Affectations</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>… = …</code></th>
+						<td>
+							<p>Affectation simple</p>
+						</td>
+						<td>
+							<p>N'importe lequel</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 id="4-2">Concaténations</h3>
+			<p>L'opérateur <code>… + …</code> tente de convertir préalablement ses opérandes en chaînes de caractères (de type <em>String</em>) puis les concatène.</p>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Concaténations</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>… + …</code>, <code>… += …</code></th>
+						<td>
+							<p>Concaténation</p>
+						</td>
+						<td>
+							<p><em>String</em></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 id="4-3">Opérations arithmétiques</h3>
+			<p>Les opérateurs <code>… + …</code>, <code>… - …</code>, <code>… * …</code>, <code>… / …</code>, <code>… % …</code>, <code>… ** …</code>, <code>+…</code>, <code>-…</code>, <code>++…</code>, <code>--…</code>, <code>…++</code> et <code>…--</code> tentent de convertir préalablement leurs opérandes en nombres (de type <em>Number</em>), s'ils ne sont pas de type <em>BigInt</em>, puis effectuent un calcul arithmétique.</p>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Opérations arithmétiques binaires</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>… + …</code>, <code>… += …</code>,<br/><code>… - …</code>, <code>… -= …</code></th>
+						<td>
+							<p>Addition,<br/>soustraction</p>
+						</td>
+						<td rowspan="3">
+							<p><em>BigInt</em> ou <br/><em>Number</em> </p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>… * …</code>, <code>… *= …</code>,<br/><code>… / …</code>, <code>… /= …</code>,<br/><code>… % …</code>, <code>… %= …</code></th>
+						<td>
+							<p>Multiplication,<br/>division,<br/>reste de la division euclidienne</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>… ** …</code>, <code>… **= …</code></th>
+						<td>
+							<p>Exponentiation</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Opérations arithmétiques unaires</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>+…</code></th>
+						<td>
+							<p>Conversion en nombre</p>
+						</td>
+						<td>
+							<p><em>Number</em></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>-…</code></th>
+						<td>
+							<p>Opposé</p>
+						</td>
+						<td>
+							<p><em>BigInt</em> ou <br/><em>Number</em></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Opérations arithmétiques unaires à effets de bord</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+					<tr>
+						<th scope="row"><code>++…</code>,<br/><code>--…</code></th>
+						<td>
+							<p>Pré-incrémentation,<br/>pré-décrémentation</p>
+						</td>
+						<td rowspan="2">
+							<p><em>BigInt</em> ou <br/><em>Number</em></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>…++</code>,<br/><code>…--</code></th>
+						<td>
+							<p>Post-incrémentation,<br/>post-décrémentation</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 id="4-4">Opérations bit à bit</h3>
+			<p>Les opérateurs <code>… | …</code>, <code>… ^ …</code>, <code>… &amp; …</code>, <code>… &lt;&lt; …</code>, <code>… &gt;&gt; …</code>, <code>… &gt;&gt;&gt; …</code> et <code>~…</code> tentent de convertir préalablement leurs opérandes en entiers (de type <em>Number</em>), s'ils ne sont pas de type <em>BigInt</em>, puis effectuent un calcul bit à bit.</pe>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Opérations bit à bit binaires</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>… | …</code>, <code>… |= …</code>,<br/><code>… ^ …</code>, <code>… ^= …</code>,<br/><code>… &amp; …</code>, <code>… &amp;= …</code></th>
+						<td>
+							<p>Disjonction bit à bit,<br/>disjonction exclusive bit à bit,<br/>conjonction bit à bit</p>
+						</td>
+						<td rowspan="2">
+							<p><em>BigInt</em> ou <br/><em>Number</em> (entier)</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>… &lt;&lt; …</code>, <code>… &lt;&lt;= …</code>,<br/><code>… &gt;&gt; …</code>, <code>… &gt;&gt;= …</code></th>
+						<td>
+							<p>Décalage à gauche,<br/>décalage à droite</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>… &gt;&gt;&gt; …</code>, <code>… &gt;&gt;&gt;= …</code></th>
+						<td>
+							<p>Décalage à droite non signé</p>
+						</td>
+						<td >
+							<p><em>Number</em> (entier)</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Opérations bit à bit unaires</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>~…</code></th>
+						<td>
+							<p>Négation bit à bit</p>
+						</td>
+						<td >
+							<p><em>BigInt</em> ou <br/><em>Number</em> (entier)</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 id="4-5">Opérations logiques</h3>
+			<p>Les opérateurs <code>… ? … : …</code>, <code>… || …</code>, <code>… && …</code> et <code>!…</code> tentent de convertir préalablement certains de leurs opérandes en booléens (de type <em>Boolean</em>).</p>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Opérations logiques</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>… ? … : …</code></th>
+						<td>
+							<p>Calcul conditionnel</p>
+						</td>
+						<td rowspan="2">
+							<p>N'importe lequel</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>… || …</code>,<br/><code>… && …</code></th>
+						<td>
+							<p>Disjonction logique,<br/>conjonction logique</p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>!…</code></th>
+						<td>
+							<p>Négation logique</p>
+						</td>
+						<td>
+							<p><em>Boolean</em></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>!…</code></th>
+						<td>
+							<p>Négation logique</p>
+						</td>
+						<td>
+							<p><em>Boolean</em></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 id="4-6">Comparaisons</h3>
+			<p>Les opérateurs <code>… === …</code> et <code>… !== …</code> n'effectuent aucune conversion préalable de leurs opérandes, au contraire des opérateurs <code>… == …</code> et <code>… != …</code>.</p>
+			<p>Les opérateurs <code>… &lt;= …</code>, <code>… &lt; …</code>, <code>… &gt;= …</code> et <code>… &gt; …</code> tentent de convertir préalablement leurs opérandes en valeurs primitives (de type <em>BigInt</em>, <em>Number</em> ou <em>String</em>).</p>
+			<hr/>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Opérations logiques</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>… == …</code>,<br/><code>… === …</code>,<br/><code>… != …</code>,<br/><code>… !== …</code></th>
+						<td>
+							<p>Égalité,<br/>égalité stricte,<br/>inégalité,<br/>inégalité stricte</p>
+						</td>
+						<td rowspan="2">
+							<p><em>Boolean</em></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><code>… &lt;= …</code>,<br/><code>… &lt; …</code>,<br/><code>… &gt;= …</code>,<br/><code>… &gt; …</code></th>
+						<td>
+							<p>Infériorité,<br/>infériorité stricte,<br/>supériorité,<br/>supériorité stricte</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 id="4-7">Fusion nulle</h3>
+			<p>L'opérateur <code>… ?? …</code> est similaire à l'opérateur de disjonction et n'évalue et retourne son opérande droit que si l'opérande gauche est de type <em>Undefined</em> ou <em>Null</em>.</p>
+			<table style="width: calc(100% + 8rem);">
+				<caption>Fusion nulle</caption>
+				<thead>
+					<tr>
+						<th scope="auto">Opérateur</th>
+						<th scope="col">Opération</th>
+						<th scope="col">Type de retour</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row"><code>… ?? …</code></th>
+						<td>
+							<p>Fusion nulle</p>
+						</td>
+						<td>
+							<p>N'importe lequel</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2 id="5">Bibliothèque standard</h2>
+			<h3 id="5-1">Nombres</h3>
+			<p>Les nombres (<code>Number</code>) peuvent être manipulés via un ensemble de fonctions directement intégré au langage, et notamment via l'espace de nom <code>Math</code>.</p>
+			<hr/>
+			<dl>
+				<dt>Constantes spéciales</dt>
+				<dd>
+					<p>Les accès <code>Number.NaN</code> (<code>NaN</code>), <code>Number.NEGATIVE_INFINITY</code> (<code>-Infinity</code>) et <code>Number.NEGATIVE_INFINITY</code> (<code>Infinity</code>) représentent respectivement une valeur <em>not a number</em>, l'infini négatif et l'infini positif&nbsp;; d'autres constantes caractéristiques de la représentation flottante sont également disponibles.</p>
+				</dd>
+				<dt>Catégories de nombres</dt>
+				<dd>
+					<p>Les appels <code>Number.isNaN()</code>, <code>Number.isFinite()</code> et <code>Number.isInteger()</code> permettent de tester si un nombre est respectivement une valeur <em>not a number</em>, un infini négatif ou positif et en entier.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Constantes mathématiques</dt>
+				<dd>
+					<p>Les accès <code>Math.E</code>, <code>Math.PI</code> représentent les nombres <em>&#8495;</em> et <em>&#0960;</em>&nbsp;; d'autres constantes récurrentes en mathématiques sont également disponibles.</p>
+				</dd>
+				<dt>Extrema</dt>
+				<dd>
+					<p>Les appels <code>Math.min(…)</code> et <code>Math.max(…)</code> permettent de rechercher au sein d'une séquence de nombres respectivement le minimum et le maximum.</p>
+				</dd>
+				<dt>Conversions en entiers</dt>
+				<dd>
+					<p>Les appels <code>Math.trunc(v)</code>, <code>Math.floor(t)</code> et <code>Math.ceil(u)</code>, <code>Math.round(w)</code> correspondent au calculs respectivement de la troncature, de la partie entière inférieure, de la fpartie entière supérieure et de l'arrondi.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Module et argument</dt>
+				<dd>
+					<p>Les appels <code>Math.hypot(…)</code> et <code>Math.atan2(x, y)</code> correspondent au calculs respectivement de la norme euclidienne d'une séquence de nombres et de l'arc tangente du quotient de deux nombres.</p>
+				</dd>
+				<dt>Fonctions trigonométriques</dt>
+				<dd>
+					<p>Les appels <code>Math.cos(a)</code>, <code>Math.sin(b)</code>, <code>Math.tan(c)</code>, <code>Math.acos(x)</code>, <code>Math.asin(y)</code> et <code>Math.atan(z)</code> correspondent aux appels des fonctions mathématiques du même nom&nbsp;; leurs équivalents hyperboliques sont également disponibles.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Exponentielle et logarithme</dt>
+				<dd>
+					<p>Les appels <code>Math.exp(a)</code> et <code>Math.log(x)</code> correspondent aux appels respectivement de la fonction exponentielle et de la fonction logarithme naturel&nbsp;; des variantes sont égalements disponibles.</p>
+				</dd>
+				<dt>Fonction pseudo-aléatoire</dt>
+				<dd>
+					<p>L'appel <code>Math.random()</code> permet de tirer aléatoirement un nombre entre <em>0</em> inclus et <em>1</em> exclus selon une distribution supposée uniforme.</p>
+				</dd>
+			</dl>
+			<h3 id="5-2">Chaînes de caractères</h3>
+			<p>Les chaînes de caractères (<code>String</code>) peuvent être manipulées via un ensemble de fonctions directement intégré au langage. Elle ont également la particularité d'être itérables (par exemple avec une boucle).</p>
+			<hr/>
+			<dl>
+				<dt>Contenu et longueur</dt>
+				<dd>
+					<p>L'accès <code>"…"[k]</code> permet d'accéder au <code>k</code><sup>e</sup> caractère d'une chaîne tandis que sa longueur s'obtient avec l'accès <code>"…".length</code>&nbsp;; les chaînes de caractères étant immuables, ces propriétés sont disponibles en lecture seule.</p>
+				</dd>
+				<dt>Concaténation, extraction et répétition</dt>
+				<dd>
+					<p>Les appels <code>"…".concat(…)</code>, <code>"…".slice(i, j)</code> et <code>"…".repeat(l)</code> permettent respectivement de concaténer une séquence de chaînes à une chaîne, d'extraire la sous-chaîne débutant à la position <code>i</code> et de longueur maximale <code>j</code> d'une chaîne et de concaténer <code>l</code> copies d'un chaîne.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Remplissage</dt>
+				<dd>
+					<p>Les appels <code>"…".padStart(m, "…")</code> et <code>"…".padEnd(n, "…")</code> permettent de compléter une chaîne avec une sous-chaîne respectivement au début jusqu'à la longueur <code>m</code> et à la fin jusqu'à la longueur <code>n</code>.</p>
+				</dd>
+				<dt>Rognage</dt>
+				<dd>
+					<p>Les appels <code>"…".trimStart()</code>, <code>"…".trimEnd()</code> et <code>"…".trim()</code> permettent de retirer d'une chaîne les blancs respectivement au début, à la fin et aux deux extrémités.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Recherche de sous-chaîne</dt>
+				<dd>
+					<p>Les appels <code>"…".indexOf("…", i)</code> et <code>"…".lastIndexOf("…", j)</code> permettent de rechercher au sein d'une chaîne la position d'une sous-chaîne respectivement à partir de la position <code>i</code> et jusqu'à la position <code>j</code>.</p>
+				</dd>
+				<dt>Présence de sous-chaîne</dt>
+				<dd>
+					<p>Les appels <code>"…".startsWith("…", i)</code> et <code>"…".endsWith("…", j)</code> et <code>"…".includes("…")</code> permettent de tester au sein d'une chaîne la présence d'une sous-chaîne respectivement à partir de la position <code>i</code>, jusqu'à la position <code>j</code> et n'importe où.</p>
+				</dd>
+			</dl>
+			<h3 id="5-3">Tableaux</h3>
+			<p>Les tableaux (<code>Array</code>) peuvent être manipulées à la fois de manière fonctionnelle et comme des objets via un ensemble de fonctions directement intégré au langage. Ils sont également itérables.</p>
+			<hr/>
+			<dl>
+				<dt>Contenu et longueur</dt>
+				<dd>
+					<p>L'accès <code>[…][k]</code> permet d'accéder au <code>k</code><sup>e</sup> élément d'un tableau tandis que sa longueur s'obtient avec l'accès <code>[…].length</code>&nbsp;; les tableaux étant mutables et flexibles, ces propriétés sont disponibles en lecture et écriture, ce qui permet notamment de les vider.</p>
+				</dd>
+				<dt>Concaténation, extraction et aplatissement</dt>
+				<dd>
+					<p>Les appels <code>[…].concat(…)</code>, <code>[…].slice(i, j)</code> et <code>[…].flat(l)</code> permettent respectivement de concaténer une séquence de tableaux à un tablau, d'extraire le sous-tableau débutant à la position <code>i</code> et de longueur maximale <code>j</code> d'un tableau et d'aplatir <code>l</code> niveaux d'imbrication de tableaux.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Remplissage (empilage, enfilage)</dt>
+				<dd>
+					<p>Les appels <code>[…].unshift(…)</code> et <code>[…].push(…)</code> permettent de compléter un tableau avec une séquence d'éléments respectivement au début et à la fin.</p>
+				</dd>
+				<dt>Rognage (désempilage, désenfilage)</dt>
+				<dd>
+					<p>Les appels <code>[…].shift()</code> et <code>[…].pop()</code> permettent de retirer d'un tableau respectivement le premier élément et le dernier élément.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Recherche d'élément</dt>
+				<dd>
+					<p>Les appels <code>[…].indexOf(…, i)</code> et <code>[…].lastIndexOf(…, j)</code> permettent de rechercher au sein d'un tableau la position d'un élément respectivement à partir de la position <code>i</code> et jusqu'à la position <code>j</code>.</p>
+				</dd>
+				<dt>Présence d'élément</dt>
+				<dd>
+					<p>L'appel <code>[…].includes(…)</code> permet de tester au sein d'un tableau la présence d'un élément.</p>
+				</dd>
+				<dt>Renversement et tri</dt>
+				<dd>
+					<p>Les appels <code>[…].reverse()</code> et <code>[…].sort((…) => {…})</code> permettent respectivement de retourner un tableau en place et d'ordonner un tableau en place de manière stable selon une relation d'ordre.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt>Quantification</dt>
+				<dd>
+					<p>Les appels <code>[…].some((…) => {…})</code> et <code>[…].every((…) => {…})</code> permettent de tester au sein d'un tableau si une condition est vérifiée par respectivement au moins un élément et chaque élément.</p>
+				</dd>
+				<dt>Association et sélection</dt>
+				<dd>
+					<p>Les appels <code>[…].map((…) => {…})</code> et <code>[…].filter((…) => {…})</code> permettent de créer à partir d'un tableau un nouveau tableau respectivement en associant à chaque élément un nouvel élément et en sélectionnant les éléments vérifiant une condition&nbsp;; de nombreuses variantes, combinaisons et généralisations de ces fonctions sont disponibles.</p>
+				</dd>
+			</dl>
+			<h3 id="5-4"><em>JavaScript Object Notation</em></h3>
+			<p>Le format <em>JSON</em> est utilisé pour stocker des données structurées non cycliques (valeur nulle, booléens, nombres, chaînes de caractères, listes et dictionnaires) et est notamment employé dans le cadre d'APIs de type <em>Rest</em>.</p>
+			<figure>
+				<figcaption>Exemple de fichier <em>JSON</em> retourné par <code>geo.api.gouv.fr</code></figcaption>
+				<pre><code>{&#x0a;&#x09;"nom": "Villers-lès-Nancy",&#x0a;&#x09;"population": 14455,&#x0a;&#x09;"code": "54578"&#x0a;}&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<p>La syntaxe du format de données <em>JSON</em> reprend celle des objets en <em>JS</em> et en forme ainsi un sous-ensemble. Ce format à la syntaxe immuable est manipulable grâce à deux fonctions disponibles via l'espace de nom du même nom.</p>
+			<dl>
+				<dt>Analyse</dt>
+				<dd>
+					<p>Une chaîne de caractères au format <em>JSON</em> peut être analysée et convertie en objet à l'aide de l'appel <code>JSON.parse("…")</code>.</p>
+				</dd>
+				<dt>Reconstitution</dt>
+				<dd>
+					<p>Un objet peut être converti en chaîne de caractères au format <em>JSON</em> à l'aide de l'appel <code>JSON.stringify(…)</code>.</p>
+				</dd>
+			</dl>
+			<h2 id="6">Bibliothèques récurrentes</h2>
+			<h3 id="6-1">Console</h3>
+			<p>L'espace de nom <code>console</code> est disponible à la fois dans dans les navgateurs et dans <em>Node.js</em>, bien que ne faisant pas partie du langage <em>ECMAScript</em> à proprement parler. Il permet d'afficher des données (des objets <em>ECMAScript</em>) éventuellement formatées dans la console du navigateur ou dans le terminal sans faire directement appel au débogueur via l'instruction <code>debugger;</code>.</p>
+			<hr/>
+			<p>Les données sont généralement affichées avec un code couleur&nbsp;:</p>
+			<figure>
+				<figcaption>Fonctions basiques de la console</figcaption>
+				<pre><code>console.debug(…);&#x0a;console.error(…);&#x0a;console.info(…);&#x0a;console.log(…);&#x0a;console.warn(…);&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<p>Pour un débogage plus fin, on peut utiliser les fonctions suivantes qui permettent respectivement de vérifier la réalisation d'une condition et d'afficher la trace de la pile d'appel&nbsp;:</p>
+			<figure>
+				<figcaption>Fonctions avancées de la console</figcaption>
+				<pre><code>console.assert(…, …);&#x0a;console.trace(…);&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<p>D'autres fonctions permettent de structurer plus aisément l'affichage des données&nbsp;:</p>
+			<figure>
+				<figcaption>Fonctions d'affichage structuré de la console</figcaption>
+				<pre><code>console.clear();&#x0a;console.table(…, …);&#x0a;console.dir(…, …);&#x0a;console.dirxml(…);&#x0a;console.group(…);&#x0a;console.groupCollapsed(…);&#x0a;console.groupEnd();&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<p>Pour finir, il est également possible de comptabiliser des occurences ou de mesurer des durées avec les fonctions suivantes&nbsp;:</p>
+			<figure>
+				<figcaption>Fonctions de mesure de la console</figcaption>
+				<pre><code>console.count("…");&#x0a;console.countReset("…");&#x0a;console.time("…");&#x0a;console.timeLog("…", …);&#x0a;console.timeEnd("…");&#x0a;</code></pre>
+			</figure>
+			<h3 id="6-2"><em>Uniform Resource Locator</em></h3>
+			<p>Les adresses de type <em>URL</em> servent à identifier et retrouver des ressources. La syntaxe varie selon le schéma employé (<code>https</code>, <code>file</code>, <code>data</code>, <code>blob</code>, <code>view-source</code>, <code>mailto</code>, <code>tel</code>…) qui correspond généralement à un nom de protocole.</p>
+			<hr/>
+			<p>La classe <code>URL</code>, présente à la fois dans les navigateurs et dans <em>Node.js</em>, permet d'analyser et de décomposer en un objet une adresse donnée sous forme de chaînes de caractères. Les différentes propriétés correspondent alors à la décomposition détaillée précédemment. Elles sont disponibles à la fois en lecture et en écriture.</p>
+			<figure>
+				<figcaption>Anatomie d'une adresse <em>URL</em></figcaption>
+				<picture><img src="./resources/url.png" alt="scheme://user:pass@example.org:1234/file?query#fragment"/></picture>
+			</figure>
+			<p>Cette classe résout automatiquement les adresses relatives (commençant généralement par <code>//</code>, <code>/</code>, <code>../</code>, <code>./</code>, <code>?</code> ou <code>#</code>).</p>
+			<figure>
+				<figcaption>Exemples de résolutions d'adresses relatives</figcaption>
+				<pre><code>new URL("//example.com", "https://example.org/dir/").href;&#x0a;// "https://example.com/"&#x0a;new URL("../", "https://example.org/dir/subdir/").href;&#x0a;// "https://example.org/dir/"&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<p>Une propriété supplémentaire, <code>….searchParams</code>, instance de la classe <code>URLSearchParams</code>, permet de manipuler directement les paramètres d'<em>URL</em>, via des fonctions de lecture (<code>….get("…")</code>), d'écriture (<code>….set("…", "…")</code>), d'ajout (<code>….append("…", "…")</code>), de retrait (<code>….delete("…")</code>), de test de présence (<code>….has("…")</code>), de recherche (<code>….getAll("…")</code>), de tri (<code>….sort()</code>) ou d'itération (<code>….forEach((…) => {…})</code>).</p>
+			<figure>
+				<figcaption>Anatomie des paramètres d'une adresse <em>URL</em></figcaption>
+				<picture><img src="./resources/search.png" alt="?a=b&amp;c=d"/></picture>
+			</figure>
+			<h2 id="7">APIs <em>web</em></h2>
+			<h3 id="7-1">API <em>Fetch</em></h3>
+			<p>L'API <em>Fetch</em> n'est disponible nativement que dans les navigateurs mais des implémentations comme <code>node-fetch</code> existent pour <em>Node.js</em>. Il s'agit d'une alernative moderne à l'API <em>XMLHttpRequest</em> qui elle remonte au temps où l'on parlait encore de techniques <em>Ajax</em>.</p>
+			<p>Cette API consiste principalement en une fonction <code>fetch(…, {…})</code> qui permet d'envoyer des requêtes, de réceptionner des réponses et de les traiter, tout ceci de manière asynchrone, c'est-à-dire non bloquante.</p>
+			<hr/>
+			<p>On donne généralement à la fonction <code>fetch(…, {…})</code> une adresse de type <em>URL</em> ainsi qu'un dictionnaire d'options spécifiant par exemple l'en-tête de la requête (<code>headers</code>), son corps (<code>body</code>), sa méthode (<code>method</code>)… L'objet retourné expose la réponse sous forme de propriétés (<code>….headers</code>, <code>….body</code>, <code>….status</code>). Celle-ci peut être décodée comme un tampon, un texte, un format <em>JSON</em>, un formulaire ou un fichier grâce à des fonctions spécialisées.</p>
+			<figure>
+				<figcaption>Exemple d'utilisation de l'API <em>Fetch</em></figcaption>
+				<pre><code>const response = await fetch("https://api.github.com/repositories/221418229");&#x0a;const json = await response.json();&#x0a;const stars = json.stargazers_count;&#x0a;console.log(stars);&#x0a;</code></pre>
+			</figure>
+			<h3 id="7-2"><em>Document Object Model</em></h3>
+			<p>Le <em>DOM</em> est certainement l'une des plus anciennes APIs du <em>web</em>, mais aussi la plus importante&nbsp;! Disponible nativement dans les navigateurs, elle peut aussi être utilisée dans <em>Node.js</em> grâce à l'implémentation <code>jsdom</code>.</p>
+			<p>Le <em>DOM</em> est essentiellement une représentation arborescente d'un document <em>XML</em> (en particulier <em>HTML</em>) manipulable via l'objet <code>document</code>. Chaque partie du document correspond ainsi à un objet de classe <code>Node</code>.</p>
+			<p>Le document en devient totalement manipulable et navigable via <em>ECMAScript</em>. C'est grâce au <em>DOM</em> qu'une page peut devenir interactive&nbsp;! À l'aide d'un système d'évènements, on peut en effet réagir à une action de l'utilisateur (comme un clic souris) ou du navigateur en exécutant alors du code <em>ECMAScript</em>.</p>
+			<hr/>
+			<figure>
+				<figcaption>Diagramme des classes simplifié d'un document <em>XML</em></figcaption>
+				<picture><img src="./resources/dom.svg" alt="@startuml&#x0a;Node -up-|> EventTarget&#x0a;Document -up-|> Node&#x0a;DocumentType -up-|> Node&#x0a;Element -up-|> Node&#x0a;HTMLElement -up-|> Element&#x0a;SVGElement -up-|> Element&#x0a;Attr -up-|> Node&#x0a;CharacterData -up-|> Node&#x0a;Text -up-|> CharacterData&#x0a;Comment -up-|> CharacterData&#x0a;CDATASection -up-|> CharacterData&#x0a;@enduml"/></picture>
+			</figure>
+			<hr/>
+			<p>Pour créer un élément dynamiquement, on utilise la fonction <code>document.createElement("…")</code> à laquelle on donne un nom de balise. L'élément ainsi créé n'est pas immédiatement inséré dans le document.</p>
+			<p>Avant d'ajouter l'élément au document via la fonction <code>….append(…)</code> par exemple, on peut le manipuler (lui ajouter des attributs, du contenu…)&nbsp;:</p>
+			<figure>
+				<figcaption>Création et insertion d'un élément dans le document</figcaption>
+				<pre><code>const element = document.createElement("button");&#x0a;element.id = "toggle-button";&#x0a;element.textContent = "Click me!";&#x0a;document.body.append(element);&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<p>Pour rechercher un certain élément dans le document, plusieurs méthodes existent, mais la plus puissante est d'utiliser la fonction <code>….querySelector("…")</code> à laquelle on donne un sélecteur <em>CSS</em>.</p>
+			<p>Un moyen de réagir à un clic souris de l'utilisateur sur cet élément peut alors être d'utiliser la fonction <code>….addEventListener("…", (…) => {…})</code>&nbsp;:</p>
+			<figure>
+				<figcaption>Recherche d'un élément dans le document et réaction au clic souris</figcaption>
+				<pre><code>const element = document.querySelector("#toggle-button");&#x0a;element.addEventListener("click", (event) => {&#x0a;&#x09;element.classList.toggle("active");&#x0a;});&#x0a;</code></pre>
+			</figure>
+			<hr/>
+			<p>Le <em>DOM</em> est une API très riche qui ne se limite pas à ces quelques fonctions. Chaque type d'élément possède ses propres spécificités et le <em>DOM</em> sert souvent de pont vers d'autres API comme les APIs <em>Canvas</em> ou <em>Web Audio</em> par exemple.</p>
+		</main>
+		<footer id="footer">
+			<p></p>
+		</footer>
+	</body>
+</html>

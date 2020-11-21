@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Présentation des formulaires</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width">
+		<script type="module" src="./index.js"></script>
+	</head>
+	<body>
+		<h1>Présentation des formulaires</h1>
+		<!--
+			<form></form> définit un formulaire.
+			l'attribut "action" correspond à la cible de l'envoi.
+			l'attribut "method" correspond à la méthode d'envoi des données ("get" : données dans l'URL ; "post" : données dans le corps de la requête).
+		-->
+		<form name="my_form" action="./index.html" method="get">
+			<!--
+				Par défaut, <input/> correspond à <input type="text"/>.
+			-->
+			<p><label>Nom complet : <input name="name" value="" placeholder="CONNU Alain"/></label></p>
+			<!--
+				Voici un exemple de champ <input/> d'attribut "type" différent.
+			-->
+			<p><label>Âge : <input type="number" name="age" placeholder="0"/></label></p>
+			<!--
+				On peut séparer un <label></label> et le champ auquel il renvoie par l'attribut "for".
+			-->
+			<p><label for="biography">Biographie : </label></p>
+			<!--
+				Le champ <textarea></<textarea> permet de rentrer un texte sur plusieurs lignes.
+			-->
+			<p><textarea id="biography" name="biography" placeholder="Il était une fois..."></textarea></p>
+			<!--
+				Le groupe <fieldset></<fieldset> permet de regrouper des champs.
+			-->
+			<fieldset>
+				<!-- La légende <legend></legend> définit un intitulé pour un groupe de champs -->
+				<legend>Mes fruits préférés :</legend>
+				<!--
+					Le champ <input type="checkbox"/> permet de définir des cases (questionnaire à choix multiple).
+					Chaque champ possède généralement un attribut "name" différent.
+					On peut définir les cases cochées par défaut.
+					La valeur par défaut (value) est "on".
+					La valeur renvoyée est "on" pour les champs cochés et rien pour les autres (ils ne sont pas envoyés).
+				-->
+				<p><label><input name="banana" type="checkbox" checked=""/> Banane</label></p>
+				<p><label><input name="apple" type="checkbox"/> Pomme</label></p>
+				<p><label><input name="orange" type="checkbox"/> Orange</label></p>
+			</fieldset>
+			<!--
+				Les champs <input type="radio"/> définissent un questionnaire à choix unique.
+				Ils ont le même attribut "name" mais des valeurs différentes.
+				On peut définir un choix par défaut.
+				La valeur renvoyée est celle de l'attribut "value" du champ coché.
+			-->
+			<fieldset>
+				<legend>J'ai le permis :</legend>
+				<label><input type="radio" name="driver_license" value="yes"/> Oui</label>
+				<label><input type="radio" name="driver_license" value="no" checked=""/> Non</label>
+			</fieldset>
+			<!--
+				Le champ de mot de passe <input type="password"/> cache automatiquement les caractères rentrés à l'intérieur.
+				Attention ! Ils sont encore visibles si vous appuyez sur F12 et ne sont pas chiffrés à ce moment-là !
+			-->
+			<p><label>Mot de passe : <input type="password" name="password"/></label></p>
+			<!--
+				Le champ <input type="hidden"/> permet de faire transiter des informations que le client n'a pas besoin de (ou ne doit pas) modifier.
+				Ici il s'agit d'un token anti-CSRF, protection contre certaines attaques.
+			-->
+			<input type="hidden" name="token"  value="692de3ecb3626f29362381d86a123f3a"/>
+			<!--
+				Le bouton <button type="button"><button> est un bouton classique.
+				On peut aussi utiliser un bouton <input type="button"/>
+			-->
+			<p><button type="button">Visualiser les données</button></p>
+			<!--
+				Le bouton <button type="submit"><button> est un bouton qui envoie un formulaire (c'est le comportement par défaut des boutons).
+				On peut aussi utiliser un bouton <input type="submit"/>
+			-->
+			<p><button type="submit">Envoyer les données</button></p>
+			<p><label for="result">Résultat :</label></p>
+			<p><output id="result" name="result"></output></p>
+		</form>
+	</body>
+</html>
