@@ -14,7 +14,7 @@
 		<main id="main">
 			<h1><em>TP</em> 3 - <em>JS</em></h1>
 			<p>Ce <em>TP</em> a pour objectif de réaliser un moteur de recherche des communes de France. Pour cela, nous allons nous appuyer sur l'<em>API</em> <code>geo.api.gouv.fr</code>, remarquable par sa simplicité d'utilisation.</p>
-			<p>Une partie de l'application, notamment tout ce qui relève de la mise en page et de la navigation a déjà été réalisée (fichiers <code>index.html</code> et <code>index.css</code>). Mais pour fonctionner pleinement, celle-ci requiert une bibliothèque de fonctions qui n'a malheureusement pas encore été développée&nbsp;! Il vous est donc demandé d'écrire le code <em>ECMAScript</em> de cette bibliothèque au sein du fichier <code>index.js</code>. Il s'agit du seul fichier à modifier et vous n'avez pas besoin d'étudier le code <em>ECMAScript</em> du fichier <code>index.html</code> pour avancer. Sachez juste qu'il se contentera d'appeler vos fonctions au bon moment.</p>
+			<p>Une partie de l'application, notamment tout ce qui relève de la mise en page et de la navigation a déjà été réalisée (fichiers <code>index.html</code> et <code>index.css</code>). Mais pour fonctionner pleinement, celle-ci requiert une bibliothèque de fonctions qui n'a malheureusement pas encore été développée&nbsp;! Il vous est donc demandé d'écrire le code <em>JS</em> de cette bibliothèque au sein du fichier <code>index.js</code>. Il s'agit du seul fichier à modifier et vous n'avez pas besoin d'étudier le code <em>JS</em> du fichier <code>index.html</code> pour avancer. Sachez juste qu'il se contentera d'appeler vos fonctions au bon moment.</p>
 			<p>Pour la majeure partie du <em>TP</em>, il vous faudra trouver la documentation par vous-même. Le site <em>MDN Web Docs</em> est une très bonne ressource pour cela. Mais bien sûr, comme toujours, n'hésitez pas non plus à poser des questions&nbsp;! Vous êtes encouragés à utiliser la console du navigateur pour déboguer votre code.</p>
 			<h2>Découverte</h2>
 			<p>Nous allons commencer par prendre un peu en main le moteur de recherche actuel. En l'état, il s'agit simplement d'un formulaire qui permet de faire une recherche sur un nom de commune. À son envoi, une requête <code>get</code> est faite à l'API distante et l'utilisateur est redirigé vers la page donnant le résultat de la recherche.</p>
@@ -92,7 +92,7 @@
 							<p>envoie une requête à l'API à l'adresse donnée par votre fonction <code>getRemoteURL</code> en utilisant la fonction <code>fetch</code>&nbsp;;</p>
 						</li>
 						<li>
-							<p>récupère, analyse puis retourne la réponse sous forme de tableau <em>ECMAScript</em>.</p>
+							<p>récupère, analyse puis retourne la réponse sous forme de tableau <em>JS</em>.</p>
 						</li>
 					</ul>
 					<p>N'oubliez pas les mots-clés <code>await</code>&nbsp;! Il sont nécessaires lorsque l'on appelle une fonction asynchrone qui demande généralement du temps pour être exécutée (comme effectuer une requête ou analyser une réponse).</p>

@@ -1,7 +1,7 @@
 @import url("./main.css");
 @import url("./noto-serif.css");
 :root {
-	--font-family: "Noto Serif", sans-serif;
+	--font-family: "Noto Serif";
 	--font-size: 7.5pt;
 	--outer-size-x: 21cm;
 	--outer-size-y: 29.7cm;
@@ -12,20 +12,21 @@
 	--padding-x: calc((var(--outer-size-x) - var(--inner-size-x)) / 2);
 	--padding-y: calc((var(--outer-size-y) - var(--inner-size-y)) / 2);
 }
-/*~~~~~~ html ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-html {
-	-webkit-text-size-adjust: none;
-	text-size-adjust: none;
-}
 /*~~~~~~ header, footer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 header,
 footer {
 	color: #666;
 }
+header::before,
+header::after,
+footer::before,
+footer::after {
+	content: "";
+	clear: both;
+	display: flex;
+}
 header::after,
 footer::before {
-	content: "";
-	display: table;
 	width: calc(100% + 4rem);
 	margin: 0 -2rem;
 	box-shadow: 0 0 0 .1rem currentColor, inset 0 0 0 .1rem currentColor;
@@ -37,6 +38,8 @@ header > p:last-of-type {
 	float: right;
 }
 footer > p:only-of-type {
+	float: right;
+	width: calc(100% - 4rem);
 	text-align: center;
 }
 footer > p:only-of-type::after {
@@ -44,36 +47,42 @@ footer > p:only-of-type::after {
 	counter-increment: page;
 }
 /*~~~~~~ main ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-main {
-	color: #333;
-}
 main::before,
 main::after {
 	content: "";
-	display: table;
-	pointer-events: none;
+	clear: both;
+	display: flex;
 }
 main > h1 {
-	counter-reset: h2;
+	-prince-bookmark-level: none;
+}
+main > h2,
+main > h3,
+main > h4 {
+	list-style-type: none;
+	display: list-item;
 }
 main > h2 {
 	counter-reset: h3;
+	counter-increment: h2;
+}
+main > h3 {
+	counter-increment: h3;
 }
 main > h2::before,
 main > h3::before,
 main > h4::before {
 	float: left;
 	width: 0;
-	margin: 0 1rem 0 -1rem;
+	height: 4rem;
+	margin: 0 -1rem;
 	direction: rtl;
 }
 main > h2::before {
 	content: "." counter(h2, upper-roman);
-	counter-increment: h2;
 }
 main > h3::before {
 	content: "." counter(h3);
-	counter-increment: h3;
 }
 main > h4::before {
 	content: "§";
@@ -110,6 +119,63 @@ main > table {
 	main {
 		box-decoration-break: clone;
 		margin: calc(var(--margin-y) + var(--padding-y)) calc(var(--margin-x) + var(--padding-x));
+	}
+}
+@supports (-prince-flow: normal) {
+	@page {
+		size: var(--outer-size-x) var(--outer-size-y);
+		margin: calc(var(--padding-y) - .5pt) calc(var(--padding-x) - .5pt);
+		@top {
+			content: flow(header);
+			vertical-align: top;
+		}
+		@bottom {
+			content: flow(footer);
+			vertical-align: bottom;
+		}
+	}
+	body {
+		float: none;
+	}
+	header,
+	footer {
+		position: static;
+	}
+	header {
+		-prince-flow: static(header, start);
+	}
+	footer {
+		-prince-flow: static(footer, start);
+	}
+	main {
+		margin: 0;
+	}
+	main > h2::marker,
+	main > h3::marker,
+	main > h4::marker {
+		width: 0;
+		height: 4rem;
+		margin: 0 1rem;
+		padding: 0;
+		direction: rtl;
+	}
+	main > h2::marker {
+		content: "." counter(h2, upper-roman);
+	}
+	main > h3::marker {
+		content: "." counter(h3);
+	}
+	main > h4::marker {
+		content: "§";
+	}
+	main > h2::before,
+	main > h3::before,
+	main > h4::before {
+		display: none;
+	}
+	main > figure > figcaption,
+	main > table > caption {
+		transform: translate(calc(var(--inner-size-x) / 2 - 2rem - 50%), 0);
 	}
 }
 @media screen {

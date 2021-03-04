@@ -1,10 +1,14 @@
 @import url("./ubuntu-mono.css");
 :root {
-	--font-family: "Helvetica", "Arial", sans-serif;
+	--color: #333;
+	--font-family: sans-serif;
 	--font-size: .625em;
+	--primary-background-color: #fff;
+	--secondary-background-color: #eee;
 }
 /*~~~~~~ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 *,
+::marker,
 ::before,
 ::after {
 	box-sizing: border-box;
@@ -14,6 +18,13 @@
 	color: inherit;
 	font-family: inherit;
 	font-size: inherit;
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+::marker,
+::before,
+::after {
+	pointer-events: none;
 }
 ::selection {
 	background-color: #fc39;
@@ -24,14 +35,90 @@
 }
 /*~~~~~~ html, body ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 html {
+	color: var(--color);
 	font-family: var(--font-family);
 	font-size: var(--font-size);
+	-webkit-text-size-adjust: none;
 }
 body {
 	margin: 0;
 	line-height: 1.25;
-	color: #333;
 	font-size: 1.6rem;
+	-webkit-text-fill-color: #333;
+}
+/*~~~~~~ a:not([download]) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+a:not([download]) {
+	text-decoration: inherit;
+	cursor: pointer;
+}
+a:not([download]):hover,
+a:not([download]):focus-within {
+	text-decoration: underline;
+}
+a:not([download]):focus-within {
+	outline: .05rem dashed #0009;
+	outline-offset: -.05rem;
+}
+/*~~~~~~ sub, sup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+sub,
+sup {
+	font-size: 1.2rem;
+}
+sub {
+	vertical-align: bottom;
+}
+sup {
+	vertical-align: top;
+}
+/*~~~~~~ del, ins, mark ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+del {
+	background-color: #fcc;
+	text-decoration: line-through;
+}
+ins {
+	background-color: #6c9;
+	text-decoration: underline;
+}
+mark {
+	background-color: #ff9;
+}
+/*~~~~~~ abbr[title], q ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+abbr[title] {
+	font-variant-caps: small-caps;
+	cursor: help;
+}
+q {
+	quotes: "«\A0" "\A0»" "\"" "\"";
+}
+/*~~~~~~ code, kbd, samp ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+code,
+kbd,
+samp {
+	vertical-align: calc(50% - .625em);
+	line-height: 1.5625;
+	font-family: "Ubuntu Mono";
+	font-size: .8em;
+	-moz-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+:not(pre) > code,
+:not(pre) > kbd,
+:not(pre) > samp {
+	display: inline-block;
+	border-radius: .4rem;
+	background-color: var(--secondary-background-color);
+	box-shadow: inset 0 0 0 .1rem currentColor, inset 0 0 0 .2rem var(--primary-background-color);
+}
+:not(pre) > code::before,
+:not(pre) > code::after,
+:not(pre) > kbd::before,
+:not(pre) > kbd::after,
+:not(pre) > samp::before,
+:not(pre) > samp::after {
+	content: "\A0";
 }
 /*~~~~~~ h1, h2, h3, h4, h5, h6, p, dl, ol, ul ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 h1,
@@ -87,22 +174,19 @@ ul {
 }
 ol {
 	counter-reset: ol;
-	list-style: none;
-}
-ul {
-	list-style: none;
 }
 dl > dt {
 	display: block;
 	margin: 0;
 	padding: 0;
 	font-weight: bold;
+	-webkit-text-fill-color: currentColor;
 }
 dl > dd,
 ol > li,
 ul > li {
-	display: block;
-	min-height: 2rem;
+	list-style-type: none;
+	display: list-item;
 	margin: 0 -2rem 0 2rem;
 	padding: 0;
 }
@@ -110,25 +194,30 @@ dl > dd::before {
 	content: "";
 	float: left;
 	width: .8rem;
-	height: .2rem;
-	margin: .9rem -.4rem .9rem -.4rem;
-	border-bottom: .2rem solid currentColor;
+	height: .8rem;
+	margin: .6rem -.4rem;
+	border-width: .4rem 0 .4rem .8rem;
+	border-style: solid;
+	border-color: transparent transparent transparent currentColor;
+}
+ol > li {
+	counter-increment: ol;
 }
 ol > li::before {
 	content: "." counter(ol);
 	float: left;
-	width: 2rem;
+	width: 0;
 	height: 2rem;
-	margin: 0 -1rem 0 -1rem;
+	margin: 0 1rem;
 	direction: rtl;
-	counter-increment: ol;
+	-webkit-text-fill-color: currentColor;
 }
 ul > li::before {
 	content: "";
 	float: left;
 	width: .8rem;
 	height: .8rem;
-	margin: .6rem -.4rem .6rem -.4rem;
+	margin: .6rem -.4rem;
 	border: .4rem solid currentColor;
 	border-radius: .4rem;
 }
@@ -142,101 +231,21 @@ ul > li > ul > li > ul > li::before {
 ul > li > ul > li > ul > li > ul > li::before {
 	border-width: .1rem;
 }
-ul > li > ul > li > ul > li > ul > li > ul > li::before {
-	border-width: .4rem 0 .4rem .8rem;
-	border-color: transparent transparent transparent currentColor;
-}
-/*~~~~~~ sub, sup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-sub,
-sup {
-	font-size: 1.2rem;
-}
-sub {
-	vertical-align: bottom;
-}
-sup {
-	vertical-align: top;
-}
-/*~~~~~~ del, ins, mark ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-del {
-	background-color: #fcc;
-	text-decoration: line-through;
-}
-ins {
-	background-color: #6c9;
-	text-decoration: underline;
-}
-mark {
-	background-color: #ff9;
-}
-/*~~~~~~ abbr[title], q ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-abbr[title] {
-	font-variant-caps: small-caps;
-	cursor: help;
-}
-q {
-	quotes: "«\A0" "\A0»" "\"" "\"";
-}
-/*~~~~~~ code, kbd, samp ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-code,
-kbd,
-samp {
-	/* vertical-align: calc(50% - .625em); */
-	line-height: 1.5625;
-	font-family: "Ubuntu Mono", monospace;
-	font-size: .8em;
-	-moz-tab-size: 4;
-	tab-size: 4;
-	-webkit-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-:not(pre) > code,
-:not(pre) > kbd,
-:not(pre) > samp {
-	display: inline-block;
-	border-radius: .4rem;
-	background-color: #eee;
-	box-shadow: inset 0 0 0 .1rem currentColor, inset 0 0 0 .2rem #fff;
-}
-:not(pre) > code::before,
-:not(pre) > code::after,
-:not(pre) > kbd::before,
-:not(pre) > kbd::after,
-:not(pre) > samp::before,
-:not(pre) > samp::after {
-	content: "\A0";
-}
-/*~~~~~~ a:not([download]) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-a:not([download]) {
-	text-decoration: inherit;
-	cursor: pointer;
-}
-a:not([download]):hover,
-a:not([download]):focus-within {
-	text-decoration: underline;
-}
-a:not([download]):focus-within {
-	outline: .05rem dashed #0009;
-	outline-offset: -.05rem;
-}
 /*~~~~~~ blockquote, pre ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 blockquote,
 pre {
 	margin: 2rem;
 	padding: 0;
+	background-color: var(--secondary-background-color);
+	box-shadow: 0 0 0 .1rem var(--primary-background-color), inset 0 0 0 .1rem var(--primary-background-color);
 }
 blockquote::before,
 blockquote::after,
 pre::before,
 pre::after {
 	content: "";
-	display: table;
-	pointer-events: none;
-	transform: translate(0, 0);
-}
-blockquote {
-	background-color: #eee;
+	clear: both;
+	display: flex;
 }
 blockquote::before,
 blockquote::after {
@@ -245,15 +254,14 @@ blockquote::after {
 }
 blockquote::before {
 	margin: 0 auto -2rem 0;
-	box-shadow: -.25rem -.25rem 0 -.15rem #fff, -.35rem -.35rem 0 -.05rem currentColor, inset .05rem .05rem 0 .05rem #fff, inset .15rem .15rem 0 .15rem currentColor;
+	box-shadow: -.25rem -.25rem 0 -.15rem var(--primary-background-color), -.35rem -.35rem 0 -.05rem currentColor, inset .05rem .05rem 0 .05rem var(--primary-background-color), inset .15rem .15rem 0 .15rem currentColor;
 }
 blockquote::after {
 	margin: -2rem 0 0 auto;
-	box-shadow: .25rem .25rem 0 -.15rem #fff, .35rem .35rem 0 -.05rem currentColor, inset -.05rem -.05rem 0 .05rem #fff, inset -.15rem -.15rem 0 .15rem currentColor;
+	box-shadow: .25rem .25rem 0 -.15rem var(--primary-background-color), .35rem .35rem 0 -.05rem currentColor, inset -.05rem -.05rem 0 .05rem var(--primary-background-color), inset -.15rem -.15rem 0 .15rem currentColor;
 }
 pre {
-	/* background-color: #fff;
-	background-image: linear-gradient(to bottom, transparent 50%, #eee 50%); */
+	/* background-image: linear-gradient(to bottom, var(--primary-background-color) 50%, transparent 50%); */
 	background-image: url("./pre.png");
 	background-size: 100% 4rem;
 	background-attachment: local;
@@ -268,17 +276,16 @@ pre > code,
 pre > kbd,
 pre > samp {
 	display: block;
-	min-height: 2rem;
 	margin: 2rem;
 	white-space: pre-wrap;
 	overflow-wrap: break-word;
 }
 /*~~~~~~ picture ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-picture {
+picture { /* TODO: remove */
 	display: inline-block;
 	text-align: center;
 }
-picture > img {
+picture > img { /* TODO: remove */
 	max-width: 100%;
 	max-height: 100%;
 	object-fit: scale-down;
@@ -289,14 +296,12 @@ figure,
 table {
 	width: calc(100% - 4rem);
 	margin: 2rem;
-	background-color: #fff;
-	transform: translate(0, 0);
+	background-color: var(--primary-background-color);
 }
 figure > figcaption,
 table > caption {
 	caption-side: bottom;
 	display: table-caption;
-	min-height: 4rem;
 	padding: 1rem;
 	font-style: italic;
 	text-align: center;
@@ -318,10 +323,10 @@ figure > iframe {
 	width: 100%;
 	padding: 2rem;
 	border: 0;
-	background-color: #fff;
+	background-color: var(--primary-background-color);
 	background-image:
-		linear-gradient(to bottom, #eee 2rem, transparent 2rem, transparent calc(100% - 2rem), #eee calc(100% - 2rem)),
-		linear-gradient(to right, #eee 2rem, transparent 2rem, transparent calc(100% - 2rem), #eee calc(100% - 2rem));
+		linear-gradient(to bottom, var(--secondary-background-color) 2rem, transparent 2rem, transparent calc(100% - 2rem), var(--secondary-background-color) calc(100% - 2rem)),
+		linear-gradient(to right, var(--secondary-background-color) 2rem, transparent 2rem, transparent calc(100% - 2rem), var(--secondary-background-color) calc(100% - 2rem));
 	box-shadow: 0 0 0 .1rem currentColor, inset 0 0 0 .1rem currentColor;
 	overflow: auto;
 }
@@ -333,104 +338,164 @@ figure > video[controls] {
 	vertical-align: middle;
 	width: 100%;
 	/* height: auto; */ /* BUG: chrome figure > audio[controls] element */
-	background-color: #fff;
+	background-color: var(--primary-background-color);
 	text-align: center;
 	object-fit: scale-down;
 	object-position: center;
 	box-shadow: 0 0 0 .1rem currentColor, inset 0 0 0 .1rem currentColor;
 }
-figure > canvas,
-figure > picture {
-	/* background-image:
-		linear-gradient(to bottom right, #eee 25%, transparent 25%, transparent 75%, #eee 75%),
-		linear-gradient(to bottom right, #eee 25%, transparent 25%, transparent 75%, #eee 75%); */
-	background-size: 2rem 2rem;
-	background-position: 0 0, 1rem 1rem;
+figure > picture > img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: scale-down;
+	object-position: center;
 }
 table {
 	empty-cells: hide;
 	border-spacing: 0;
 }
-/* table > thead:not(:last-child)::after,
-table > tbody:not(:last-child)::after,
-table > tfoot:not(:last-child)::after {
-	content: "";
-	display: table-row;
-	box-shadow: 0 0 0 .1rem #fff, 0 -.2rem 0 .1rem currentColor, 0 .2rem 0 .1rem currentColor;
-	transform: translate(0, 0);
-} */
 table > :not(caption) > tr:nth-child(even) {
-	background-color: #eee;
+	background-color: var(--secondary-background-color);
 }
-table > :not(caption) > tr > th[scope] {
+table > :not(caption) > tr > th:not(:empty),
+table > :not(caption) > tr > td:not(:empty) {
+	box-shadow: 0 0 0 .1rem currentColor, inset 0 0 0 .1rem currentColor;
+}
+table > :not(caption) > tr > th {
+	position: relative;
+	z-index: 4;
 	padding: 2rem;
 	vertical-align: middle;
 	text-align: center;
-	transform: translate(0, 0);
+	-webkit-text-fill-color: currentColor;
 }
-table > :not(caption) > tr > th[scope]:not(:empty) {
-	box-shadow: 0 0 0 .1rem currentColor, inset 0 0 0 .1rem currentColor;
+table > :not(caption) > tr > th[scope="row"] {
+	z-index: 2;
 }
-table > :not(caption) > tr > th[scope],
-table > :not(caption) > tr > td {z-index: 1}
-table > :not(caption) > tr > th[scope="row"] {z-index: 2}
-table > :not(caption) > tr > th[scope="col"] {z-index: 3}
-table > :not(caption) > tr > th[scope="auto"] {z-index: 4}
-table > :not(caption) > tr > th[scope="auto"]::before,
-table > :not(caption) > tr > th[scope="row"]::before {
+table > :not(caption) > tr > th[scope="col"] {
+	z-index: 3;
+}
+table > :not(caption) > tr > th[scope="row"]::before,
+table > :not(caption) > tr > th:not([scope])::before {
 	content: "";
 	position: absolute;
-	/* top: .2rem; */
 	top: 0;
 	left: 100%;
-	width: 0;
-	/* height: calc(100% - .4rem); */
 	height: 100%;
-	/* box-shadow: 0 0 0 .1rem #fff, 0 0 0 .3rem currentColor; */
-	box-shadow: 0 0 0 .1rem #fff, -.2rem 0 0 .1rem currentColor, .2rem 0 0 .1rem currentColor;
-	pointer-events: none;
+	box-shadow: 0 0 0 .1rem var(--primary-background-color), -.2rem 0 0 .1rem currentColor, .2rem 0 0 .1rem currentColor;
 }
-table > :not(caption) > tr > th[scope="auto"]::after,
-table > :not(caption) > tr > th[scope="col"]::after {
+table > :not(caption) > tr > th[scope="col"]::after,
+table > :not(caption) > tr > th:not([scope])::after {
 	content: "";
 	position: absolute;
 	top: 100%;
 	left: 0;
 	width: 100%;
-	height: 0;
-	box-shadow: 0 0 0 .1rem #fff, 0 -.2rem 0 .1rem currentColor, 0 .2rem 0 .1rem currentColor;
-	pointer-events: none;
+	box-shadow: 0 0 0 .1rem var(--primary-background-color), 0 -.2rem 0 .1rem currentColor, 0 .2rem 0 .1rem currentColor;
 }
-table > :not(caption) > tr > th[scope="auto"]::before {
+table > :not(caption) > tr > th:not([scope])::before {
 	height: calc(100% - .2rem);
 }
-table > :not(caption) > tr > th[scope="auto"]::after {
+table > :not(caption) > tr > th:not([scope])::after {
 	width: calc(100% + .2rem);
 }
 table > :not(caption) > tr > td {
+	z-index: 1;
 	padding: 0;
-	transform: translate(0, 0);
-}
-table > :not(caption) > tr > td:not(:empty)::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	box-shadow: 0 0 0 .1rem currentColor, inset 0 0 0 .1rem currentColor;
-	pointer-events: none;
-	transform: translate(0, 0);
 }
 hr {
-	display: table;
-	width: calc(100% - 4rem);
 	height: 0;
 	margin: 2rem;
 	border: 0;
 }
 hr::after {
 	content: "";
-	display: table-cell;
+	clear: both;
+	display: flex;
+	width: 100%;
 	box-shadow: 0 0 0 .1rem currentColor;
+}
+@supports (-prince-flow: normal) {
+	body {
+		color: #333;
+	}
+	q::before {
+		content: "«\A0";
+	}
+	q::after {
+		content: "\A0»";
+	}
+	q q::before,
+	q q::after {
+		content: "\"";
+	}
+	:not(pre) > code,
+	:not(pre) > kbd,
+	:not(pre) > samp {
+		box-shadow: inset 0 0 0 .1rem var(--color), inset 0 0 0 .2rem var(--primary-background-color);
+	}
+	dl > dt,
+	dl > dd::marker,
+	ol > li::marker,
+	ul > li::marker,
+	blockquote::before,
+	blockquote::after,
+	pre::before,
+	pre::after,
+	table > :not(caption) > tr > th,
+	hr {
+		color: var(--color);
+	}
+	figure > iframe,
+	figure > canvas,
+	figure > picture,
+	figure > audio[controls],
+	figure > video[controls],
+	table > :not(caption) > tr > td:not(:empty) {
+		box-shadow: 0 0 0 .1rem var(--color), inset 0 0 0 .1rem var(--color);
+	}
+	dl > dd::marker {
+		content: "";
+		width: .8rem;
+		height: .8rem;
+		margin: 0 1.6rem;
+		padding: 0;
+		border-width: .4rem 0 .4rem .8rem;
+		border-style: solid;
+		border-color: transparent transparent transparent currentColor;
+		transform: translate(0, -.2rem);
+	}
+	ol > li::marker {
+		content: "." counter(ol);
+		width: 0;
+		height: 2rem;
+		margin: 0 1rem;
+		padding: 0;
+		direction: rtl;
+	}
+	ul > li::marker {
+		content: "";
+		width: .8rem;
+		height: .8rem;
+		margin: 0 1.6rem;
+		padding: 0;
+		border: .4rem solid currentColor;
+		border-radius: .4rem;
+		transform: translate(0, -.2rem);
+	}
+	ul > li > ul > li::marker {
+		border-width: .1rem;
+	}
+	ul > li > ul > li > ul > li::marker {
+		border-width: .4rem;
+		border-radius: 0;
+	}
+	ul > li > ul > li > ul > li > ul > li::marker {
+		border-width: .1rem;
+	}
+	dl > dd::before,
+	ol > li::before,
+	ul > li::before {
+		display: none;
+	}
 }

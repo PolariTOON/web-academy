@@ -51,7 +51,3 @@ La *Web Academy* est une formation sur le *web* dispensée aux élèves de [*Tel
 ```sh
 $ npm start
 ```
-
-## Note sur les fichiers *PDF*
-
-Les supports de cours et les énoncés de travaux pratiques et d'exercices au format *PDF* ont été générés via le navigateur *Firefox 67.0.4* sous *Ubuntu 19.04* à partir d'une page *web* codée en *HTML* et *CSS*.
