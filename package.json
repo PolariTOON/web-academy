@@ -4,6 +4,7 @@
   "description": "Formation web dispensée par Telecom Nancy Services",
   "main": "package.js",
   "scripts": {
+    "print": "for file in exercises/*/subject/index.html labs/*/subject/index.html lessons/*/index.html; do prince $file; done",
     "start": "node package.js http://127.0.0.1:8080/"
   },
   "repository": "https://github.com/PolariTOON/web-academy",
