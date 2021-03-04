@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 420" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" font-family="sans-serif" font-size="20" font-weight="bold" dominant-baseline="middle">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 420" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" font-family="sans-serif" font-size="20" font-weight="bold" dominant-baseline="middle" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<symbol id="entity" width="240" height="240">
 		<circle cx="120" cy="120" r="110" fill="#9cf"/>
 		<rect x="40" y="195" width="160" height="30" rx="10" ry="10" fill="#69c"/>
 	</symbol>
 	<symbol id="client" width="240" height="240" text-anchor="middle">
-		<use href="#entity" x="0" y="0"/>
+		<use xlink:href="#entity" x="0" y="0"/>
 		<text x="120" y="210" fill="#333">Client</text>
 		<g stroke="#333">
 			<g fill="#ccc">
@@ -29,7 +29,7 @@
 		</g>
 	</symbol>
 	<symbol id="server" width="240" height="240" text-anchor="middle">
-		<use href="#entity" x="0" y="0"/>
+		<use xlink:href="#entity" x="0" y="0"/>
 		<text x="120" y="210" fill="#333">Server</text>
 		<g stroke="#333">
 			<g fill="#ccc">
@@ -102,7 +102,7 @@
 			<text x="1120" y="405">&lt;html&gt;…&lt;/html&gt;</text>
 		</g>
 	</symbol>
-	<use href="#web" x="0" y="0"/>
-	<use href="#client" x="0" y="90"/>
-	<use href="#server" x="1200" y="90"/>
+	<use xlink:href="#web" x="0" y="0"/>
+	<use xlink:href="#client" x="0" y="90"/>
+	<use xlink:href="#server" x="1200" y="90"/>
 </svg>
