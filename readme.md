@@ -20,23 +20,23 @@ La *Web Academy* est une formation sur le *web* dispensée aux élèves de [*Tel
 
 ***HTML*** :
 
-- Structure d'un *CV* ([énoncé](labs/01-html/subject/index.pdf), [squelette](labs/01-html/skeleton/index.html), [corrigé](labs/01-html/correction/index.html))
+- Structure d'un *CV* ([énoncé](labs/01-html/index.pdf), [squelette](labs/01-html/skeleton/index.html), [corrigé](labs/01-html/correction/index.html))
 
 ***CSS*** :
 
-- Reproduction du style du site d'un club ([énoncé](labs/02-css/subject/index.pdf), [squelette](labs/02-css/skeleton/index.css), [objectif](labs/02-css/goal.png), [corrigé](labs/02-css/correction/index.css))
+- Reproduction du style du site d'un club ([énoncé](labs/02-css/index.pdf), [squelette](labs/02-css/skeleton/index.css), [objectif](labs/02-css/goal.png), [corrigé](labs/02-css/correction/index.css))
 
 ***JS*** :
 
-- Conception d'un moteur de recherche ([énoncé](labs/03-js/subject/index.pdf), [squelette](labs/03-js/skeleton/index.js), [corrigé](labs/03-js/correction/index.js))
+- Conception d'un moteur de recherche ([énoncé](labs/03-js/index.pdf), [squelette](labs/03-js/skeleton/index.js), [corrigé](labs/03-js/correction/index.js))
 
 ### Exercices
 
-- Corps ([énoncé](exercises/01-body/subject/index.pdf), [squelette](exercises/01-body/skeleton/index.html), [objectif](exercises/01-body/goal.png), [corrigé](exercises/01-body/correction/index.html))
+- Corps ([énoncé](exercises/01-body/index.pdf), [squelette](exercises/01-body/skeleton/index.html), [objectif](exercises/01-body/goal.png), [corrigé](exercises/01-body/correction/index.html))
 
-- Tableaux ([énoncé](exercises/02-table/subject/index.pdf), [squelette](exercises/02-table/skeleton/index.html), [objectif](exercises/02-table/goal.png), [corrigé](exercises/02-table/correction/index.html))
+- Tableaux ([énoncé](exercises/02-table/index.pdf), [squelette](exercises/02-table/skeleton/index.html), [objectif](exercises/02-table/goal.png), [corrigé](exercises/02-table/correction/index.html))
 
-- Formulaires ([énoncé](exercises/03-form/subject/index.pdf), [squelette](exercises/03-form/skeleton/index.html), [objectif](exercises/03-form/goal.png), [corrigé](exercises/03-form/correction/index.html))
+- Formulaires ([énoncé](exercises/03-form/index.pdf), [squelette](exercises/03-form/skeleton/index.html), [objectif](exercises/03-form/goal.png), [corrigé](exercises/03-form/correction/index.html))
 
 ### Exemples
 
