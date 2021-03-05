@@ -234,6 +234,7 @@ ul > li > ul > li > ul > li > ul > li::before {
 /*~~~~~~ blockquote, pre ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 blockquote,
 pre {
+	display: flow-root;
 	margin: 2rem;
 	padding: 0;
 	background-color: var(--secondary-background-color);
@@ -404,6 +405,7 @@ table > :not(caption) > tr > td {
 	padding: 0;
 }
 hr {
+	display: flow-root;
 	height: 0;
 	margin: 2rem;
 	border: 0;

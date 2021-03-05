@@ -16,6 +16,7 @@
 /*~~~~~~ header, footer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 header,
 footer {
+	display: flow-root;
 	-webkit-text-fill-color: currentColor;
 }
 header::before,
@@ -50,6 +51,9 @@ footer > p:only-of-type::after {
 	counter-increment: page;
 }
 /*~~~~~~ main ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+main {
+	display: flow-root;
+}
 main::before,
 main::after {
 	content: "";
@@ -92,6 +96,7 @@ main > h4::before {
 	content: "§";
 }
 main > hgroup {
+	display: flow-root;
 	margin: 7rem 0;
 	border-radius: 2rem 0;
 	background-color: #9cf;
@@ -166,9 +171,6 @@ main > figure > picture {
 		size: A4 landscape;
 		margin: 0;
 	}
-	body {
-		float: left;
-	}
 	header,
 	footer {
 		position: fixed;
@@ -201,98 +203,103 @@ main > figure > picture {
 	main > hr::after {
 		box-shadow: none;
 	}
-}
-@supports (-prince-flow: normal) {
-	@page {
-		size: var(--outer-size-x) var(--outer-size-y);
-		margin: calc(var(--padding-y) - .5pt) calc(var(--padding-x) - .5pt);
-		@top {
-			content: flow(header);
-			vertical-align: top;
+	@supports (-prince-flow: static(header, start)) {
+		@page {
+			size: var(--outer-size-x) var(--outer-size-y);
+			margin: calc(var(--padding-y) - .5pt) calc(var(--padding-x) - .5pt);
+			@top {
+				content: flow(header);
+				vertical-align: top;
+			}
+			@bottom {
+				content: flow(footer);
+				vertical-align: bottom;
+			}
 		}
-		@bottom {
-			content: flow(footer);
-			vertical-align: bottom;
+		header,
+		footer {
+			position: static;
+			color: var(--color);
 		}
-	}
-	body {
-		float: none;
-	}
-	header,
-	footer {
-		position: static;
-		color: var(--color);
-	}
-	header {
-		-prince-flow: static(header, start);
-	}
-	footer {
-		-prince-flow: static(footer, start);
-	}
-	main {
-		margin: 0;
-	}
-	main > h2::marker,
-	main > h3::marker,
-	main > h4::marker {
-		width: 0;
-		height: 4rem;
-		padding: 0;
-		direction: rtl;
-	}
-	main > h2::marker {
-		content: "." counter(h2, upper-roman);
-		margin: 0 -5rem;
-	}
-	main > h3::marker {
-		content: "." counter(h3);
-		margin: 0 1rem;
-	}
-	main > h4::marker {
-		content: "§";
-		margin: 0 1rem;
-	}
-	main > h2::before,
-	main > h3::before,
-	main > h4::before {
-		display: none;
-	}
-	main > hgroup + address + h2::marker {
-		content: none;
-	}
-	main > hgroup + address + h2 + ol > li::marker {
-		content: "." counter(ol, upper-roman);
-	}
-	main > hgroup + address + h2 + ol > li > ol > li::marker {
-		content: "." counter(ol);
-	}
-	main > hgroup + address + h2 + ol > li > ol > li > ol > li::marker {
-		content: "§";
-	}
-	main > hgroup + address + h2 + ol > li > p > a:not([download])::after,
-	main > hgroup + address + h2 + ol > li > ol > li > p > a:not([download])::after,
-	main > hgroup + address + h2 + ol > li > ol > li > ol > li > p > a:not([download])::after {
-		content: leader(dotted) target-counter(attr(href), page);
-		color: var(--color);
-	}
-	main > figure > figcaption,
-	main > table > caption {
-		transform: translate(calc(var(--inner-size-x) / 2 - 2rem - 50%), 0);
+		header {
+			-prince-flow: static(header, start);
+		}
+		footer {
+			-prince-flow: static(footer, start);
+		}
+		main {
+			margin: 0;
+		}
+		main > h2::marker,
+		main > h3::marker,
+		main > h4::marker {
+			width: 0;
+			height: 4rem;
+			padding: 0;
+			direction: rtl;
+		}
+		main > h2::marker {
+			content: "." counter(h2, upper-roman);
+			margin: 0 -5rem;
+		}
+		main > h3::marker {
+			content: "." counter(h3);
+			margin: 0 1rem;
+		}
+		main > h4::marker {
+			content: "§";
+			margin: 0 1rem;
+		}
+		main > h2::before,
+		main > h3::before,
+		main > h4::before {
+			display: none;
+		}
+		main > hgroup + address + h2::marker {
+			content: none;
+		}
+		main > hgroup + address + h2 + ol > li::marker {
+			content: "." counter(ol, upper-roman);
+		}
+		main > hgroup + address + h2 + ol > li > ol > li::marker {
+			content: "." counter(ol);
+		}
+		main > hgroup + address + h2 + ol > li > ol > li > ol > li::marker {
+			content: "§";
+		}
+		main > hgroup + address + h2 + ol > li > p > a:not([download])::after,
+		main > hgroup + address + h2 + ol > li > ol > li > p > a:not([download])::after,
+		main > hgroup + address + h2 + ol > li > ol > li > ol > li > p > a:not([download])::after {
+			content: leader(dotted) target-counter(attr(href), page);
+			color: var(--color);
+		}
+		main > figure > figcaption,
+		main > table > caption {
+			transform: inherit;
+		}
 	}
 }
 @media screen {
 	html {
 		scrollbar-width: none;
-		scroll-snap-type-x: mandatory;
-		scroll-snap-points-x: repeat(100vw);
-		scroll-snap-type: x mandatory;
-		justify-content: center;
-		align-content: center;
-		display: grid;
-		width: 100vw;
+		min-width: 100vw;
 		height: 100vh;
-		background: linear-gradient(to bottom, #333 var(--margin-y), transparent var(--margin-y), transparent calc(100vh - var(--margin-y)), #333 calc(100vh - var(--margin-y))), linear-gradient(to right, #333 var(--margin-x), #fff var(--margin-x), #fff calc(100vw - var(--margin-x)), #333 calc(100vw - var(--margin-x))) #333;
-		background: linear-gradient(to bottom, #333 var(--margin-y), transparent var(--margin-y), transparent calc(100vh - var(--margin-y)), #333 calc(100vh - var(--margin-y))) no-repeat, linear-gradient(to right, #333 var(--margin-x), #fff var(--margin-x), #fff calc(100vw - var(--margin-x)), #333 calc(100vw - var(--margin-x))) no-repeat, -moz-element(#footer) bottom repeat-x, -moz-element(#header) top repeat-x, linear-gradient(to bottom, #333 var(--margin-y), transparent var(--margin-y), transparent calc(100vh - var(--margin-y)), #333 calc(100vh - var(--margin-y))) repeat-x, linear-gradient(to right, #333 var(--margin-x), #fff var(--margin-x), #fff calc(100vw - var(--margin-x)), #333 calc(100vw - var(--margin-x))) repeat-x #333;
+		padding: max(var(--margin-y), 2rem) max(var(--margin-x), 2rem);
+		background:
+			conic-gradient(at max(var(--margin-x), 2rem) 100%, transparent 75%, #333 0) no-repeat,
+			conic-gradient(at var(--outer-size-x) var(--outer-size-y), transparent 75%, #fff 0) max(var(--margin-x), 2rem) max(var(--margin-y), 2rem) / calc(var(--outer-size-x) + 2rem) calc(var(--outer-size-y) + 2rem) repeat-x,
+			#333;
+	}
+	html::after {
+		content: "";
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background:
+			linear-gradient(to left, transparent, #333) left 0 top 0 / calc(max(var(--margin-x), 2rem) / 2) 100% no-repeat,
+			linear-gradient(to right, transparent, #333) right 0 top 0 / calc(max(var(--margin-x), 2rem) / 2) 100% no-repeat;
 	}
 	html::-webkit-scrollbar {
 		display: none;
@@ -300,36 +307,65 @@ main > figure > picture {
 	header,
 	footer {
 		position: absolute;
-		left: 0;
-		right: 0;
-		width: 100vw;
-		max-height: 100vh;
-		padding: var(--margin-y) calc(var(--margin-x) + var(--padding-x));
+		left: calc(max(var(--margin-x), 2rem) - 1rem);
+		width: calc(var(--outer-size-x) + 2rem);
+		padding: 1rem calc(var(--padding-x) + 2rem);
 	}
 	header {
-		top: 0;
-		bottom: auto;
+		top: calc(max(var(--margin-y), 2rem) - 1rem);
 	}
 	footer {
-		top: auto;
-		bottom: 0;
+		bottom: calc(max(var(--margin-y), 2rem) - 1rem - max(calc(var(--outer-size-y) + 4rem - 100vh), 0rem));
 	}
 	main {
-		scroll-snap-align: none center;
 		width: var(--outer-size-x);
 		height: var(--outer-size-y);
-		margin: 0;
 		padding: var(--padding-y) var(--padding-x);
 		column-width: var(--outer-size-x);
-		column-gap: calc(100vw - var(--inner-size-x));
+		column-gap: calc(var(--padding-x) * 2 + 2rem);
 		column-fill: auto;
 	}
 	main::after {
-		width: calc(var(--margin-x) + var(--padding-x) + var(--inner-size-x));
+		width: calc(max(var(--margin-x), 2rem) + var(--padding-x) + var(--inner-size-x));
 		height: 2rem;
 		margin: -4rem 0 2rem 0;
 	}
-	main > hr {
-		display: none;
+	@supports (-webkit-column-break-before: always) {
+		main > h2,
+		main > :not(h2) + h3 {
+			-webkit-column-break-before: always;
+			margin-top: 0;
+		}
+		main > hr {
+			-webkit-column-break-before: always;
+			margin-top: -2rem;
+		}
+	}
+	@supports (break-before: column) {
+		main > h2,
+		main > :not(h2) + h3 {
+			break-before: column;
+			margin-top: 0;
+		}
+		main > hr {
+			break-before: column;
+			margin-top: -2rem;
+		}
+	}
+	@supports not ((-webkit-column-break-before: always) or (break-before: column)) {
+		main > hr {
+			display: none;
+		}
+	}
+	@supports (background: -moz-element(#header)) {
+		html {
+			background:
+				conic-gradient(at max(var(--margin-x), 2rem) 100%, transparent 75%, #333 0) no-repeat,
+				conic-gradient(at var(--outer-size-x) var(--outer-size-y), transparent 75%, #fff 0) max(var(--margin-x), 2rem) max(var(--margin-y), 2rem) / calc(var(--outer-size-x) + 2rem) calc(var(--outer-size-y) + 2rem) no-repeat,
+				-moz-element(#footer) left calc(max(var(--margin-x), 2rem) - 1rem) bottom calc(max(var(--margin-y), 2rem) - 1rem) repeat-x,
+				-moz-element(#header) left calc(max(var(--margin-x), 2rem) - 1rem) top calc(max(var(--margin-y), 2rem) - 1rem) repeat-x,
+				conic-gradient(at var(--outer-size-x) var(--outer-size-y), transparent 75%, #fff 0) max(var(--margin-x), 2rem) max(var(--margin-y), 2rem) / calc(var(--outer-size-x) + 2rem) calc(var(--outer-size-y) + 2rem) repeat-x,
+				#333;
+		}
 	}
 }
