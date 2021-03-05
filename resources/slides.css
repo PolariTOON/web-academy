@@ -283,7 +283,7 @@ main > figure > picture {
 	html {
 		scrollbar-width: none;
 		min-width: 100vw;
-		height: 100vh;
+		min-height: 100vh;
 		padding: max(var(--margin-y), 2rem) max(var(--margin-x), 2rem);
 		background:
 			conic-gradient(at max(var(--margin-x), 2rem) 100%, transparent 75%, #333 0) no-repeat,
@@ -328,7 +328,7 @@ main > figure > picture {
 	main::after {
 		width: calc(max(var(--margin-x), 2rem) + var(--padding-x) + var(--inner-size-x));
 		height: 2rem;
-		margin: -4rem 0 2rem 0;
+		margin: -4rem 0 2rem;
 	}
 	@supports (-webkit-column-break-before: always) {
 		main > h2,

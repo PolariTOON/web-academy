@@ -179,7 +179,7 @@ main > table {
 @media screen {
 	html {
 		scrollbar-width: none;
-		width: 100vw;
+		min-width: 100vw;
 		min-height: 100vh;
 		padding: max(var(--margin-y), 2rem) max(var(--margin-x), 2rem);
 		background: #333;
@@ -212,5 +212,10 @@ main > table {
 		width: var(--outer-size-x);
 		padding: var(--padding-y) var(--padding-x);
 		background: #fff;
+	}
+	main::after {
+		width: calc(max(var(--margin-x), 2rem) + var(--padding-x) + var(--inner-size-x));
+		height: 2rem;
+		margin: -4rem 0 2rem;
 	}
 }
