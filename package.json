@@ -1,7 +1,7 @@
 {
   "name": "web-academy",
   "version": "0.0.0",
-  "description": "Formation web dispensée par Telecom Nancy Services",
+  "description": "Formation web à destination des élèves de Telecom Nancy",
   "main": "package.js",
   "scripts": {
     "print": "for file in exercises/*/index.html labs/*/index.html lessons/*/index.html; do prince $file; done",
@@ -9,6 +9,9 @@
   },
   "repository": "https://github.com/PolariTOON/web-academy",
   "author": "Tristan LE GODAIS",
+  "contributors": [
+    "Alexis EL MRINI"
+  ],
   "license": "MIT",
   "type": "module"
 }
