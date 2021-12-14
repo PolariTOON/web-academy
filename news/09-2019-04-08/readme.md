@@ -1,0 +1,5 @@
+# Bulletin 9 - 08/04/2019
+
+*Par Tristan LE GODAIS ([@PolariTOON](https://github.com/PolariTOON))*
+
+- En décembre dernier, peut-être aviez-vous vu le communiqué de *Microsoft* qui annonçait que le navigateur *Edge* allait désormais être basé sur *Chromium*, abandonnant ainsi *EdgeHTML* et *ChakraCore* (le moteur de rendu et le moteur *JavaScript* de *Microsoft*) pour *Blink* et *V8* (le moteur de rendu et le moteur *JavaScript* de *Google*) ; aujourd'hui, *Microsoft* annonce les premières versions de test de la nouvelle mouture de son navigateur ~~*Edg*~~ pour *Windows 10*, même si le support est aussi à prévoir sur des versions plus anciennes de *Windows* comme *Windows 7* en remplacement de feu *Internet Explorer* ; voici le lien pour les intéressés : [https://blogs.windows.com/msedgedev/2019/04/08/microsoft-edge-preview-channel-details/](https://blogs.windows.com/msedgedev/2019/04/08/microsoft-edge-preview-channel-details/) ; lorsque la transition vers la nouvelle version sera finalisée, *Firefox* deviendra le seul grand navigateur à ne pas dériver de *Webkit*...

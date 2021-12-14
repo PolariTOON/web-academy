@@ -1,0 +1,5 @@
+# Bulletin 41 - 16/03/2020
+
+*Par Tristan LE GODAIS ([@PolariTOON](https://github.com/PolariTOON))*
+
+- Depuis quelques années déjà, *npm*, la société qui gère le principal gestionnaire de paquets éponyme inclus dans *Node.js* ainsi que le principal registre de paquets, faisait parler d'elle plus en mal qu'en bien : changement de gouvernance, démissions, licenciements... à tel point qu'une bonne partie de la communauté s'était mise à appeler à son rachat par des entreprises au but... moins lucratif, telles que *Mozilla* ; de son côté, *GitHub* a plus récemment lancé son propre registre de paquets multi-langages, y compris compatible avec le gestionnaire de paquets *npm* ; aujourd'hui, *npm* annonce finalement son rachat par *GitHub*, son concurrent en quelque sorte ; c'est donc bien *Microsoft* qui joue une nouvelle fois la carte de l'ouverture à l'*open source* ; voici l'annonce de *npm* : [https://blog.npmjs.org/post/612764866888007680/next-phase-montage](https://blog.npmjs.org/post/612764866888007680/next-phase-montage) et celle de *GitHub* : [https://github.blog/2020-03-16-npm-is-joining-github/](https://github.blog/2020-03-16-npm-is-joining-github/)
