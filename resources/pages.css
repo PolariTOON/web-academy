@@ -1,6 +1,7 @@
 @import url("./main.css");
 @import url("./noto-serif.css");
 :root {
+	--color: #333;
 	--font-family: "Noto Serif";
 	--font-size: 7.5pt;
 	--outer-size-x: 21cm;
@@ -30,7 +31,7 @@ header::after,
 footer::before {
 	width: calc(100% + 4rem);
 	margin: 0 -2rem;
-	box-shadow: 0 0 0 .1rem currentColor, inset 0 0 0 .1rem currentColor;
+	box-shadow: 0 0 0 .1rem #666, inset 0 0 0 .1rem #666;
 }
 header > p:first-of-type {
 	float: left;
@@ -63,6 +64,7 @@ main > h1 {
 main > h2,
 main > h3,
 main > h4 {
+	scroll-margin: calc(max(var(--margin-y), 2rem) + var(--padding-y) + 2rem) calc(max(var(--margin-x), 2rem) + var(--padding-x) + 2rem);
 	list-style-type: none;
 	display: list-item;
 }

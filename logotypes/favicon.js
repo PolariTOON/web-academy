@@ -19,8 +19,8 @@ b.moveTo(0,96)
 b.lineTo(160,256)
 b.lineTo(0,256)
 b.closePath()
-b.miterLimit="2"
-b.lineWidth="6"
+b.miterLimit=2
+b.lineWidth=6
 b.fillStyle="#158700"
 b.fill()
 b.strokeStyle="#333333"
@@ -33,8 +33,8 @@ b.lineTo(256,256)
 b.lineTo(220,256)
 b.lineTo(0,36)
 b.closePath()
-b.miterLimit="2"
-b.lineWidth="6"
+b.miterLimit=2
+b.lineWidth=6
 b.fillStyle="#1a5e9a"
 b.fill()
 b.strokeStyle="#333333"
@@ -44,8 +44,8 @@ b.moveTo(76,0)
 b.lineTo(256,0)
 b.lineTo(256,180)
 b.closePath()
-b.miterLimit="2"
-b.lineWidth="6"
+b.miterLimit=2
+b.lineWidth=6
 b.fillStyle="#ff7b00"
 b.fill()
 b.strokeStyle="#333333"
@@ -54,8 +54,8 @@ b.restore()
 b.beginPath()
 b.arc(128,128,96,0,Math.PI*2,true)
 b.closePath()
-b.miterLimit="2"
-b.lineWidth="6"
+b.miterLimit=2
+b.lineWidth=6
 b.strokeStyle="#333333"
 b.stroke()
 document.body.append(a)

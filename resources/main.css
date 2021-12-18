@@ -14,10 +14,8 @@
 	box-sizing: border-box;
 	outline: 0;
 	vertical-align: top;
-	line-height: inherit;
+	font: inherit;
 	color: inherit;
-	font-family: inherit;
-	font-size: inherit;
 	-webkit-box-decoration-break: clone;
 	box-decoration-break: clone;
 }
@@ -28,36 +26,41 @@
 }
 ::selection {
 	background-color: #fc39;
-	color: #333;
+	color: #3339;
 }
 ::-moz-focus-inner {
 	border: 0;
 }
 /*~~~~~~ html, body ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 html {
-	color: var(--color);
-	font-family: var(--font-family);
-	font-size: var(--font-size);
+	font: var(--font-size) var(--font-family);
 	-webkit-text-size-adjust: none;
 }
 body {
 	margin: 0;
 	line-height: 1.25;
 	font-size: 1.6rem;
-	-webkit-text-fill-color: #333;
+	color: #333;
 }
 /*~~~~~~ a:not([download]) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 a:not([download]) {
-	text-decoration: inherit;
 	cursor: pointer;
+	text-decoration: underline .1rem dotted var(--color);
 }
 a:not([download]):hover,
 a:not([download]):focus-within {
-	text-decoration: underline;
+	text-decoration-style: solid;
 }
 a:not([download]):focus-within {
-	outline: .05rem dashed #0009;
-	outline-offset: -.05rem;
+	outline: calc(.1rem + 1px) dashed var(--color);
+	outline-offset: calc(.1rem - 1px);
+}
+/*~~~~~~ em, strong ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+em {
+	font-style: italic;
+}
+strong {
+	font-weight: bold;
 }
 /*~~~~~~ sub, sup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 sub,
@@ -72,15 +75,20 @@ sup {
 }
 /*~~~~~~ del, ins, mark ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 del {
-	background-color: #fcc;
-	text-decoration: line-through;
+	background-color: #f9c;
+	text-decoration: line-through .1rem solid #603;
+	color: #603;
 }
 ins {
-	background-color: #6c9;
-	text-decoration: underline;
+	background-color: #9fc;
+	text-decoration: underline .1rem solid #063;
+	color: #063;
 }
 mark {
+	outline: calc(.1rem + 1px) solid #660;
+	outline-offset: -1px;
 	background-color: #ff9;
+	color: #660;
 }
 /*~~~~~~ abbr[title], q ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 abbr[title] {
@@ -88,7 +96,7 @@ abbr[title] {
 	cursor: help;
 }
 q {
-	quotes: "«\A0" "\A0»" "\"" "\"";
+	quotes: "«\a0" "\a0»" "\"" "\"";
 }
 /*~~~~~~ code, kbd, samp ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 code,
@@ -110,7 +118,7 @@ samp {
 	display: inline-block;
 	border-radius: .4rem;
 	background-color: var(--secondary-background-color);
-	box-shadow: inset 0 0 0 .1rem currentColor, inset 0 0 0 .2rem var(--primary-background-color);
+	box-shadow: inset 0 0 0 .1rem var(--color), inset 0 0 0 .2rem var(--primary-background-color);
 }
 :not(pre) > code::before,
 :not(pre) > code::after,
@@ -118,7 +126,7 @@ samp {
 :not(pre) > kbd::after,
 :not(pre) > samp::before,
 :not(pre) > samp::after {
-	content: "\A0";
+	content: "\a0";
 }
 /*~~~~~~ h1, h2, h3, h4, h5, h6, p, dl, ol, ul ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 h1,
@@ -180,7 +188,7 @@ dl > dt {
 	margin: 0;
 	padding: 0;
 	font-weight: bold;
-	-webkit-text-fill-color: currentColor;
+	color: var(--color);
 }
 dl > dd,
 ol > li,
@@ -198,7 +206,7 @@ dl > dd::before {
 	margin: .6rem -.4rem;
 	border-width: .4rem 0 .4rem .8rem;
 	border-style: solid;
-	border-color: transparent transparent transparent currentColor;
+	border-color: transparent transparent transparent var(--color);
 }
 ol > li {
 	counter-increment: ol;
@@ -210,7 +218,8 @@ ol > li::before {
 	height: 2rem;
 	margin: 0 1rem;
 	direction: rtl;
-	-webkit-text-fill-color: currentColor;
+	font-weight: bold;
+	color: var(--color);
 }
 ul > li::before {
 	content: "";
@@ -218,7 +227,7 @@ ul > li::before {
 	width: .8rem;
 	height: .8rem;
 	margin: .6rem -.4rem;
-	border: .4rem solid currentColor;
+	border: .4rem solid var(--color);
 	border-radius: .4rem;
 }
 ul > li > ul > li::before {
@@ -255,15 +264,19 @@ blockquote::after {
 }
 blockquote::before {
 	margin: 0 auto -2rem 0;
-	box-shadow: -.25rem -.25rem 0 -.15rem var(--primary-background-color), -.35rem -.35rem 0 -.05rem currentColor, inset .05rem .05rem 0 .05rem var(--primary-background-color), inset .15rem .15rem 0 .15rem currentColor;
+	box-shadow: -.25rem -.25rem 0 -.15rem var(--primary-background-color), -.35rem -.35rem 0 -.05rem var(--color), inset .05rem .05rem 0 .05rem var(--primary-background-color), inset .15rem .15rem 0 .15rem var(--color);
 }
 blockquote::after {
 	margin: -2rem 0 0 auto;
-	box-shadow: .25rem .25rem 0 -.15rem var(--primary-background-color), .35rem .35rem 0 -.05rem currentColor, inset -.05rem -.05rem 0 .05rem var(--primary-background-color), inset -.15rem -.15rem 0 .15rem currentColor;
+	box-shadow: .25rem .25rem 0 -.15rem var(--primary-background-color), .35rem .35rem 0 -.05rem var(--color), inset -.05rem -.05rem 0 .05rem var(--primary-background-color), inset -.15rem -.15rem 0 .15rem var(--color);
 }
 pre {
-	/* background-image: linear-gradient(to bottom, var(--primary-background-color) 50%, transparent 50%); */
-	background-image: url("./pre.png");
+	/* background-image: repeating-linear-gradient(to bottom, var(--primary-background-color) 0 2rem, transparent 0 4rem); */
+	background-image: url("data:image/svg+xml,\
+		<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 720 60\">\
+			<rect x=\"0\" y=\"0\" width=\"720\" height=\"30\" fill=\"%23fff\"/>\
+		</svg>\
+	");
 	background-size: 100% 4rem;
 	background-attachment: local;
 	white-space: normal;
@@ -271,7 +284,7 @@ pre {
 pre::before,
 pre::after {
 	width: 100%;
-	box-shadow: 0 0 0 .1rem currentColor;
+	box-shadow: 0 0 0 .1rem var(--color);
 }
 pre > code,
 pre > kbd,
@@ -280,17 +293,6 @@ pre > samp {
 	margin: 2rem;
 	white-space: pre-wrap;
 	overflow-wrap: break-word;
-}
-/*~~~~~~ picture ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-picture { /* TODO: remove */
-	display: inline-block;
-	text-align: center;
-}
-picture > img { /* TODO: remove */
-	max-width: 100%;
-	max-height: 100%;
-	object-fit: scale-down;
-	object-position: center;
 }
 /*~~~~~~ figure, table, hr ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 figure,
@@ -328,7 +330,7 @@ figure > iframe {
 	background-image:
 		linear-gradient(to bottom, var(--secondary-background-color) 2rem, transparent 2rem, transparent calc(100% - 2rem), var(--secondary-background-color) calc(100% - 2rem)),
 		linear-gradient(to right, var(--secondary-background-color) 2rem, transparent 2rem, transparent calc(100% - 2rem), var(--secondary-background-color) calc(100% - 2rem));
-	box-shadow: 0 0 0 .1rem currentColor, inset 0 0 0 .1rem currentColor;
+	box-shadow: 0 0 0 .1rem var(--color), inset 0 0 0 .1rem var(--color);
 	overflow: auto;
 }
 figure > canvas,
@@ -339,11 +341,12 @@ figure > video[controls] {
 	vertical-align: middle;
 	width: 100%;
 	/* height: auto; */ /* BUG: chrome figure > audio[controls] element */
+	padding: 2rem;
 	background-color: var(--primary-background-color);
 	text-align: center;
 	object-fit: scale-down;
 	object-position: center;
-	box-shadow: 0 0 0 .1rem currentColor, inset 0 0 0 .1rem currentColor;
+	box-shadow: 0 0 0 .1rem var(--color), inset 0 0 0 .1rem var(--color);
 }
 figure > picture > img {
 	max-width: 100%;
@@ -360,15 +363,16 @@ table > :not(caption) > tr:nth-child(even) {
 }
 table > :not(caption) > tr > th:not(:empty),
 table > :not(caption) > tr > td:not(:empty) {
-	box-shadow: 0 0 0 .1rem currentColor, inset 0 0 0 .1rem currentColor;
+	box-shadow: 0 0 0 .1rem var(--color), inset 0 0 0 .1rem var(--color);
 }
 table > :not(caption) > tr > th {
 	position: relative;
 	z-index: 4;
 	padding: 2rem;
 	vertical-align: middle;
+	font-weight: bold;
 	text-align: center;
-	-webkit-text-fill-color: currentColor;
+	color: var(--color);
 }
 table > :not(caption) > tr > th[scope="row"] {
 	z-index: 2;
@@ -383,7 +387,7 @@ table > :not(caption) > tr > th:not([scope])::before {
 	top: 0;
 	left: 100%;
 	height: 100%;
-	box-shadow: 0 0 0 .1rem var(--primary-background-color), -.2rem 0 0 .1rem currentColor, .2rem 0 0 .1rem currentColor;
+	box-shadow: 0 0 0 .1rem var(--primary-background-color), -.2rem 0 0 .1rem var(--color), .2rem 0 0 .1rem var(--color);
 }
 table > :not(caption) > tr > th[scope="col"]::after,
 table > :not(caption) > tr > th:not([scope])::after {
@@ -392,7 +396,7 @@ table > :not(caption) > tr > th:not([scope])::after {
 	top: 100%;
 	left: 0;
 	width: 100%;
-	box-shadow: 0 0 0 .1rem var(--primary-background-color), 0 -.2rem 0 .1rem currentColor, 0 .2rem 0 .1rem currentColor;
+	box-shadow: 0 0 0 .1rem var(--primary-background-color), 0 -.2rem 0 .1rem var(--color), 0 .2rem 0 .1rem var(--color);
 }
 table > :not(caption) > tr > th:not([scope])::before {
 	height: calc(100% - .2rem);
@@ -415,46 +419,27 @@ hr::after {
 	clear: both;
 	display: flex;
 	width: 100%;
-	box-shadow: 0 0 0 .1rem currentColor;
+	box-shadow: 0 0 0 .1rem var(--color);
 }
 @supports (-prince-flow: normal) {
-	body {
-		color: #333;
+	a:not([download]) {
+		text-underline: dotted var(--color);
+	}
+	del {
+		text-line-through: solid #603;
+	}
+	ins {
+		text-underline: solid #063;
 	}
 	q::before {
-		content: "«\A0";
+		content: "«\a0";
 	}
 	q::after {
-		content: "\A0»";
+		content: "\a0»";
 	}
 	q q::before,
 	q q::after {
 		content: "\"";
-	}
-	:not(pre) > code,
-	:not(pre) > kbd,
-	:not(pre) > samp {
-		box-shadow: inset 0 0 0 .1rem var(--color), inset 0 0 0 .2rem var(--primary-background-color);
-	}
-	dl > dt,
-	dl > dd::marker,
-	ol > li::marker,
-	ul > li::marker,
-	blockquote::before,
-	blockquote::after,
-	pre::before,
-	pre::after,
-	table > :not(caption) > tr > th,
-	hr {
-		color: var(--color);
-	}
-	figure > iframe,
-	figure > canvas,
-	figure > picture,
-	figure > audio[controls],
-	figure > video[controls],
-	table > :not(caption) > tr > td:not(:empty) {
-		box-shadow: 0 0 0 .1rem var(--color), inset 0 0 0 .1rem var(--color);
 	}
 	dl > dd::marker {
 		content: "";
@@ -464,7 +449,7 @@ hr::after {
 		padding: 0;
 		border-width: .4rem 0 .4rem .8rem;
 		border-style: solid;
-		border-color: transparent transparent transparent currentColor;
+		border-color: transparent transparent transparent var(--color);
 		transform: translate(0, -.2rem);
 	}
 	ol > li::marker {
@@ -474,6 +459,8 @@ hr::after {
 		margin: 0 1rem;
 		padding: 0;
 		direction: rtl;
+		font-weight: bold;
+		color: var(--color);
 	}
 	ul > li::marker {
 		content: "";
@@ -481,7 +468,7 @@ hr::after {
 		height: .8rem;
 		margin: 0 1.6rem;
 		padding: 0;
-		border: .4rem solid currentColor;
+		border: .4rem solid var(--color);
 		border-radius: .4rem;
 		transform: translate(0, -.2rem);
 	}

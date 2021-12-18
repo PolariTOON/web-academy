@@ -17,7 +17,7 @@
 header,
 footer {
 	display: flow-root;
-	-webkit-text-fill-color: currentColor;
+	color: var(--color);
 }
 header::before,
 header::after,
@@ -31,7 +31,7 @@ header::after,
 footer::before {
 	width: calc(100% + 4rem);
 	margin: 0 -2rem;
-	box-shadow: 0 0 0 .1rem currentColor, inset 0 0 0 .1rem currentColor;
+	box-shadow: 0 0 0 .1rem var(--color), inset 0 0 0 .1rem var(--color);
 }
 header > p,
 footer > p {
@@ -67,6 +67,7 @@ main > h4 {
 	display: list-item;
 }
 main > h2 {
+	scroll-margin: calc(max(var(--margin-y), 2rem) + var(--padding-y) + 2rem) calc(max(var(--margin-x), 2rem) + var(--padding-x) - 4rem);
 	margin: 2rem -4rem;
 	padding: 1rem 6rem;
 	border-radius: 2rem 0;
@@ -75,7 +76,11 @@ main > h2 {
 	counter-increment: h2;
 }
 main > h3 {
+	scroll-margin: calc(max(var(--margin-y), 2rem) + var(--padding-y) + 2rem) calc(max(var(--margin-x), 2rem) + var(--padding-x) + 2rem);
 	counter-increment: h3;
+}
+main > h4 {
+	scroll-margin: calc(max(var(--margin-y), 2rem) + var(--padding-y) + 2rem) calc(max(var(--margin-x), 2rem) + var(--padding-x) + 2rem);
 }
 main > h2::before,
 main > h3::before,
@@ -116,7 +121,7 @@ main > hgroup > h2 {
 	padding: 2rem 6rem;
 	border-radius: 2rem 0;
 	background-color: #69c;
-	background-image: url("./web-academy.png");
+	background-image: url("../logotypes/web-academy-200x200.png");
 	background-position: 5rem 1rem;
 	background-size: 10rem 10rem;
 	background-repeat: no-repeat;
@@ -125,6 +130,7 @@ main > hgroup > h2 {
 }
 main > hgroup + address {
 	margin: -4rem 0;
+	font-style: italic;
 }
 main > hgroup + address > p {
 	margin: 0;
@@ -148,22 +154,11 @@ main > hgroup + address + h2 + ol > li > ol > li::before {
 main > hgroup + address + h2 + ol > li > ol > li > ol > li::before {
 	content: "§";
 }
-main > picture { /* TODO: remove */
-	clear: right;
-	float: right;
-	width: 16rem;
-	height: 16rem;
-	margin: 0 2rem;
-	padding: 2rem;
-}
 main > figure,
 main > table {
 	margin-left: calc(50% - var(--inner-size-x) / 2 + 2rem);
 	margin-right: calc(50% - var(--inner-size-x) / 2 + 2rem);
 	transform: translate(calc(var(--inner-size-x) / 2 - 2rem - 50%), 0);
-}
-main > figure > picture {
-	padding: 2rem;
 }
 /*~~~~~~ @media ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 @media print {
@@ -219,7 +214,6 @@ main > figure > picture {
 		header,
 		footer {
 			position: static;
-			color: var(--color);
 		}
 		header {
 			-prince-flow: static(header, start);

@@ -1,4 +1,4 @@
-# *Web Academy* [<img width="100" height="100" alt="" src="resources/web-academy.png" align="right"/>](https://polaritoon.github.io/web-academy/)
+# *Web Academy* [<img width="100" height="100" alt="" src="logotypes/web-academy-200x200.png" align="right"/>](//polaritoon.github.io/web-academy/)
 
 ## Présentation
 
@@ -8,7 +8,7 @@ La *Web Academy* est une formation portant sur le *web*, initiée par l'associat
 
 ### Supports de cours
 
-- [Introduction au développement *web*](lessons/01-web/index.pdf)
+- [Introduction à la plateforme *web*](lessons/01-web/index.pdf)
 
 - [Structuration de page *web* en *HTML*](lessons/02-html/index.pdf)
 
