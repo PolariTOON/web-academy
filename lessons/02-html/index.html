@@ -16,60 +16,78 @@
 				<h2>Structuration de<br/>page <em>web</em> en <em>HTML</em></h2>
 			</hgroup>
 			<address>
-				<p>Alexis EL MRINI (<a href="https://github.com/alexis-elmrini">@alexis-elmrini</a>)</p>
+				<p>Alexis EL MRINI (<a href="https://github.com/dspiricate">@dspiricate</a>)</p>
 				<p>Tristan LE GODAIS (<a href="https://github.com/PolariTOON">@PolariTOON</a>)</p>
 			</address>
 			<h2>Sommaire</h2>
 			<ol>
 				<li>
-					<p><a href="#1">Syntaxe d'un nœud</a></p>
+					<p><a href="#1">Présentation du <em>HTML</em></a></p>
 					<ol>
 						<li>
-							<p><a href="#1-1">Nœuds</a></p>
+							<p><a href="#1-1">Vocation du <em>HTML</em></a></p>
 						</li>
 						<li>
-							<p><a href="#1-2">Attributs</a></p>
-						</li>
-						<li>
-							<p><a href="#1-3">Échappement de caractères</a></p>
+							<p><a href="#1-2">Bonnes pratiques</a></p>
 						</li>
 					</ol>
 				</li>
 				<li>
-					<p><a href="#2">Contenu d'un document <em>HTML</em></a></p>
+					<p><a href="#2">Syntaxe d'un nœud</a></p>
 					<ol>
 						<li>
-							<p><a href="#2-1">Corps de texte</a></p>
+							<p><a href="#2-1">Nœuds</a></p>
 						</li>
 						<li>
-							<p><a href="#2-2">Formatage de texte (à la <em>HTML4</em>)</a></p>
+							<p><a href="#2-2">Attributs</a></p>
 						</li>
 						<li>
-							<p><a href="#2-3">Balisage sémantique de texte</a></p>
-						</li>
-						<li>
-							<p><a href="#2-4">Références à d'autres documents</a></p>
-						</li>
-						<li>
-							<p><a href="#2-5">Structures composites plus complexes</a></p>
-						</li>
-						<li>
-							<p><a href="#2-6">Formulaires</a></p>
-						</li>
-						<li>
-							<p><a href="#2-7">Sections</a></p>
+							<p><a href="#2-3">Échappement de caractères</a></p>
 						</li>
 					</ol>
 				</li>
 				<li>
-					<p><a href="#3">Métadonnées d'un document <em>HTML</em></a></p>
+					<p><a href="#3">Contenu d'un document <em>HTML</em></a></p>
+					<ol>
+						<li>
+							<p><a href="#3-1">Corps de texte</a></p>
+						</li>
+						<li>
+							<p><a href="#3-2">Formatage de texte (à la <em>HTML4</em>)</a></p>
+						</li>
+						<li>
+							<p><a href="#3-3">Balisage sémantique de texte</a></p>
+						</li>
+						<li>
+							<p><a href="#3-4">Références à d'autres documents</a></p>
+						</li>
+						<li>
+							<p><a href="#3-5">Structures composites plus complexes</a></p>
+						</li>
+						<li>
+							<p><a href="#3-6">Formulaires</a></p>
+						</li>
+						<li>
+							<p><a href="#3-7">Sections</a></p>
+						</li>
+					</ol>
 				</li>
 				<li>
-					<p><a href="#4">Structure générale d'un document <em>HTML</em> valide</a></p>
+					<p><a href="#4">Métadonnées d'un document <em>HTML</em></a></p>
+				</li>
+				<li>
+					<p><a href="#5">Structure générale d'un document <em>HTML</em> valide</a></p>
 				</li>
 			</ol>
-			<h2 id="1">Syntaxe d'un nœud</h2>
-			<h3 id="1-1">Nœuds</h3>
+			<h2 id="1">Présentation du <em>HTML</em></h2>
+			<h3 id="1-1">Vocation du <em>HTML</em></h3>
+			<p>Le langage <em>HTML</em> (<em>HyperText Markup Language</em>) est un language déclaratif, qui permet de décrire le contenu d'un document, dont les données, essentiellement textuelles et destinées à être lues par un humain, sont annotées, structurées et assemblées à l'aide de balises à valeur généralement sémantique.</p>
+			<p>À l'aide d'hyperliens, un tel document peut faire référence à, voire être référencé par, d'autres documents de divers types (textes, médias), constituant ainsi un hypertexte. Il peut aussi bien s'agir d'une page <em>web</em> que d'un article de journal, d'une publication scientifique, d'un livre, d'un cours, d'un <em>CV</em>…</p>
+			<h3 id="1-2">Bonnes pratiques</h3>
+			<p>Pour rester accessible au plus grand nombre, l'intégralité de l'information d'un document <em>HTML</em> doit être disponible sous forme textuelle. Lorsque qu'une information essentielle est plus efficacement véhiculée autrement auprès de certains utilisateurs, on veillera donc à proposer un texte alternatif (une description pour une image, une transcription pour de l'audio ou de la vidéo, un tableau de données pour un graphique…).</p>
+			<p>Pour bien déclarer la nature de chaque information, exposer ses alternatives, mais aussi délimiter et enrichir le discours, il est primordial de structurer un document avec des balises appropriées, sans quoi l'expérience sera dégradée pour certains utilisateurs. Elle peut ensuite être progressivement améliorée via des feuilles de styles <em>CSS</em> ou des programmes <em>JS</em>.</p>
+			<h2 id="2">Syntaxe d'un nœud</h2>
+			<h3 id="2-1">Nœuds</h3>
 			<figure>
 				<figcaption>Anatomie d'un élément</figcaption>
 				<picture><img width="660" height="150" alt="<div class=&quot;wrapper&quot; id=&quot;content&quot;>…</div>" src="./element.png"/></picture>
@@ -91,7 +109,7 @@
 					<p>Commentaires&nbsp;: <code>&lt;!-- ceci est un commentaire --&gt;</code></p>
 				</li>
 			</ul>
-			<h3 id="1-2">Attributs</h3>
+			<h3 id="2-2">Attributs</h3>
 			<ul>
 				<li>
 					<p>Attributs universels apposables à n'importe quel élément&nbsp;:</p>
@@ -134,7 +152,7 @@
 					</ul>
 				</li>
 			</ul>
-			<h3 id="1-3">Échappement de caractères</h3>
+			<h3 id="2-3">Échappement de caractères</h3>
 			<table>
 				<caption>Séquences d'échappement héritées de <em>XML</em></caption>
 				<tbody>
@@ -184,9 +202,9 @@
 					<p>Possibilité de donner directement le point de code <em>Unicode</em> en décimal (<code>&amp;#dddd;</code>) ou hexadécimal (<code>&amp;#xhhhh;</code>)</p>
 				</li>
 			</ul>
-			<h2 id="2">Contenu d'un document <em>HTML</em></h2>
-			<h3 id="2-1">Corps de texte</h3>
-			<p><em>HTML</em> sert à structurer un document (un livre, un cours, un <em>CV</em>, une page <em>web</em>…), notamment à l'aide de&nbsp;:</p>
+			<h2 id="3">Contenu d'un document <em>HTML</em></h2>
+			<h3 id="3-1">Corps de texte</h3>
+			<p>L'essentiel de l'information textuelle d'un document <em>HTML</em> peut être structurée à l'aide de&nbsp;:</p>
 			<ul>
 				<li>
 					<p>Balises de titres&nbsp;: <code>&lt;h1&gt;…&lt;/h1&gt;</code> de haut niveau à de <code>&lt;h6&gt;…&lt;/h6&gt;</code> de bas niveau</p>
@@ -201,7 +219,7 @@
 					<p>Balise de règle horizontale&nbsp;: <code>&lt;hr/&gt;</code> (changement de sujet)</p>
 				</li>
 			</ul>
-			<h3 id="2-2">Formatage de texte (à la <em>HTML4</em>)</h3>
+			<h3 id="3-2">Formatage de texte (à la <em>HTML4</em>)</h3>
 			<dl>
 				<dt><code>&lt;i&gt;…&lt;/i&gt;</code></dt>
 				<dd>
@@ -236,7 +254,7 @@
 					<p>Conteneurs de dernier recours, sans aucune valeur sémantique, à réserver notamment pour la mise en page avec <em>CSS</em></p>
 				</dd>
 			</dl>
-			<h3 id="2-3">Balisage sémantique de texte</h3>
+			<h3 id="3-3">Balisage sémantique de texte</h3>
 			<dl>
 				<dt><code>&lt;em&gt;…&lt;/em&gt;</code></dt>
 				<dd>
@@ -255,7 +273,7 @@
 					<p>Suppression de texte</p>
 				</dd>
 			</dl>
-			<h3 id="2-4">Références à d'autres documents</h3>
+			<h3 id="3-4">Références à d'autres documents</h3>
 			<p>Un document <em>HTML</em> peut faire référence à du contenu externe (une autre page <em>web</em>, une image, une vidéo…) via une <em>URL</em> notamment sous la forme de&nbsp;:</p>
 			<ul>
 				<li>
@@ -273,18 +291,21 @@
 			<hr/>
 			<ul>
 				<li>
-					<p>Image intégrée&nbsp;: <code>&lt;img src="…" alt="…"/&gt;</code> avec les attributs&nbsp;:</p>
+					<p>Image intégrée&nbsp;: <code>&lt;img width="…" height="…" alt="…" src="…"/&gt;</code> avec les attributs&nbsp;:</p>
 					<ul>
 						<li>
-							<p><code>src="…"</code> qui donne l'adresse (l'<em>URL</em>) de l'image</p>
+							<p><code>width="…"</code> et <code>height="…"</code> qui donnent le format de l'image</p>
 						</li>
 						<li>
 							<p><code>alt="…"</code> qui donne le texte alternatif équivalent pour les utilisateurs n'ayant pas accès aux images ou en cas d'erreur de chargement</p>
 						</li>
+						<li>
+							<p><code>src="…"</code> qui donne l'adresse (l'<em>URL</em>) de l'image</p>
+						</li>
 					</ul>
 				</li>
 			</ul>
-			<h3 id="2-5">Structures composites plus complexes</h3>
+			<h3 id="3-5">Structures composites plus complexes</h3>
 			<ul>
 				<li>
 					<p>Liste non ordonnée (avec puces)&nbsp;:</p>
@@ -313,7 +334,7 @@
 					<p>L'attribut <code>colspan="…"</code> d'une cellule permet d'indiquer le nombre de colonnes qu'elle occupe</p>
 				</li>
 			</ul>
-			<h3 id="2-6">Formulaires</h3>
+			<h3 id="3-6">Formulaires</h3>
 			<dl>
 				<dt><code>&lt;textarea name="…"&gt;…&lt;/textarea&gt;</code></dt>
 				<dd>
@@ -359,7 +380,7 @@
 					<p>L'attribut <code>method="…"</code> d'un formulaire permet de spécifier la méthode <em>HTTP</em> utilisée pour soumettre le formulaire (<code>get</code> ou <code>post</code>)</p>
 				</dd>
 			</dl>
-			<h3 id="2-7">Sections</h3>
+			<h3 id="3-7">Sections</h3>
 			<p>Un document <em>HTML</em> peut être hiérarchisé via l'utilisation des différents niveaux de titres (de <code>&lt;h1&gt;…&lt;/h1&gt;</code> à <code>&lt;h6&gt;…&lt;/h6&gt;</code>), mais aussi de sections&nbsp;:</p>
 			<ul>
 				<li>
@@ -388,10 +409,10 @@
 					<p>Pied de section&nbsp;: <code>&lt;footer&gt;…&lt;/footer&gt;</code> pour des informations sur l'auteur, les sources, la license…</p>
 				</li>
 				<li>
-					<p>Corps de section&nbsp;: <code>&lt;main&gt;…&lt;/main&gt;</code> pour le contenu principal du document (cet élément <strong>ne doit pas apparaître plus d'une fois</strong> dans le document)…</p>
+					<p>Corps de section&nbsp;: <code>&lt;main&gt;…&lt;/main&gt;</code> pour le contenu principal du document (cet élément ne doit pas apparaître plus d'une fois dans le document)…</p>
 				</li>
 			</ul>
-			<h2 id="3">Métadonnées d'un document <em>HTML</em></h2>
+			<h2 id="4">Métadonnées d'un document <em>HTML</em></h2>
 			<p>Un document <em>HTML</em> peut être décrit et enrichi par un ensemble d'informations générales (métadonnées) renseignées à l'aide de&nbsp;:</p>
 			<ul>
 				<li>
@@ -401,7 +422,7 @@
 					<p>Feuille de style&nbsp;: <code>&lt;style&gt;…&lt;/style&gt;</code> décrivant la mise en forme en via <em>CSS</em></p>
 				</li>
 				<li>
-					<p>Programme&nbsp;: <code>&lt;script&gt;…&lt;/script&gt;</code> permettant d'exécuter du <em>JS</em></p>
+					<p>Programme&nbsp;: <code>&lt;script&gt;…&lt;/script&gt;</code> permettant d'exécuter du code <em>JS</em></p>
 				</li>
 			</ul>
 			<hr/>
@@ -415,7 +436,7 @@
 					<pre><code>&lt;meta charset="utf-8"/&gt;&#x0a;&lt;meta name="viewport" content="width=480"/&gt;&#x0a;…&#x0a;</code></pre>
 				</li>
 			</ul>
-			<h2 id="4">Structure générale d'un document <em>HTML</em> valide</h2>
+			<h2 id="5">Structure générale d'un document <em>HTML</em> valide</h2>
 			<p>Tout document <em>HTML</em> doit commencer avec la déclaration <code>&lt;!DOCTYPE html&gt;</code> afin de signifier au navigateur qu'il est en codé en <em>HTML</em>, dans sa dernière version.</p>
 			<p>La déclaration doit être suivie de l'élément racine <code>&lt;html&gt;…&lt;/html&gt;</code>.</p>
 			<p>L'attribut <code>dir="…"</code> permet de spécifier le sens de lecture (<code>ltr</code> ou <code>rtl</code>).</p>

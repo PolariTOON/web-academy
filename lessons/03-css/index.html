@@ -16,7 +16,7 @@
 				<h2>Mise en forme de<br/>page <em>web</em> en <em>CSS</em></h2>
 			</hgroup>
 			<address>
-				<p>Alexis EL MRINI (<a href="https://github.com/alexis-elmrini">@alexis-elmrini</a>)</p>
+				<p>Alexis EL MRINI (<a href="https://github.com/dspiricate">@dspiricate</a>)</p>
 				<p>Tristan LE GODAIS (<a href="https://github.com/PolariTOON">@PolariTOON</a>)</p>
 			</address>
 			<h2>Sommaire</h2>
@@ -86,7 +86,7 @@
 			</ol>
 			<h2 id="1">Présentation des <em>CSS</em></h2>
 			<h3 id="1-1">Vocation des <em>CSS</em></h3>
-			<p>Les <em>CSS</em> (<em>Cascading Style Sheets</em>) permettent de décrire le rendu d'un document en suivant le principe de séparation du fond de la forme&nbsp;:</p>
+			<p>Le langage <em>CSS</em> (<em>Cascading Style Sheets</em>) est un language déclaratif, qui permet de décrire le rendu d'un document en suivant le principe de séparation du fond de la forme&nbsp;:</p>
 			<dl>
 				<dt><em>HTML</em></dt>
 				<dd>
@@ -187,8 +187,8 @@
 				<pre><code>div {&#x0a;&#x09;color: red; /* couleur du texte */&#x0a;&#x09;font-family: Arial; /* police d'écriture */&#x0a;&#x09;font-style: italic; /* roman ou italique */&#x0a;&#x09;font-weight: bold; /* graisse */&#x0a;&#x09;text-decoration: underline; /* soulignage… */&#x0a;}&#x0a;</code></pre>
 			</figure>
 			<h3 id="4-2">Modèles de disposition</h3>
-			<p><em>CSS</em> offre plusieurs modèles pour agencer le contenu d'un élément.</p>
-			<p>Plusieurs propriétés permettent d'activer les différents modèles&nbsp;: <code>display</code>, mais aussi <code>float</code> et <code>position</code>.</p>
+			<p>Plusieurs modèles existent pour agencer le contenu d'un élément, et parfois adapter sa disposition à son entourage.</p>
+			<p>Plusieurs propriétés permettent d'activer les différents modèles&nbsp;: <code>display</code>, mais aussi <code>float</code> et <code>position</code> par exemple.</p>
 			<p>Remarquons que&nbsp;:</p>
 			<ul>
 				<li>
@@ -210,7 +210,7 @@
 					<p>Il est possible de répartir le contenu d'un élément <em>block</em> en colonnes à l'aide des propriétés <code>column-*</code></p>
 				</dd>
 				<dd>
-					<p>Un élément peux sortir du flux si une des propriétés <code>float</code> et <code>position</code> est modifiée</p>
+					<p>Un élément peut sortir du flux si une des propriétés <code>float</code> et <code>position</code> est modifiée</p>
 				</dd>
 			</dl>
 			<hr/>
@@ -221,7 +221,7 @@
 				</dd>
 				<dt>Boîte positionnée</dt>
 				<dd>
-					<p>Avec les propriétés <code>position</code>, <code>top</code>, <code>left</code>, <code>bottom</code> et <code>right</code>, la position d'un élément peut être définie très précisément en fournissant ses coordonnées</p>
+					<p>Avec les propriétés <code>position</code> et <code>inset-*</code>, la position d'un élément peut être définie très précisément en fournissant ses coordonnées</p>
 				</dd>
 				<dt>Tableau</dt>
 				<dd>
@@ -237,13 +237,14 @@
 				</dd>
 				<dt>Grille</dt>
 				<dd>
-					<p>C'est un modèle activable avec les valeurs <code>grid</code> et <code>inline-flex</code> de la propriété <code>display</code> conçu pour un <em>design</em> bidimensionnel</p>
+					<p>C'est un modèle activable avec les valeurs <code>grid</code> et <code>inline-grid</code> de la propriété <code>display</code> conçu pour un <em>design</em> bidimensionnel</p>
 					<p>Le position, la taille et l'ordre des enfants se contrôle avec les propriétés <code>grid-*</code>, <code>place-*</code>, <code>*-gap</code> et <code>order</code></p>
 				</dd>
 			</dl>
 			<h3 id="4-3">Modèle de boîte</h3>
 			<p>Un élément est lui-même constitué d'un imbrication de boîtes délimitées par la marge intérieure, la bordure, la marge extérieure et le décalage.</p>
-			<p>La dimension de chacune des boîtes peut notamment être contrôlée avec les propriétés <code>padding-*</code>, <code>border-*-width</code>, <code>margin-*</code>, <code>top</code>, <code>left</code>, <code>bottom</code> et <code>right</code>.</p>
+			<p>La dimension de chacune des boîtes peut notamment être contrôlée avec les propriétés <code>padding-*</code>, <code>border-*-width</code>, <code>margin-*</code> et <code>inset-*</code>.</p>
+			<p>La taille de la boîte intérieure ou bien de la boîte extérieure peut être redéfinie avec les propriétés <code>width</code> et <code>height</code>, selon la valeur de la propriété <code>box-sizing</code> qui spécifie la boîte en question.</p>
 			<h3 id="4-4">Bordure et fond</h3>
 			<figure>
 				<figcaption>Propriétés affectant la bordure et le fond</figcaption>
@@ -261,7 +262,7 @@
 				</dd>
 				<dt>Une notation fonctionnelle</dt>
 				<dd>
-					<p><code>rgb(102, 51, 153)</code>, <code>rgba(102, 51, 153, .4)</code>…</p>
+					<p><code>rgb(40% 20% 60% / 40%)</code>, <code>hsl(30deg 100% 50% / 100%)</code>…</p>
 				</dd>
 				<dt>Une notation hexadécimale</dt>
 				<dd>

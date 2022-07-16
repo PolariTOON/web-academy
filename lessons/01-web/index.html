@@ -1,40 +1,90 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="fr">
 	<head>
-		<title>Web Academy - Introduction au développement web</title>
+		<title>Web Academy - Introduction à la plateforme web</title>
 		<meta name="viewport" content="width=device-width"/>
 		<link rel="stylesheet" type="text/css" href="./index.css"/>
 	</head>
 	<body>
 		<header id="header">
-			<p>Introduction au développement <em>web</em></p>
+			<p>Introduction à la plateforme <em>web</em></p>
 			<p><em>Web Academy</em></p>
 		</header>
 		<main id="main">
 			<hgroup>
 				<h1><em>Web Academy</em></h1>
-				<h2>Introduction au<br/>développement <em>web</em></h2>
+				<h2>Introduction à la<br/>plateforme <em>web</em></h2>
 			</hgroup>
 			<address>
-				<p>Alexis EL MRINI (<a href="https://github.com/alexis-elmrini">@alexis-elmrini</a>)</p>
+				<p>Alexis EL MRINI (<a href="https://github.com/dspiricate">@dspiricate</a>)</p>
 				<p>Tristan LE GODAIS (<a href="https://github.com/PolariTOON">@PolariTOON</a>)</p>
 			</address>
 			<h2>Sommaire</h2>
 			<ol>
 				<li>
-					<p><a href="#1">Histoire du <em>web</em></a></p>
+					<p><a href="#1">Présentation de la plateforme <em>web</em></a></p>
+					<ol>
+						<li>
+							<p><a href="#1-1">Vocation de la plateforme <em>web</em></a></p>
+						</li>
+						<li>
+							<p><a href="#1-2">Principes</a></p>
+						</li>
+						<li>
+							<p><a href="#1-3">Bonnes pratiques</a></p>
+						</li>
+					</ol>
 				</li>
 				<li>
-					<p><a href="#2">Présentation de <em>HTTP</em></a></p>
+					<p><a href="#2">Moteurs de rendu</a></p>
 				</li>
 				<li>
-					<p><a href="#3">Présentation des langages du <em>web</em></a></p>
+					<p><a href="#3">Technologies</a></p>
+					<ol>
+						<li>
+							<p><a href="#3-1">Présentation de <em>HTTP</em></a></p>
+						</li>
+						<li>
+							<p><a href="#3-2">Présentation des langages du <em>web</em></a></p>
+						</li>
+					</ol>
 				</li>
 				<li>
 					<p><a href="#4">Outils de développement <em>web</em></a></p>
 				</li>
 			</ol>
-			<h2 id="1">Histoire du <em>web</em></h2>
+			<h2 id="1">Présentation de la plateforme <em>web</em></h2>
+			<h3 id="1-1">Vocation de la plateforme <em>web</em></h3>
+			<p>Le <em>web</em> a été imaginé en 1989 comme un système décentralisé de documents reliés entre eux reposant sur l'internet. Une de ses vocations est de pouvoir mettre à disposition du contenu et de pouvoir le consulter depuis n'importe où, quel que soit l'appareil.</p>
+			<hr>
+			<p>La plateforme <em>web</em> est l'ensemble des technologies (formats, schémas, langages, protocoles, APIs…) disponibles dans les navigateurs et à partir desquelles ces documents <em>web</em> sont construits. Elles sont majoritairement décrites par des standards ouverts maintenus par divers groupes de travail, indépendants ou non, mais parfois étendues par des fonctionnalités propriétaires.</p>
+			<p>Les concepts de <em>web</em> sémantique et de <em>web 3.0</em> ne sont communément pas englobés par cette définition.</p>
+			<h3 id="1-2">Principes</h3>
+			<h3 id="1-3">Bonnes pratiques</h3>
+			<p>Les auteurs de contenus ont aussi une responsabilité dans la garantie de la bonne santé du <em>web</em>. Concevoir les documents dans le respect des standards, et les tester régulièrement dans les différents navigateurs et leurs différentes versions favorise l'accessibilité du <em>web</em>, sans entraver l'évolution de la plateforme <em>web</em>.</p>
+			<h2 id="2">Moteurs de rendu</h2>
+			<p>Les différents navigateurs majeurs actuels reposent tous sur trois implémentations distinctes appelées moteurs de rendus, même si chacun y ajoute ensuite ses propres fonctionnalités.</p>
+			<dl>
+				<dt><em>WebKit</em> avec <em>JavaScriptCore</em></dt>
+				<dd>
+					<p>C'est le seul moteur de rendu disponible sous <em>iOS</em>. Il est donc à la base de toutes les variantes de tous les navigateurs sur ce système, mais aussi de <em>Safari</em> sous <em>macOS</em>. On le retrouve aussi dans <em>Gnome Web</em> sous certaines distributions <em>Linux</em>.</p>
+				</dd>
+			</dl>
+			<hr/>
+			<dl>
+				<dt><em>Blink</em> avec <em>V8</em></dt>
+				<dd>
+					<p>C'est le moteur de rendu le plus répandu actuellement qui fait notamment tourner les versions actuelles de <em>Chrome</em> et <em>Edge</em>. Initialement dérivé de <em>WebKit</em>, il en garde encore certaines fonctionnalités propriétaires.</p>
+				</dd>
+				<dt><em>Gecko</em> avec <em>SpiderMonkey</em></dt>
+				<dd>
+					<p>C'est le moteur de rendu de <em>Firefox</em>, mais aussi de <em>Tor</em> et de <em>Wolvic</em>, des navigateurs plus exotiques.</p>
+				</dd>
+			</dl>
+			<p>Le nombre de moteurs de rendu maintenus a tendance à diminuer avec le temps. Ainsi <em>Presto</em>, à la base des anciennes versions d'<em>Opera</em>, et <em>Trident</em>, à la base d'<em>Internet Explorer</em> et des anciennes versions d'<em>Edge</em> ont disparu. Cependant d'autres sont en train d'émerger, comme <em>Servo</em> et <em>Flow</em>.</p>
+			<h2 id="3">Technologies</h2>
+			<p>Le <em>web</em> est une des applications majeures de l'internet, à l'instar des courriels. À sa base, l'internet repose sur des protocoles et sytèmes d'adressage comme TLS, UDP, TCP, DNS et IP. Le <em>web</em> y ajoute sa couche de technologies plus spécialisées, en commençant par le protocole HTTP et les adresses URL. Viennent ensuite les documents HTML, enrichis dans lesquels sont inclus ou référencés d'autres documents (HTML, PDF), certains types spécifiques de médias (images, audio, vidéos), autour desquels gravitent notamment CSS pour la mise en forme ou encore JS et WASM pour la programmation, un certain nombre d'APIs généralement exposées via JS et d'autres formats de données comme génériques comme XML ou JSON.</p>
+			<!-- <h2 id="1">Histoire du <em>web</em></h2>
 			<dl>
 				<dt>1950's</dt>
 				<dd>
@@ -59,11 +109,11 @@
 				<dd>
 					<p><em>HTML</em>, <em>HTTP</em>, <em>URI</em> (Tim Berners-Lee)&nbsp;: naissance du <em>World Wide Web</em>, réseau décentralisé</p>
 				</dd>
-			</dl>
-			<h2 id="2">Présentation de <em>HTTP</em></h2>
+			</dl> -->
+			<h3 id="3-1">Présentation de <em>HTTP</em></h3>
 			<figure>
-				<figcaption>Connexion de clients et de serveurs à travers l'Internet</figcaption>
-				<picture><img width="660" height="300" alt="Connexion de clients et de serveurs à travers l'Internet" src="./internet.png"/></picture>
+				<figcaption>Connexion de clients et de serveurs à travers l'internet</figcaption>
+				<picture><img width="660" height="300" alt="Connexion de clients et de serveurs à travers l'internet" src="./internet.png"/></picture>
 			</figure>
 			<hr/>
 			<dl>
@@ -102,7 +152,7 @@
 				<figcaption>En-tête d'une réponse HTTP</figcaption>
 				<pre><code>HTTP/2 200 OK&#x0a;content-encoding: gzip&#x0a;accept-ranges: bytes&#x0a;cache-control: max-age=604800&#x0a;content-type: text/html; charset=UTF-8&#x0a;date: Tue, 26 Nov 2019 17:36:02 GMT&#x0a;etag: "3147526947+gzip"&#x0a;expires: Tue, 03 Dec 2019 17:36:02 GMT&#x0a;last-modified: Thu, 17 Oct 2019 07:18:26 GMT&#x0a;server: ECS (bsa/EB17)&#x0a;vary: Accept-Encoding&#x0a;x-cache: HIT&#x0a;content-length: 648&#x0a;X-Firefox-Spdy: h2&#x0a;</code></pre>
 			</figure>
-			<h2 id="3">Présentation des langages du <em>web</em></h2>
+			<h3 id="3-2">Présentation des langages du <em>web</em></h3>
 			<figure>
 				<figcaption>Technologies prises en charge par les navigateurs</figcaption>
 				<picture><img width="660" height="300" alt="Technologies prises en charge par les navigateurs" src="./technologies.png"/></picture>
@@ -157,45 +207,10 @@
 					<p>Permet d'animer une page</p>
 				</dd>
 				<dd>
-					<p>Attention&nbsp;: n'est <strong>pas</strong> <em>Java</em></p>
+					<p>Attention&nbsp;: n'est pas <em>Java</em></p>
 				</dd>
 				<dd>
 					<p>Aujourd'hui&nbsp;: <em>ECMAScript 2018</em></p>
-				</dd>
-			</dl>
-			<hr/>
-			<dl>
-				<dt><em>PHP</em></dt>
-				<dd>
-					<p><em>PHP Hypertext Preprocessor</em></p>
-				</dd>
-				<dd>
-					<p>Langage de programmation côté serveur</p>
-				</dd>
-				<dd>
-					<p>Permet de générer une page</p>
-				</dd>
-				<dd>
-					<p>Aujourd'hui&nbsp;: <em>PHP 7</em></p>
-				</dd>
-			</dl>
-			<hr/>
-			<dl>
-				<dt><em>SQL</em></dt>
-				<dd>
-					<p><em>Structured Query Language</em></p>
-				</dd>
-				<dd>
-					<p>Langage de manipulation des données</p>
-				</dd>
-				<dd>
-					<p>Permet de gérer des bases de données</p>
-				</dd>
-				<dd>
-					<p>Syntaxe&nbsp;: <code>SELECT name FROM users;</code></p>
-				</dd>
-				<dd>
-					<p>Aujourd'hui&nbsp;: <em>MySQL</em>, <em>MariaDB</em>, <em>SQLite</em>…</p>
 				</dd>
 			</dl>
 			<hr/>
