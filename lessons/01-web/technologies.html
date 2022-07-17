@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<style>
+	html {
+		background: #333;
+	}
+	body {
+		place-items: center;
+		display: grid;
+		width: 990px;
+		height: 450px;
+		margin: 0;
+		background: #fff;
+	}
+</style>
+<script type="module">
+	const response = await fetch("./technologies.svg");
+	const text = await response.text();
+	const xml = new XMLSerializer().serializeToString(new DOMParser().parseFromString(text, "text/xml"));
+	document.body.innerHTML = xml;
+</script>

@@ -1,10 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" font-family="sans-serif" font-size="20" font-weight="bold" text-anchor="middle" dominant-baseline="middle" xmlns:xlink="http://www.w3.org/1999/xlink">
-	<symbol id="entity" width="240" height="240">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 600" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" font-family="sans-serif" font-size="24" font-weight="bold" text-anchor="middle" dominant-baseline="middle">
+	<symbol id="web" viewBox="0 0 1320 600" fill="none" stroke="#333">
+		<path d="
+			M540,260
+			L320,260
+			L240,180
+			M540,340
+			L320,340
+			L240,420
+			M580,200
+			L500,120
+			L480,120
+			M580,400
+			L500,480
+			L480,480
+			M780,260
+			L1000,260
+			L1080,180
+			M780,340
+			L1000,340
+			L1080,420
+		"/>
+	</symbol>
+	<symbol id="entity" viewBox="0 0 240 240">
 		<circle cx="120" cy="120" r="110" fill="#9cf"/>
 		<rect x="40" y="195" width="160" height="30" rx="10" ry="10" fill="#69c"/>
 	</symbol>
-	<symbol id="desktop" width="240" height="240">
-		<use xlink:href="#entity" x="0" y="0"/>
+	<symbol id="desktop" viewBox="0 0 240 240">
+		<use href="#entity" x="0" y="0"/>
 		<text x="120" y="210" fill="#333">Desktop</text>
 		<g stroke="#333">
 			<g fill="#ccc">
@@ -14,7 +36,7 @@
 					L85,180
 					L100,165
 					Z
-				" fill="#ccc"/>
+				"/>
 				<rect x="60" y="60" width="120" height="105" rx="10" ry="10"/>
 			</g>
 			<rect x="70" y="70" width="100" height="75" rx="5" ry="5" fill="#eee"/>
@@ -28,8 +50,8 @@
 			" fill="none"/>
 		</g>
 	</symbol>
-	<symbol id="mobile" width="240" height="240">
-		<use xlink:href="#entity" x="0" y="0"/>
+	<symbol id="mobile" viewBox="0 0 240 240">
+		<use href="#entity" x="0" y="0"/>
 		<text x="120" y="210" fill="#333">Mobile</text>
 		<g stroke="#333">
 			<rect x="85" y="60" width="70" height="120" rx="10" ry="10" fill="#ccc"/>
@@ -39,8 +61,8 @@
 			</g>
 		</g>
 	</symbol>
-	<symbol id="server" width="240" height="240">
-		<use xlink:href="#entity" x="0" y="0"/>
+	<symbol id="server" viewBox="0 0 240 240">
+		<use href="#entity" x="0" y="0"/>
 		<text x="120" y="210" fill="#333">Server</text>
 		<g stroke="#333">
 			<g fill="#ccc">
@@ -81,8 +103,8 @@
 			</g>
 		</g>
 	</symbol>
-	<symbol id="internet" width="240" height="240">
-		<use xlink:href="#entity" x="0" y="0"/>
+	<symbol id="internet" viewBox="0 0 240 240">
+		<use href="#entity" x="0" y="0"/>
 		<text x="120" y="210" fill="#333">Internet</text>
 		<path d="
 			M70,170
@@ -92,34 +114,12 @@
 			Z
 		" fill="#eee" stroke="#333"/>
 	</symbol>
-	<symbol id="web" width="1440" height="600" fill="none" stroke="#333">
-		<path d="
-			M600,260
-			L320,260
-			L240,180
-			M600,340
-			L320,340
-			L240,420
-			M640,200
-			L560,120
-			L480,120
-			M640,400
-			L560,480
-			L480,480
-			M840,260
-			L1120,260
-			L1200,180
-			M840,340
-			L1120,340
-			L1200,420
-		"/>
-	</symbol>
-	<use xlink:href="#web" x="0" y="0"/>
-	<use xlink:href="#desktop" x="0" y="60"/>
-	<use xlink:href="#desktop" x="0" y="300"/>
-	<use xlink:href="#mobile" x="240" y="0"/>
-	<use xlink:href="#mobile" x="240" y="360"/>
-	<use xlink:href="#server" x="1200" y="60"/>
-	<use xlink:href="#server" x="1200" y="300"/>
-	<use xlink:href="#internet" x="600" y="180"/>
+	<use href="#web" x="0" y="0" width="1320" height="600"/>
+	<use href="#desktop" x="0" y="60" width="240" height="240"/>
+	<use href="#desktop" x="0" y="300" width="240" height="240"/>
+	<use href="#mobile" x="240" y="0" width="240" height="240"/>
+	<use href="#mobile" x="240" y="360" width="240" height="240"/>
+	<use href="#server" x="1080" y="60" width="240" height="240"/>
+	<use href="#server" x="1080" y="300" width="240" height="240"/>
+	<use href="#internet" x="540" y="180" width="240" height="240"/>
 </svg>

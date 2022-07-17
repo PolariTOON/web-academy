@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 420" stroke-width="4" stroke-linejoin="round" stroke-linecap="round" font-family="sans-serif" font-size="24" font-weight="bold" dominant-baseline="middle">
+	<symbol id="web"  viewBox="0 0 1320 420">
+		<circle cx="280" cy="120" r="30" fill="#eee" stroke="#333"/>
+		<text x="280" y="120" fill="#333" text-anchor="middle">1</text>
+		<path d="
+			M1000,170
+			L320,170
+			Z
+			L980,150
+			Z
+			L980,190
+		" fill="none" stroke="#333"/>
+		<g fill="#333" text-anchor="start">
+			<text x="320" y="105">GET / HTTP/2</text>
+			<text x="320" y="135">Host: example.org</text>
+		</g>
+		<circle cx="1040" cy="300" r="30" fill="#eee" stroke="#333"/>
+		<text x="1040" y="300" fill="#333" text-anchor="middle">2</text>
+		<path d="
+			M320,250
+			L1000,250
+			Z
+			L340,230
+			Z
+			L340,270
+		" fill="none" stroke="#333"/>
+		<g fill="#333" text-anchor="end">
+			<text x="1000" y="285">HTTP/2 200 OK</text>
+			<text x="1000" y="315">content-type: text/html; charset=UTF-8</text>
+			<text x="1000" y="375">&lt;!DOCTYPE html&gt;</text>
+			<text x="1000" y="405">&lt;html&gt;…&lt;/html&gt;</text>
+		</g>
+	</symbol>
+	<symbol id="entity" viewBox="0 0 240 240">
+		<circle cx="120" cy="120" r="110" fill="#9cf"/>
+		<rect x="40" y="195" width="160" height="30" rx="10" ry="10" fill="#69c"/>
+	</symbol>
+	<symbol id="client" viewBox="0 0 240 240" text-anchor="middle">
+		<use href="#entity" x="0" y="0"/>
+		<text x="120" y="210" fill="#333">Client</text>
+		<g stroke="#333">
+			<g fill="#ccc">
+				<path d="
+					M140,165
+					L155,180
+					L85,180
+					L100,165
+					Z
+				"/>
+				<rect x="60" y="60" width="120" height="105" rx="10" ry="10"/>
+			</g>
+			<rect x="70" y="70" width="100" height="75" rx="5" ry="5" fill="#eee"/>
+			<path d="
+				M70,155
+				Z
+				M80,155
+				Z
+				M90,155
+				Z
+			" fill="none"/>
+		</g>
+	</symbol>
+	<symbol id="server" viewBox="0 0 240 240" text-anchor="middle">
+		<use href="#entity" x="0" y="0"/>
+		<text x="120" y="210" fill="#333">Server</text>
+		<g stroke="#333">
+			<g fill="#ccc">
+				<rect x="40" y="60" width="160" height="30" rx="10" ry="10"/>
+				<rect x="40" y="105" width="160" height="30" rx="10" ry="10"/>
+				<rect x="40" y="150" width="160" height="30" rx="10" ry="10"/>
+			</g>
+			<g fill="#eee">
+				<rect x="170" y="70" width="20" height="10" rx="5" ry="5"/>
+				<rect x="170" y="115" width="20" height="10" rx="5" ry="5"/>
+				<rect x="170" y="160" width="20" height="10" rx="5" ry="5"/>
+			</g>
+			<g fill="none">
+				<path d="
+					M50,80
+					Z
+					M60,80
+					Z
+					M70,80
+					Z
+				"/>
+				<path d="
+					M50,125
+					Z
+					M60,125
+					Z
+					M70,125
+					Z
+				"/>
+				<path d="
+					M50,170
+					Z
+					M60,170
+					Z
+					M70,170
+					Z
+				"/>
+			</g>
+		</g>
+	</symbol>
+	<use href="#web" x="0" y="0" width="1320" height="420"/>
+	<use href="#client" x="0" y="90" width="240" height="240"/>
+	<use href="#server" x="1080" y="90" width="240" height="240"/>
+</svg>

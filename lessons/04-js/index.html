@@ -938,7 +938,7 @@
 			<p>La classe <code>URL</code>, présente à la fois dans les navigateurs et dans <em>Node.js</em>, permet d'analyser et de décomposer en un objet une adresse donnée sous forme de chaînes de caractères. Les différentes propriétés correspondent alors à la décomposition détaillée précédemment. Elles sont disponibles à la fois en lecture et en écriture.</p>
 			<figure>
 				<figcaption>Anatomie d'une adresse <em>URL</em></figcaption>
-				<picture><img src="./resources/url.png" alt="scheme://user:pass@example.org:1234/file?query#fragment"/></picture>
+				<picture><img width="660" height="180" alt="scheme://user:pass@example.org:1234/file?query#fragment" src="./url.png"/></picture>
 			</figure>
 			<p>Cette classe résout automatiquement les adresses relatives (commençant généralement par <code>//</code>, <code>/</code>, <code>../</code>, <code>./</code>, <code>?</code> ou <code>#</code>).</p>
 			<figure>
@@ -949,7 +949,7 @@
 			<p>Une propriété supplémentaire, <code>….searchParams</code>, instance de la classe <code>URLSearchParams</code>, permet de manipuler directement les paramètres d'<em>URL</em>, via des fonctions de lecture (<code>….get("…")</code>), d'écriture (<code>….set("…", "…")</code>), d'ajout (<code>….append("…", "…")</code>), de retrait (<code>….delete("…")</code>), de test de présence (<code>….has("…")</code>), de recherche (<code>….getAll("…")</code>), de tri (<code>….sort()</code>) ou d'itération (<code>….forEach((…) => {…})</code>).</p>
 			<figure>
 				<figcaption>Anatomie des paramètres d'une adresse <em>URL</em></figcaption>
-				<picture><img src="./resources/search.png" alt="?a=b&amp;c=d"/></picture>
+				<picture><img width="660" height="120" alt="?a=b&amp;c=d" src="./search.png"/></picture>
 			</figure>
 			<h2 id="7">APIs <em>web</em></h2>
 			<h3 id="7-1">API <em>Fetch</em></h3>
@@ -968,7 +968,7 @@
 			<hr/>
 			<figure>
 				<figcaption>Diagramme des classes simplifié d'un document <em>XML</em></figcaption>
-				<picture><img src="./resources/dom.svg" alt="@startuml&#x0a;Node -up-|> EventTarget&#x0a;Document -up-|> Node&#x0a;DocumentType -up-|> Node&#x0a;Element -up-|> Node&#x0a;HTMLElement -up-|> Element&#x0a;SVGElement -up-|> Element&#x0a;Attr -up-|> Node&#x0a;CharacterData -up-|> Node&#x0a;Text -up-|> CharacterData&#x0a;Comment -up-|> CharacterData&#x0a;CDATASection -up-|> CharacterData&#x0a;@enduml"/></picture>
+				<picture><img width="660" height="270" alt="@startuml&#x0a;Node -up-|> EventTarget&#x0a;Document -up-|> Node&#x0a;DocumentType -up-|> Node&#x0a;Element -up-|> Node&#x0a;HTMLElement -up-|> Element&#x0a;SVGElement -up-|> Element&#x0a;Attr -up-|> Node&#x0a;CharacterData -up-|> Node&#x0a;Text -up-|> CharacterData&#x0a;Comment -up-|> CharacterData&#x0a;CDATASection -up-|> CharacterData&#x0a;@enduml" src="./dom.png"/></picture>
 			</figure>
 			<hr/>
 			<p>Pour créer un élément dynamiquement, on utilise la fonction <code>document.createElement("…")</code> à laquelle on donne un nom de balise. L'élément ainsi créé n'est pas immédiatement inséré dans le document.</p>
